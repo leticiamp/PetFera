@@ -1,3 +1,14 @@
+/*
+# Disciplina: Linguagem de Programação I
+# Professor: Silvio Sampaio
+# Alunos:
+# ANDRE VITOR MACEDO SOARES
+# LETICIA MOURA PINHEIRO
+# ODILON JULIO DOS SANTOS
+# Projeto Final "PetFera"
+===========================================================================
+*/
+
 #ifndef _FUNCIONARIO_H_
 #define _FUNCIONARIO_H_
 
@@ -25,6 +36,5 @@ class Funcionario{
 		// type method(type);
 
 };
-
 
 #endif // _FUNCIONARIO_H_

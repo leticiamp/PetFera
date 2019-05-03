@@ -1,3 +1,14 @@
+/*
+# Disciplina: Linguagem de Programação I
+# Professor: Silvio Sampaio
+# Alunos:
+# ANDRE VITOR MACEDO SOARES
+# LETICIA MOURA PINHEIRO
+# ODILON JULIO DOS SANTOS
+# Projeto Final "PetFera"
+===========================================================================
+*/
+
 #ifndef _VETERINARIO_H_
 #define _VETERINARIO_H_
 
@@ -16,6 +27,5 @@ class Veterinario{
 		~Veterinario();
 
 };
-
 
 #endif // _VETERINARIO_H_

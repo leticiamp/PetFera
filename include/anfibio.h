@@ -1,14 +1,27 @@
+/*
+# Disciplina: Linguagem de Programação I
+# Professor: Silvio Sampaio
+# Alunos:
+# ANDRE VITOR MACEDO SOARES
+# LETICIA MOURA PINHEIRO
+# ODILON JULIO DOS SANTOS
+# Projeto Final "PetFera"
+===========================================================================
+*/
+
+
 #ifndef _ANFIBIO_H_
 #define _ANFIBIO_H_
 
 #include <string>
+#include "data.h"
 
 using namespace std;
 
 class Anfibio{
 	private:
 		int m_total_de_mudas;
-		date m_ultima_muda; // criar classe date?
+		Date m_ultima_muda;
 		
 	protected:
 
