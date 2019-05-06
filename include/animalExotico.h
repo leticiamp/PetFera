@@ -18,12 +18,12 @@ using namespace std;
 
 class AnimalExo{
 	private:
+
+	protected:
 		string m_pais_origem;
 		string m_pais_origem;
 		/* Certamente é erro duplicar. Assim, consta
 		no PDF. Verificar com o Prof. */
-	protected:
-
 	public:
 		AnimalExo();
 		~AnimalExo();

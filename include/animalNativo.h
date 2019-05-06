@@ -18,10 +18,10 @@ using namespace std;
 
 class AnimalNat{
 	private:
+
+	protected:
 		string m_uf_origem;
 		string m_autorizacao;
-	protected:
-
 	public:
 		AnimalNat();
 		~AnimalNat();

@@ -18,11 +18,10 @@ using namespace std;
 
 class Reptil{
 	private:
+				
+	protected:
 		bool m_venenoso;
 		string m_tipo_veneno;
-		
-	protected:
-
 	public:
 		Reptil();
 		~Reptil();

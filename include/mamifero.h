@@ -18,10 +18,9 @@ using namespace std;
 
 class Mamifero{
 	private:
-		string m_cor_pelo;
 		
 	protected:
-
+		string m_cor_pelo;
 	public:
 		Mamifero();
 		~Mamifero();

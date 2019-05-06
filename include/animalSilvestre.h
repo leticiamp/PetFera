@@ -18,11 +18,11 @@ using namespace std;
 
 class AnimalSilv{
 	private:
+
+	protected:
 		string m_autorizacao_ibama;
 		/* Certamente é erro duplicar. Assim, consta
 		no PDF. Verificar com o Prof. */
-	protected:
-
 	public:
 		AnimalSilv();
 		~AnimalSilv();

@@ -22,6 +22,8 @@ using namespace std;
 
 class Animal{
 	private:
+		
+	protected:
 		int m_id;
 		string m_classe;
 		string m_nome_cientifico;
@@ -30,8 +32,6 @@ class Animal{
 		string m_dieta;
 		Veterinario m_veterinario;
 		Tratador m_tratador;
-	protected:
-
 	public:
 		Animal();
 		Animal(/*parâmetros*/);

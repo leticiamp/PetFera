@@ -20,11 +20,10 @@ using namespace std;
 
 class Anfibio{
 	private:
-		int m_total_de_mudas;
-		Date m_ultima_muda;
 		
 	protected:
-
+		int m_total_de_mudas;
+		Date m_ultima_muda;
 	public:
 		Anfibio();
 		~Anfibio();

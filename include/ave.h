@@ -18,11 +18,11 @@ using namespace std;
 
 class Ave{
 	private:
+	
+	protected:
 		double m_tamanho_do_bico_cm;
 		double m_envergadura_das_asas;
-		
-	protected:
-
+	
 	public:
 		Ave();
 		~Ave();

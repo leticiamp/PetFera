@@ -18,6 +18,8 @@ using namespace std;
 
 class Funcionario{
 	private:
+	
+	protected:
 		int m_id;
 		string m_nome;
 		string m_cpf;
@@ -25,9 +27,6 @@ class Funcionario{
 		short m_tipo_sanguineo;
 		char m_fator_rh;
 		string m_especialidade;
-		
-	protected:
-
 	public:
 		Funcionario();
 		~Funcionario();
