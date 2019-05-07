@@ -7,8 +7,6 @@
 # Makefile do Projeto Final "PetFera"
 
 
-# >>>>>>> FALTA EDITAR ABAIXO!!!!!! <<<<<<<<
-
 CC = g++
 PROG = $(BIN)/PetFera
 
@@ -21,14 +19,14 @@ CPPFLAGS = -Wall -O0 -g -pedantic -std=c++11 -I$(INC)
 
 OBJS = 	$(OBJ)/anfibio.o $(OBJ)/anfibioExotico.o $(OBJ)/anfibioNativo.o \
 	   	$(OBJ)/ave.o $(OBJ)/aveExotico.o $(OBJ)/aveNativo.o \
-		$(OBJ)/mamifero.o $(OBJ)/mamiferioExotico.o $(OBJ)/mamiferioNativo.o \
+		$(OBJ)/mamifero.o $(OBJ)/mamiferoExotico.o $(OBJ)/mamiferoNativo.o \
 		$(OBJ)/reptil.o $(OBJ)/reptilExotico.o $(OBJ)/reptilNativo.o \
 		$(OBJ)/animal.o $(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o \
 	   	$(OBJ)/data.o $(OBJ)/funcionario.o $(OBJ)/tratador.o $(OBJ)/veterinario.o \
 	   	$(OBJ)/main.o
 
 all: $(PROG)
-	 $(PROG)
+	$(PROG)
 
 $(PROG): $(OBJS)
 	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
@@ -54,11 +52,11 @@ $(OBJ)/aveNativo.o:$(INC)/aveNativo.h
 $(OBJ)/mamifero.o:$(INC)/mamifero.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/mamifero.cpp -o $(OBJ)/mamifero.o
 
-$(OBJ)/mamiferioExotico.o:$(INC)/mamiferioExotico.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/mamiferioExotico.cpp -o $(OBJ)/mamiferioExotico.o
+$(OBJ)/mamiferoExotico.o:$(INC)/mamiferoExotico.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/mamiferoExotico.cpp -o $(OBJ)/mamiferoExotico.o
 
-$(OBJ)/mamiferioNativo.o:$(INC)/mamiferioNativo.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/mamiferioNativo.cpp -o $(OBJ)/mamiferioNativo.o
+$(OBJ)/mamiferoNativo.o:$(INC)/mamiferoNativo.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/mamiferoNativo.cpp -o $(OBJ)/mamiferoNativo.o
 
 $(OBJ)/reptil.o:$(INC)/reptil.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/reptil.cpp -o $(OBJ)/reptil.o

@@ -22,9 +22,7 @@ class AnimalExo : public AnimalSilv{
 
 	protected:
 		string m_pais_origem;
-		string m_pais_origem;
-		/* Certamente é erro duplicar. Assim, consta
-		no PDF. Verificar com o Prof. */
+
 	public:
 		AnimalExo();
 		~AnimalExo();
