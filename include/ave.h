@@ -13,10 +13,11 @@
 #define _AVE_H_
 
 #include <string>
+#include "animal.h"
 
 using namespace std;
 
-class Ave{
+class Ave : public Animal{
 	private:
 	
 	protected:

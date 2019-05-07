@@ -13,10 +13,12 @@
 #define _ANFIBIO_NATIVO_H_
 
 #include <string>
+#include "anfibio.h"
+#include "animalNativo.h"
 
 using namespace std;
 
-class AnfibioNat{
+class AnfibioNat : public Anfibio, AnimalNat{
 	private:
 		
 	protected:

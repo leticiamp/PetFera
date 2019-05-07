@@ -15,10 +15,11 @@
 
 #include <string>
 #include "data.h"
+#include "animal.h"
 
 using namespace std;
 
-class Anfibio{
+class Anfibio : public Animal{
 	private:
 		
 	protected:

@@ -13,10 +13,11 @@
 #define _ANIMAL_NATIVO_H_
 
 #include <string>
+#include "animalSilvestre.h"
 
 using namespace std;
 
-class AnimalNat{
+class AnimalNat : public AnimalSilv {
 	private:
 
 	protected:

@@ -13,10 +13,12 @@
 #define _REPTIL_EXOTICO_H_
 
 #include <string>
+#include "reptil.h"
+#include "animalExotico.h"
 
 using namespace std;
 
-class ReptilExo{
+class ReptilExo : public Reptil, AnimalExo{
 	private:
 		
 	protected:

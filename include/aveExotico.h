@@ -13,10 +13,12 @@
 #define _AVE_EXOTICO_H_
 
 #include <string>
+#include "ave.h"
+#include "animalExotico.h"
 
 using namespace std;
 
-class AveExo{
+class AveExo : public Ave, AnimalExo{
 	private:
 		
 	protected:

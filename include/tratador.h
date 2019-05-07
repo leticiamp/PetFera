@@ -13,10 +13,11 @@
 #define _TRATADOR_H_
 
 #include <string>
+#include "funcionario.h"
 
 using namespace std;
 
-class Tratador{
+class Tratador : public Funcionario{
 	private:
 		int m_nivel_de_seguranca;
 		

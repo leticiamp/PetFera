@@ -13,10 +13,12 @@
 #define _AVE_NATIVO_H_
 
 #include <string>
+#include "ave.h"
+#include "animalNativo.h"
 
 using namespace std;
 
-class AveNat{
+class AveNat : public Ave, AnimalNat{
 	private:
 		
 	protected:

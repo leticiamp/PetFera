@@ -15,7 +15,7 @@ using namespace std;
 
 #include "animal.h"
 
-Animal::Animal(){}
+//Animal::Animal(){}
 
 Animal::Animal(/*parâmetros*/){}
 

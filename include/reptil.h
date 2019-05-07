@@ -13,10 +13,11 @@
 #define _REPTIL_H_
 
 #include <string>
+#include "animal.h"
 
 using namespace std;
 
-class Reptil{
+class Reptil : public Animal{
 	private:
 				
 	protected:

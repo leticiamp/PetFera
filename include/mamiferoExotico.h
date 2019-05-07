@@ -13,10 +13,12 @@
 #define _MAMIFERO_EXOTICO_H_
 
 #include <string>
+#include "mamifero.h"
+#include "animalExotico.h"
 
 using namespace std;
 
-class MamiferoExo{
+class MamiferoExo : public Mamifero, AnimalExo{
 	private:
 		
 	protected:

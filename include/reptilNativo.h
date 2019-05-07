@@ -13,10 +13,12 @@
 #define _REPTIL_NATIVO_H_
 
 #include <string>
+#include "reptil.h"
+#include "animalNativo.h"
 
 using namespace std;
 
-class ReptilNat{
+class ReptilNat : public Reptil, AnimalNat{
 	private:
 		
 	protected:

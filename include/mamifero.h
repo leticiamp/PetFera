@@ -13,10 +13,11 @@
 #define _MAMIFERO_H_
 
 #include <string>
+#include "animal.h"
 
 using namespace std;
 
-class Mamifero{
+class Mamifero : public Animal{
 	private:
 		
 	protected:

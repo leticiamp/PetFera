@@ -21,8 +21,7 @@ class AnimalSilv{
 
 	protected:
 		string m_autorizacao_ibama;
-		/* Certamente é erro duplicar. Assim, consta
-		no PDF. Verificar com o Prof. */
+	
 	public:
 		AnimalSilv();
 		~AnimalSilv();

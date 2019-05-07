@@ -13,10 +13,12 @@
 #define _MAMIFERO_NATIVO_H_
 
 #include <string>
+#include "mamifero.h"
+#include "animalNativo.h"
 
 using namespace std;
 
-class MamiferoNat{
+class MamiferoNat : public Mamifero, AnimalNat{
 	private:
 		
 	protected:

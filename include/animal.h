@@ -33,7 +33,7 @@ class Animal{
 		Veterinario m_veterinario;
 		Tratador m_tratador;
 	public:
-		Animal();
+		//Animal();
 		Animal(/*parâmetros*/);
 		~Animal();
 

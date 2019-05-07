@@ -13,10 +13,11 @@
 #define _VETERINARIO_H_
 
 #include <string>
+#include "funcionario.h"
 
 using namespace std;
 
-class Veterinario{
+class Veterinario : public Funcionario{
 	private:
 		string m_crmv;
 		
