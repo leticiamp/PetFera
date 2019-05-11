@@ -23,7 +23,7 @@ OBJS = 	$(OBJ)/anfibio.o $(OBJ)/anfibioExotico.o $(OBJ)/anfibioNativo.o \
 		$(OBJ)/reptil.o $(OBJ)/reptilExotico.o $(OBJ)/reptilNativo.o \
 		$(OBJ)/animal.o $(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o \
 	   	$(OBJ)/data.o $(OBJ)/funcionario.o $(OBJ)/tratador.o $(OBJ)/veterinario.o \
-	   	$(OBJ)/main.o
+	   	$(OBJ)/cadastro.o $(OBJ)/main.o
 
 all: $(PROG)
 	$(PROG)
@@ -90,6 +90,9 @@ $(OBJ)/tratador.o:$(INC)/tratador.h
 
 $(OBJ)/veterinario.o:$(INC)/veterinario.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/veterinario.cpp -o $(OBJ)/veterinario.o
+
+$(OBJ)/cadastro.o:$(INC)/cadastro.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/cadastro.cpp -o $(OBJ)/cadastro.o
 
 $(OBJ)/main.o: $(SRC)/main.cpp
 	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o

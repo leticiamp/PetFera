@@ -27,6 +27,10 @@ class Tratador : public Funcionario{
 		Tratador();
 		~Tratador();
 
+
+//		friend ostream& operator<< ( ostream& output, const Tratador& tratadorTal);
+//		friend istream& operator>> ( istream& input, Tratador& tratadorTal);
+
 };
 
 #endif // _TRATADOR_H_
