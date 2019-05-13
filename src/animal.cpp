@@ -1,4 +1,4 @@
-/*
+ /*
 # Disciplina: Linguagem de Programação I
 # Professor: Silvio Sampaio
 # Alunos:
@@ -17,6 +17,7 @@ using namespace std;
 #include "animal.h"
 #include "veterinario.h"
 #include "tratador.h"
+#include "cadastro.h"
 
 Animal::Animal():
 	m_id(0),
@@ -27,9 +28,25 @@ Animal::Animal():
 	m_dieta("Empty"){
 //	m_veterinario(Veterinario(m_veterinario)),
 //	m_tratador(Tratador(m_tratador))
+	Cadatro::m_totalDeAnimais++;
 }
 
-//Animal::Animal(/* parametrizado */){}
+Animal::Animal( int id_,
+				string classe_,
+				string nome_cientifico_,
+				char sexo_,
+				double tamanho_,
+				string dieta_):
+	m_id(id_),
+	m_classe(classe_),
+	m_nome_cientifico(nome_cientifico_),
+	m_sexo(sexo_),
+	m_tamanho(tamanho_),
+	m_dieta(dieta_){
+//	m_veterinario(Veterinario(veterinario_)),
+//	m_tratador(Tratador(tratador_))
+	m_totalDeAnimais++;
+}
 
 Animal::~Animal(){}
 /*

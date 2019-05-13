@@ -22,7 +22,7 @@ using namespace std;
 
 class Animal{
 	private:
-		
+		static int m_totalDeAnimais;
 	protected:
 		int m_id;
 		string m_classe;
