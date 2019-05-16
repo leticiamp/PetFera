@@ -13,23 +13,21 @@
 #define _ANIMAL_H_
 
 #include <string>
-#include "veterinario.h"
-#include "tratador.h"
+//#include "veterinario.h"
+//#include "tratador.h"
 
-using namespace std;
-
-
+enum Gender{M, F, MF, NONE};
 
 class Animal{
 	private:
-		static int m_totalDeAnimais;
+//		static int m_totalDeAnimais;
 	protected:
-		int m_id;
-		string m_classe;
-		string m_nome_cientifico;
-		char m_sexo;
+		size_t m_id;
+		std::string m_classe;
+		std::string m_nome_cientifico;
+		Genders m_sexo;
 		double m_tamanho;
-		string m_dieta;
+		std::string m_dieta;
 //		Veterinario m_veterinario;
 //		Tratador m_tratador;
 	public:
@@ -37,9 +35,9 @@ class Animal{
 		Animal(/*parâmetros*/);
 		~Animal();
 
-		int getId();
-		string getClasse();
-		string getNome();
+		size_t getId();
+		std::string getClasse();
+		std::string getNome();
 		char getSexo();
 		double getTamanho();
 		string getDieta();
@@ -56,8 +54,8 @@ class Animal{
 //		void setVeterinario(Veterinario& veterinario_);
 //		void setTratador(Tratador& tratador_);
 
-		friend ostream& operator<< ( ostream& output, const Animal& animalTal);
-		friend istream& operator>> ( istream& input, Animal& animalTal);
+//		friend ostream& operator<< ( ostream& output, const Animal& animalTal);
+//		friend istream& operator>> ( istream& input, Animal& animalTal);
 };
 
 

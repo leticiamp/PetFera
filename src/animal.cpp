@@ -23,7 +23,7 @@ Animal::Animal():
 	m_id(0),
 	m_classe("Empty"),
 	m_nome_cientifico("Empty"),
-	m_sexo("Empty"),
+	m_sexo(NONE),
 	m_tamanho(0.0),
 	m_dieta("Empty"){
 //	m_veterinario(Veterinario(m_veterinario)),
@@ -54,27 +54,29 @@ Animal::~Animal(){}
 MÉTODOS GETTERS
 ====================================
 */
-int 
+size_t
 Animal::getId(){
 	return m_id;
 }
-string 
+
+string
 Animal::getClasse(){
 	return m_classe;
 }
-string 
+
+string
 Animal::getNome(){
 	return m_nome_cientifico;
 }
-char 
+char
 Animal::getSexo(){
 	return m_sexo;
 }
-double 
+double
 Animal::getTamanho(){
 	return m_tamanho;
 }
-string 
+string
 Animal::getDieta(){
 	return m_dieta;
 }
@@ -94,36 +96,36 @@ Animal::getTratador(){
 MÉTODOS SETTERS
 ====================================
 */
-void 
+void
 Animal::setId(int id_){
 	m_id = id_;
 }
-void 
+void
 Animal::setClasse(string classe_){
 	m_classe = classe_;
 }
-void 
+void
 Animal::setNome(string nome_){
 	m_nome_cientifico = nome_;
 }
-void 
+void
 Animal::setSexo(char sexo_){
 	m_sexo = sexo_;
 }
-void 
+void
 Animal::setTamanho(double tamanho_){
 	m_tamanho = tamanho_;
 }
-void 
+void
 Animal::setDieta(string dieta_){
 	m_dieta = dieta_;
 }
 /*
-void 
+void
 Animal::setVeterinario(Veterinario& veterinario_){
 	m_veterinario = veterinario_;
 }
-void 
+void
 Animal::setTratador(Tratador& tratador_){
 	m_tratador = tratador_;
 }
@@ -158,14 +160,13 @@ istream& operator>> ( istream& input, Animal& animalTal){
 	cout << " Sexo do Animal: ";
 	getline(input, animalTal.m_sexo);
 	cout << " Tamanho do Animal: ";
-	getline(input, animalTal.m_tamanho);	
+	getline(input, animalTal.m_tamanho);
 	cout << " Dieta do Animal: ";
 	getline(input, animalTal.m_dieta);
 //	cout << " Veterinário do Animal: ";
 //	getline(input, animalTal.m_veterinario);
 //	cout << " Tratador do Animal: ";
-//	getline(input, animalTal.m_tratador);	
+//	getline(input, animalTal.m_tratador);
 
 	return input;
 }
-
