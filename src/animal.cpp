@@ -12,31 +12,29 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 #include "animal.h"
-#include "veterinario.h"
-#include "tratador.h"
-#include "cadastro.h"
+//#include "veterinario.h"
+//#include "tratador.h"
+//#include "cadastro.h"
 
 Animal::Animal():
 	m_id(0),
 	m_classe("Empty"),
 	m_nome_cientifico("Empty"),
 	m_sexo(NONE),
-	m_tamanho(0.0),
+	m_tamanho(0),
 	m_dieta("Empty"){
 //	m_veterinario(Veterinario(m_veterinario)),
 //	m_tratador(Tratador(m_tratador))
-	Cadatro::m_totalDeAnimais++;
+//	Cadatro::m_totalDeAnimais++;
 }
 
-Animal::Animal( int id_,
-				string classe_,
-				string nome_cientifico_,
-				char sexo_,
+Animal::Animal( size_t id_,
+				std::string classe_,
+				std::string nome_cientifico_,
+				Gender sexo_,
 				double tamanho_,
-				string dieta_):
+				std::string dieta_):
 	m_id(id_),
 	m_classe(classe_),
 	m_nome_cientifico(nome_cientifico_),
@@ -45,7 +43,7 @@ Animal::Animal( int id_,
 	m_dieta(dieta_){
 //	m_veterinario(Veterinario(veterinario_)),
 //	m_tratador(Tratador(tratador_))
-	m_totalDeAnimais++;
+//	m_totalDeAnimais++;
 }
 
 Animal::~Animal(){}
@@ -56,35 +54,42 @@ MÉTODOS GETTERS
 */
 size_t
 Animal::getId(){
-	return m_id;
+	return this->m_id;
 }
 
-string
+std::string
 Animal::getClasse(){
-	return m_classe;
+	return this->m_classe;
 }
 
-string
+std::string
 Animal::getNome(){
-	return m_nome_cientifico;
+	return this->m_nome_cientifico;
 }
-char
+
+Gender
 Animal::getSexo(){
-	return m_sexo;
+	return this->m_sexo;
 }
+
 double
 Animal::getTamanho(){
-	return m_tamanho;
+	return this->m_tamanho;
 }
-string
+
+std::string
 Animal::getDieta(){
-	return m_dieta;
+	return this->m_dieta;
 }
+
 /*
 Veterinario
 Animal::getVeterinario(){
 	return m_veterinario;
 }
+
+*/
+/*
 Tratador
 Animal::getTratador(){
 	return m_tratador;
@@ -96,38 +101,48 @@ Animal::getTratador(){
 MÉTODOS SETTERS
 ====================================
 */
+
 void
-Animal::setId(int id_){
-	m_id = id_;
+Animal::setId(size_t id_){
+	this->m_id = id_;
 }
+
 void
-Animal::setClasse(string classe_){
-	m_classe = classe_;
+Animal::setClasse(std::string classe_){
+	this->m_classe = classe_;
 }
+
 void
-Animal::setNome(string nome_){
-	m_nome_cientifico = nome_;
+Animal::setNome(std::string nome_){
+	this->m_nome_cientifico = nome_;
 }
+
 void
-Animal::setSexo(char sexo_){
-	m_sexo = sexo_;
+Animal::setSexo(Gender sexo_){
+	this->m_sexo = sexo_;
 }
+
 void
 Animal::setTamanho(double tamanho_){
-	m_tamanho = tamanho_;
+	this->m_tamanho = tamanho_;
 }
+
 void
-Animal::setDieta(string dieta_){
-	m_dieta = dieta_;
+Animal::setDieta(std::string dieta_){
+	this->m_dieta = dieta_;
 }
+
 /*
 void
 Animal::setVeterinario(Veterinario& veterinario_){
-	m_veterinario = veterinario_;
+	this->m_veterinario = veterinario_;
 }
+
+*/
+/*
 void
 Animal::setTratador(Tratador& tratador_){
-	m_tratador = tratador_;
+	this->m_tratador = tratador_;
 }
 */
 
@@ -137,7 +152,7 @@ SOBRECARGA DE OPERADORES
 ====================================
 */
 
-ostream& operator<< ( ostream& output, const Animal& animalTal){
+std::ostream& operator<< ( std::ostream& output, const Animal& animalTal){
 	output 	<< animalTal.m_id << ";"
 			<< animalTal.m_classe << ";"
 			<< animalTal.m_nome_cientifico << ";"
@@ -146,27 +161,29 @@ ostream& operator<< ( ostream& output, const Animal& animalTal){
 			<< animalTal.m_dieta << ";"
 //			<< animalTal.m_veterinario << ";"
 //			<< animalTal.m_tratador << ";"
-			<< endl;
+			<< std::endl;
 	return output;
 }
 
-istream& operator>> ( istream& input, Animal& animalTal){
-	cout << " Identificador do Animal: ";
-	getline(input, animalTal.m_id);
-	cout << " Nome da Classe do Animal: ";
-	getline(input, animalTal.m_classe);
-	cout << " Nome do Animal: ";
-	getline(input, animalTal.m_nome_cientifico);
-	cout << " Sexo do Animal: ";
-	getline(input, animalTal.m_sexo);
-	cout << " Tamanho do Animal: ";
-	getline(input, animalTal.m_tamanho);
-	cout << " Dieta do Animal: ";
-	getline(input, animalTal.m_dieta);
-//	cout << " Veterinário do Animal: ";
-//	getline(input, animalTal.m_veterinario);
-//	cout << " Tratador do Animal: ";
-//	getline(input, animalTal.m_tratador);
+/*
+std::istream& operator>> ( std::istream& input, Animal& animalTal){
+	std::cout << " Identificador do Animal: ";
+	std::getline(input, animalTal.m_id);
+	std::cout << " Nome da Classe do Animal: ";
+	std::getline(input, animalTal.m_classe);
+	std::cout << " Nome do Animal: ";
+	std::getline(input, animalTal.m_nome_cientifico);
+	std::cout << " Sexo do Animal: ";
+	std::getline(input, animalTal.m_sexo);
+	std::cout << " Tamanho do Animal: ";
+	std::getline(input, animalTal.m_tamanho);
+	std::cout << " Dieta do Animal: ";
+	std::getline(input, animalTal.m_dieta);
+//	std::cout << " Veterinário do Animal: ";
+//	std::getline(input, animalTal.m_veterinario);
+//	std::cout << " Tratador do Animal: ";
+//	std::getline(input, animalTal.m_tratador);
 
 	return input;
 }
+*/
