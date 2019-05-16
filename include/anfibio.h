@@ -17,17 +17,21 @@
 #include "data.h"
 #include "animal.h"
 
-using namespace std;
 
 class Anfibio : public Animal{
 	private:
-		
+
 	protected:
 		int m_total_de_mudas;
 		Date m_ultima_muda;
 	public:
 		Anfibio();
 		~Anfibio();
+
+		//get's
+    int get_m_total_de_mudas();
+    //set's
+    void set_m_total_de_mudas(int mudas);
 
 };
 
