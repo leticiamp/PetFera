@@ -25,11 +25,15 @@ OBJS = 	$(OBJ)/anfibio.o $(OBJ)/anfibioExotico.o $(OBJ)/anfibioNativo.o \
 	   	$(OBJ)/data.o $(OBJ)/funcionario.o $(OBJ)/tratador.o $(OBJ)/veterinario.o \
 	   	$(OBJ)/cadastro.o $(OBJ)/main.o
 
-all: $(PROG)
+all: pasta_build
 	$(PROG)
 
 $(PROG): $(OBJS)
 	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
+
+pasta_build:
+	@mkdir -p build
+	@mkdir -p bin
 
 $(OBJ)/anfibio.o:$(INC)/anfibio.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/anfibio.cpp -o $(OBJ)/anfibio.o
