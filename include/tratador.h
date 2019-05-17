@@ -15,20 +15,23 @@
 #include <string>
 #include "funcionario.h"
 
-using namespace std;
-
 class Tratador : public Funcionario{
 	private:
 		int m_nivel_de_seguranca;
-		
+
 	protected:
 
 	public:
 		Tratador();
 		~Tratador();
 
+		//get's
+		int getNivel_de_Seguranca();
 
-//		friend ostream& operator<< ( ostream& output, const Tratador& tratadorTal);
+		//set's
+		void setNivel_de_Seguranca(int nivel_de_seguranca_);
+
+		friend std::ostream& operator<< ( std::ostream& output, const Tratador& tratadorTal);
 //		friend istream& operator>> ( istream& input, Tratador& tratadorTal);
 
 };

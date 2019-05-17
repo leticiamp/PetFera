@@ -14,25 +14,42 @@
 
 #include <string>
 
-using namespace std;
-
 class Funcionario{
 	private:
-	
+
 	protected:
-		int m_id;
-		string m_nome;
-		string m_cpf;
+		size_t m_id;
+		std::string m_nome;
+		std::string m_cpf;
 		short m_idade;
 		short m_tipo_sanguineo;
 		char m_fator_rh;
-		string m_especialidade;
+		std::string m_especialidade;
 	public:
 		Funcionario();
 		~Funcionario();
 
 		// type method(type);
 		// type method(type);
+
+		//get's
+		size_t getId();
+		std::string getNome();
+		std::string getCpf();
+		short getIdade();
+		short getTipo_sanguineo();
+		char getFator_rh();
+		std::string getEspecialidade();
+
+		//set's
+
+		void setId(size_t id_);
+		void setNome(std::string nome_);
+		void setCpf(std::string cpf_);
+		void setIdade(short idade_);
+		void setTipo_sanguineo(short tipo_sanguineo_);
+		void setFator_rh(char fator_rh_);
+		void setEspecialidade(std::string especialidade_);
 
 };
 
