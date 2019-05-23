@@ -22,6 +22,7 @@ class AnimalExo : public AnimalSilv{
 
 	protected:
 		string m_pais_origem;
+		string m_cidade_origem;
 
 	public:
 		AnimalExo();

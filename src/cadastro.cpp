@@ -61,7 +61,7 @@ Cadastro::listaOpcaoInicial(string abasOrientacao){ // Método que mostra as alt
 			 cin >> alternativa; cin.ignore();
 		switch(alternativa){
 			case '1' : listarTodosOsAnimais("\n Menu Inicial >> Listar Animais \n");
-				break;
+				break; 
 			case '2' : inserirAnimal("\n Menu Inicial >> Inserir Animal \n");
 				break;
 			case '3' : excluirAnimal("\n Menu Inicial >> Excluir Animal \n");

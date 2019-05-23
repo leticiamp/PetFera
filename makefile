@@ -17,23 +17,38 @@ INC = ./include
 
 CPPFLAGS = -Wall -O0 -g -pedantic -std=c++11 -I$(INC)
 
-OBJS = 	$(OBJ)/anfibio.o $(OBJ)/anfibioExotico.o $(OBJ)/anfibioNativo.o \
-	   	$(OBJ)/ave.o $(OBJ)/aveExotico.o $(OBJ)/aveNativo.o \
-		$(OBJ)/mamifero.o $(OBJ)/mamiferoExotico.o $(OBJ)/mamiferoNativo.o \
-		$(OBJ)/reptil.o $(OBJ)/reptilExotico.o $(OBJ)/reptilNativo.o \
-		$(OBJ)/animal.o $(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o \
-	   	$(OBJ)/data.o $(OBJ)/funcionario.o $(OBJ)/tratador.o $(OBJ)/veterinario.o \
-	   	$(OBJ)/cadastro.o $(OBJ)/main.o
+OBJS = 	$(OBJ)/main.o \
+		$(OBJ)/animal.o \
+		$(OBJ)/funcionario.o\
+		$(OBJ)/tratador.o \
+	   	$(OBJ)/veterinario.o \
+		$(OBJ)/anfibioExotico.o \
+		$(OBJ)/anfibioNativo.o \
+	   	$(OBJ)/ave.o \
+	   	$(OBJ)/aveExotico.o \
+	   	$(OBJ)/aveNativo.o \
+		$(OBJ)/mamifero.o \
+		$(OBJ)/mamiferoExotico.o \
+		$(OBJ)/mamiferoNativo.o \
+		$(OBJ)/reptilExotico.o \
+		$(OBJ)/animalSilvestre.o \
+		$(OBJ)/reptilNativo.o \
+		$(OBJ)/animalExotico.o \
+		$(OBJ)/animalNativo.o \
+		$(OBJ)/data.o \
+	   	$(OBJ)/cadastro.o \
+	   	$(OBJ)/anfibio.o \
+		$(OBJ)/reptil.o \
 
-all: pasta_build
-	$(PROG)
+#all: pasta_build
+#	$(PROG)
 
 $(PROG): $(OBJS)
 	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
 
-pasta_build:
-	@mkdir -p build
-	@mkdir -p bin
+#pasta_build:
+#	@mkdir -p build
+#	@mkdir -p bin
 
 $(OBJ)/anfibio.o:$(INC)/anfibio.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/anfibio.cpp -o $(OBJ)/anfibio.o

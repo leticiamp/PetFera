@@ -17,7 +17,7 @@ using namespace std;
 #include "veterinario.h"
 
 Veterinario::Veterinario():
-	Funcinonario(),
+	Funcionario(),
 	m_crmv("Empty"){
 
 }

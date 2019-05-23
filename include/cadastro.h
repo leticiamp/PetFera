@@ -17,7 +17,7 @@
 
 using namespace std;
 
-#define MAXIMO_DE_ANIMAIS 10000
+#define MAXIMO_DE_ANIMAIS 100
 
 class Cadastro{
 	public:

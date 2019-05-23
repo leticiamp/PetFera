@@ -31,7 +31,6 @@ class Animal{
 //		Veterinario m_veterinario;
 //		Tratador m_tratador;
 	public:
-
 		Animal();
 		Animal(size_t id_,
 						std::string classe_,

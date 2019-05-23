@@ -15,6 +15,6 @@ using namespace std;
 
 #include "ave.h"
 
-Ave::Ave(){}
+Ave::Ave():Animal(){}
 
 Ave::~Ave(){}

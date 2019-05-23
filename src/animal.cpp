@@ -17,6 +17,7 @@
 //#include "tratador.h"
 //#include "cadastro.h"
 
+
 Animal::Animal():
 	m_id(0),
 	m_classe("Empty"),
@@ -28,6 +29,7 @@ Animal::Animal():
 //	m_tratador(Tratador(m_tratador))
 //	Cadatro::m_totalDeAnimais++;
 }
+
 
 Animal::Animal( size_t id_,
 				std::string classe_,
