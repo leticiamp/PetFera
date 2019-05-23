@@ -17,13 +17,15 @@
 
 using namespace std;
 
-class Mamifero : public Animal{
-	private:
-		
+class Mamifero : public Animal{		
 	protected:
 		string m_cor_pelo;
 	public:
-		Mamifero();
+		Mamifero(string m_classe, int m_id);
+
+		string getCorPelo();
+		void setCorPelo(string cor_pelo_);
+
 		~Mamifero();
 
 };
