@@ -11,10 +11,16 @@
 
 #include <iostream>
 
-using namespace std;
-
 #include "animalExotico.h"
 
 AnimalExo::AnimalExo(){}
 
 AnimalExo::~AnimalExo(){}
+
+std::string getPaisOrigem() {
+	return m_pais_origem;
+}
+
+std::string getCidadeOrigem() {
+	return m_cidade_origem;
+}

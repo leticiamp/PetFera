@@ -18,3 +18,11 @@ using namespace std;
 AnimalNat::AnimalNat(){}
 
 AnimalNat::~AnimalNat(){}
+
+std::string getUfOrigem() {
+	return m_uf_origem;
+}
+
+std::string getAutorizacao() {
+	return m_autorizacao;
+}

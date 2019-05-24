@@ -15,17 +15,19 @@
 #include <string>
 #include "animalSilvestre.h"
 
-using namespace std;
 
 class AnimalNat : public AnimalSilv {
 	private:
 
 	protected:
-		string m_uf_origem;
-		string m_autorizacao;
+		std::string m_uf_origem;
+		std::string m_autorizacao;
 	public:
 		AnimalNat();
 		~AnimalNat();
+
+		std::string getUfOrigem();
+		std::string getAutorizacao();
 
 };
 

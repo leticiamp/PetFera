@@ -50,6 +50,21 @@ $(PROG): $(OBJS)
 #	@mkdir -p build
 #	@mkdir -p bin
 
+$(OBJ)/main.o: $(SRC)/main.cpp
+	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
+
+$(OBJ)/animal.o:$(INC)/animal.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/animal.cpp -o $(OBJ)/animal.o
+
+$(OBJ)/funcionario.o:$(INC)/funcionario.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/funcionario.cpp -o $(OBJ)/funcionario.o
+
+$(OBJ)/tratador.o:$(INC)/tratador.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/tratador.cpp -o $(OBJ)/tratador.o
+
+$(OBJ)/veterinario.o:$(INC)/veterinario.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/veterinario.cpp -o $(OBJ)/veterinario.o
+
 $(OBJ)/anfibio.o:$(INC)/anfibio.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/anfibio.cpp -o $(OBJ)/anfibio.o
 
@@ -86,9 +101,6 @@ $(OBJ)/reptilExotico.o:$(INC)/reptilExotico.h
 $(OBJ)/reptilNativo.o:$(INC)/reptilNativo.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/reptilNativo.cpp -o $(OBJ)/reptilNativo.o
 
-$(OBJ)/animal.o:$(INC)/animal.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/animal.cpp -o $(OBJ)/animal.o
-
 $(OBJ)/animalExotico.o:$(INC)/animalExotico.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/animalExotico.cpp -o $(OBJ)/animalExotico.o
 
@@ -101,20 +113,8 @@ $(OBJ)/animalSilvestre.o:$(INC)/animalSilvestre.h
 $(OBJ)/data.o:$(INC)/data.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/data.cpp -o $(OBJ)/data.o
 
-$(OBJ)/funcionario.o:$(INC)/funcionario.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/funcionario.cpp -o $(OBJ)/funcionario.o
-
-$(OBJ)/tratador.o:$(INC)/tratador.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/tratador.cpp -o $(OBJ)/tratador.o
-
-$(OBJ)/veterinario.o:$(INC)/veterinario.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/veterinario.cpp -o $(OBJ)/veterinario.o
-
 $(OBJ)/cadastro.o:$(INC)/cadastro.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/cadastro.cpp -o $(OBJ)/cadastro.o
-
-$(OBJ)/main.o: $(SRC)/main.cpp
-	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
 
 clean: 
 	rm -f $(BIN)/*

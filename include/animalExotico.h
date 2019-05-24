@@ -15,19 +15,19 @@
 #include <string>
 #include "animalSilvestre.h"
 
-using namespace std;
-
 class AnimalExo : public AnimalSilv{
 	private:
 
 	protected:
-		string m_pais_origem;
-		string m_cidade_origem;
+		std::string m_pais_origem;
+		std::string m_cidade_origem;
 
 	public:
 		AnimalExo();
 		~AnimalExo();
 
+		std::string getPaisOrigem();
+		std::string getCidadeOrigem();
 };
 
 #endif // _ANIMAL_EXOTICO_H_
