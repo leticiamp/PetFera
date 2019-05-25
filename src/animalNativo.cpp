@@ -15,14 +15,16 @@ using namespace std;
 
 #include "animalNativo.h"
 
-AnimalNat::AnimalNat(){}
+AnimalNat::AnimalNat():AnimalSilv(){}
 
 AnimalNat::~AnimalNat(){}
 
-std::string getUfOrigem() {
+std::string 
+AnimalNat::getUfOrigem(){
 	return m_uf_origem;
 }
 
-std::string getAutorizacao() {
+std::string 
+AnimalNat::getAutorizacao() {
 	return m_autorizacao;
 }

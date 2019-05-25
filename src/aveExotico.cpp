@@ -15,6 +15,8 @@ using namespace std;
 
 #include "aveExotico.h"
 
-AveExo::AveExo(){}
+AveExo::AveExo(): 	Ave(),
+					AnimalExo()
+					{}
 
 AveExo::~AveExo(){}

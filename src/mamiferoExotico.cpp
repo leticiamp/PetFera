@@ -15,6 +15,7 @@ using namespace std;
 
 #include "mamiferoExotico.h"
 
-MamiferoExo::MamiferoExo(){}
+MamiferoExo::MamiferoExo():	Mamifero(),
+							AnimalExo(){}
 
 MamiferoExo::~MamiferoExo(){}

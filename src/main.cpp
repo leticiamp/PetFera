@@ -13,12 +13,12 @@
 
 using namespace std;
 
-//int Animal:: contadorDeAnimais = 0; 
+#include "cadastro.h"
 
 int main(int argc, char **argv){
 
-	//Cadastro on;
-	//on.listaOpcaoInicial("MENU PRINCIPAL");
+	Cadastro on;
+	on.listaOpcaoInicial("MENU PRINCIPAL");
   
     return 0;
 }

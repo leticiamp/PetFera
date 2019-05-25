@@ -13,14 +13,17 @@
 
 #include "animalExotico.h"
 
-AnimalExo::AnimalExo(){}
+AnimalExo::AnimalExo():AnimalSilv()
+{}
 
 AnimalExo::~AnimalExo(){}
 
-std::string getPaisOrigem() {
+std::string 
+AnimalExo::getPaisOrigem() {
 	return m_pais_origem;
 }
 
-std::string getCidadeOrigem() {
+std::string 
+AnimalExo::getCidadeOrigem() {
 	return m_cidade_origem;
 }

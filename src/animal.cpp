@@ -17,24 +17,19 @@
 //#include "tratador.h"
 //#include "cadastro.h"
 
-
+/*
 Animal::Animal():
-	m_id(0),
-	m_classe("Empty"),
-	m_nome_cientifico("Empty"),
-	m_sexo(NONE),
-	m_tamanho(0),
-	m_dieta("Empty"){
+	////// ERRO AQUI ///////
 //	m_veterinario(Veterinario(m_veterinario)),
 //	m_tratador(Tratador(m_tratador))
 //	Cadatro::m_totalDeAnimais++;
-}
-
+{}
+*/
 
 Animal::Animal( size_t id_,
 				std::string classe_,
 				std::string nome_cientifico_,
-				Gender sexo_,
+				std::string sexo_,
 				double tamanho_,
 				std::string dieta_):
 	m_id(id_),
@@ -42,13 +37,14 @@ Animal::Animal( size_t id_,
 	m_nome_cientifico(nome_cientifico_),
 	m_sexo(sexo_),
 	m_tamanho(tamanho_),
-	m_dieta(dieta_){
+	m_dieta(dieta_)
 //	m_veterinario(Veterinario(veterinario_)),
 //	m_tratador(Tratador(tratador_))
 //	m_totalDeAnimais++;
-}
+{}
 
 Animal::~Animal(){}
+
 /*
 ====================================
 MÉTODOS GETTERS
@@ -69,7 +65,7 @@ Animal::getNome(){
 	return this->m_nome_cientifico;
 }
 
-Gender
+std::string
 Animal::getSexo(){
 	return this->m_sexo;
 }
@@ -120,7 +116,7 @@ Animal::setNome(std::string nome_){
 }
 
 void
-Animal::setSexo(Gender sexo_){
+Animal::setSexo(std::string sexo_){
 	this->m_sexo = sexo_;
 }
 
@@ -154,7 +150,8 @@ SOBRECARGA DE OPERADORES
 ====================================
 */
 
-std::ostream& operator<< ( std::ostream& output, const Animal& animalTal){
+std::ostream& 
+operator<< ( std::ostream& output, const Animal& animalTal){
 	output 	<< animalTal.m_id << ";"
 			<< animalTal.m_classe << ";"
 			<< animalTal.m_nome_cientifico << ";"
@@ -168,7 +165,8 @@ std::ostream& operator<< ( std::ostream& output, const Animal& animalTal){
 }
 
 /*
-std::istream& operator>> ( std::istream& input, Animal& animalTal){
+std::istream& 
+operator>> ( std::istream& input, Animal& animalTal){
 	std::cout << " Identificador do Animal: ";
 	std::getline(input, animalTal.m_id);
 	std::cout << " Nome da Classe do Animal: ";

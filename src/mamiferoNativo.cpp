@@ -15,6 +15,7 @@ using namespace std;
 
 #include "mamiferoNativo.h"
 
-MamiferoNat::MamiferoNat(){}
+MamiferoNat::MamiferoNat():	Mamifero(),
+							AnimalNat(){}
 
 MamiferoNat::~MamiferoNat(){}

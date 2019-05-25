@@ -15,6 +15,8 @@ using namespace std;
 
 #include "mamifero.h"
 
+Mamifero::Mamifero(){}
+
 Mamifero::Mamifero(string m_classe, int m_id) {
 	cout << "Cor do pêlo: ";
 	cin >> m_cor_pelo;
