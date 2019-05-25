@@ -13,6 +13,8 @@
 #include <string>
 #include <iterator>
 #include <map>
+#include <fstream>
+
 #include "cadastro.h"
 #include "animal.h"
 #include "funcionario.h"
@@ -130,18 +132,52 @@ Cadastro::pesquisarAnimal(string abasOrientacao){ // Método que pesquisa um ani
 
 void
 Cadastro::listarTodosOsAnimais(string abasOrientacao){ // Método para listar todos os animais já cadastradas.
-	cout << "\n\n Esse cadastro possui " << m_totalDeAnimais << " animais cadastrados."
+	
+	ofstream fileO; // Cria arquivo
+	fileO.open("Lista_De_Animais.csv");
+	
+	fileO << "\n\n Esse cadastro possui " << m_totalDeAnimais << " animais cadastrados."
 		 << "\n" << "\n=============================================" 
 		 << "\n Lista de animais cadastradas: \n\n";
 	
 	map<int, Animal>::iterator it;
 	for (it = animais->begin(); it != animais->end(); ++it) // Impressao dos valores no mapa
-	cout << it->first << ";" << it->second << endl;
+	fileO << it->first << ";" << it->second << endl;
+
+	fileO.close();
 }	
 
 void 
 Cadastro::inserirAnimal(string abasOrientacao){ // Método para criar uma novo animal.
 	if (m_totalDeAnimais < MAXIMO_DE_ANIMAIS){
+		std::string nomeDoArquivo;
+		cout << " Qual é o nome do arquivo CSV com os dados dos novos animais? " << endl;
+		cin >> nomeDoArquivo; cin.ignore();
+
+		ifstream fileI; // Cria arquivo de entrada da dados.
+		string lineAnimal; // Cria linha para armazenar linha-a-linha o texto do arquivo.
+		fileI.open(nomeDoArquivo); //Abre o arquivo já existente no diretório.
+
+		if(fileI.is_open()){//Verifica se o arquivo está aberto.
+			while(getline(fileI, lineAnimal)){
+				/* FALTA CONSEGUIR LER O ATRIBUTOS SEPARADOS POR ";"
+
+				animais->insert(pair<int, Animal>(id_, Animal(
+													id_,
+													classe_,
+													nome_cientifico_,
+													sexo_,
+													tamanho_,
+													dieta_)));
+				
+				*/
+				cout << lineAnimal << endl;
+			}
+			fileI.close();
+		}else{
+			cout << " Não foi possível abrir o arquivo!" << endl;
+		}
+/*
 		int id_;
 		cout << " Qual o número idenficador do animal a ser inserido? " << endl;
 		cin >> id_; cin.ignore();
@@ -175,8 +211,9 @@ Cadastro::inserirAnimal(string abasOrientacao){ // Método para criar uma novo a
 													tamanho_,
 													dieta_)));
 	}
+*/
 	else{
-		cout << " Não é possível adicionar um novo animal a este cadastro." << endl;
+		cout << " Não é possível adicionar animais a este cadastro." << endl;
 	}
 	cout << " Animal adicionado com sucesso!" << endl;
 }
@@ -186,6 +223,24 @@ Cadastro::excluirAnimal(string abasOrientacao){ // Método para remover um refer
 	int id;
 	cout << " Qual o número idenficador do animal a ser removido? " << endl;
 	cin >> id; cin.ignore();
-	animais->erase(id);
+	
+	fstream file;
+	std::string lineAnimal;
+	file.open("Lista_De_Animais.csv", fstream::in|fstream::out|fstream::trunc);
+
+	if(file.is_open()){ // Verifica se está aberto.
+		animais->erase(id);
+		file << "\n\n Esse cadastro possui " << m_totalDeAnimais << " animais cadastrados."
+		 << "\n" << "\n=============================================" 
+		 << "\n Lista de animais cadastradas: \n\n";
+	}else{
+		cout << "Não foi possível abrir o arquivo!";
+	}
+	map<int, Animal>::iterator it;
+	for (it = animais->begin(); it != animais->end(); ++it) // Impressao dos valores no mapa
+	file << it->first << ";" << it->second << endl;
+	}
+
+	m_totalDeAnimais--;
 	cout << " Animal excluído com sucesso!" << endl;
 }

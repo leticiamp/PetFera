@@ -17,14 +17,14 @@
 //#include "tratador.h"
 //#include "cadastro.h"
 
-/*
+/
 Animal::Animal():
 	////// ERRO AQUI ///////
 //	m_veterinario(Veterinario(m_veterinario)),
 //	m_tratador(Tratador(m_tratador))
 //	Cadatro::m_totalDeAnimais++;
 {}
-*/
+
 
 Animal::Animal( size_t id_,
 				std::string classe_,

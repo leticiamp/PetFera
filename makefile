@@ -8,7 +8,7 @@
 #******
 
 CC = g++
-PROG = $(BIN)/Pet
+PROG = $(BIN)/PetBicho
 OBJ = ./build
 SRC = ./src
 BIN = ./bin
@@ -43,8 +43,8 @@ OBJS = 	$(OBJ)/main.o \
 #all: pasta_build
 #	$(PROG)
 
-$(PROG): 	$(OBJS)
-			$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
+$(PROG): $(OBJS)
+		$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
 
 
 #pasta_build:
