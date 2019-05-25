@@ -119,7 +119,7 @@ char Cadastro::alterarCadastro(string abasOrientacao){ // Método que apresenta 
 */
 void
 Cadastro::pesquisarAnimal(string abasOrientacao){ // Método que pesquisa um animal pelo nome e retorna sua posição.
-	int id;
+/*	int id;
 
 	cout << " Qual o número idenficador do animal? " << endl;
 
@@ -127,12 +127,12 @@ Cadastro::pesquisarAnimal(string abasOrientacao){ // Método que pesquisa um ani
 
 	map<int, Animal>::iterator it = animais->find(id);
 	cout << " Idenficador: " << it->first 
-		 << " - Animal: " << it->second << endl;
+		 << " - Animal: " << it->second << endl;*/
 }
 
 void
 Cadastro::listarTodosOsAnimais(string abasOrientacao){ // Método para listar todos os animais já cadastradas.
-	
+	/*
 	ofstream fileO; // Cria arquivo
 	fileO.open("Lista_De_Animais.csv");
 	
@@ -145,10 +145,12 @@ Cadastro::listarTodosOsAnimais(string abasOrientacao){ // Método para listar to
 	fileO << it->first << ";" << it->second << endl;
 
 	fileO.close();
-}	
+	*/
+} 
 
 void 
 Cadastro::inserirAnimal(string abasOrientacao){ // Método para criar uma novo animal.
+	/*
 	if (m_totalDeAnimais < MAXIMO_DE_ANIMAIS){
 		std::string nomeDoArquivo;
 		cout << " Qual é o nome do arquivo CSV com os dados dos novos animais? " << endl;
@@ -160,7 +162,7 @@ Cadastro::inserirAnimal(string abasOrientacao){ // Método para criar uma novo a
 
 		if(fileI.is_open()){//Verifica se o arquivo está aberto.
 			while(getline(fileI, lineAnimal)){
-				/* FALTA CONSEGUIR LER O ATRIBUTOS SEPARADOS POR ";"
+				
 
 				animais->insert(pair<int, Animal>(id_, Animal(
 													id_,
@@ -170,14 +172,12 @@ Cadastro::inserirAnimal(string abasOrientacao){ // Método para criar uma novo a
 													tamanho_,
 													dieta_)));
 				
-				*/
 				cout << lineAnimal << endl;
 			}
 			fileI.close();
 		}else{
 			cout << " Não foi possível abrir o arquivo!" << endl;
 		}
-/*
 		int id_;
 		cout << " Qual o número idenficador do animal a ser inserido? " << endl;
 		cin >> id_; cin.ignore();
@@ -211,16 +211,17 @@ Cadastro::inserirAnimal(string abasOrientacao){ // Método para criar uma novo a
 													tamanho_,
 													dieta_)));
 	}
-*/
+
 	else{
 		cout << " Não é possível adicionar animais a este cadastro." << endl;
 	}
+	*/
 	cout << " Animal adicionado com sucesso!" << endl;
 }
 
 void 
 Cadastro::excluirAnimal(string abasOrientacao){ // Método para remover um referido animal.
-	int id;
+/*	int id;
 	cout << " Qual o número idenficador do animal a ser removido? " << endl;
 	cin >> id; cin.ignore();
 	
@@ -243,4 +244,5 @@ Cadastro::excluirAnimal(string abasOrientacao){ // Método para remover um refer
 
 	m_totalDeAnimais--;
 	cout << " Animal excluído com sucesso!" << endl;
+*/
 }

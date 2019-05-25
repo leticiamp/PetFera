@@ -18,7 +18,7 @@ using namespace std;
 int main(int argc, char **argv){
 
 	Cadastro on;
-	on.listaOpcaoInicial("MENU PRINCIPAL");
+	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
   
     return 0;
 }

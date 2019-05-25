@@ -24,12 +24,13 @@ class Cadastro{
 	public:
 		map<int, Animal> * animais; // 
 		int listaOpcaoInicial(string abasOrientacao); // Método que mostra opções iniciais.
-//		char listaOpcaoSecundaria(string abasOrientacao); // Método que mostra opções secundárias do pet escolhida.
-//		char listaOpcoesDeAlteracao(string abasOrientacao); // Método que apresenta possibilidades de alteracão.
 		void pesquisarAnimal(string abasOrientacao); // Método que pesquisa um animal pelo nome.
 		void listarTodosOsAnimais(string abasOrientacao); // Método para listar todas as animais já cadastrados.
 		void inserirAnimal(string abasOrientacao); // Método para cadastrar um novo animal.
 		void excluirAnimal(string abasOrientacao); // Método para remover um referido animal.
+
+//		char listaOpcaoSecundaria(string abasOrientacao); // Método que mostra opções secundárias do pet escolhida.
+//		char listaOpcoesDeAlteracao(string abasOrientacao); // Método que apresenta possibilidades de alteracão.
 //		void mostrarFuncionarios();
 //		void inserirFuncionario();
 //		void excluirFuncionario();
@@ -38,7 +39,6 @@ class Cadastro{
 		~Cadastro();
 
 	private:
-		
 		int m_totalDeAnimais;
 };
 

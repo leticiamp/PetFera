@@ -9,6 +9,7 @@
 
 CC = g++
 PROG = $(BIN)/PetBicho
+
 OBJ = ./build
 SRC = ./src
 BIN = ./bin
@@ -16,9 +17,9 @@ INC = ./include
 
 CPPFLAGS = -Wall -O0 -g -pedantic -std=c++11 -I$(INC)
 
-OBJS = 	$(OBJ)/main.o \
-	   	$(OBJ)/cadastro.o \
-		$(OBJ)/animal.o \
+OBJS = 	$(OBJ)/main.o\
+	   	$(OBJ)/cadastro.o\
+		$(OBJ)/animal.o\
 #		$(OBJ)/funcionario.o\
 #		$(OBJ)/tratador.o \
 #	   	$(OBJ)/veterinario.o \
@@ -40,16 +41,16 @@ OBJS = 	$(OBJ)/main.o \
 #	   	$(OBJ)/anfibio.o \
 #		$(OBJ)/reptil.o \
 
-#all: pasta_build
-#	$(PROG)
+all: $(PROG)
+		$(PROG)
+
+	@mkdir -p build
+	@mkdir -p bin
 
 $(PROG): $(OBJS)
-		$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
+	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
 
 
-#pasta_build:
-#	@mkdir -p build
-#	@mkdir -p bin
 
 
 $(OBJ)/main.o: $(SRC)/main.cpp
