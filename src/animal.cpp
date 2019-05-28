@@ -29,7 +29,7 @@ Animal::Animal():
 Animal::Animal( size_t id_,
 				std::string classe_,
 				std::string nome_cientifico_,
-				std::string sexo_,
+				char sexo_,
 				double tamanho_,
 				std::string dieta_):
 	m_id(id_),
@@ -65,7 +65,7 @@ Animal::getNome(){
 	return this->m_nome_cientifico;
 }
 
-std::string
+char
 Animal::getSexo(){
 	return this->m_sexo;
 }
@@ -78,6 +78,11 @@ Animal::getTamanho(){
 std::string
 Animal::getDieta(){
 	return this->m_dieta;
+}
+
+std::string
+Animal::getNomeBatismo(){
+	return this->m_nome_batismo;
 }
 
 /*
@@ -116,7 +121,7 @@ Animal::setNome(std::string nome_){
 }
 
 void
-Animal::setSexo(std::string sexo_){
+Animal::setSexo(char sexo_){
 	this->m_sexo = sexo_;
 }
 
@@ -128,6 +133,12 @@ Animal::setTamanho(double tamanho_){
 void
 Animal::setDieta(std::string dieta_){
 	this->m_dieta = dieta_;
+}
+
+
+void
+Animal::setNomeBatismo(std::string nomeBatismo_){
+	this->m_nome_batismo = nomeBatismo_;
 }
 
 /*
@@ -150,7 +161,7 @@ SOBRECARGA DE OPERADORES
 ====================================
 */
 
-std::ostream& 
+std::ostream&
 operator<< ( std::ostream& output, const Animal& animalTal){
 	output 	<< animalTal.m_id << ";"
 			<< animalTal.m_classe << ";"
@@ -165,7 +176,7 @@ operator<< ( std::ostream& output, const Animal& animalTal){
 }
 
 /*
-std::istream& 
+std::istream&
 operator>> ( std::istream& input, Animal& animalTal){
 	std::cout << " Identificador do Animal: ";
 	std::getline(input, animalTal.m_id);

@@ -41,7 +41,7 @@ short Funcionario::getIdade(){
 	return this->m_idade;
 }
 
-short Funcionario::getTipo_sanguineo(){
+std::string Funcionario::getTipo_sanguineo(){
 	return this->m_tipo_sanguineo;
 }
 char Funcionario::getFator_rh(){
@@ -66,7 +66,7 @@ void Funcionario::setCpf(std::string cpf_){
 void Funcionario::setIdade(short idade_){
 	this->m_idade = idade_;
 }
-void Funcionario::setTipo_sanguineo(short tipo_sanguineo_){
+void Funcionario::setTipo_sanguineo(std::string tipo_sanguineo_){
 	this->m_tipo_sanguineo = tipo_sanguineo_;
 }
 void Funcionario::setFator_rh(char fator_rh_){

@@ -22,7 +22,7 @@ class Funcionario{
 		std::string m_nome;
 		std::string m_cpf;
 		short m_idade;
-		short m_tipo_sanguineo;
+		std::string m_tipo_sanguineo;
 		char m_fator_rh;
 		std::string m_especialidade;
 	public:
@@ -37,7 +37,7 @@ class Funcionario{
 		std::string getNome();
 		std::string getCpf();
 		short getIdade();
-		short getTipo_sanguineo();
+		std::string getTipo_sanguineo();
 		char getFator_rh();
 		std::string getEspecialidade();
 
@@ -47,7 +47,7 @@ class Funcionario{
 		void setNome(std::string nome_);
 		void setCpf(std::string cpf_);
 		void setIdade(short idade_);
-		void setTipo_sanguineo(short tipo_sanguineo_);
+		void setTipo_sanguineo(std::string tipo_sanguineo_);
 		void setFator_rh(char fator_rh_);
 		void setEspecialidade(std::string especialidade_);
 

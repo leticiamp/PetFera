@@ -14,7 +14,19 @@
 #include "anfibio.h"
 
 //Construtor
-Anfibio::Anfibio(): Animal(),
+Anfibio::Anfibio(size_t id_,
+				         std::string classe_,
+				         std::string nome_cientifico_,
+				         char sexo_,
+				         double tamanho_,
+				         std::string dieta_,
+                 ):
+        Animal(size_t id_,
+				std::string classe_,
+				std::string nome_cientifico_,
+				char sexo_,
+				double tamanho_,
+				std::string dieta_),
                     m_total_de_mudas(0)
 {}
 
