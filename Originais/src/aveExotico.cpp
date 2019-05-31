@@ -11,13 +11,12 @@
 
 #include <iostream>
 
-//#include "cadastro.h"
+using namespace std;
 
-int main(int argc, char **argv){
+#include "aveExotico.h"
 
-/*
-	Cadastro on;
-	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
-    return 0;
-}
+AveExo::AveExo(): 	Ave(),
+					AnimalExo()
+					{}
+
+AveExo::~AveExo(){}

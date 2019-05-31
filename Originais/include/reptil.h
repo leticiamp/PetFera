@@ -9,15 +9,24 @@
 ===========================================================================
 */
 
-#include <iostream>
+#ifndef _REPTIL_H_
+#define _REPTIL_H_
 
-//#include "cadastro.h"
+#include <string>
+#include "animal.h"
 
-int main(int argc, char **argv){
+using namespace std;
 
-/*
-	Cadastro on;
-	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
-    return 0;
-}
+class Reptil : public Animal{
+	private:
+				
+	protected:
+		bool m_venenoso;
+		string m_tipo_veneno;
+	public:
+		Reptil();
+		~Reptil();
+
+};
+
+#endif // _REPTIL_H_

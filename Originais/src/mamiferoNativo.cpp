@@ -11,13 +11,11 @@
 
 #include <iostream>
 
-//#include "cadastro.h"
+using namespace std;
 
-int main(int argc, char **argv){
+#include "mamiferoNativo.h"
 
-/*
-	Cadastro on;
-	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
-    return 0;
-}
+MamiferoNat::MamiferoNat():	Mamifero(),
+							AnimalNat(){}
+
+MamiferoNat::~MamiferoNat(){}

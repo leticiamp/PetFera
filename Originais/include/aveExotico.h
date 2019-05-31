@@ -9,15 +9,24 @@
 ===========================================================================
 */
 
-#include <iostream>
+#ifndef _AVE_EXOTICO_H_
+#define _AVE_EXOTICO_H_
 
-//#include "cadastro.h"
+#include <string>
+#include "ave.h"
+#include "animalExotico.h"
 
-int main(int argc, char **argv){
+using namespace std;
 
-/*
-	Cadastro on;
-	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
-    return 0;
-}
+class AveExo : public Ave, AnimalExo{
+	private:
+		
+	protected:
+
+	public:
+		AveExo();
+		~AveExo();
+
+};
+
+#endif // _AVE_EXOTICO_H_

@@ -18,10 +18,9 @@ INC = ./include
 CPPFLAGS = -Wall -O0 -g -pedantic -std=c++11 -I$(INC)
 
 OBJS = 	$(OBJ)/main.o\
-	   	$(OBJ)/cadastro.o\
-		$(OBJ)/animal.o\
-#		$(OBJ)/funcionario.o\
-#		$(OBJ)/tratador.o \
+		$(OBJ)/funcionario.o\
+		$(OBJ)/tratador.o \
+# $(OBJ)/animal.o\
 #	   	$(OBJ)/veterinario.o \
 #	   	$(OBJ)/data.o \
 #		$(OBJ)/anfibioExotico.o \
@@ -37,6 +36,7 @@ OBJS = 	$(OBJ)/main.o\
 #		$(OBJ)/reptilNativo.o \
 #		$(OBJ)/animalExotico.o \
 #		$(OBJ)/animalNativo.o \
+#		$(OBJ)/cadastro.o\
 
 #	   	$(OBJ)/anfibio.o \
 #		$(OBJ)/reptil.o \
@@ -51,22 +51,21 @@ $(PROG): $(OBJS)
 	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
 
 
-
-
 $(OBJ)/main.o: $(SRC)/main.cpp
 	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
 
-$(OBJ)/cadastro.o:$(INC)/cadastro.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/cadastro.cpp -o $(OBJ)/cadastro.o
 
-$(OBJ)/animal.o:$(INC)/animal.h
-	$(CC) $(CPPFLAGS) -c $(SRC)/animal.cpp -o $(OBJ)/animal.o
+#$(OBJ)/animal.o:$(INC)/animal.h
+#	$(CC) $(CPPFLAGS) -c $(SRC)/animal.cpp -o $(OBJ)/animal.o
 
-#$(OBJ)/funcionario.o:$(INC)/funcionario.h
-#	$(CC) $(CPPFLAGS) -c $(SRC)/funcionario.cpp -o $(OBJ)/funcionario.o
+$(OBJ)/funcionario.o:$(INC)/funcionario.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/funcionario.cpp -o $(OBJ)/funcionario.o
 
-#$(OBJ)/tratador.o:$(INC)/tratador.h
-#	$(CC) $(CPPFLAGS) -c $(SRC)/tratador.cpp -o $(OBJ)/tratador.o
+#$(OBJ)/cadastro.o:$(INC)/cadastro.h
+#	$(CC) $(CPPFLAGS) -c $(SRC)/cadastro.cpp -o $(OBJ)/cadastro.o
+
+$(OBJ)/tratador.o:$(INC)/tratador.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/tratador.cpp -o $(OBJ)/tratador.o
 
 #$(OBJ)/veterinario.o:$(INC)/veterinario.h
 #	$(CC) $(CPPFLAGS) -c $(SRC)/veterinario.cpp -o $(OBJ)/veterinario.o
@@ -121,6 +120,6 @@ $(OBJ)/animal.o:$(INC)/animal.h
 
 
 
-clean: 
+clean:
 	rm -f $(BIN)/*
 	rm -f $(OBJ)/*

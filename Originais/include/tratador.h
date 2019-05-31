@@ -22,18 +22,7 @@ class Tratador : public Funcionario{
 	protected:
 
 	public:
-
-		//Metodos Construtor
-		Tratador(int id_,
-							std::string nome_,
-							std::string cpf_,
-							short idade_,
-							std::string tipo_sanguineo_,
-							char fator_rh_,
-							std::string especialidade_,
-							int nivel_de_seguranca_);
-
-		//Metodo Destrutor
+		Tratador();
 		~Tratador();
 
 		//get's
@@ -42,7 +31,7 @@ class Tratador : public Funcionario{
 		//set's
 		void setNivel_de_Seguranca(int nivel_de_seguranca_);
 
-		std::ostream& print(std::ostream& os) const;
+		friend std::ostream& operator<< ( std::ostream& output, const Tratador& tratadorTal);
 //		friend istream& operator>> ( istream& input, Tratador& tratadorTal);
 
 };

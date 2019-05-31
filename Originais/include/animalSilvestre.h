@@ -9,15 +9,22 @@
 ===========================================================================
 */
 
-#include <iostream>
+#ifndef _ANIMAL_SILVESTRE_H_
+#define _ANIMAL_SILVESTRE_H_
 
-//#include "cadastro.h"
+#include <string>
 
-int main(int argc, char **argv){
+using namespace std;
 
-/*
-	Cadastro on;
-	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
-    return 0;
-}
+class AnimalSilv{
+	private:
+
+	protected:
+		string m_autorizacao_ibama;
+	
+	public:
+		AnimalSilv();
+		~AnimalSilv();
+};
+
+#endif // _ANIMAL_SILVESTRE_H_

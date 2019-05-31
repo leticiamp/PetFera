@@ -9,15 +9,17 @@
 ===========================================================================
 */
 
+
 #include <iostream>
 
-//#include "cadastro.h"
+using namespace std;
 
-int main(int argc, char **argv){
+#include "veterinario.h"
 
-/*
-	Cadastro on;
-	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
-    return 0;
+Veterinario::Veterinario():
+	Funcionario(),
+	m_crmv("Empty"){
+
 }
+
+Veterinario::~Veterinario(){}

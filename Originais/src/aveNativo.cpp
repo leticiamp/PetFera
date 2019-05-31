@@ -11,13 +11,10 @@
 
 #include <iostream>
 
-//#include "cadastro.h"
+using namespace std;
 
-int main(int argc, char **argv){
+#include "aveNativo.h"
 
-/*
-	Cadastro on;
-	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
-    return 0;
-}
+AveNat::AveNat(){}
+
+AveNat::~AveNat(){}

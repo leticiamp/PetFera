@@ -16,29 +16,24 @@
 
 class Funcionario{
 	private:
-		virtual std::ostream& print(std::ostream&) const = 0;
 
 	protected:
-		int m_id;
+		size_t m_id;
 		std::string m_nome;
 		std::string m_cpf;
 		short m_idade;
 		std::string m_tipo_sanguineo;
 		char m_fator_rh;
 		std::string m_especialidade;
-
 	public:
-		Funcionario(int id_,
-							std::string nome_,
-							std::string cpf_,
-							short idade_,
-							std::string tipo_sanguineo_,
-							char fator_rh_,
-							std::string especialidade_);
+		Funcionario();
 		~Funcionario();
 
+		// type method(type);
+		// type method(type);
+
 		//get's
-		int getId();
+		size_t getId();
 		std::string getNome();
 		std::string getCpf();
 		short getIdade();
@@ -48,7 +43,7 @@ class Funcionario{
 
 		//set's
 
-		void setId(int id_);
+		void setId(size_t id_);
 		void setNome(std::string nome_);
 		void setCpf(std::string cpf_);
 		void setIdade(short idade_);
@@ -56,9 +51,6 @@ class Funcionario{
 		void setFator_rh(char fator_rh_);
 		void setEspecialidade(std::string especialidade_);
 
-		//Metodos de impressao
-		virtual void imprime() = 0;
-		friend std::ostream& operator<< ( std::ostream& output, const Funcionario& funcionarioTal);
 };
 
 #endif // _FUNCIONARIO_H_

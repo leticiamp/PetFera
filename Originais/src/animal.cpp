@@ -17,21 +17,27 @@
 //#include "tratador.h"
 //#include "cadastro.h"
 
-Animal::Animal( int id_,
+/
+Animal::Animal():
+	////// ERRO AQUI ///////
+//	m_veterinario(Veterinario(m_veterinario)),
+//	m_tratador(Tratador(m_tratador))
+//	Cadatro::m_totalDeAnimais++;
+{}
+
+
+Animal::Animal( size_t id_,
 				std::string classe_,
 				std::string nome_cientifico_,
 				char sexo_,
 				double tamanho_,
-				std::string dieta_,
-			std::string nome_batismo_):
+				std::string dieta_):
 	m_id(id_),
 	m_classe(classe_),
 	m_nome_cientifico(nome_cientifico_),
 	m_sexo(sexo_),
 	m_tamanho(tamanho_),
-	m_dieta(dieta_),
-	m_nome_batismo(nome_batismo_)
-
+	m_dieta(dieta_)
 //	m_veterinario(Veterinario(veterinario_)),
 //	m_tratador(Tratador(tratador_))
 //	m_totalDeAnimais++;
@@ -39,14 +45,12 @@ Animal::Animal( int id_,
 
 Animal::~Animal(){}
 
-`
 /*
 ====================================
 MÉTODOS GETTERS
 ====================================
-*/`
-
-int
+*/
+size_t
 Animal::getId(){
 	return this->m_id;
 }
@@ -95,7 +99,6 @@ Animal::getTratador(){
 }
 */
 
-
 /*
 ====================================
 MÉTODOS SETTERS
@@ -103,7 +106,7 @@ MÉTODOS SETTERS
 */
 
 void
-Animal::setId(int id_){
+Animal::setId(size_t id_){
 	this->m_id = id_;
 }
 
@@ -159,8 +162,17 @@ SOBRECARGA DE OPERADORES
 */
 
 std::ostream&
-Animal::operator<< ( std::ostream& output, const Animal& animalTal){
-	return animalTal.print(output);
+operator<< ( std::ostream& output, const Animal& animalTal){
+	output 	<< animalTal.m_id << ";"
+			<< animalTal.m_classe << ";"
+			<< animalTal.m_nome_cientifico << ";"
+			<< animalTal.m_sexo << ";"
+			<< animalTal.m_tamanho << ";"
+			<< animalTal.m_dieta << ";"
+//			<< animalTal.m_veterinario << ";"
+//			<< animalTal.m_tratador << ";"
+			<< std::endl;
+	return output;
 }
 
 /*

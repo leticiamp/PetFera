@@ -11,13 +11,19 @@
 
 #include <iostream>
 
-//#include "cadastro.h"
+#include "animalExotico.h"
 
-int main(int argc, char **argv){
+AnimalExo::AnimalExo():AnimalSilv()
+{}
 
-/*
-	Cadastro on;
-	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
-    return 0;
+AnimalExo::~AnimalExo(){}
+
+std::string 
+AnimalExo::getPaisOrigem() {
+	return m_pais_origem;
+}
+
+std::string 
+AnimalExo::getCidadeOrigem() {
+	return m_cidade_origem;
 }

@@ -11,13 +11,14 @@
 
 #include <iostream>
 
-//#include "cadastro.h"
+using namespace std;
+
+#include "cadastro.h"
 
 int main(int argc, char **argv){
 
-/*
 	Cadastro on;
 	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
+  
     return 0;
 }

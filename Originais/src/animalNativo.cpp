@@ -11,13 +11,20 @@
 
 #include <iostream>
 
-//#include "cadastro.h"
+using namespace std;
 
-int main(int argc, char **argv){
+#include "animalNativo.h"
 
-/*
-	Cadastro on;
-	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
-    return 0;
+AnimalNat::AnimalNat():AnimalSilv(){}
+
+AnimalNat::~AnimalNat(){}
+
+std::string 
+AnimalNat::getUfOrigem(){
+	return m_uf_origem;
+}
+
+std::string 
+AnimalNat::getAutorizacao() {
+	return m_autorizacao;
 }

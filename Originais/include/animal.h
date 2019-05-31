@@ -17,13 +17,19 @@
 //#include "veterinario.h"
 //#include "tratador.h"
 
-class Animal{
+//enum Gender{M, F, MF, NONE};
+/*
+Vitor, tive que tirar e trocar por "char" TEMPORARIAMENTE, pois teria que
+fazer sobrecarga do operador >> e não consegui fazer... Quando conseguir,
+botamos o Gender outra vez.
+*/
 
+class Animal{
 	private:
 		virtual std::ostream& print(std::ostream&) const = 0;
-
+//		static int m_totalDeAnimais;
 	protected:
-		int m_id;
+		size_t m_id;
 		std::string m_classe;
 		std::string m_nome_cientifico;
 		char m_sexo;
@@ -34,21 +40,28 @@ class Animal{
 		std::string m_nome_batismo;
 
 	public:
+		Animal(	size_t m_id=0,
+				std::string m_classe="Empty",
+				std::string m_nome_cientifico="Empty",
+				char m_sexo = 'M',
+				double m_tamanho=0,
+				std::string m_dieta="Empty"
+				std::string m_nome_batismo = "test");
 
-		Animal(	int id_,
+/*		Animal(	size_t id_,
 				std::string classe_,
 				std::string nome_cientifico_,
 				char sexo_,
 				double tamanho_,
-				std::string dieta_,
-				std::string nome_batismo_);
+				std::string dieta_);
+*/
 
 		~Animal();
 
-		int getId();
+		size_t getId();
 		std::string getClasse();
 		std::string getNome();
-		char getSexo();
+		std::string getSexo();
 		double getTamanho();
 		std::string getDieta();
 		std::string getNomeBatismo();
@@ -56,18 +69,17 @@ class Animal{
 //		Veterinario getVeterinario();
 //		Tratador getTratador();
 
-		void setId(int id_);
+		void setId(size_t id_);
 		void setClasse(std::string classe_);
 		void setNome(std::string nome_);
-		void setSexo(char sexo_);
+		void setSexo(std::string sexo_);
 		void setTamanho(double tamanho_);
 		void setDieta(std::string dieta_);
-		void setNomeBatismo(std::string nome_batismo_);
+		void setNomeBatismo(std::string nomeBatismo_);
 
 //		void setVeterinario(Veterinario& veterinario_);
 //		void setTratador(Tratador& tratador_);
 
-		virtual void imprime() = 0;
 		friend std::ostream& operator<< ( std::ostream& output, const Animal& animalTal);
 //		friend std::istream& operator>> ( std::istream& input, Animal& animalTal);
 };

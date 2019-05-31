@@ -9,15 +9,24 @@
 ===========================================================================
 */
 
-#include <iostream>
+#ifndef _VETERINARIO_H_
+#define _VETERINARIO_H_
 
-//#include "cadastro.h"
+#include <string>
+#include "funcionario.h"
 
-int main(int argc, char **argv){
+using namespace std;
 
-/*
-	Cadastro on;
-	on.listaOpcaoInicial(" ### MENU PRINCIPAL ###");
-*/
-    return 0;
-}
+class Veterinario : public Funcionario{
+	private:
+		string m_crmv;
+		
+	protected:
+
+	public:
+		Veterinario();
+		~Veterinario();
+
+};
+
+#endif // _VETERINARIO_H_

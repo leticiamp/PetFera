@@ -1,0 +1,7 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
+PROJECT(MeuProjeto)
+
+SET(CMAKE_CXX_STANDARD 11)
+
+INCLUDE_DIRECTORIES(include/)
+ADD_EXECUTABLE(programa src/main.cpp src/animal.cpp src/funcionario.cpp)
