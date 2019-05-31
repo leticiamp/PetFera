@@ -20,7 +20,7 @@
 class Animal{
 
 	private:
-		virtual std::ostream& print(std::ostream&) const = 0;
+//		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
 		int m_id;
@@ -67,8 +67,8 @@ class Animal{
 //		void setVeterinario(Veterinario& veterinario_);
 //		void setTratador(Tratador& tratador_);
 
-		virtual void imprime() = 0;
-		friend std::ostream& operator<< ( std::ostream& output, const Animal& animalTal);
+//		virtual void imprime() = 0;
+//		friend std::ostream& operator<< ( std::ostream& output, const Animal& animalTal);
 //		friend std::istream& operator>> ( std::istream& input, Animal& animalTal);
 };
 

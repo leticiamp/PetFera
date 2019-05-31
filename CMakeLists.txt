@@ -4,4 +4,4 @@ PROJECT(MeuProjeto)
 SET(CMAKE_CXX_STANDARD 11)
 
 INCLUDE_DIRECTORIES(include/)
-ADD_EXECUTABLE(programa src/main.cpp src/animal.cpp src/funcionario.cpp)
+ADD_EXECUTABLE(programa src/main.cpp src/animal.cpp src/anfibio.cpp src/animalSilvestre.cpp src/anfibioExotico.cpp )

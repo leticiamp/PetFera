@@ -11,23 +11,28 @@
 
 #include <iostream>
 
+//#include "data.h"
 #include "anfibio.h"
 
 //Construtor
-Anfibio::Anfibio(size_t id_,
-				         std::string classe_,
-				         std::string nome_cientifico_,
-				         char sexo_,
-				         double tamanho_,
-				         std::string dieta_,
+Anfibio::Anfibio(	int id_,
+								std::string classe_,
+								std::string nome_cientifico_,
+								char sexo_,
+								double tamanho_,
+								std::string dieta_,
+								std::string nome_batismo_,
+								int mudas_
+/*	Falta o construtod de data					*/								
                  ):
-        Animal(size_t id_,
-				std::string classe_,
-				std::string nome_cientifico_,
-				char sexo_,
-				double tamanho_,
-				std::string dieta_),
-                    m_total_de_mudas(0)
+        Animal(	id_,
+							classe_,
+							nome_cientifico_,
+							sexo_,
+							tamanho_,
+							dieta_,
+							nome_batismo_),
+        m_total_de_mudas(mudas_)
 {}
 
 //Destrutor

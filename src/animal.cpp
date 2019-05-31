@@ -39,12 +39,12 @@ Animal::Animal( int id_,
 
 Animal::~Animal(){}
 
-`
+
 /*
 ====================================
 MÉTODOS GETTERS
 ====================================
-*/`
+*/
 
 int
 Animal::getId(){
@@ -157,12 +157,11 @@ Animal::setTratador(Tratador& tratador_){
 SOBRECARGA DE OPERADORES
 ====================================
 */
-
-std::ostream&
-Animal::operator<< ( std::ostream& output, const Animal& animalTal){
+/*
+std::ostream& operator<< ( std::ostream& output, const Animal& animalTal){
 	return animalTal.print(output);
 }
-
+*/
 /*
 std::istream&
 operator>> ( std::istream& input, Animal& animalTal){

@@ -21,9 +21,9 @@ class AnimalSilv{
 
 	protected:
 		string m_autorizacao_ibama;
-	
+
 	public:
-		AnimalSilv();
+		AnimalSilv(std::string auto_ibama_);
 		~AnimalSilv();
 };
 

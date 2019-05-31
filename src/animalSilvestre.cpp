@@ -15,6 +15,8 @@ using namespace std;
 
 #include "animalSilvestre.h"
 
-AnimalSilv::AnimalSilv(){}
+AnimalSilv::AnimalSilv(std::string auto_ibama_):
+m_autorizacao_ibama(auto_ibama_)
+{}
 
 AnimalSilv::~AnimalSilv(){}

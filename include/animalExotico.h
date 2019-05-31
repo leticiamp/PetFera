@@ -23,7 +23,9 @@ class AnimalExo : public AnimalSilv{
 		std::string m_cidade_origem;
 
 	public:
-		AnimalExo();
+		AnimalExo(std::string pais_origem_,
+							std::string cidade_origem_,
+							std::string auto_ibama_);
 		~AnimalExo();
 
 		std::string getPaisOrigem();

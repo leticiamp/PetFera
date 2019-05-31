@@ -13,17 +13,22 @@
 
 #include "animalExotico.h"
 
-AnimalExo::AnimalExo():AnimalSilv()
+AnimalExo::AnimalExo(std::string pais_origem_,
+										 std::string cidade_origem_,
+										 std::string auto_ibama_):
+										 m_pais_origem(pais_origem_),
+										 m_cidade_origem(cidade_origem_),
+										 AnimalSilv(auto_ibama_)
 {}
 
 AnimalExo::~AnimalExo(){}
 
-std::string 
+std::string
 AnimalExo::getPaisOrigem() {
-	return m_pais_origem;
+	return this->m_pais_origem;
 }
 
-std::string 
+std::string
 AnimalExo::getCidadeOrigem() {
-	return m_cidade_origem;
+	return tihs->m_cidade_origem;
 }

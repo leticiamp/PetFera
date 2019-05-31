@@ -14,7 +14,7 @@
 #define _ANFIBIO_H_
 
 #include <string>
-#include "data.h"
+//#include "data.h"
 #include "animal.h"
 
 
@@ -23,9 +23,17 @@ class Anfibio : public Animal{
 
 	protected:
 		int m_total_de_mudas;
-		Date m_ultima_muda;
+//		Date m_ultima_muda;
 	public:
-		Anfibio();
+		Anfibio(int id_,
+						std::string classe_,
+						std::string nome_cientifico_,
+						char sexo_,
+						double tamanho_,
+						std::string dieta_,
+						std::string nome_batismo_,
+						int mudas_);
+
 		~Anfibio();
 
 		//get's
