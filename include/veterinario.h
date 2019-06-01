@@ -15,17 +15,28 @@
 #include <string>
 #include "funcionario.h"
 
-using namespace std;
-
 class Veterinario : public Funcionario{
 	private:
-		string m_crmv;
-		
+		std::string m_crmv;
+		std::ostream& print(std::ostream& os)const;
 	protected:
 
 	public:
-		Veterinario();
+		Veterinario(int id_ = 0,
+						 std::string nome_ = "NOTDEF",
+						 std::string cpf_ = "NOTDEF",
+						 short idade_ = -1,
+				 		 std::string tipo_sanguineo_ = " NOTDEF",
+						 char fator_rh_ = 'N',
+						 std::string especialidade_= "NOTDEF",
+					 	 std::string crmv_ = "NOTDEF");
 		~Veterinario();
+
+		//get
+		std::string get_crmv();
+		//set
+		void set_crmv(std::string crmv_);
+
 
 };
 

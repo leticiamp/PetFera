@@ -18,20 +18,20 @@
 class Tratador : public Funcionario{
 	private:
 		int m_nivel_de_seguranca;
-
+		std::ostream& print(std::ostream& os)const;
 	protected:
 
 	public:
 
 		//Metodos Construtor
-		Tratador(int id_,
-							std::string nome_,
-							std::string cpf_,
-							short idade_,
-							std::string tipo_sanguineo_,
-							char fator_rh_,
-							std::string especialidade_,
-							int nivel_de_seguranca_);
+		Tratador(int id_ = 0,
+						 std::string nome_ = "NOTDEF",
+						 std::string cpf_ = "NOTDEF",
+						 short idade_ = -1,
+				 		 std::string tipo_sanguineo_ = " NOTDEF",
+						 char fator_rh_ = 'N',
+						 std::string especialidade_= "NOTDEF",
+						 int nivel_de_seguranca_ = 0);
 
 		//Metodo Destrutor
 		~Tratador();
@@ -41,9 +41,6 @@ class Tratador : public Funcionario{
 
 		//set's
 		void setNivel_de_Seguranca(int nivel_de_seguranca_);
-
-		std::ostream& print(std::ostream& os) const;
-//		friend istream& operator>> ( istream& input, Tratador& tratadorTal);
 
 };
 

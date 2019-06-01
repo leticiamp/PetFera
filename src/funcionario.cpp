@@ -34,9 +34,10 @@ Funcionario::~Funcionario(){}
 ====================================
 MÉTODOS GETTERS
 ====================================
-*/`
+*/
 
-int Funcionario::getId(){
+int
+Funcionario::getId(){
 	return this->m_id;
 }
 
@@ -118,8 +119,3 @@ Funcionario::setEspecialidade(std::string especialidade_){
 MÉTODOS DE IMPRESSAO
 ====================================
 */
-
-std::ostream&
-Funcionario::operator<< ( std::ostream& output, const Funcionario& funcionarioTal){
-	return funcionarioTal.print(output);
-}

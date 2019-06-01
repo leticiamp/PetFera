@@ -29,12 +29,12 @@ class Funcionario{
 
 	public:
 		Funcionario(int id_,
-							std::string nome_,
-							std::string cpf_,
-							short idade_,
-							std::string tipo_sanguineo_,
-							char fator_rh_,
-							std::string especialidade_);
+								std::string nome_,
+								std::string cpf_,
+								short idade_,
+								std::string tipo_sanguineo_,
+								char fator_rh_,
+								std::string especialidade_);
 		~Funcionario();
 
 		//get's
@@ -57,8 +57,10 @@ class Funcionario{
 		void setEspecialidade(std::string especialidade_);
 
 		//Metodos de impressao
-		virtual void imprime() = 0;
-		friend std::ostream& operator<< ( std::ostream& output, const Funcionario& funcionarioTal);
+	//	virtual void imprime() = 0;
+		friend std::ostream& operator << ( std::ostream& os, const Funcionario& funcionario){
+			return funcionario.print(os);
+		}
 };
 
 #endif // _FUNCIONARIO_H_
