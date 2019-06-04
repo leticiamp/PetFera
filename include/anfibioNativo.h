@@ -16,15 +16,25 @@
 #include "anfibio.h"
 #include "animalNativo.h"
 
-using namespace std;
-
 class AnfibioNat : public Anfibio, AnimalNat{
 	private:
-		
+			std::ostream& print(std::ostream& os)const;
 	protected:
 
 	public:
-		AnfibioNat();
+		AnfibioNat( int id_,
+								std::string classe_,
+								std::string nome_cientifico_,
+								char sexo_,
+								double tamanho_,
+								std::string dieta_,
+								Veterinario * veterinario_,
+								Tratador * tratador_,
+								std::string nome_batismo_,
+								int mudas_,
+								std::string uf_origem_,
+								std::string auto_ibama_
+							);
 		~AnfibioNat();
 
 };

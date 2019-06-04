@@ -14,17 +14,18 @@
 
 #include <string>
 
-using namespace std;
-
 class AnimalSilv{
 	private:
 
 	protected:
-		string m_autorizacao_ibama;
+		std::string m_autorizacao_ibama;
 
 	public:
 		AnimalSilv(std::string auto_ibama_);
 		~AnimalSilv();
+
+		std::string getAutoIbama();
+		void setAutoIbama(std::string auto_ibama_);
 };
 
 #endif // _ANIMAL_SILVESTRE_H_

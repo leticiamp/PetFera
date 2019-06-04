@@ -31,6 +31,8 @@ class Anfibio : public Animal{
 						char sexo_,
 						double tamanho_,
 						std::string dieta_,
+						Veterinario * veterinario_,
+						Tratador * tratador_,
 						std::string nome_batismo_,
 						int mudas_);
 

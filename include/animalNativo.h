@@ -21,13 +21,14 @@ class AnimalNat : public AnimalSilv {
 
 	protected:
 		std::string m_uf_origem;
-		std::string m_autorizacao;
 	public:
-		AnimalNat();
+		AnimalNat(std::string uf_origem_,
+							std::string auto_ibama_);
 		~AnimalNat();
 
 		std::string getUfOrigem();
-		std::string getAutorizacao();
+
+		void setUfOrigem(std::string UfOrigem);
 
 };
 

@@ -14,13 +14,14 @@
 
 #include <iostream>
 #include <string>
-//#include "veterinario.h"
-//#include "tratador.h"
+#include "funcionario.h"
+#include "veterinario.h"
+#include "tratador.h"
 
 class Animal{
 
 	private:
-//		virtual std::ostream& print(std::ostream& os) const = 0;
+		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
 		int m_id;
@@ -29,8 +30,8 @@ class Animal{
 		char m_sexo;
 		double m_tamanho;
 		std::string m_dieta;
-//		Veterinario m_veterinario;
-//		Tratador m_tratador;
+		Veterinario * m_veterinario;
+		Tratador * m_tratador;
 		std::string m_nome_batismo;
 
 	public:
@@ -41,6 +42,8 @@ class Animal{
 				char sexo_,
 				double tamanho_,
 				std::string dieta_,
+				Veterinario * veterinario_,
+				Tratador * tratador_,
 				std::string nome_batismo_);
 
 		~Animal();
@@ -53,8 +56,8 @@ class Animal{
 		std::string getDieta();
 		std::string getNomeBatismo();
 
-//		Veterinario getVeterinario();
-//		Tratador getTratador();
+	 	Veterinario * getVeterinario();
+		Tratador * getTratador();
 
 		void setId(int id_);
 		void setClasse(std::string classe_);
@@ -64,12 +67,12 @@ class Animal{
 		void setDieta(std::string dieta_);
 		void setNomeBatismo(std::string nome_batismo_);
 
-//		void setVeterinario(Veterinario& veterinario_);
-//		void setTratador(Tratador& tratador_);
+		void setVeterinario(Veterinario* veterinario_);
+		void setTratador(Tratador* tratador_);
 
-//		virtual void imprime() = 0;
-//		friend std::ostream& operator<< ( std::ostream& output, const Animal& animalTal);
-//		friend std::istream& operator>> ( std::istream& input, Animal& animalTal);
+		friend std::ostream& operator << ( std::ostream& os, const Animal& animal){
+			return animal.print(os);
+		}
 };
 
 

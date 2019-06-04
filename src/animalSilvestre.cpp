@@ -20,3 +20,11 @@ m_autorizacao_ibama(auto_ibama_)
 {}
 
 AnimalSilv::~AnimalSilv(){}
+
+std::string AnimalSilv::getAutoIbama(){
+  return this->m_autorizacao_ibama;
+}
+
+void AnimalSilv::setAutoIbama(std::string auto_ibama_){
+  this->m_autorizacao_ibama = auto_ibama_;
+}

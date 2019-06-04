@@ -18,10 +18,7 @@
 
 class AnfibioExo : public Anfibio, AnimalExo{
 	private:
-//		std::ostream& print(std::ostream& os){
-//			return os << "Funcionou" << std::endl;
-//		}
-
+		std::ostream& print(std::ostream& os)const;
 	protected:
 
 	public:
@@ -31,14 +28,14 @@ class AnfibioExo : public Anfibio, AnimalExo{
 							char sexo_,
 							double tamanho_,
 							std::string dieta_,
+							Veterinario * veterinario_,
+							Tratador * tratador_,
 							std::string nome_batismo_,
 							int mudas_,
-		          std::string pais_origem_,
-		          std::string cidade_origem_,
-		          std::string auto_ibama_);
-
+							std::string pais_origem_,
+							std::string cidade_origem_,
+							std::string auto_ibama_);
 		~AnfibioExo();
-
 };
 
 #endif // _ANFIBIO_EXOTICO_H_

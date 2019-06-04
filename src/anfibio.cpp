@@ -21,16 +21,18 @@ Anfibio::Anfibio(	int id_,
 								char sexo_,
 								double tamanho_,
 								std::string dieta_,
+								Veterinario * veterinario_,
+								Tratador * tratador_,
 								std::string nome_batismo_,
-								int mudas_
-/*	Falta o construtod de data					*/								
-                 ):
+								int mudas_):
         Animal(	id_,
 							classe_,
 							nome_cientifico_,
 							sexo_,
 							tamanho_,
 							dieta_,
+							veterinario_,
+							tratador_,
 							nome_batismo_),
         m_total_de_mudas(mudas_)
 {}
