@@ -15,17 +15,26 @@
 #include <string>
 #include "animal.h"
 
-using namespace std;
-
 class Ave : public Animal{
 	private:
-	
+
 	protected:
 		double m_tamanho_do_bico_cm;
 		double m_envergadura_das_asas;
-	
+
 	public:
-		Ave();
+		Ave(int id_,
+				std::string classe_,
+				std::string nome_cientifico_,
+				char sexo_,
+				double tamanho_,
+				std::string dieta_,
+				Veterinario * veterinario_,
+				Tratador * tratador_,
+				std::string nome_batismo_,
+				double tamanho_do_bico_cm_,
+				double envergadura_das_asas_);
+
 		~Ave();
 
 		double getTamanhoBicoCm();

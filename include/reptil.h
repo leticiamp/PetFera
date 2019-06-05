@@ -15,17 +15,31 @@
 #include <string>
 #include "animal.h"
 
-using namespace std;
-
 class Reptil : public Animal{
 	private:
-				
+
 	protected:
 		bool m_venenoso;
-		string m_tipo_veneno;
+		std::string m_tipo_veneno;
 	public:
-		Reptil();
+		Reptil(int id_,
+						std::string classe_,
+						std::string nome_cientifico_,
+						char sexo_,
+						double tamanho_,
+						std::string dieta_,
+						Veterinario * veterinario_,
+						Tratador * tratador_,
+						std::string nome_batismo_,
+					  bool venenoso_,
+						std::string tipo_veneno_);
 		~Reptil();
+
+		bool getVenenoso();
+		std::string getTipoVenenoso();
+
+		void setVenenoso(bool venenoso_);
+		void setTipoVenenoso(std::string tipo_veneno_);
 
 };
 

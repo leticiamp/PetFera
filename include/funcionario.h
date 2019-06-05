@@ -35,6 +35,7 @@ class Funcionario{
 								std::string tipo_sanguineo_,
 								char fator_rh_,
 								std::string especialidade_);
+		Funcionario();
 		~Funcionario();
 
 		//get's
@@ -57,7 +58,7 @@ class Funcionario{
 		void setEspecialidade(std::string especialidade_);
 
 		//Metodos de impressao
-	//	virtual void imprime() = 0;
+
 		friend std::ostream& operator << ( std::ostream& os, const Funcionario& funcionario){
 			return funcionario.print(os);
 		}

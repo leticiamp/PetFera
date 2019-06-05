@@ -53,9 +53,9 @@ std::ostream& AnfibioNat::print(std::ostream& os)const{
 		<< "Nome de Batismo : " 					<< m_nome_batismo 			<< std::endl
 		<< "Numero de Mudas : " 					<< m_total_de_mudas			<< std::endl
 		<< "\n"
-		<< "Veterinario Responsavel: \n"	<< *m_veterinario 				<< std::endl
+		<< "Veterinario Responsavel: \n"	<< *m_veterinario 			<< std::endl
 		<< "Tratador Responsavel: \n"			<< *m_tratador 					<< std::endl
-		<< "Pais : " << m_uf_origem << std::endl
-		<< "Ibama Autorização : " << m_autorizacao_ibama << std::endl;
+		<< "Pais : " 											<< m_uf_origem 					<< std::endl
+		<< "Ibama Autorização : " 				<< m_autorizacao_ibama  << std::endl;
 		return os;
 }

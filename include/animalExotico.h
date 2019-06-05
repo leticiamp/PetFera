@@ -30,6 +30,9 @@ class AnimalExo : public AnimalSilv{
 
 		std::string getPaisOrigem();
 		std::string getCidadeOrigem();
+
+		void setPaisOrigem(std::string pais_origem_);
+		void setCidadeOrigem(std::string cidade_origem_);
 };
 
 #endif // _ANIMAL_EXOTICO_H_

@@ -22,6 +22,7 @@ class Veterinario : public Funcionario{
 	protected:
 
 	public:
+		//Construtores
 		Veterinario(int id_ = 0,
 						 std::string nome_ = "NOTDEF",
 						 std::string cpf_ = "NOTDEF",
@@ -30,6 +31,8 @@ class Veterinario : public Funcionario{
 						 char fator_rh_ = 'N',
 						 std::string especialidade_= "NOTDEF",
 					 	 std::string crmv_ = "NOTDEF");
+
+	//Destrutor
 		~Veterinario();
 
 		//get

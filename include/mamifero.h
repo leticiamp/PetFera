@@ -15,20 +15,29 @@
 #include <string>
 #include "animal.h"
 
-using namespace std;
-
-class Mamifero : public Animal{		
+class Mamifero : public Animal{
+	private :
+	
 	protected:
-		string m_cor_pelo;
+		std::string m_cor_pelo;
 	public:
-		Mamifero();
-
-		Mamifero(string m_classe, int m_id);
-
-		string getCorPelo();
-		void setCorPelo(string cor_pelo_);
+		Mamifero(int id_,
+						std::string classe_,
+						std::string nome_cientifico_,
+						char sexo_,
+						double tamanho_,
+						std::string dieta_,
+						Veterinario * veterinario_,
+						Tratador * tratador_,
+						std::string nome_batismo_,
+					  std::string cor_pelo_);
 
 		~Mamifero();
+
+		std::string getCorPelo();
+
+		void setCorPelo(std::string cor_pelo_);
+
 
 };
 

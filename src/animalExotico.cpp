@@ -30,5 +30,16 @@ AnimalExo::getPaisOrigem() {
 
 std::string
 AnimalExo::getCidadeOrigem() {
-	return tihs->m_cidade_origem;
+	return this->m_cidade_origem;
+}
+
+
+void
+AnimalExo::setPaisOrigem(std::string pais_origem_){
+	this->m_pais_origem = pais_origem_;
+}
+
+void
+AnimalExo::setCidadeOrigem(std::string cidade_origem_){
+	this->m_cidade_origem = cidade_origem_;
 }

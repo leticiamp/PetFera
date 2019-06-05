@@ -29,9 +29,7 @@ Veterinario::Veterinario(int id_,
 					  	tipo_sanguineo_,
 					 		fator_rh_,
 					    especialidade_),
-	m_crmv(crmv_){
-
-}
+	m_crmv(crmv_){}
 
 Veterinario::~Veterinario(){}
 
