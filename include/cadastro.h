@@ -22,7 +22,7 @@ using namespace std;
 
 class Cadastro{
 	public:
-		map<int, Animal> * animais; // 
+		map<int, Animal*>  animais; //
 		int listaOpcaoInicial(string abasOrientacao); // Método que mostra opções iniciais.
 		void pesquisarAnimal(string abasOrientacao); // Método que pesquisa um animal pelo nome.
 		void listarTodosOsAnimais(string abasOrientacao); // Método para listar todas as animais já cadastrados.
@@ -34,7 +34,7 @@ class Cadastro{
 //		void mostrarFuncionarios();
 //		void inserirFuncionario();
 //		void excluirFuncionario();
-		
+
 		Cadastro(); // Método construtor padrão para instanciar um animal.
 		~Cadastro();
 
