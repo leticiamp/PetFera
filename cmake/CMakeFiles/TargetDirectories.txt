@@ -1,3 +1,0 @@
-/home/odilonjulio/Projeto-LPI/PetFera/cmake/CMakeFiles/rebuild_cache.dir
-/home/odilonjulio/Projeto-LPI/PetFera/cmake/CMakeFiles/main.dir
-/home/odilonjulio/Projeto-LPI/PetFera/cmake/CMakeFiles/edit_cache.dir

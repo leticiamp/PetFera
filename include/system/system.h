@@ -57,8 +57,13 @@ class System{
     void inserirFuncionario(Tratador * funcionario);
     void inserirFuncionario(Veterinario * funcionario);
     void inserirFuncionario(Funcionario * funcionario);
+    void inserirFuncionarioDigitando(string guia_);
+    void inserirFuncionarioViaArquivoCSV(string guia_);
 
     void inserirAnimal(Animal * animal);
+    void inserirAnimalDigitando(string guia_);
+    void inserirAnimalViaArquivoCSV(string guia_);
+
 
     Tratador * consultaTratador(int Id);
     Veterinario * consultaVeterinario(int Id);
