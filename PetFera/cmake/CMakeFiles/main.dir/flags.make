@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/include/animal -I/home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/include/anfibio -I/home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/include/ave -I/home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/include/reptil -I/home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/include/funcionario -I/home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/include/mamifero -I/home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/include/system 
+CXX_INCLUDES = -I/home/odilonjulio/Projeto-LPI/PetFera/include/animal -I/home/odilonjulio/Projeto-LPI/PetFera/include/anfibio -I/home/odilonjulio/Projeto-LPI/PetFera/include/ave -I/home/odilonjulio/Projeto-LPI/PetFera/include/reptil -I/home/odilonjulio/Projeto-LPI/PetFera/include/funcionario -I/home/odilonjulio/Projeto-LPI/PetFera/include/mamifero -I/home/odilonjulio/Projeto-LPI/PetFera/include/system 
 

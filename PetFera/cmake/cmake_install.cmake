@@ -1,4 +1,4 @@
-# Install script for directory: /home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera
+# Install script for directory: /home/odilonjulio/Projeto-LPI/PetFera
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/cmake/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/odilonjulio/Projeto-LPI/PetFera/cmake/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera
+CMAKE_SOURCE_DIR = /home/odilonjulio/Projeto-LPI/PetFera
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/cmake
+CMAKE_BINARY_DIR = /home/odilonjulio/Projeto-LPI/PetFera/cmake
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/cmake/CMakeFiles /home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/cmake/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odilonjulio/Projeto-LPI/PetFera/cmake/CMakeFiles /home/odilonjulio/Projeto-LPI/PetFera/cmake/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrevms/IMD0030---LINGUAGEM-DE-PROGRAMA-O-I/PetFera/cmake/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odilonjulio/Projeto-LPI/PetFera/cmake/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
