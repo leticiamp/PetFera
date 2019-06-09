@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PetFera: Código-Fonte de src/ave/ave.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">PetFera
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Projeto final da disciplina Linguagem de Programação I</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6ae8b13a839820dc38f158114b7f8330.html">ave</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ave.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ave_8cpp.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># Disciplina: Linguagem de Programação I</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># Professor: Silvio Sampaio</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"># Alunos:</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"># ANDRE VITOR MACEDO SOARES</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"># LETICIA MOURA PINHEIRO</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"># ODILON JULIO DOS SANTOS</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"># Projeto Final &quot;PetFera&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">===========================================================================</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*/</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ave_8h.html">ave.h</a>&quot;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//Construtor</span></div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_ave.html#a601d8e741971cf43ab2cc1b2056390c5">   17</a></span>&#160;<a class="code" href="class_ave.html#a601d8e741971cf43ab2cc1b2056390c5">Ave::Ave</a>(<span class="keywordtype">int</span> id_,</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                std::string classe_,</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                std::string nome_cientifico_,</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordtype">char</span> sexo_,</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordtype">double</span> tamanho_,</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                std::string dieta_,</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <a class="code" href="class_veterinario.html">Veterinario</a> * veterinario_,</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <a class="code" href="class_tratador.html">Tratador</a> * tratador_,</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                std::string nome_batismo_,</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordtype">double</span> tamanho_do_bico_cm_,</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordtype">double</span> envergadura_das_asas_) :</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_animal.html">Animal</a>( id_,</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    classe_,</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    nome_cientifico_,</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    sexo_,</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    tamanho_,</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    dieta_,</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    veterinario_,</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    tratador_,</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    nome_batismo_),</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    m_tamanho_do_bico_cm(tamanho_do_bico_cm_),</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    m_envergadura_das_asas(envergadura_das_asas_)</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{}</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//Destrutor</span></div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_ave.html#ad290be8d6fb95f1cfd24b5f55def7741">   42</a></span>&#160;<a class="code" href="class_ave.html#ad290be8d6fb95f1cfd24b5f55def7741">Ave::~Ave</a>(){}</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//get&#39;s</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">double</span></div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_ave.html#a7b068d68148ed6e0283a6c61e8d5e64f">   46</a></span>&#160;<a class="code" href="class_ave.html#a7b068d68148ed6e0283a6c61e8d5e64f">Ave::getTamanhoBicoCm</a>(){</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_ave.html#a6b226ae4077430877b040141105a9890">m_tamanho_do_bico_cm</a>;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">double</span></div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_ave.html#a2c4997b9909169eea956b4e879578412">   51</a></span>&#160;<a class="code" href="class_ave.html#a2c4997b9909169eea956b4e879578412">Ave::getEnvergaduraAsas</a>(){</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_ave.html#a6261373aae903e524e220e53ded18693">m_envergadura_das_asas</a>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//set&#39;s</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span></div><div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_ave.html#a51aba267531b80c5b4b81d419cd8bb67">   57</a></span>&#160;<a class="code" href="class_ave.html#a51aba267531b80c5b4b81d419cd8bb67">Ave::setTamanhoBicoCm</a>(<span class="keywordtype">double</span> tamanho_do_bico_cm_){</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    this-&gt;<a class="code" href="class_ave.html#a6b226ae4077430877b040141105a9890">m_tamanho_do_bico_cm</a> = tamanho_do_bico_cm_;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span></div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_ave.html#a1b2e632f23f0c859b80c464508ce6761">   62</a></span>&#160;<a class="code" href="class_ave.html#a1b2e632f23f0c859b80c464508ce6761">Ave::setEnevergaduraAsas</a>(<span class="keywordtype">double</span> envergadura_das_asas_){</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    this-&gt;<a class="code" href="class_ave.html#a6261373aae903e524e220e53ded18693">m_envergadura_das_asas</a> = envergadura_das_asas_;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div><div class="ttc" id="class_ave_html_a601d8e741971cf43ab2cc1b2056390c5"><div class="ttname"><a href="class_ave.html#a601d8e741971cf43ab2cc1b2056390c5">Ave::Ave</a></div><div class="ttdeci">Ave(int id_, std::string classe_, std::string nome_cientifico_, char sexo_, double tamanho_, std::string dieta_, Veterinario *veterinario_, Tratador *tratador_, std::string nome_batismo_, double tamanho_do_bico_cm_, double envergadura_das_asas_)</div><div class="ttdef"><b>Definition:</b> <a href="ave_8cpp_source.html#l00017">ave.cpp:17</a></div></div>
+<div class="ttc" id="class_ave_html_a6b226ae4077430877b040141105a9890"><div class="ttname"><a href="class_ave.html#a6b226ae4077430877b040141105a9890">Ave::m_tamanho_do_bico_cm</a></div><div class="ttdeci">double m_tamanho_do_bico_cm</div><div class="ttdef"><b>Definition:</b> <a href="ave_8h_source.html#l00022">ave.h:22</a></div></div>
+<div class="ttc" id="class_ave_html_a51aba267531b80c5b4b81d419cd8bb67"><div class="ttname"><a href="class_ave.html#a51aba267531b80c5b4b81d419cd8bb67">Ave::setTamanhoBicoCm</a></div><div class="ttdeci">void setTamanhoBicoCm(double tamanho_do_bico_cm_)</div><div class="ttdef"><b>Definition:</b> <a href="ave_8cpp_source.html#l00057">ave.cpp:57</a></div></div>
+<div class="ttc" id="class_veterinario_html"><div class="ttname"><a href="class_veterinario.html">Veterinario</a></div><div class="ttdef"><b>Definition:</b> <a href="veterinario_8h_source.html#l00018">veterinario.h:18</a></div></div>
+<div class="ttc" id="class_animal_html"><div class="ttname"><a href="class_animal.html">Animal</a></div><div class="ttdoc">Classe base para todos os grupos de animais. </div><div class="ttdef"><b>Definition:</b> <a href="animal_8h_source.html#l00024">animal.h:24</a></div></div>
+<div class="ttc" id="class_ave_html_a7b068d68148ed6e0283a6c61e8d5e64f"><div class="ttname"><a href="class_ave.html#a7b068d68148ed6e0283a6c61e8d5e64f">Ave::getTamanhoBicoCm</a></div><div class="ttdeci">double getTamanhoBicoCm()</div><div class="ttdef"><b>Definition:</b> <a href="ave_8cpp_source.html#l00046">ave.cpp:46</a></div></div>
+<div class="ttc" id="ave_8h_html"><div class="ttname"><a href="ave_8h.html">ave.h</a></div></div>
+<div class="ttc" id="class_ave_html_a1b2e632f23f0c859b80c464508ce6761"><div class="ttname"><a href="class_ave.html#a1b2e632f23f0c859b80c464508ce6761">Ave::setEnevergaduraAsas</a></div><div class="ttdeci">void setEnevergaduraAsas(double envergadura_das_asas_)</div><div class="ttdef"><b>Definition:</b> <a href="ave_8cpp_source.html#l00062">ave.cpp:62</a></div></div>
+<div class="ttc" id="class_ave_html_ad290be8d6fb95f1cfd24b5f55def7741"><div class="ttname"><a href="class_ave.html#ad290be8d6fb95f1cfd24b5f55def7741">Ave::~Ave</a></div><div class="ttdeci">~Ave()</div><div class="ttdef"><b>Definition:</b> <a href="ave_8cpp_source.html#l00042">ave.cpp:42</a></div></div>
+<div class="ttc" id="class_tratador_html"><div class="ttname"><a href="class_tratador.html">Tratador</a></div><div class="ttdef"><b>Definition:</b> <a href="tratador_8h_source.html#l00018">tratador.h:18</a></div></div>
+<div class="ttc" id="class_ave_html_a2c4997b9909169eea956b4e879578412"><div class="ttname"><a href="class_ave.html#a2c4997b9909169eea956b4e879578412">Ave::getEnvergaduraAsas</a></div><div class="ttdeci">double getEnvergaduraAsas()</div><div class="ttdef"><b>Definition:</b> <a href="ave_8cpp_source.html#l00051">ave.cpp:51</a></div></div>
+<div class="ttc" id="class_ave_html_a6261373aae903e524e220e53ded18693"><div class="ttname"><a href="class_ave.html#a6261373aae903e524e220e53ded18693">Ave::m_envergadura_das_asas</a></div><div class="ttdeci">double m_envergadura_das_asas</div><div class="ttdef"><b>Definition:</b> <a href="ave_8h_source.html#l00023">ave.h:23</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

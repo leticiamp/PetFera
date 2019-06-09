@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PetFera: Código-Fonte de src/mamifero/mamifero.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">PetFera
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Projeto final da disciplina Linguagem de Programação I</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a0c497c0af44bd9ee472852f96ffede9.html">mamifero</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mamifero.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mamifero_8cpp.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># Disciplina: Linguagem de Programação I</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># Professor: Silvio Sampaio</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"># Alunos:</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"># ANDRE VITOR MACEDO SOARES</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"># LETICIA MOURA PINHEIRO</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"># ODILON JULIO DOS SANTOS</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"># Projeto Final &quot;PetFera&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">===========================================================================</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*/</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mamifero_8h.html">mamifero.h</a>&quot;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_mamifero.html#ad8a30224afbfe3a94387652e1fae4f51">   16</a></span>&#160;<a class="code" href="class_mamifero.html#ad8a30224afbfe3a94387652e1fae4f51">Mamifero::Mamifero</a>(<span class="keywordtype">int</span> id_,</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                    std::string classe_,</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                    std::string nome_cientifico_,</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                    <span class="keywordtype">char</span> sexo_,</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                    <span class="keywordtype">double</span> tamanho_,</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                    std::string dieta_,</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                    <a class="code" href="class_veterinario.html">Veterinario</a> * veterinario_,</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                    <a class="code" href="class_tratador.html">Tratador</a> * tratador_,</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                    std::string nome_batismo_,</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                    std::string cor_pelo_) :</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;          <a class="code" href="class_animal.html">Animal</a>(   id_,</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                            classe_,</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                            nome_cientifico_,</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                            sexo_,</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                            tamanho_,</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            dieta_,</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                            veterinario_,</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                            tratador_,</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            nome_batismo_),</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            m_cor_pelo(cor_pelo_)</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{}</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_mamifero.html#a56eb196d45222e754eb6f19000667d5d">   38</a></span>&#160;<a class="code" href="class_mamifero.html#a56eb196d45222e754eb6f19000667d5d">Mamifero::~Mamifero</a>(){}</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_mamifero.html#ab164b4053fcb1912af011c1204b19fc1">   41</a></span>&#160;std::string <a class="code" href="class_mamifero.html#ab164b4053fcb1912af011c1204b19fc1">Mamifero::getCorPelo</a>(){</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_mamifero.html#a5a7737addd9b2a5736c2fe8edaba1220">m_cor_pelo</a>;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_mamifero.html#a851ecc895ae5deddc45f51f5b8dbf790">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_mamifero.html#a851ecc895ae5deddc45f51f5b8dbf790">Mamifero::setCorPelo</a>(std::string cor_pelo_) {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    this-&gt;<a class="code" href="class_mamifero.html#a5a7737addd9b2a5736c2fe8edaba1220">m_cor_pelo</a> = cor_pelo_;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div><div class="ttc" id="class_mamifero_html_a5a7737addd9b2a5736c2fe8edaba1220"><div class="ttname"><a href="class_mamifero.html#a5a7737addd9b2a5736c2fe8edaba1220">Mamifero::m_cor_pelo</a></div><div class="ttdeci">std::string m_cor_pelo</div><div class="ttdef"><b>Definition:</b> <a href="mamifero_8h_source.html#l00022">mamifero.h:22</a></div></div>
+<div class="ttc" id="class_mamifero_html_a851ecc895ae5deddc45f51f5b8dbf790"><div class="ttname"><a href="class_mamifero.html#a851ecc895ae5deddc45f51f5b8dbf790">Mamifero::setCorPelo</a></div><div class="ttdeci">void setCorPelo(std::string cor_pelo_)</div><div class="ttdef"><b>Definition:</b> <a href="mamifero_8cpp_source.html#l00045">mamifero.cpp:45</a></div></div>
+<div class="ttc" id="mamifero_8h_html"><div class="ttname"><a href="mamifero_8h.html">mamifero.h</a></div></div>
+<div class="ttc" id="class_mamifero_html_a56eb196d45222e754eb6f19000667d5d"><div class="ttname"><a href="class_mamifero.html#a56eb196d45222e754eb6f19000667d5d">Mamifero::~Mamifero</a></div><div class="ttdeci">~Mamifero()</div><div class="ttdef"><b>Definition:</b> <a href="mamifero_8cpp_source.html#l00038">mamifero.cpp:38</a></div></div>
+<div class="ttc" id="class_veterinario_html"><div class="ttname"><a href="class_veterinario.html">Veterinario</a></div><div class="ttdef"><b>Definition:</b> <a href="veterinario_8h_source.html#l00018">veterinario.h:18</a></div></div>
+<div class="ttc" id="class_animal_html"><div class="ttname"><a href="class_animal.html">Animal</a></div><div class="ttdoc">Classe base para todos os grupos de animais. </div><div class="ttdef"><b>Definition:</b> <a href="animal_8h_source.html#l00024">animal.h:24</a></div></div>
+<div class="ttc" id="class_mamifero_html_ad8a30224afbfe3a94387652e1fae4f51"><div class="ttname"><a href="class_mamifero.html#ad8a30224afbfe3a94387652e1fae4f51">Mamifero::Mamifero</a></div><div class="ttdeci">Mamifero(int id_, std::string classe_, std::string nome_cientifico_, char sexo_, double tamanho_, std::string dieta_, Veterinario *veterinario_, Tratador *tratador_, std::string nome_batismo_, std::string cor_pelo_)</div><div class="ttdef"><b>Definition:</b> <a href="mamifero_8cpp_source.html#l00016">mamifero.cpp:16</a></div></div>
+<div class="ttc" id="class_mamifero_html_ab164b4053fcb1912af011c1204b19fc1"><div class="ttname"><a href="class_mamifero.html#ab164b4053fcb1912af011c1204b19fc1">Mamifero::getCorPelo</a></div><div class="ttdeci">std::string getCorPelo()</div><div class="ttdef"><b>Definition:</b> <a href="mamifero_8cpp_source.html#l00041">mamifero.cpp:41</a></div></div>
+<div class="ttc" id="class_tratador_html"><div class="ttname"><a href="class_tratador.html">Tratador</a></div><div class="ttdef"><b>Definition:</b> <a href="tratador_8h_source.html#l00018">tratador.h:18</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
