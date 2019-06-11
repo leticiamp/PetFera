@@ -15,7 +15,15 @@
 
 
 System::System(){}
-System::~System(){}
+System::~System(){
+  if(this->mymapF.size() != 0){
+    for (std::map<int,Funcionario*>::iterator it = this->mymapF.begin();
+    it!= this->mymapF.end();
+    ++it){
+      delete it->second;
+    }
+  }
+}
 
 
 //Metodos de listagem
@@ -82,6 +90,8 @@ void System::listarFuncionariosComFiltroEmArquivoCSV(){
 
 //Metodos de inserção
 
+
+
 void System::inserirFuncionario(Tratador * funcionario){
   if( mymapF.find(funcionario->getId()) != mymapF.end()){
     std::cout << "\n Erro. Id já existe! " << std::endl;
@@ -105,6 +115,120 @@ void System::inserirFuncionario(Funcionario * funcionario){
   }
   this->mymapF.insert(std::pair<int, Funcionario *>(funcionario->getId(),funcionario));
 }
+
+void System::inserirFuncionarioDigitando(){
+
+  int id_;
+  std::cout << " Qual o número idenficador do Funcionario a ser inserido? " << std::endl;
+  std::cin >> id_; std::cin.ignore();
+
+  while(this->mymapF.find(id_) != mymapF.end() && id_ != 0){ // Testando se entrada existe
+      std::cout << "Entrada invalida, digite novamente\n";
+      std::cout << " Qual o número idenficador do Funcionario a ser inserido? " << std::endl;
+      std::cin >> id_; std::cin.ignore();
+  }
+
+  int funcao_;
+  std::cout << " Qual a funcao do Funcionario: 1 para Veterinario e 2 para Tratador " << std::endl;
+  std::cin >> funcao_; std::cin.ignore();
+
+  while(funcao_ != 1 && funcao_ != 2){
+    std::cout << "Entrada invalida, digite novamente\n";
+    std::cout << " Qual a funcao do Funcionario: 1 para Veterinario e 2 para Tratador " << std::endl;
+    std::cin >> funcao_; std::cin.ignore();
+
+  }
+
+  std::string nome_;
+  std::cout << " Qual o nome do funcionario" << std::endl;
+  std::cin >> nome_; std::cin.ignore();
+
+  std::string cpf_;
+  std::cout << " Qual o cpf do funcionario" << std::endl;
+  std::cin >> cpf_; std::cin.ignore();
+
+  short idade_;
+  std::cout << " Qual a idade do funcionario" << std::endl;
+  std::cin >> idade_; std::cin.ignore();
+
+  while(idade_ < 0){ // Caso digite um numero negativo
+    std::cout << "Entrada invalida, digite novamente\n";
+    std::cout << " Qual a idade do funcionario" << std::endl;
+    std::cin >> idade_; std::cin.ignore();
+
+  }
+
+  std::string tipo_sanguineo_;
+  std::cout << " Qual o tipo_sanguineo do funcionario" << std::endl;
+  std::cin >> tipo_sanguineo_; std::cin.ignore();
+
+  while(tipo_sanguineo_ != "A" &&
+        tipo_sanguineo_ != "B" &&
+        tipo_sanguineo_ != "O" &&
+        tipo_sanguineo_ != "AB")
+        {
+            std::cout << "Entrada invalida, digite novamente\n";
+            std::cout << " Qual o tipo_sanguineo do funcionario" << std::endl;
+            std::cin >> tipo_sanguineo_; std::cin.ignore();
+        }
+
+  char fator_rh_;
+  std::cout << " Qual o fator rh do funcionario" << std::endl;
+  std::cin >> fator_rh_; std::cin.ignore();
+
+  while(fator_rh_ != '-' &&
+        fator_rh_ != '+')
+        {
+          std::cout << "Entrada invalida, digite novamente\n";
+          std::cout << " Qual o fator rh do funcionario" << std::endl;
+          std::cin >> fator_rh_; std::cin.ignore();
+        }
+
+  std::string especialidade_;
+  std::cout << " Qual a especialidade do funcionario" << std::endl;
+  std::cin >> especialidade_; std::cin.ignore();
+
+  if(funcao_ == 1 ){
+      std::string crmv_;
+      std::cout << " Qual o crmv do funcionario" << std::endl;
+      std::cin >> crmv_; std::cin.ignore();
+      Veterinario * funcionario = new Veterinario(  id_,
+                                                    nome_,
+                                                    cpf_,
+                                                    idade_,
+                                                    tipo_sanguineo_,
+                                                    fator_rh_,
+                                                    especialidade_,
+                                                    crmv_);
+    inserirFuncionario(funcionario);
+  }
+
+  if(funcao_ == 2){
+    int nivel_de_seguranca_;
+    std::cout << " Qual o nivel de segurança do funcionario" << std::endl;
+    std::cin >> nivel_de_seguranca_; std::cin.ignore();
+
+    while(nivel_de_seguranca_ != 0 &&
+          nivel_de_seguranca_ != 1 &&
+         nivel_de_seguranca_ != 2)
+         {
+           std::cout << "Entrada invalida, digite novamente\n";
+           std::cout << " Qual o nivel de segurança do funcionario" << std::endl;
+           std::cin >> nivel_de_seguranca_; std::cin.ignore();
+          }
+    Tratador * funcionario = new Tratador(  id_,
+                                            nome_,
+                                            cpf_,
+                                            idade_,
+                                            tipo_sanguineo_,
+                                            fator_rh_,
+                                            especialidade_,
+                                            nivel_de_seguranca_);
+    inserirFuncionario(funcionario);
+  }
+
+}
+
 
 void System::inserirAnimal(){
 
@@ -192,11 +316,8 @@ void System::inserirAnimalDigitando(){
 
 }
 
-void System::inserirAnimalViaArquivoCSV(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
-}
 
-void System::inserirFuncionarioDigitando(){
+void System::inserirAnimalViaArquivoCSV(){
   std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
 }
 

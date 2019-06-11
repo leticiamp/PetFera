@@ -14,6 +14,7 @@
 #include "funcionario.h"
 
 Funcionario::Funcionario(int id_,
+						std::string funcao_,
 						std::string nome_,
 						std::string cpf_,
 						short idade_,
@@ -21,6 +22,7 @@ Funcionario::Funcionario(int id_,
 						char fator_rh_,
 						std::string especialidade_):
 	m_id(id_),
+	m_funcao(funcao_),
 	m_nome(nome_),
 	m_cpf(cpf_),
 	m_idade(idade_),
@@ -39,6 +41,11 @@ MÉTODOS GETTERS
 int
 Funcionario::getId(){
 	return this->m_id;
+}
+
+std::string
+Funcionario::getFuncao(){
+	return this->m_funcao;
 }
 
 std::string

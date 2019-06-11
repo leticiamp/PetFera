@@ -14,7 +14,7 @@
 #include "tratador.h"
 
 Tratador::Tratador(int id_,
-				 std::string nome_,
+			   std::string nome_,
 				 std::string cpf_,
 				 short idade_,
 				 std::string tipo_sanguineo_,
@@ -22,6 +22,7 @@ Tratador::Tratador(int id_,
 				 std::string especialidade_,
 				 int nivel_de_seguranca_):
 	Funcionario(id_,
+							"Tratador",
 					 		nome_,
 					 		cpf_,
 					 		idade_,
@@ -45,6 +46,7 @@ void Tratador::setNivel_de_Seguranca(int nivel_de_seguranca_){
 // Imprime
 std::ostream& Tratador::print(std::ostream& os)const{
 		os 	<<"ID : " 						<< m_id 								<< std::endl
+				<<"Funcao : "					<< m_funcao 						<< std::endl
 				<<"Name : " 					<< m_nome 							<< std::endl
 				<<"CPF : " 						<< m_cpf					  		<< std::endl
 				<<"AGE : " 						<< m_idade	 						<< std::endl

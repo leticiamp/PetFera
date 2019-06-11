@@ -20,6 +20,7 @@ class Funcionario{
 
 	protected:
 		int m_id;
+		std::string m_funcao;
 		std::string m_nome;
 		std::string m_cpf;
 		short m_idade;
@@ -29,6 +30,7 @@ class Funcionario{
 
 	public:
 		Funcionario(int id_,
+								std::string funcao_,
 								std::string nome_,
 								std::string cpf_,
 								short idade_,
@@ -40,6 +42,7 @@ class Funcionario{
 
 		//get's
 		int getId();
+		std::string getFuncao();
 		std::string getNome();
 		std::string getCpf();
 		short getIdade();

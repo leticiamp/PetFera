@@ -23,6 +23,7 @@ Veterinario::Veterinario(int id_,
 				 std::string especialidade_,
 			 	 std::string crmv_):
 	Funcionario(id_,
+							"Veterinario",
 					 		nome_,
 					 		cpf_,
 					 		idade_,
@@ -48,6 +49,7 @@ Veterinario::set_crmv(std::string crmv_){
 //imprime
 std::ostream& Veterinario::print(std::ostream& os)const{
 		os 	<<"ID : " 						<< m_id 								<< std::endl
+				<<"Funcao : "					<< m_funcao 						<< std::endl
 				<<"Name : " 					<< m_nome 							<< std::endl
 				<<"CPF : " 						<< m_cpf					  		<< std::endl
 				<<"AGE : " 						<< m_idade	 						<< std::endl
