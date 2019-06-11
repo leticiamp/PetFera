@@ -43,7 +43,7 @@ MamiferoNat::~MamiferoNat(){}
 
 
 std::ostream& MamiferoNat::print(std::ostream& os)const{
-	os <<"ID : " 						  					<< m_id 								<< std::endl
+	os  <<"ID : " 						  					<< m_id 								<< std::endl
 		<< "Classe : " 										<< m_classe 						<< std::endl
 		<< "Nome Cientifico : "						<< m_nome_cientifico 		<< std::endl
 		<< "Sexo : " 											<< m_sexo 							<< std::endl

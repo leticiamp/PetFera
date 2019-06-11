@@ -10,6 +10,7 @@
 */
 
 #include <string>
+#include <fstream>
 #include "system.h"
 
 
@@ -39,7 +40,7 @@ void System::listarAnimaisNaTela(string guia_){
 }
 
 void System::listarAnimaisEmArquivoCSV(string guia_){
-  std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
+  this->inserirAnimal();
 }
     
 void System::listarAnimaisComFiltroNaTela(string guia_){
@@ -93,17 +94,90 @@ void System::inserirFuncionario(Funcionario * funcionario){
   this->mymapF.insert(std::pair<int, Funcionario *>(funcionario->getId(),funcionario));
 }
 
-void System::inserirAnimal(Animal * animal){
-  if( mymapA.find(animal->getId()) != mymapA.end()){
-    std::cout << "\n Erro. Id já existe!" << std::endl;
-    return;
-  }
-  this->mymapA.insert(std::pair<int, Animal*>(animal->getId(), animal));
+void System::inserirAnimal(){
+    
+    if (m_totalDeAnimais < MAXIMO_DE_ANIMAIS){
+    std::string nomeDoArquivo;
+    cout << " Qual é o nome do arquivo CSV com os dados dos novos animais? " << endl;
+    cin >> nomeDoArquivo; cin.ignore();
+
+    ifstream fileI; // Cria arquivo de entrada da dados.
+    string lineAnimal; // Cria linha para armazenar linha-a-linha o texto do arquivo.
+    fileI.open(nomeDoArquivo); //Abre o arquivo já existente no diretório.
+
+    if(fileI.is_open()){//Verifica se o arquivo está aberto.
+      while(getline(fileI, lineAnimal)){
+        /*
+        if( mymapA.find(animal->getId()) != mymapA.end()){
+          std::cout << "\n Erro. Id já existe!" << std::endl;
+          return;
+        }
+        //this->mymapA.insert(std::pair<int, Animal*>(arquivo->begin(), animal));          
+        /*
+        mymapA.insert(std::pair<int, Animal*>(animal->getId(), Animal(
+                          id_,
+                          classe_,
+                          nome_cientifico_,
+                          sexo_,
+                          tamanho_,
+                          dieta_,
+                          veterinario_,
+                          tratador_,
+                          nome_batismo_,
+                          mudas_,
+                          pais_origem_,
+                          cidade_origem_,
+                          auto_ibama_)));
+        */
+        cout << lineAnimal << endl;
+      }
+      fileI.close();
+    }else{
+      cout << " Não foi possível abrir o arquivo! " << endl;
+    }
+    }
 
 }
 
 void System::inserirAnimalDigitando(string guia_){
   std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
+
+  /*
+      int id_;
+    cout << " Qual o número idenficador do animal a ser inserido? " << endl;
+    cin >> id_; cin.ignore();
+
+    std::string classe_;
+    cout << " Qual a classe do animal (Ave, Reptil, Mamifero ou Anfíbio)? " << endl;
+    cin >> classe_; cin.ignore();
+
+    std::string nome_cientifico_;
+    cout << " Qual o nome científico do animal? " << endl;
+    cin >> nome_cientifico_; cin.ignore();
+
+    char sexo_;
+    cout << " Qual o sexo do animal? (Digite 1 para macho e 2 para fêmea)" << endl;
+    cin >> sexo_; cin.ignore();
+
+    double tamanho_;
+    cout << " Qual o tamanho do animal? (em centímentros)" << endl;
+    cin >> tamanho_; cin.ignore();
+
+    std::string dieta_;
+    cout << " Qual a dieta do animal? " << endl;
+    cin >> dieta_; cin.ignore();
+
+  
+    animais->insert(pair<int, Animal>(id_, Animal(
+                          id_,
+                          classe_,
+                          nome_cientifico_,
+                          sexo_,
+                          tamanho_,
+                          dieta_)));
+  }
+  */
+
 }
 
 void System::inserirAnimalViaArquivoCSV(string guia_){
@@ -144,6 +218,30 @@ void System::consultaAnimaisDoTratador(int Id){
 
 void System::excluiAnimal(int Id){
   this->mymapA.erase(Id);
+  /*  int id;
+  cout << " Qual o número idenficador do animal a ser removido? " << endl;
+  cin >> id; cin.ignore();
+  
+  fstream file;
+  std::string lineAnimal;
+  file.open("Lista_De_Animais.csv", fstream::in|fstream::out|fstream::trunc);
+
+  if(file.is_open()){ // Verifica se está aberto.
+    animais->erase(id);
+    file << "\n\n Esse cadastro possui " << m_totalDeAnimais << " animais cadastrados."
+     << "\n" << "\n=============================================" 
+     << "\n Lista de animais cadastradas: \n\n";
+  }else{
+    cout << "Não foi possível abrir o arquivo!";
+  }
+  map<int, Animal>::iterator it;
+  for (it = animais->begin(); it != animais->end(); ++it) // Impressao dos valores no mapa
+  file << it->first << ";" << it->second << endl;
+  }
+
+  m_totalDeAnimais--;
+  cout << " Animal excluído com sucesso!" << endl;
+*/
 }
 
 void System::excluiFuncionario(int Id){

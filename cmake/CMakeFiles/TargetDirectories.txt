@@ -1,0 +1,3 @@
+/home/odilonjulio/Projeto-LPI/cmake/CMakeFiles/rebuild_cache.dir
+/home/odilonjulio/Projeto-LPI/cmake/CMakeFiles/main.dir
+/home/odilonjulio/Projeto-LPI/cmake/CMakeFiles/edit_cache.dir

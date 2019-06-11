@@ -31,10 +31,17 @@
 #include "reptilExotico.h"
 #include "reptilNativo.h"
 
+#define MAXIMO_DE_ANIMAIS 50
+#define MAXIMO_DE_FUNCIONARIOS 50 
+
+
 class System{
   private:
     std::map<int,Funcionario*> mymapF;
-    std::map<int, Animal*> mymapA;
+    std::map<int,Animal*> mymapA;
+
+    int m_totalDeAnimais = 0;
+    int m_totalDeEmpresas = 0;
   public:
     System();
     ~System();
@@ -60,7 +67,7 @@ class System{
     void inserirFuncionarioDigitando(string guia_);
     void inserirFuncionarioViaArquivoCSV(string guia_);
 
-    void inserirAnimal(Animal * animal);
+    void inserirAnimal(/*Animal * animal*/);
     void inserirAnimalDigitando(string guia_);
     void inserirAnimalViaArquivoCSV(string guia_);
 
