@@ -32,7 +32,7 @@
 #include "reptilNativo.h"
 
 #define MAXIMO_DE_ANIMAIS 50
-#define MAXIMO_DE_FUNCIONARIOS 50 
+#define MAXIMO_DE_FUNCIONARIOS 50
 
 
 class System{
@@ -40,36 +40,29 @@ class System{
     std::map<int,Funcionario*> mymapF;
     std::map<int,Animal*> mymapA;
 
-    int m_totalDeAnimais = 0;
-    int m_totalDeEmpresas = 0;
   public:
     System();
     ~System();
 
-    void menuInicial(string guia_);
-    void printMenuInicial(string guia_);
+    void listarAnimaisNaTela();
+    void listarAnimaisEmArquivoCSV();
+    void listarAnimaisComFiltroNaTela();
+    void listarAnimaisComFiltroEmArquivoCSV();
 
-    void listarAnimais(string guia_);
-    void listarAnimaisNaTela(string guia_);
-    void listarAnimaisEmArquivoCSV(string guia_);
-    void listarAnimaisComFiltroNaTela(string guia_);
-    void listarAnimaisComFiltroEmArquivoCSV(string guia_);
-
-    void listarFuncionarios(string guia_);
-    void listarFuncionariosNaTela(string guia_);
-    void listarFuncionariosEmArquivoCSV(string guia_);
-    void listarFuncionariosComFiltroNaTela(string guia_);
-    void listarFuncionariosComFiltroEmArquivoCSV(string guia_);
+    void listarFuncionariosNaTela();
+    void listarFuncionariosEmArquivoCSV();
+    void listarFuncionariosComFiltroNaTela();
+    void listarFuncionariosComFiltroEmArquivoCSV();
 
     void inserirFuncionario(Tratador * funcionario);
     void inserirFuncionario(Veterinario * funcionario);
     void inserirFuncionario(Funcionario * funcionario);
-    void inserirFuncionarioDigitando(string guia_);
-    void inserirFuncionarioViaArquivoCSV(string guia_);
+    void inserirFuncionarioDigitando();
+    void inserirFuncionarioViaArquivoCSV();
 
     void inserirAnimal(/*Animal * animal*/);
-    void inserirAnimalDigitando(string guia_);
-    void inserirAnimalViaArquivoCSV(string guia_);
+    void inserirAnimalDigitando();
+    void inserirAnimalViaArquivoCSV();
 
 
     Tratador * consultaTratador(int Id);
@@ -79,25 +72,27 @@ class System{
     void excluiAnimal(int Id);
     void excluiFuncionario(int Id);
 
-    void printMenuListar1(string guia_);
-    void printMenuListar12(string guia_);
-    void printMenuListar13(string guia_);
+    void MenuInicial();
 
-    void printMenuInserir1(string guia_);
-    void printMenuInserir12(string guia_);
-    void printMenuInserir13(string guia_);
+    void printMenuListar1();
+    void printMenuListar1_1();
+    void printMenuListar1_2();
 
-    void printMenuRemover1(string guia_);
-    void printMenuRemover12(string guia_);
-    void printMenuRemover13(string guia_);
+    void printMenuInserir1();
+    void printMenuInserir1_1();
+    void printMenuInserir1_2();
 
-    void printMenuPesquisar1(string guia_);
-    void printMenuPesquisar12(string guia_);
-    void printMenuPesquisar13(string guia_);
+    void printMenuRemover1();
+    void printMenuRemover1_1();
+    void printMenuRemover1_2();
 
-    void printMenuEditar1(string guia_);
-    void printMenuEditar12(string guia_);
-    void printMenuEditar13(string guia_);
+    void printMenuPesquisar1();
+    void printMenuPesquisar1_1();
+    void printMenuPesquisar1_2();
+
+    void printMenuEditar1();
+    void printMenuEditar1_1();
+    void printMenuEditar1_2();
 
 
 };
