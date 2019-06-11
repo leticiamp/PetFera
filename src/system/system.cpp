@@ -31,8 +31,19 @@ void System::listarAnimaisNaTela(){
 }
 
 void System::listarAnimaisEmArquivoCSV(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n "<< endl;
-  //this->inserirAnimal();
+  //std::cout << " \n FALTA IMPLEMENTAR!\n "<< endl;
+  std::string nomeDoArquivo;
+  cout << " Qual é o nome do arquivo CSV com os dados dos novos animais? " << endl;
+  cin >> nomeDoArquivo; cin.ignore();
+  ifstream fileI; // Cria arquivo de entrada da dados.
+  string lineAnimal; // Cria linha para armazenar linha-a-linha o texto do arquivo.
+  fileI.open(nomeDoArquivo); //Abre o arquivo já existente no diretório.
+  /* if(fileI.is_open()){
+     while(getline(fileI, lineAnimal){
+
+     }
+  }
+  */
 }
 
 void System::listarAnimaisComFiltroNaTela(){
