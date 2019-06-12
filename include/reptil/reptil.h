@@ -31,6 +31,7 @@ class Reptil : public Animal{
 						Veterinario * veterinario_,
 						Tratador * tratador_,
 						std::string nome_batismo_,
+						std::string naturalidade_,
 					  bool venenoso_,
 						std::string tipo_veneno_);
 		~Reptil();

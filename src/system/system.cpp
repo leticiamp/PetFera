@@ -39,19 +39,7 @@ void System::listarAnimaisNaTela(){
 }
 
 void System::listarAnimaisEmArquivoCSV(){
-  //std::cout << " \n FALTA IMPLEMENTAR!\n "<< endl;
-  std::string nomeDoArquivo;
-  cout << " Qual é o nome do arquivo CSV com os dados dos novos animais? " << endl;
-  cin >> nomeDoArquivo; cin.ignore();
-  ifstream fileI; // Cria arquivo de entrada da dados.
-  string lineAnimal; // Cria linha para armazenar linha-a-linha o texto do arquivo.
-  fileI.open(nomeDoArquivo); //Abre o arquivo já existente no diretório.
-  /* if(fileI.is_open()){
-     while(getline(fileI, lineAnimal){
-
-     }
-  }
-  */
+  std::cout << " \n FALTA IMPLEMENTAR!\n "<< endl;
 }
 
 void System::listarAnimaisComFiltroNaTela(){
@@ -89,7 +77,6 @@ void System::listarFuncionariosComFiltroEmArquivoCSV(){
 
 
 //Metodos de inserção
-
 
 
 void System::inserirFuncionario(Tratador * funcionario){
@@ -230,89 +217,446 @@ void System::inserirFuncionarioDigitando(){
 }
 
 
-void System::inserirAnimal(){
 
-//    if (m_totalDeAnimais < MAXIMO_DE_ANIMAIS){
-    std::string nomeDoArquivo;
-    cout << " Qual é o nome do arquivo CSV com os dados dos novos animais? " << endl;
-    cin >> nomeDoArquivo; cin.ignore();
+void System::inserirAnimalMymapA(AveExo * animal){
+  if( mymapA.find(animal->getId()) != mymapA.end()){
+    std::cout << "\n Erro. Id já existe!" << std::endl;
+    return;
+  }
+  this->mymapA.insert(std::pair<int, AveExo*>(animal->getId(),animal));
+}
 
-    ifstream fileI; // Cria arquivo de entrada da dados.
-    string lineAnimal; // Cria linha para armazenar linha-a-linha o texto do arquivo.
-    fileI.open(nomeDoArquivo); //Abre o arquivo já existente no diretório.
+void System::inserirAnimalMymapA(AveNat * animal){
+  if( mymapA.find(animal->getId()) != mymapA.end()){
+    std::cout << "\n Erro. Id já existe!" << std::endl;
+    return;
+  }
+  this->mymapA.insert(std::pair<int, AveNat*>(animal->getId(),animal));
+}
 
-    if(fileI.is_open()){//Verifica se o arquivo está aberto.
-      while(getline(fileI, lineAnimal)){
-        /*
-        if( mymapA.find(animal->getId()) != mymapA.end()){
-          std::cout << "\n Erro. Id já existe!" << std::endl;
-          return;
-        }
-        //this->mymapA.insert(std::pair<int, Animal*>(arquivo->begin(), animal));
-        /*
-        mymapA.insert(std::pair<int, Animal*>(animal->getId(), Animal(
-                          id_,
-                          classe_,
-                          nome_cientifico_,
-                          sexo_,
-                          tamanho_,
-                          dieta_,
-                          veterinario_,
-                          tratador_,
-                          nome_batismo_,
-                          mudas_,
-                          pais_origem_,
-                          cidade_origem_,
-                          auto_ibama_)));
-        */
-        cout << lineAnimal << endl;
-      }
-      fileI.close();
-    }else{
-      cout << " Não foi possível abrir o arquivo! " << endl;
-    }
-//    }
+void System::inserirAnimalMymapA(ReptilExo * animal){
+  if( mymapA.find(animal->getId()) != mymapA.end()){
+    std::cout << "\n Erro. Id já existe!" << std::endl;
+    return;
+  }
+  this->mymapA.insert(std::pair<int, ReptilExo*>(animal->getId(),animal));
+}
+
+void System::inserirAnimalMymapA(ReptilNat * animal){
+  if( mymapA.find(animal->getId()) != mymapA.end()){
+    std::cout << "\n Erro. Id já existe!" << std::endl;
+    return;
+  }
+  this->mymapA.insert(std::pair<int, ReptilNat*>(animal->getId(),animal));
+}
+
+void System::inserirAnimalMymapA(MamiferoExo * animal){
+  if( mymapA.find(animal->getId()) != mymapA.end()){
+    std::cout << "\n Erro. Id já existe!" << std::endl;
+    return;
+  }
+  this->mymapA.insert(std::pair<int, MamiferoExo*>(animal->getId(),animal));
 
 }
 
+void System::inserirAnimalMymapA(MamiferoNat * animal){
+  if( mymapA.find(animal->getId()) != mymapA.end()){
+    std::cout << "\n Erro. Id já existe!" << std::endl;
+    return;
+  }
+  this->mymapA.insert(std::pair<int, MamiferoNat*>(animal->getId(),animal));
+
+}
+
+void System::inserirAnimalMymapA(AnfibioExo * animal){
+  if( mymapA.find(animal->getId()) != mymapA.end()){
+    std::cout << "\n Erro. Id já existe!" << std::endl;
+    return;
+  }
+  this->mymapA.insert(std::pair<int, AnfibioExo*>(animal->getId(),animal));
+
+}
+
+void System::inserirAnimalMymapA(AnfibioNat * animal){
+  if( mymapA.find(animal->getId()) != mymapA.end()){
+    std::cout << "\n Erro. Id já existe!" << std::endl;
+    return;
+  }
+  this->mymapA.insert(std::pair<int, AnfibioNat*>(animal->getId(),animal));
+
+}
+
+
+
+void System::infoAnimalId(int &id_){
+
+  //Pergunta o ID do animal
+  std::cout << " Qual o número idenficador do animal a ser inserido? " << std::endl;
+  std::cin >> id_; std::cin.ignore();
+
+  // Testando se Id existencia no mymapA
+  while(this->mymapA.find(id_) != this->mymapA.end()){
+      system("clear");
+      std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                << " Qual o número idenficador do animal a ser inserido?" << std::endl;
+      std::cin  >> id_;
+      std::cin.ignore();
+  }
+  system("clear");
+}
+
+void System::infoAnimalClasse(std::string &classe_){
+
+  std::cout << "Qual a classe do animal Ave, Reptil, Mamifero ou Anfibio?"
+            << std::endl;
+  std::cin  >> classe_;
+  std::cin.ignore();
+
+  while(classe_ != "Ave" && classe_ != "Anfibio"  &&
+        classe_ != "Mamifero" && classe_ != "Reptil")
+    {
+      system("clear");
+      std::cout << "++++++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                << "Qual a classe do animal Ave, Reptil, Mamifero ou Anfibio?"
+                << std::endl;
+      std::cin  >> classe_;
+      std::cin.ignore();
+    }
+    system("clear");
+}
+
+void System::infoAnimalNaturalidade(std::string &naturalidade_){
+  std::cout << "Qual a naturalidade do animal ? Exotico ou Nativo"
+            << std::endl;
+  std::cin  >> naturalidade_;
+  std::cin.ignore();
+
+  while(naturalidade_ != "Exotico" && naturalidade_ != "Nativo")
+    {
+      system("clear");
+      std::cout << "++++++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                << "Qual a naturalidade do animal ? Exotico ou Nativo"
+                << std::endl;
+      std::cin  >> naturalidade_;
+      std::cin.ignore();
+    }
+    system("clear");
+}
+
+void System::infoAnimalNomeCientifico(string &nome_cientifico_){
+  //Pergunta nome Cientifico
+  std::cout << " Qual o nome científico do animal? " << std::endl;
+  std::cin >> nome_cientifico_; std::cin.ignore();
+  system("clear");
+}
+
+void System::infoAnimalSexo(char &sexo_){
+  //Pergunta sexo do animal
+  std::cout << " Qual o sexo do animal? (Digite M para macho e F para fêmea)" << std::endl;
+  std::cin  >> sexo_;
+  std::cin.ignore();
+
+  //Tratamento de entrada só deixa passar M ou F
+  while(sexo_ != 'M' && sexo_ != 'F')
+        {
+          system("clear");
+          std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                    << "Qual o sexo do animal ? \n"
+                    << "Digite M para o sexo Masculino e F para o sexo Feminino : ";
+          std::cin >> sexo_;
+          std::cin.ignore();
+        }
+  system("clear");
+}
+
+
+
+void System::infoMaiorQZero(double &generico, std::string os){
+  std::cout << os << std::endl;
+  std::cin >> generico;
+  std::cin.ignore();
+
+  while(generico < 0)
+        {
+          std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                    << os << std::endl;
+          std::cin >> generico;
+          std::cin.ignore();
+        }
+  system("clear");
+}
+
+void System::infoMaiorQZero(int &generico, std::string os){
+  std::cout << os << std::endl;
+  std::cin >> generico;
+  std::cin.ignore();
+
+  while(generico < 0)
+        {
+          std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                    << os << std::endl;
+          std::cin >> generico;
+          std::cin.ignore();
+        }
+  system("clear");
+}
+
+void System::infoString(std::string &generico, std::string os){
+  //Função generica que recebe dois parametros string
+  // onde "os" esta com a pergunta a ser respondida no
+  // genericos
+  std::cout <<  os << std::endl;
+  std::cin >> generico;
+  std::cin.ignore();
+
+  system("clear");
+}
+
+void System::boolReptilVenenoso(bool &venenoso_){
+  //Pergunta se o animal é venenoso ou não
+  int aux;
+  std::cout << " O animal é venenoso ? Digite 1 para sim e 0 para não"
+            << std::endl;
+  std::cin  >> aux;
+  std::cin.ignore();
+
+  while(aux != 1 && aux != 0)
+        {
+          system("clear");
+          std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                    << " O animal é venenoso ? Digite 1 para sim e 0 para não"
+                    << std::endl;
+          std::cin >> aux;
+          std::cin.ignore();
+        }
+
+  venenoso_ = aux;
+  system("clear");
+}
+
+
+
 void System::inserirAnimalDigitando(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
+/*  //Condição de parada, se nao existir funcionarios
+  if(mymapF.size() == 0){
+    std::cout << " Não existem funcionarios para cuidar dos animais\n" << std::endl;
+    return;
+  }
+*/
+  std::string classe_; // Classe do animal
+  infoAnimalClasse(classe_); //Pergunta a classe do animal
 
-  /*
-      int id_;
-    cout << " Qual o número idenficador do animal a ser inserido? " << endl;
-    cin >> id_; cin.ignore();
+  std::string naturalidade_;// naturalidade do animal (Exotico ou Nativo)
+  infoAnimalNaturalidade(naturalidade_); // Perguntando a naturalidade do animal
 
-    std::string classe_;
-    cout << " Qual a classe do animal (Ave, Reptil, Mamifero ou Anfíbio)? " << endl;
-    cin >> classe_; cin.ignore();
+  int id_; //Id do animal
+  infoAnimalId(id_); // Perguntando a classe do animal
 
-    std::string nome_cientifico_;
-    cout << " Qual o nome científico do animal? " << endl;
-    cin >> nome_cientifico_; cin.ignore();
+  std::string nome_cientifico_; //Nome Cientifico do animal
+  infoAnimalNomeCientifico(nome_cientifico_); // Perguntando o nome Cienficio do animal
 
-    char sexo_;
-    cout << " Qual o sexo do animal? (Digite 1 para macho e 2 para fêmea)" << endl;
-    cin >> sexo_; cin.ignore();
+  char sexo_; // Sexo do animal
+  infoAnimalSexo(sexo_); // Perguntando o sexo do animal
 
-    double tamanho_;
-    cout << " Qual o tamanho do animal? (em centímentros)" << endl;
-    cin >> tamanho_; cin.ignore();
+  double tamanho_; // Tamanho do animal
+  //perguntando o tamanho do animal
+  infoMaiorQZero(tamanho_, "Qual o tamanho do animal? (em centímentros)");
 
-    std::string dieta_;
-    cout << " Qual a dieta do animal? " << endl;
-    cin >> dieta_; cin.ignore();
+  std::string dieta_; //Dieta do animal
+  infoString(dieta_, "Qual a dieta do animal?" ); // Perguntando a dieta do animal
 
+  std::string nome_batismo_; // Nome do animal
+  //Perguntando nome do animal
+  infoString(nome_batismo_, "Qual o nome de batismo do animal?" );
 
-    animais->insert(pair<int, Animal>(id_, Animal(
-                          id_,
-                          classe_,
-                          nome_cientifico_,
-                          sexo_,
-                          tamanho_,
-                          dieta_)));
+  std::string auto_ibama_; // autorização do ibama do animal
+  //perguntando autorização do ibama do animal
+  infoString(auto_ibama_, "Qual a autorização do ibama do animal?");
+
+  Veterinario * veterinario_ = nullptr;
+  Tratador * tratador_ = nullptr;
+
+  //Condição de parada sem funcionario cuidador
+  /*  if(veterinario_ == nullptr && tratador_ == nullptr){
+    std::cout << " Não foram atralados funcionarios para cuidar dos animais\n" << std::endl;
+    delete veterinario_;
+    delete tratador_;
+    return;
   }
   */
+
+  //Declaração das variaveis
+  double tamanho_do_bico_cm_; // Caracteristica de Ave
+  double envergadura_das_asas_; // Caracteristica de Ave
+  int mudas_; // Caracteristica de Anfibio
+  std::string cor_pelo_; //Caracteristica de Mamifero
+  bool venenoso_; // Caracteristica de Reptil
+  std::string tipo_veneno_; // Caracteristica de Reptil
+  std::string pais_origem_; // Caracteristica de animal exotico
+  std::string cidade_origem_; // Caracteristica de animal exotico
+  std::string uf_origem_; //Caracteristica de animal nativo
+
+  if(classe_ == "Ave"){
+    infoMaiorQZero(tamanho_do_bico_cm_,
+          "Qual o tamanho do bico do animal? (em centímentros)");
+    infoMaiorQZero(envergadura_das_asas_,
+        "Qual o tamanho da envergadura das asas do animal? (em centímentros)");
+  }
+  else if(classe_ == "Mamifero"){
+    infoString(cor_pelo_,"Qual a cor do pelo do animal?");
+  }
+  else if(classe_ == "Reptil"){
+    boolReptilVenenoso(venenoso_);
+    if(venenoso_){
+      infoString(tipo_veneno_, "Qual o tipo de veneno do animal?");
+    }
+    else{
+      tipo_veneno_ = "Não venenoso";
+    }
+  }else if(classe_ == "Anfibio"){
+    infoMaiorQZero(mudas_, "Qual a quantidade de mudas do animal?");
+  }
+
+  if(naturalidade_ == "Exotico"){
+    infoString(pais_origem_, "Qual o pais de origem do animal?");
+    infoString(cidade_origem_, "Qual a cidade de origem do animal?");
+  }
+  else if( naturalidade_ == "Nativo"){
+    infoString(uf_origem_, "Qual o Uf origem do animal?");
+  }
+
+
+
+  if(classe_ == "Ave" && naturalidade_ == "Exotico"){
+    AveExo * animal = new AveExo(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  tamanho_do_bico_cm_,
+                                  envergadura_das_asas_,
+                                  pais_origem_,
+                                  cidade_origem_,
+                                  auto_ibama_);
+    inserirAnimalMymapA(animal);
+  }
+  if(classe_ == "Mamifero" && naturalidade_ == "Exotico"){
+    MamiferoExo * animal = new MamiferoExo(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  cor_pelo_,
+                                  pais_origem_,
+                                  cidade_origem_,
+                                  auto_ibama_);
+    inserirAnimalMymapA(animal);
+  }
+  if(classe_ == "Reptil" && naturalidade_ == "Exotico"){
+    ReptilExo * animal = new ReptilExo(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  venenoso_,
+                                  tipo_veneno_,
+                                  pais_origem_,
+                                  cidade_origem_,
+                                  auto_ibama_);
+    inserirAnimalMymapA(animal);
+  }
+  if(classe_ == "Anfibio" && naturalidade_ == "Exotico"){
+    AnfibioExo * animal = new AnfibioExo(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  mudas_,
+                                  pais_origem_,
+                                  cidade_origem_,
+                                  auto_ibama_);
+    inserirAnimalMymapA(animal);
+  }
+
+
+  if(classe_ == "Ave" && naturalidade_ == "Nativo"){
+    AveNat * animal = new AveNat  (id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  tamanho_do_bico_cm_,
+                                  envergadura_das_asas_,
+                                  uf_origem_,
+                                  auto_ibama_);
+    inserirAnimalMymapA(animal);
+  }
+  if(classe_ == "Mamifero" && naturalidade_ == "Nativo"){
+    MamiferoNat * animal = new MamiferoNat(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  cor_pelo_,
+                                  uf_origem_,
+                                  auto_ibama_);
+    inserirAnimalMymapA(animal);
+  }
+  if(classe_ == "Reptil" && naturalidade_ == "Nativo"){
+    ReptilNat * animal = new ReptilNat(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  venenoso_,
+                                  tipo_veneno_,
+                                  uf_origem_,
+                                  auto_ibama_);
+    inserirAnimalMymapA(animal);
+  }
+  if(classe_ == "Anfibio" && naturalidade_ == "Nativo"){
+    AnfibioNat * animal = new AnfibioNat(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  mudas_,
+                                  uf_origem_,
+                                  auto_ibama_);
+    inserirAnimalMymapA(animal);
+  }
 
 }
 
@@ -330,7 +674,6 @@ void System::inserirFuncionarioViaArquivoCSV(){
 Tratador * System::consultaTratador(int Id){
   return (dynamic_cast<Tratador*>(mymapF.find(Id)->second));
 }
-
 
 Veterinario * System::consultaVeterinario(int Id){
   return (dynamic_cast<Veterinario*>(mymapF.find(Id)->second));
@@ -351,36 +694,11 @@ void System::consultaAnimaisDoTratador(int Id){
 
 void System::excluiAnimal(int Id){
   this->mymapA.erase(Id);
-  /*  int id;
-  cout << " Qual o número idenficador do animal a ser removido? " << endl;
-  cin >> id; cin.ignore();
-
-  fstream file;
-  std::string lineAnimal;
-  file.open("Lista_De_Animais.csv", fstream::in|fstream::out|fstream::trunc);
-
-  if(file.is_open()){ // Verifica se está aberto.
-    animais->erase(id);
-    file << "\n\n Esse cadastro possui " << m_totalDeAnimais << " animais cadastrados."
-     << "\n" << "\n============================================="
-     << "\n Lista de animais cadastradas: \n\n";
-  }else{
-    cout << "Não foi possível abrir o arquivo!";
-  }
-  map<int, Animal>::iterator it;
-  for (it = animais->begin(); it != animais->end(); ++it) // Impressao dos valores no mapa
-  file << it->first << ";" << it->second << endl;
-  }
-
-  m_totalDeAnimais--;
-  cout << " Animal excluído com sucesso!" << endl;
-*/
 }
 
 void System::excluiFuncionario(int Id){
   this->mymapF.erase(Id);
 }
-
 
 //Menus
 
@@ -388,10 +706,6 @@ void System::MenuInicial(){
   int alternativa = -1;
   do{
       std::cout  << "\n\n"
-                 << " ++++++++++++++++++++++++++++++++++++++++++++ \n"
-                 << " ++++++++++ BEM-VINDO AO PETFERA ++++++++++++ \n"
-                 << " ++++++++++++++++++++++++++++++++++++++++++++ \n"
-                 << "\n\n"
                  << " +++++++++++++ MENU PRINCIPAL++++++++++++++++ \n"
                  << "\n\n"
                  << " Escolha uma das seguintes alternativas abaixo: \n"
@@ -427,7 +741,8 @@ void System::MenuInicial(){
           system("clear");
           printMenuEditar1(); // Menu Inicial >> Editar
           break;
-        case 0 : // Nenhuma ação. Somente sai do menu.
+        case 0 : // Salva em arquivo CSV e sai do menu.
+          //Função a implementar
           break;
         default:
           system("clear");
@@ -466,7 +781,7 @@ void System::printMenuListar1(){
           std::cout << " \n\n Alternativa inválida! Tente outra vez.\n\n" << std::endl;
       }
   } while (alternativa != 0);
-}
+} // ok
 
 void System::printMenuListar1_1(){
   int alternativa = -1;
@@ -580,7 +895,7 @@ void System::printMenuInserir1(){
           std::cout << " \n\n Alternativa inválida! Tente outra vez.\n\n" << std::endl;
       }
   } while (alternativa != 0);
-}
+} // ok
 
 void System::printMenuInserir1_1(){
   int alternativa = -1;
@@ -604,7 +919,7 @@ void System::printMenuInserir1_1(){
           system("clear");
           inserirAnimalViaArquivoCSV(); // Menu Inicial >> Inserir >> Animais >> Arquivo CSV
           break;
-        case 9 : // Nenhuma ação. Somente sai do menu.
+        case 0 : // Nenhuma ação. Somente sai do menu.
           break;
         default:
           system("clear");
@@ -673,7 +988,7 @@ void System::printMenuRemover1(){
           std::cout << " \n\n Alternativa inválida! Tente outra vez.\n\n" << std::endl;
       }
   } while (alternativa != 0);
-}
+} // ok
 
 void System::printMenuRemover1_1(){
   int alternativa = -1;
@@ -695,7 +1010,7 @@ void System::printMenuRemover1_1(){
       std::cin   >> alternativa; std::cin.ignore();
 
   } while (alternativa != 0);
-}
+} // ok
 
 void System::printMenuRemover1_2(){
   int alternativa = -1;
@@ -718,7 +1033,7 @@ void System::printMenuRemover1_2(){
       std::cin   >> alternativa; std::cin.ignore();
 
   } while (alternativa != 0);
-}
+} // ok
 
 void System::printMenuPesquisar1(){
 

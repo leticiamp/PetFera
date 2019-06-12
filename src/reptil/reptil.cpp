@@ -22,6 +22,7 @@ Reptil::Reptil(int id_,
         Veterinario * veterinario_,
         Tratador * tratador_,
         std::string nome_batismo_,
+        std::string naturalidade_,
         bool venenoso_,
         std::string tipo_veneno_):
       Animal(	id_,
@@ -32,7 +33,8 @@ Reptil::Reptil(int id_,
                 dieta_,
                 veterinario_,
                 tratador_,
-                nome_batismo_),
+                nome_batismo_,
+              naturalidade_),
       m_venenoso(venenoso_),
       m_tipo_veneno(tipo_veneno_)
 {}

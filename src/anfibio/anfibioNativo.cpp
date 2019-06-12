@@ -35,6 +35,7 @@ AnfibioNat::AnfibioNat(int id_,
 									veterinario_,
 									tratador_,
   								nome_batismo_,
+									"Nativo",
   								mudas_),
 					AnimalNat(uf_origem_,
 										auto_ibama_)
@@ -51,10 +52,22 @@ std::ostream& AnfibioNat::print(std::ostream& os)const{
 		<< "Tamanho : " 									<< m_tamanho 						<< std::endl
 		<< "Dieta : " 										<< m_dieta 							<< std::endl
 		<< "Nome de Batismo : " 					<< m_nome_batismo 			<< std::endl
-		<< "Numero de Mudas : " 					<< m_total_de_mudas			<< std::endl
-		<< "Veterinario Responsavel: "		<< *m_veterinario			  << std::endl
-		<< "Tratador Responsavel: "				<< *m_tratador					<< std::endl
-		<< "Pais : " 											<< m_uf_origem 					<< std::endl
+		<< "Naturalidade : " 							<< m_naturalidade 			<< std::endl
+		<< "Numero de Mudas : " 					<< m_total_de_mudas			<< std::endl;
+
+		if(m_veterinario == nullptr){
+			os << "Veterinario Responsavel: 0" << std::endl;
+		}else{
+			os << "Veterinario Responsavel: \n"	<< *m_veterinario << std::endl;
+		}
+
+		if(m_tratador == nullptr){
+			os << "Tratador Responsavel: 0" << std::endl;
+		}else{
+			os << "Tratador Responsavel: \n"	<< *m_tratador	<< std::endl;
+		}
+
+		os << "Pais : " 											<< m_uf_origem 					<< std::endl
 		<< "Ibama Autorização : " 				<< m_autorizacao_ibama  << std::endl;
 		return os;
 }

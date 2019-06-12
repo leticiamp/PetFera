@@ -36,7 +36,7 @@ class Animal{
 		Veterinario * m_veterinario; /**< Define o veterinário associado ao animal */
 		Tratador * m_tratador; /**< Define o tratador associado ao animal */
 		std::string m_nome_batismo; /**< Define o nome de batismo (nome pelo qual o animal atende) */
-
+		std::string m_naturalidade;
 	public:
 		/** @brief Construtor parametrizado. */
 		Animal(	int id_,
@@ -47,7 +47,8 @@ class Animal{
 				std::string dieta_,
 				Veterinario * veterinario_,
 				Tratador * tratador_,
-				std::string nome_batismo_);
+				std::string nome_batismo_,
+				std::string naturalidade_);
 
 		~Animal(); /**< Destrutor padrão*/
 
@@ -58,6 +59,7 @@ class Animal{
 		double getTamanho();
 		std::string getDieta();
 		std::string getNomeBatismo();
+		std::string getNaturalidade();
 
 	 	Veterinario * getVeterinario();
 		Tratador * getTratador();
@@ -69,6 +71,8 @@ class Animal{
 		void setTamanho(double tamanho_);
 		void setDieta(std::string dieta_);
 		void setNomeBatismo(std::string nome_batismo_);
+		void setNaturalidade(std::string naturalidade_);
+
 
 		void setVeterinario(Veterinario* veterinario_);
 		void setTratador(Tratador* tratador_);

@@ -31,10 +31,6 @@
 #include "reptilExotico.h"
 #include "reptilNativo.h"
 
-#define MAXIMO_DE_ANIMAIS 50
-#define MAXIMO_DE_FUNCIONARIOS 50
-
-
 class System{
   private:
     std::map<int,Funcionario*> mymapF;
@@ -60,7 +56,26 @@ class System{
     void inserirFuncionarioDigitando();
     void inserirFuncionarioViaArquivoCSV();
 
-    void inserirAnimal(/*Animal * animal*/);
+    void inserirAnimalMymapA(AveExo * animal);
+    void inserirAnimalMymapA(AveNat * animal);
+    void inserirAnimalMymapA(ReptilExo * animal);
+    void inserirAnimalMymapA(ReptilNat * animal);
+    void inserirAnimalMymapA(MamiferoExo * animal);
+    void inserirAnimalMymapA(MamiferoNat * animal);
+    void inserirAnimalMymapA(AnfibioExo * animal);
+    void inserirAnimalMymapA(AnfibioNat * animal);
+
+    void infoAnimalId(int &id_);
+    void infoAnimalClasse(std::string &classe_);
+    void infoAnimalNaturalidade(std::string &naturalidade_);
+    void infoAnimalNomeCientifico(string &nome_cientifico_);
+    void infoAnimalSexo(char &sexo);
+
+    void infoMaiorQZero(double &generico, std::string os);
+    void infoMaiorQZero(int &generico, std::string os);
+    void infoString(std::string &generico, std::string os);
+    void boolReptilVenenoso(bool &venenoso_);
+
     void inserirAnimalDigitando();
     void inserirAnimalViaArquivoCSV();
 

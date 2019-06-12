@@ -24,6 +24,7 @@ Anfibio::Anfibio(	int id_,
 								Veterinario * veterinario_,
 								Tratador * tratador_,
 								std::string nome_batismo_,
+								std::string naturalidade_,
 								int mudas_):
         Animal(	id_,
 							classe_,
@@ -33,7 +34,8 @@ Anfibio::Anfibio(	int id_,
 							dieta_,
 							veterinario_,
 							tratador_,
-							nome_batismo_),
+							nome_batismo_,
+							naturalidade_),
         m_total_de_mudas(mudas_)
 {}
 

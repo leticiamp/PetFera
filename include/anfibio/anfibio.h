@@ -34,6 +34,7 @@ class Anfibio : public Animal{
 						Veterinario * veterinario_,
 						Tratador * tratador_,
 						std::string nome_batismo_,
+						std::string naturalidade_,
 						int mudas_);
 
 		~Anfibio();

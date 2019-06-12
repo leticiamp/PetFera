@@ -17,7 +17,7 @@
 
 class Mamifero : public Animal{
 	private :
-	
+
 	protected:
 		std::string m_cor_pelo;
 	public:
@@ -30,6 +30,7 @@ class Mamifero : public Animal{
 						Veterinario * veterinario_,
 						Tratador * tratador_,
 						std::string nome_batismo_,
+						std::string naturalidade_,
 					  std::string cor_pelo_);
 
 		~Mamifero();

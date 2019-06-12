@@ -36,6 +36,7 @@ class AveExo : public Ave, AnimalExo{
 					std::string pais_origem_,
 					std::string cidade_origem_,
 					std::string auto_ibama_);
+
 		~AveExo();
 
 };

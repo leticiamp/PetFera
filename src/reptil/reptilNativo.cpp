@@ -36,6 +36,7 @@ ReptilNat::ReptilNat(int id_,
           veterinario_,
           tratador_,
           nome_batismo_,
+          "Nativo",
           venenoso_,
           tipo_veneno_),
   AnimalNat(uf_origem_,
@@ -53,12 +54,23 @@ std::ostream& ReptilNat::print(std::ostream& os)const{
 		<< "Tamanho : " 									<< m_tamanho 						<< std::endl
 		<< "Dieta : " 										<< m_dieta 							<< std::endl
 		<< "Nome de Batismo : " 					<< m_nome_batismo 			<< std::endl
+    << "Naturalidade : " 							<< m_naturalidade 			<< std::endl
 		<< "Venenoso : " 							    << m_venenoso						<< std::endl
-    << "Tipo de veneno : " 						<< m_tipo_veneno				<< std::endl
-		<< "\n"
-		<< "Veterinario Responsavel: \n"	<< *m_veterinario 			<< std::endl
-		<< "Tratador Responsavel: \n"			<< *m_tratador 					<< std::endl
-		<< "Pais : " 											<< m_uf_origem 					<< std::endl
+    << "Tipo de veneno : " 						<< m_tipo_veneno				<< std::endl;
+
+    if(m_veterinario == nullptr){
+			os << "Veterinario Responsavel: 0" << std::endl;
+		}else{
+			os << "Veterinario Responsavel: \n"	<< *m_veterinario << std::endl;
+		}
+
+		if(m_tratador == nullptr){
+			os << "Tratador Responsavel: 0" << std::endl;
+		}else{
+			os << "Tratador Responsavel: \n"	<< *m_tratador	<< std::endl;
+		}
+
+		os << "Pais : " 											<< m_uf_origem 					<< std::endl
 		<< "Ibama Autorização : " 				<< m_autorizacao_ibama  << std::endl;
 		return os;
 }

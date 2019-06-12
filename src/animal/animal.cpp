@@ -23,7 +23,8 @@ Animal::Animal( int id_,
 				std::string dieta_,
 				Veterinario * veterinario_,
 				Tratador * tratador_,
-			std::string nome_batismo_):
+				std::string nome_batismo_,
+				std::string naturalidade_):
 	m_id(id_),
 	m_classe(classe_),
 	m_nome_cientifico(nome_cientifico_),
@@ -32,7 +33,8 @@ Animal::Animal( int id_,
 	m_dieta(dieta_),
 	m_veterinario(veterinario_),
 	m_tratador(tratador_),
-	m_nome_batismo(nome_batismo_)
+	m_nome_batismo(nome_batismo_),
+	m_naturalidade(naturalidade_)
 {}
 
 Animal::~Animal(){}
@@ -77,6 +79,12 @@ Animal::getDieta(){
 std::string
 Animal::getNomeBatismo(){
 	return this->m_nome_batismo;
+}
+
+
+std::string
+Animal::getNaturalidade(){
+	return this->m_naturalidade;
 }
 
 
@@ -132,6 +140,11 @@ Animal::setDieta(std::string dieta_){
 void
 Animal::setNomeBatismo(std::string nomeBatismo_){
 	this->m_nome_batismo = nomeBatismo_;
+}
+
+void
+Animal::setNaturalidade(std::string naturalidade_){
+	this->m_naturalidade = naturalidade_;
 }
 
 

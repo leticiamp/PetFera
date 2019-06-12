@@ -35,6 +35,7 @@ AveNat::AveNat(int id_,
         veterinario_,
         tratador_,
         nome_batismo_,
+        "Nativo",
         tamanho_do_bico_cm_,
         envergadura_das_asas_),
     AnimalNat(uf_origem_,
@@ -52,11 +53,23 @@ std::ostream& AveNat::print(std::ostream& os)const{
 		<< "Tamanho : " 									<< m_tamanho 						  << std::endl
 		<< "Dieta : " 										<< m_dieta 							  << std::endl
 		<< "Nome de Batismo : " 					<< m_nome_batismo 			  << std::endl
+    << "Naturalidade : " 							<< m_naturalidade 			<< std::endl
 		<< "Tamanho do Bico : " 			    << m_tamanho_do_bico_cm	  << std::endl
-    << "Envergadura das Asas : " 	  	<< m_envergadura_das_asas	<< std::endl
-    << "Veterinario Responsavel: \n"	<< *m_veterinario 		   	<< std::endl
-    << "Tratador Responsavel: \n"			<< *m_tratador			   	  << std::endl
-    << "Pais : " 											<< m_uf_origem 					  << std::endl
+    << "Envergadura das Asas : " 	  	<< m_envergadura_das_asas	<< std::endl;
+
+    if(m_veterinario == nullptr){
+			os << "Veterinario Responsavel: 0" << std::endl;
+		}else{
+			os << "Veterinario Responsavel: \n"	<< *m_veterinario << std::endl;
+		}
+
+		if(m_tratador == nullptr){
+			os << "Tratador Responsavel: 0" << std::endl;
+		}else{
+			os << "Tratador Responsavel: \n"	<< *m_tratador	<< std::endl;
+		}
+
+    os << "Pais : " 											<< m_uf_origem 					  << std::endl
 		<< "Ibama Autorização : " 				<< m_autorizacao_ibama    << std::endl;
 		return os;
 }

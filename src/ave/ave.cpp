@@ -23,6 +23,7 @@ Ave::Ave(int id_,
 				Veterinario * veterinario_,
 				Tratador * tratador_,
 				std::string nome_batismo_,
+				std::string naturalidade_,
 				double tamanho_do_bico_cm_,
 				double envergadura_das_asas_) :
 	Animal(	id_,
@@ -33,7 +34,8 @@ Ave::Ave(int id_,
 					dieta_,
 					veterinario_,
 					tratador_,
-					nome_batismo_),
+					nome_batismo_,
+					naturalidade_),
 	m_tamanho_do_bico_cm(tamanho_do_bico_cm_),
 	m_envergadura_das_asas(envergadura_das_asas_)
 {}

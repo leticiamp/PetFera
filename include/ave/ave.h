@@ -32,6 +32,7 @@ class Ave : public Animal{
 				Veterinario * veterinario_,
 				Tratador * tratador_,
 				std::string nome_batismo_,
+				std::string naturalidade_,
 				double tamanho_do_bico_cm_,
 				double envergadura_das_asas_);
 
