@@ -437,12 +437,12 @@ void System::boolReptilVenenoso(bool &venenoso_){
 
 
 void System::inserirAnimalDigitando(){
-/*  //Condição de parada, se nao existir funcionarios
+  //Condição de parada, se nao existir funcionarios
   if(mymapF.size() == 0){
     std::cout << " Não existem funcionarios para cuidar dos animais\n" << std::endl;
     return;
   }
-*/
+
   std::string classe_; // Classe do animal
   infoAnimalClasse(classe_); //Pergunta a classe do animal
 
@@ -475,15 +475,44 @@ void System::inserirAnimalDigitando(){
 
   Veterinario * veterinario_ = nullptr;
   Tratador * tratador_ = nullptr;
+  int aux;
+
+  std::cout << "Digite o id do Veterinario, caso o animal não tenha, digite 0 : \n";
+  std::cin >> aux;
+  std::cin.ignore();
+
+  while(this->mymapF.find(aux) == this->mymapF.end() && aux != 0){
+    std::cout << "Digite o id do Veterinario, caso o animal não tenha, digite 0";
+    std::cin >> aux;
+    std::cin.ignore();
+  }
+
+  if(aux != 0){
+    veterinario_ = dynamic_cast<Veterinario*> (mymapF.find(aux)->second);
+  }
+
+  std::cout << "Digite o id do Tratador, caso o animal não tenha, digite 0 :\n";
+  std::cin >> aux;
+  std::cin.ignore();
+
+  while(this->mymapF.find(aux) == this->mymapF.end() && aux != 0){
+    std::cout << "Digite o id do Tratador, caso o animal não tenha, digite 0 : \n";
+    std::cin >> aux;
+    std::cin.ignore();
+  }
+
+  if(aux != 0){
+    tratador_ = dynamic_cast<Tratador*> (mymapF.find(aux)->second);
+  }
+
 
   //Condição de parada sem funcionario cuidador
-  /*  if(veterinario_ == nullptr && tratador_ == nullptr){
-    std::cout << " Não foram atralados funcionarios para cuidar dos animais\n" << std::endl;
+    if(veterinario_ == nullptr && tratador_ == nullptr){
+    std::cout << "Erro: Não foram atrelados funcionarios para cuidar dos animais\n" << std::endl;
     delete veterinario_;
     delete tratador_;
     return;
   }
-  */
 
   //Declaração das variaveis
   double tamanho_do_bico_cm_; // Caracteristica de Ave
