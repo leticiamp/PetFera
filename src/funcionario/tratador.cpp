@@ -45,14 +45,10 @@ void Tratador::setNivel_de_Seguranca(int nivel_de_seguranca_){
 
 // Imprime
 std::ostream& Tratador::print(std::ostream& os)const{
-		os 	<< m_id << ";"
-			<< m_funcao << ";"
-			<< m_nome << ";"
-			<< m_cpf << ";"
-			<< m_idade << ";"
-			<< m_tipo_sanguineo << ";"
-			<< m_fator_rh << ";"
-			<< m_especialidade << ";"
-			<< m_nivel_de_seguranca << ";";
+		os 	<< m_id << ";" << m_funcao << ";" << m_nome << ";"
+	 			<< m_cpf << ";" <<  m_idade	 << ";" << m_tipo_sanguineo << ";"
+				<< m_fator_rh << ";"	<< m_especialidade << ";"
+				<< m_nivel_de_seguranca << ";" << std::endl;
+
 		return os;
 }

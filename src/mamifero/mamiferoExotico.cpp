@@ -44,30 +44,26 @@ MamiferoExo::MamiferoExo(int id_,
 MamiferoExo::~MamiferoExo(){}
 
 
-
 std::ostream& MamiferoExo::print(std::ostream& os)const{
-	os	<< m_id << ";" 
-    	<< m_classe << ";"
-		<< m_nome_cientifico << ";"
-		<< m_sexo << ";"
-		<< m_tamanho << ";"
-		<< m_dieta << ";"
-		<< m_nome_batismo << ";"
-     	<< m_naturalidade << ";"
-		<< m_cor_pelo << ";";
+	os << m_id << ";" << m_classe 	 << ";" << m_nome_cientifico << ";"
+		 << m_sexo << ";" << m_tamanho << ";" << m_dieta << ";"
+		 << m_nome_batismo << ";" << m_naturalidade << ";"
+		 << m_cor_pelo	<<";";
+
+
 	if(m_veterinario == nullptr){
-		os << "0" << ";";
+		os << "Veterinario Responsavel: 0" << std::endl;
 	}else{
-		os << m_veterinario->getNome() << ";";
+		os << "Veterinario Responsavel: \n"	<< *m_veterinario << std::endl;
 	}
+
 	if(m_tratador == nullptr){
-		os << "0" << ";";
+		os << "Tratador Responsavel: 0" << std::endl;
 	}else{
-		os << m_tratador->getNome()	<< ";";
+		os << "Tratador Responsavel: \n"	<< *m_tratador	<< std::endl;
 	}
-  	os 	<< m_pais_origem << ";"
-		<< m_cidade_origem << ";"
-		<< m_autorizacao_ibama << ";";
+
+	os  << m_pais_origem << ";" << m_cidade_origem  << ";"
+			<< m_autorizacao_ibama  << ";" << std::endl;
 	return os;
-  
 }

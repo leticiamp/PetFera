@@ -44,28 +44,25 @@ AveNat::AveNat(int id_,
 
 AveNat::~AveNat(){}
 
+
 std::ostream& AveNat::print(std::ostream& os)const{
-  os  << m_id << ";" 
-      << m_classe << ";"
-		  << m_nome_cientifico << ";"
-		  << m_sexo << ";"
-		  << m_tamanho << ";"
-		  << m_dieta << ";"
-		  << m_nome_batismo << ";"
-      << m_naturalidade << ";"
-		  << m_tamanho_do_bico_cm << ";"
-      << m_envergadura_das_asas	<< ";";
-  if(m_veterinario == nullptr){
-	  os  << "0" << ";";
-	}else{
-		os  << m_veterinario->getNome() << ";";
-	}
-	if(m_tratador == nullptr){
-		os  << "0" << ";";
-	}else{
-		os  << m_tratador->getNome()	<< ";";
-	}
-  os  << m_uf_origem << ";"
-		  << m_autorizacao_ibama << ";";
-	return os;
+  os << m_id << ";" << m_classe 	 << ";" << m_nome_cientifico << ";"
+		 << m_sexo << ";" << m_tamanho << ";" << m_dieta << ";"
+		 << m_nome_batismo << ";" << m_naturalidade << ";"
+		 << m_tamanho_do_bico_cm	<< ";" << m_envergadura_das_asas << ";";
+
+    if(m_veterinario == nullptr){
+      os << "0" << ";";
+    }else{
+      os << m_veterinario->getId() << ";";
+    }
+
+    if(m_tratador == nullptr){
+      os << "0" << ";";
+    }else{
+      os << m_tratador->getId()	<< ";";
+    }
+
+    os  << m_uf_origem << ";"<< m_autorizacao_ibama << ";" << std::endl;
+		return os;
 }

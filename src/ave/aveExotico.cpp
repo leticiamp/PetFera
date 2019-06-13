@@ -48,29 +48,24 @@ AveExo::~AveExo(){}
 
 
 std::ostream& AveExo::print(std::ostream& os)const{
-  	os 	<< m_id << ";" 
-     	<< m_classe << ";"
-		<< m_nome_cientifico << ";"
-		<< m_sexo << ";"
-		<< m_tamanho << ";"
-		<< m_dieta << ";"
-		<< m_nome_batismo << ";"
-     	<< m_naturalidade << ";"
-		<< m_tamanho_do_bico_cm << ";"
-		<< m_envergadura_das_asas << ";";
-  	if(m_veterinario == nullptr){
-		os 	<< "0" << ";";
-	}else{
-		os 	<< m_veterinario->getNome() << ";";
-	}
-	if(m_tratador == nullptr){
-		os 	<< "0" << ";";
-	}else{
-		os 	<< m_tratador->getNome()	<< ";";
-	}
-  	os 	<< m_pais_origem << ";"
-		<< m_cidade_origem << ";"
-		<< m_autorizacao_ibama << ";";
-	return os;
-  
+	os << m_id << ";" << m_classe 	 << ";" << m_nome_cientifico << ";"
+		 << m_sexo << ";" << m_tamanho << ";" << m_dieta << ";"
+		 << m_nome_batismo << ";" << m_naturalidade << ";"
+		 << m_tamanho_do_bico_cm	<< ";" << m_envergadura_das_asas << ";";
+			
+		if(m_veterinario == nullptr){
+			os << "Veterinario Responsavel: 0" << std::endl;
+		}else{
+			os << "Veterinario Responsavel: \n"	<< *m_veterinario << std::endl;
+		}
+
+		if(m_tratador == nullptr){
+			os << "Tratador Responsavel: 0" << std::endl;
+		}else{
+			os << "Tratador Responsavel: \n"	<< *m_tratador	<< std::endl;
+		}
+
+		os  << m_pais_origem << ";" << m_cidade_origem  << ";"
+				<< m_autorizacao_ibama  << ";" << std::endl;
+		return os;
 }

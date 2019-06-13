@@ -48,14 +48,10 @@ Veterinario::set_crmv(std::string crmv_){
 
 //imprime
 std::ostream& Veterinario::print(std::ostream& os)const{
-		os 	<< m_id << ";"
-			<< m_funcao << ";"
-			<< m_nome << ";"
-			<< m_cpf <<	";"
-			<< m_idade	<< ";"
-			<< m_tipo_sanguineo << ";"
-			<< m_fator_rh << ";"
-			<< m_especialidade << ";"
-			<< m_crmv << ";";
+		os 	<< m_id << ";" << m_funcao << ";" << m_nome << ";"
+	 			<< m_cpf << ";" <<  m_idade	 << ";" << m_tipo_sanguineo << ";"
+				<< m_fator_rh << ";"	<< m_especialidade << ";"
+				<< m_crmv	<< ";"  << std::endl;
+
 		return os;
 }
