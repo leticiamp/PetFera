@@ -111,6 +111,7 @@ void System::Receive_CSV_To_MyMapF(std::string nomeArquivo){
     std::cerr << "Arquivo não foi aberto" << std::endl;
     exit(1);
   }
+  file.close();
 }
 
 //Metodos de constrole de inserção no MyMap
