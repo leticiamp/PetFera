@@ -49,6 +49,9 @@ class System{
     void Print_MyMapA_CSV(std::string nomeArquivo);
     void Print_MyMapF_CSV(std::string nomeArquivo);
 
+    //Metodos de Leitura de csv
+    void Receive_CSV_To_MyMapF(std::string nomeArquivo);
+
     //Metodos de controle de inserção no MyMap
     void Inserir_Func_MyMapF();
     void Inserir_Animal_MyMapA();
@@ -103,16 +106,6 @@ class System{
 
 
 
-    //Metodos a serem implementados
-    void listarAnimaisEmArquivoCSV(); // Odilon deve fazer.
-    void listarAnimaisComFiltroNaTela();
-    void listarAnimaisComFiltroEmArquivoCSV();
-
-    void listarFuncionariosEmArquivoCSV();
-    void listarFuncionariosComFiltroNaTela();
-    void listarFuncionariosComFiltroEmArquivoCSV();
-    void inserirFuncionarioViaArquivoCSV();
-    void inserirAnimalViaArquivoCSV();
 
 
     //Menus que controlam as opções do usuario
@@ -147,20 +140,6 @@ class System{
     void PrintPesquisar1_2();
     void PrintEditar1();
     void PrintEditar1_1();
-
-
-
-    void printMenuInserir1();
-    void printMenuInserir1_1();
-    void printMenuInserir1_2();
-    void printMenuRemover1();
-    void printMenuRemover1_1();
-    void printMenuRemover1_2();
-    void printMenuPesquisar1_1();
-    void printMenuPesquisar1_2();
-    void printMenuEditar1();
-    void printMenuEditar1_1();
-    void printMenuEditar1_2();
 
 
 };

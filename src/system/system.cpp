@@ -73,9 +73,16 @@ void System::Print_MyMapA_CSV(std::string nomeArquivo){
   ofstream file; // Cria arquivo.
 	file.open(nomeArquivo);
 
+  if(file.bad()){
+    std::cerr << "Arquivo não foi aberto" << std::endl;
+    exit(1);
+  }
+
 	for (std::map<int,Animal*>::iterator it = this->mymapA.begin();it!= this->mymapA.end(); ++it){
       file <<  *it->second;
   }
+
+
 	file.close();
 }
 
@@ -84,10 +91,26 @@ void System::Print_MyMapF_CSV(std::string nomeArquivo){
   ofstream file; // Cria arquivo.
 	file.open(nomeArquivo);
 
+  if(file.bad()){
+    std::cerr << "Arquivo não foi aberto" << std::endl;
+    exit(1);
+  }
+
 	for (std::map<int,Funcionario*>::iterator it = this->mymapF.begin();it!= this->mymapF.end(); ++it){
       file <<  *it->second;
   }
 	file.close();
+}
+
+//Metodos de Leitura de csv - Imcompleto
+void System::Receive_CSV_To_MyMapF(std::string nomeArquivo){
+  ifstream file;
+  file.open(nomeArquivo);
+
+  if(file.bad()){
+    std::cerr << "Arquivo não foi aberto" << std::endl;
+    exit(1);
+  }
 }
 
 //Metodos de constrole de inserção no MyMap
@@ -781,33 +804,6 @@ Veterinario * System::consultaVeterinario(int Id){
 
 
 
-//Não Implementados
-
-void System::listarAnimaisEmArquivoCSV(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n "<< endl;
-}
-void System::listarAnimaisComFiltroNaTela(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
-}
-void System::listarAnimaisComFiltroEmArquivoCSV(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
-}
-void System::listarFuncionariosEmArquivoCSV(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n "<< endl;
-}
-void System::listarFuncionariosComFiltroNaTela(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
-}
-void System::listarFuncionariosComFiltroEmArquivoCSV(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
-}
-void System::inserirAnimalViaArquivoCSV(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
-}
-void System::inserirFuncionarioViaArquivoCSV(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
-}
-
 
 //Menus que controlam as opções do usuario
 void System::MenuInicial(){
@@ -840,7 +836,8 @@ void System::MenuInicial(){
           MenuEditar1(); // Menu Inicial >> Editar
           break;
         case 0 : // Salva em arquivo CSV e sai do menu.
-          //Função a implementar
+          Print_MyMapA_CSV("animais.csv");
+          Print_MyMapF_CSV("funcionarios.csv");
           break;
         default:
           system("clear");
