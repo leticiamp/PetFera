@@ -60,12 +60,12 @@ std::ostream& ReptilNat::print(std::ostream& os)const{
   if(m_veterinario == nullptr){
 		os << "0" << ";" ;
 	}else{
-		os << *m_veterinario << ";";
+		os << m_veterinario->getNome() << ";";
 	}
 	if(m_tratador == nullptr){
 		os << "0" << ";";
 	}else{
-		os << *m_tratador	<< ";";
+		os << m_tratador->getNome()	<< ";";
 	}
   os << m_uf_origem << ";"
 		 << m_autorizacao_ibama << ";";

@@ -58,12 +58,12 @@ std::ostream& AnfibioExo::print(std::ostream& os)const{
   	if(m_veterinario == nullptr){
 		os 	<< "0" << ";";
 	}else{
-		os 	<< *m_veterinario << ";";
+		os 	<< m_veterinario->getNome() << ";";
 	}
 	if(m_tratador == nullptr){
 		os 	<< "0" << ";";
 	}else{
-		os 	<< *m_tratador	<< ";";
+		os 	<< m_tratador->getNome() << ";";
 	}
   	os 	<< m_pais_origem << ";"
 		<< m_cidade_origem << ";"

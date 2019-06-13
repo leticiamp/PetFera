@@ -47,8 +47,15 @@ void System::listarAnimaisEmArquivoCSV(){ // Salva todos os animais em uma arqui
   ofstream file; // Cria arquivo.
 	file.open(nomeDoArquivoCSV); 
 	
-	file << "\n\n Esse cadastro possui " << mymapA.size() << " animal(is) cadastrado(s)."
-		   << "ID;Classe;Nome_Cientifico;Sexo;Tamanho;Dieta;Nome_de_Batismo;Naturalidade;Tamanho_do_Bico;Envergadura_das_Asas;Veterinario_Responsavel;ID;Funcao;Name;CPF;AGE;BLOOD_TYPE;RH_FACTOR;ESPECIALIDADE;CRMV;Tratador_Responsavel;Pais;Ibama_Autorização\n";
+  // >>>>>>>Falta colocar colunas vazias para normalizar a tabela dos animais.<<<<<<<<
+
+	file << "\n\n Esse cadastro possui " << mymapA.size() << " animal(is) cadastrado(s). \n"
+		   << "ID_Animal;Classe;Nome_Cientifico;Sexo;Tamanho;Dieta;Nome_de_Batismo;Naturalidade;"
+       << "Tamanho_do_Bico;Envergadura_das_Asas;Veterinario_Responsavel;ID;Funcao;Name;"
+       << "CPF;AGE;BLOOD_TYPE;RH_FACTOR;ESPECIALIDADE;CRMV;Tratador_Responsavel;Pais;"
+       << "Ibama_Autorização;ID_Funcionario;Funcao;Name;CPF;Age;Blood_Type;RH_Factor;"
+       << "Especialidade;CRMV;ID_Funcionario;Funcao;Name;CPF;Age;Blood_Type;RH_Factor;"
+       << "Especialidade;CRMV;\n";
 	for (std::map<int,Animal*>::iterator it = this->mymapA.begin();it!= this->mymapA.end(); ++it){
       file <<  it->first << ";" << *it->second << std::endl;
   }
@@ -379,7 +386,7 @@ void System::infoMaiorQZero(double &generico, std::string os){
 
   while(generico < 0)
         {
-          std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+          std::cout << " ++++++++++++ ENTRADA INVÁLIDA. TENTE NOVAMENTE ++++++++++++++++\n"
                     << os << std::endl;
           std::cin >> generico;
           std::cin.ignore();
@@ -394,7 +401,7 @@ void System::infoMaiorQZero(int &generico, std::string os){
 
   while(generico < 0)
         {
-          std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+          std::cout << " ++++++++++++ ENTRADA INVÁLIDA. TENTE NOVAMENTE ++++++++++++++++\n"
                     << os << std::endl;
           std::cin >> generico;
           std::cin.ignore();
@@ -524,31 +531,31 @@ void System::inserirAnimalDigitando(){
 
   if(classe_ == "Ave"){
     infoMaiorQZero(tamanho_do_bico_cm_,
-        "Qual o tamanho do bico do animal? (em centímentros)");
+        " Qual o tamanho do bico do animal? (em centímentros)");
     infoMaiorQZero(envergadura_das_asas_,
-        "Qual o tamanho da envergadura das asas do animal? (em centímentros)");
+        " Qual o tamanho da envergadura das asas do animal? (em centímentros)");
   }
   else if(classe_ == "Mamifero"){
-    infoString(cor_pelo_,"Qual a cor do pelo do animal?");
+    infoString(cor_pelo_," Qual a cor do pelo do animal?");
   }
   else if(classe_ == "Reptil"){
     boolReptilVenenoso(venenoso_);
     if(venenoso_){
-      infoString(tipo_veneno_, "Qual o tipo de veneno do animal?");
+      infoString(tipo_veneno_, " Qual o tipo de veneno do animal?");
     }
     else{
-      tipo_veneno_ = "Não venenoso";
+      tipo_veneno_ = " Não venenoso. ";
     }
   }else if(classe_ == "Anfibio"){
-    infoMaiorQZero(mudas_, "Qual a quantidade de mudas do animal?");
+    infoMaiorQZero(mudas_, " Qual a quantidade de mudas do animal?");
   }
 
   if(naturalidade_ == "Exotico"){
-    infoString(pais_origem_, "Qual o pais de origem do animal?");
-    infoString(cidade_origem_, "Qual a cidade de origem do animal?");
+    infoString(pais_origem_, " Qual o pais de origem do animal?");
+    infoString(cidade_origem_, " Qual a cidade de origem do animal?");
   }
   else if( naturalidade_ == "Nativo"){
-    infoString(uf_origem_, "Qual o Uf origem do animal?");
+    infoString(uf_origem_, " Qual o Uf origem do animal?");
   }
 
   if(classe_ == "Ave" && naturalidade_ == "Exotico"){
