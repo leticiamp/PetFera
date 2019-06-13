@@ -47,30 +47,27 @@ ReptilNat::~ReptilNat(){}
 
 
 std::ostream& ReptilNat::print(std::ostream& os)const{
-	os <<"ID : " 						  					<< m_id 								<< std::endl
-		<< "Classe : " 										<< m_classe 						<< std::endl
-		<< "Nome Cientifico : "						<< m_nome_cientifico 		<< std::endl
-		<< "Sexo : " 											<< m_sexo 							<< std::endl
-		<< "Tamanho : " 									<< m_tamanho 						<< std::endl
-		<< "Dieta : " 										<< m_dieta 							<< std::endl
-		<< "Nome de Batismo : " 					<< m_nome_batismo 			<< std::endl
-    << "Naturalidade : " 							<< m_naturalidade 			<< std::endl
-		<< "Venenoso : " 							    << m_venenoso						<< std::endl
-    << "Tipo de veneno : " 						<< m_tipo_veneno				<< std::endl;
-
-    if(m_veterinario == nullptr){
-			os << "Veterinario Responsavel: 0" << std::endl;
-		}else{
-			os << "Veterinario Responsavel: \n"	<< *m_veterinario << std::endl;
-		}
-
-		if(m_tratador == nullptr){
-			os << "Tratador Responsavel: 0" << std::endl;
-		}else{
-			os << "Tratador Responsavel: \n"	<< *m_tratador	<< std::endl;
-		}
-
-		os << "Pais : " 											<< m_uf_origem 					<< std::endl
-		<< "Ibama Autorização : " 				<< m_autorizacao_ibama  << std::endl;
-		return os;
+  os << m_id << ";" 
+     << m_classe << ";"
+		 << m_nome_cientifico << ";"
+		 << m_sexo << ";"
+		 << m_tamanho << ";"
+		 << m_dieta << ";"
+		 << m_nome_batismo << ";"
+     << m_naturalidade << ";"
+		 << m_venenoso << ";"
+     << m_tipo_veneno	<< ";";
+  if(m_veterinario == nullptr){
+		os << "0" << ";" ;
+	}else{
+		os << *m_veterinario << ";";
+	}
+	if(m_tratador == nullptr){
+		os << "0" << ";";
+	}else{
+		os << *m_tratador	<< ";";
+	}
+  os << m_uf_origem << ";"
+		 << m_autorizacao_ibama << ";";
+	return os;
 }

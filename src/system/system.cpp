@@ -30,7 +30,7 @@ System::~System(){
 
 void System::listarAnimaisNaTela(){
   if(this->mymapA.size() == 0){
-    std::cout << "Nenhum animal instanciado\n" << std::endl;
+    std::cout << " Nenhum animal instanciado.\n" << std::endl;
     return;
   }
   for (std::map<int,Animal*>::iterator it = this->mymapA.begin(); it!= this->mymapA.end(); ++it){
@@ -38,8 +38,21 @@ void System::listarAnimaisNaTela(){
   }
 }
 
-void System::listarAnimaisEmArquivoCSV(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n "<< endl;
+void System::listarAnimaisEmArquivoCSV(){ // Salva todos os animais em uma arquivo.
+  std::string nomeDoArquivoCSV;
+  std::cout << " Qual o nome do arquivo para salvar a lista de animais? " << std::endl;
+  std::cin >> nomeDoArquivoCSV; 
+  std::cin.ignore();
+
+  ofstream file; // Cria arquivo.
+	file.open(nomeDoArquivoCSV); 
+	
+	file << "\n\n Esse cadastro possui " << mymapA.size() << " animal(is) cadastrado(s)."
+		   << "ID;Classe;Nome_Cientifico;Sexo;Tamanho;Dieta;Nome_de_Batismo;Naturalidade;Tamanho_do_Bico;Envergadura_das_Asas;Veterinario_Responsavel;ID;Funcao;Name;CPF;AGE;BLOOD_TYPE;RH_FACTOR;ESPECIALIDADE;CRMV;Tratador_Responsavel;Pais;Ibama_Autorização\n";
+	for (std::map<int,Animal*>::iterator it = this->mymapA.begin();it!= this->mymapA.end(); ++it){
+      file <<  it->first << ";" << *it->second << std::endl;
+  }
+	file.close();
 }
 
 void System::listarAnimaisComFiltroNaTela(){
@@ -52,7 +65,7 @@ void System::listarAnimaisComFiltroEmArquivoCSV(){
 
 void System::listarFuncionariosNaTela(){
   if(this->mymapF.size() == 0){
-    std::cout << "Nenhum funcionario instanciado\n" << std::endl;
+    std::cout << " Nenhum funcionario instanciado.\n" << std::endl;
     return;
   }
 
@@ -75,9 +88,7 @@ void System::listarFuncionariosComFiltroEmArquivoCSV(){
   std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
 }
 
-
 //Metodos de inserção
-
 
 void System::inserirFuncionario(Tratador * funcionario){
   if( mymapF.find(funcionario->getId()) != mymapF.end()){
@@ -106,47 +117,47 @@ void System::inserirFuncionario(Funcionario * funcionario){
 void System::inserirFuncionarioDigitando(){
 
   int id_;
-  std::cout << " Qual o número idenficador do Funcionario a ser inserido? " << std::endl;
+  std::cout << " Qual o número idenficador do funcionário a ser inserido? " << std::endl;
   std::cin >> id_; std::cin.ignore();
 
   while(this->mymapF.find(id_) != mymapF.end() && id_ != 0){ // Testando se entrada existe
-      std::cout << "Entrada invalida, digite novamente\n";
-      std::cout << " Qual o número idenficador do Funcionario a ser inserido? " << std::endl;
+      std::cout << " Entrada inválida. Digite novamente.\n";
+      std::cout << " Qual o número idenficador do funcionário a ser inserido? " << std::endl;
       std::cin >> id_; std::cin.ignore();
   }
 
   int funcao_;
-  std::cout << " Qual a funcao do Funcionario: 1 para Veterinario e 2 para Tratador " << std::endl;
+  std::cout << " Qual a funcao do funcionário? Digite 1 para Veterinário ou 2 para Tratador. " << std::endl;
   std::cin >> funcao_; std::cin.ignore();
 
   while(funcao_ != 1 && funcao_ != 2){
-    std::cout << "Entrada invalida, digite novamente\n";
-    std::cout << " Qual a funcao do Funcionario: 1 para Veterinario e 2 para Tratador " << std::endl;
+    std::cout << " Entrada inválida! Digite novamente. \n";
+    std::cout << " Qual a funcao do funcionário? Digite 1 para Veterinário ou 2 para Tratador. " << std::endl;
     std::cin >> funcao_; std::cin.ignore();
 
   }
 
   std::string nome_;
-  std::cout << " Qual o nome do funcionario" << std::endl;
+  std::cout << " Qual o nome do funcionário? " << std::endl;
   std::cin >> nome_; std::cin.ignore();
 
   std::string cpf_;
-  std::cout << " Qual o cpf do funcionario" << std::endl;
+  std::cout << " Qual o cpf do funcionario?" << std::endl;
   std::cin >> cpf_; std::cin.ignore();
 
   short idade_;
-  std::cout << " Qual a idade do funcionario" << std::endl;
+  std::cout << " Qual a idade do funcionário? " << std::endl;
   std::cin >> idade_; std::cin.ignore();
 
   while(idade_ < 0){ // Caso digite um numero negativo
-    std::cout << "Entrada invalida, digite novamente\n";
-    std::cout << " Qual a idade do funcionario" << std::endl;
+    std::cout << " Entrada inválida. Digite novamente.\n";
+    std::cout << " Qual a idade do funcionário? " << std::endl;
     std::cin >> idade_; std::cin.ignore();
 
   }
 
   std::string tipo_sanguineo_;
-  std::cout << " Qual o tipo_sanguineo do funcionario" << std::endl;
+  std::cout << " Qual o tipo sanguíneo do funcionário? " << std::endl;
   std::cin >> tipo_sanguineo_; std::cin.ignore();
 
   while(tipo_sanguineo_ != "A" &&
@@ -154,30 +165,30 @@ void System::inserirFuncionarioDigitando(){
         tipo_sanguineo_ != "O" &&
         tipo_sanguineo_ != "AB")
         {
-            std::cout << "Entrada invalida, digite novamente\n";
-            std::cout << " Qual o tipo_sanguineo do funcionario" << std::endl;
+            std::cout << " Entrada invalida. Digite novamente.\n";
+            std::cout << " Qual o tipo_sanguíneo do funcionário? " << std::endl;
             std::cin >> tipo_sanguineo_; std::cin.ignore();
         }
 
   char fator_rh_;
-  std::cout << " Qual o fator rh do funcionario" << std::endl;
+  std::cout << " Qual o fator rh do funcionário? " << std::endl;
   std::cin >> fator_rh_; std::cin.ignore();
 
   while(fator_rh_ != '-' &&
         fator_rh_ != '+')
         {
-          std::cout << "Entrada invalida, digite novamente\n";
-          std::cout << " Qual o fator rh do funcionario" << std::endl;
+          std::cout << "Entrada inválida. Digite novamente. \n";
+          std::cout << " Qual o fator rh do funcionario? " << std::endl;
           std::cin >> fator_rh_; std::cin.ignore();
         }
 
   std::string especialidade_;
-  std::cout << " Qual a especialidade do funcionario" << std::endl;
+  std::cout << " Qual a especialidade do funcionário? " << std::endl;
   std::cin >> especialidade_; std::cin.ignore();
 
   if(funcao_ == 1 ){
       std::string crmv_;
-      std::cout << " Qual o crmv do funcionario" << std::endl;
+      std::cout << " Qual o crmv do funcionario? " << std::endl;
       std::cin >> crmv_; std::cin.ignore();
       Veterinario * funcionario = new Veterinario(  id_,
                                                     nome_,
@@ -192,15 +203,15 @@ void System::inserirFuncionarioDigitando(){
 
   if(funcao_ == 2){
     int nivel_de_seguranca_;
-    std::cout << " Qual o nivel de segurança do funcionario" << std::endl;
+    std::cout << " Qual o nível de segurança do funcionário? " << std::endl;
     std::cin >> nivel_de_seguranca_; std::cin.ignore();
 
     while(nivel_de_seguranca_ != 0 &&
           nivel_de_seguranca_ != 1 &&
          nivel_de_seguranca_ != 2)
          {
-           std::cout << "Entrada invalida, digite novamente\n";
-           std::cout << " Qual o nivel de segurança do funcionario" << std::endl;
+           std::cout << " Entrada inválida. Digite novamente. \n";
+           std::cout << " Qual o nível de segurança do funcionário? " << std::endl;
            std::cin >> nivel_de_seguranca_; std::cin.ignore();
           }
     Tratador * funcionario = new Tratador(  id_,
@@ -215,8 +226,6 @@ void System::inserirFuncionarioDigitando(){
   }
 
 }
-
-
 
 void System::inserirAnimalMymapA(AveExo * animal){
   if( mymapA.find(animal->getId()) != mymapA.end()){
@@ -256,7 +265,6 @@ void System::inserirAnimalMymapA(MamiferoExo * animal){
     return;
   }
   this->mymapA.insert(std::pair<int, MamiferoExo*>(animal->getId(),animal));
-
 }
 
 void System::inserirAnimalMymapA(MamiferoNat * animal){
@@ -265,7 +273,6 @@ void System::inserirAnimalMymapA(MamiferoNat * animal){
     return;
   }
   this->mymapA.insert(std::pair<int, MamiferoNat*>(animal->getId(),animal));
-
 }
 
 void System::inserirAnimalMymapA(AnfibioExo * animal){
@@ -274,7 +281,6 @@ void System::inserirAnimalMymapA(AnfibioExo * animal){
     return;
   }
   this->mymapA.insert(std::pair<int, AnfibioExo*>(animal->getId(),animal));
-
 }
 
 void System::inserirAnimalMymapA(AnfibioNat * animal){
@@ -283,10 +289,7 @@ void System::inserirAnimalMymapA(AnfibioNat * animal){
     return;
   }
   this->mymapA.insert(std::pair<int, AnfibioNat*>(animal->getId(),animal));
-
 }
-
-
 
 void System::infoAnimalId(int &id_){
 
@@ -297,8 +300,8 @@ void System::infoAnimalId(int &id_){
   // Testando se Id existencia no mymapA
   while(this->mymapA.find(id_) != this->mymapA.end()){
       system("clear");
-      std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
-                << " Qual o número idenficador do animal a ser inserido?" << std::endl;
+      std::cout << " ++++++++++++ ENTRADA INVÁLIDA. TENTE NOVAMENTE. ++++++++++++++++\n"
+                << " Qual o número idenficador do animal a ser inserido? " << std::endl;
       std::cin  >> id_;
       std::cin.ignore();
   }
@@ -307,7 +310,7 @@ void System::infoAnimalId(int &id_){
 
 void System::infoAnimalClasse(std::string &classe_){
 
-  std::cout << "Qual a classe do animal Ave, Reptil, Mamifero ou Anfibio?"
+  std::cout << " Qual a classe do animal: Ave, Réptil, Mamífero ou Anfíbio? (Digite sem acento)"
             << std::endl;
   std::cin  >> classe_;
   std::cin.ignore();
@@ -316,8 +319,8 @@ void System::infoAnimalClasse(std::string &classe_){
         classe_ != "Mamifero" && classe_ != "Reptil")
     {
       system("clear");
-      std::cout << "++++++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
-                << "Qual a classe do animal Ave, Reptil, Mamifero ou Anfibio?"
+      std::cout << " ++++++++++++++++ ENTRADA INVÁLIDA. TENTE NOVAMENTE. ++++++++++++++++\n"
+                << " Qual a classe do animal: Ave, Réptil, Mamífero ou Anfíbio? (Digite sem acento)"
                 << std::endl;
       std::cin  >> classe_;
       std::cin.ignore();
@@ -326,7 +329,7 @@ void System::infoAnimalClasse(std::string &classe_){
 }
 
 void System::infoAnimalNaturalidade(std::string &naturalidade_){
-  std::cout << "Qual a naturalidade do animal ? Exotico ou Nativo"
+  std::cout << " Qual a naturalidade do animal? Exótico ou Nativo? (Digite sem acento)"
             << std::endl;
   std::cin  >> naturalidade_;
   std::cin.ignore();
@@ -334,8 +337,8 @@ void System::infoAnimalNaturalidade(std::string &naturalidade_){
   while(naturalidade_ != "Exotico" && naturalidade_ != "Nativo")
     {
       system("clear");
-      std::cout << "++++++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
-                << "Qual a naturalidade do animal ? Exotico ou Nativo"
+      std::cout << " ++++++++++++++++ ENTRADA INVÁLIDA. TENTE NOVAMENTE. ++++++++++++++++\n"
+                << " Qual a naturalidade do animal: Exótico ou Nativo? (Digite sem acento) "
                 << std::endl;
       std::cin  >> naturalidade_;
       std::cin.ignore();
@@ -360,16 +363,14 @@ void System::infoAnimalSexo(char &sexo_){
   while(sexo_ != 'M' && sexo_ != 'F')
         {
           system("clear");
-          std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
-                    << "Qual o sexo do animal ? \n"
-                    << "Digite M para o sexo Masculino e F para o sexo Feminino : ";
+          std::cout << " ++++++++++++ ENTRADA INVÁLIDA. TENTE NOVAMENTE. ++++++++++++++++\n"
+                    << " Qual o sexo do animal? \n"
+                    << " Digite M para o macho e F para o fêmea: ";
           std::cin >> sexo_;
           std::cin.ignore();
         }
   system("clear");
 }
-
-
 
 void System::infoMaiorQZero(double &generico, std::string os){
   std::cout << os << std::endl;
@@ -402,10 +403,10 @@ void System::infoMaiorQZero(int &generico, std::string os){
 }
 
 void System::infoString(std::string &generico, std::string os){
-  //Função generica que recebe dois parametros string
-  // onde "os" esta com a pergunta a ser respondida no
-  // genericos
-  std::cout <<  os << std::endl;
+  // Função genérica que recebe dois parametros string
+  // onde "os" está com a pergunta a ser respondida no
+  // genericos.
+  std::cout << os << std::endl;
   std::cin >> generico;
   std::cin.ignore();
 
@@ -415,7 +416,7 @@ void System::infoString(std::string &generico, std::string os){
 void System::boolReptilVenenoso(bool &venenoso_){
   //Pergunta se o animal é venenoso ou não
   int aux;
-  std::cout << " O animal é venenoso ? Digite 1 para sim e 0 para não"
+  std::cout << " O animal é venenoso? Digite 1 para 'sim' e 0 para 'não'. "
             << std::endl;
   std::cin  >> aux;
   std::cin.ignore();
@@ -423,23 +424,20 @@ void System::boolReptilVenenoso(bool &venenoso_){
   while(aux != 1 && aux != 0)
         {
           system("clear");
-          std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
-                    << " O animal é venenoso ? Digite 1 para sim e 0 para não"
+          std::cout << " ++++++++++++ ENTRADA INVÁLIDA. TENTE NOVAMENTE ++++++++++++++++\n"
+                    << " O animal é venenoso? Digite 1 para 'sim' e 0 para 'não'. "
                     << std::endl;
           std::cin >> aux;
           std::cin.ignore();
         }
-
   venenoso_ = aux;
   system("clear");
 }
 
-
-
 void System::inserirAnimalDigitando(){
-  //Condição de parada, se nao existir funcionarios
+  //Condição de parada, se nao existir funcionários.
   if(mymapF.size() == 0){
-    std::cout << " Não existem funcionarios para cuidar dos animais\n" << std::endl;
+    std::cout << " Não existem funcionários para cuidar dos animais. \n" << std::endl;
     return;
   }
 
@@ -460,29 +458,29 @@ void System::inserirAnimalDigitando(){
 
   double tamanho_; // Tamanho do animal
   //perguntando o tamanho do animal
-  infoMaiorQZero(tamanho_, "Qual o tamanho do animal? (em centímentros)");
+  infoMaiorQZero(tamanho_, " Qual o tamanho do animal? (em centímentros)");
 
   std::string dieta_; //Dieta do animal
-  infoString(dieta_, "Qual a dieta do animal?" ); // Perguntando a dieta do animal
+  infoString(dieta_, " Qual a dieta do animal?" ); // Perguntando a dieta do animal
 
   std::string nome_batismo_; // Nome do animal
   //Perguntando nome do animal
-  infoString(nome_batismo_, "Qual o nome de batismo do animal?" );
+  infoString(nome_batismo_, " Qual o nome de batismo do animal? " );
 
   std::string auto_ibama_; // autorização do ibama do animal
   //perguntando autorização do ibama do animal
-  infoString(auto_ibama_, "Qual a autorização do ibama do animal?");
+  infoString(auto_ibama_, " Qual a autorização do ibama do animal? ");
 
   Veterinario * veterinario_ = nullptr;
   Tratador * tratador_ = nullptr;
   int aux;
 
-  std::cout << "Digite o id do Veterinario, caso o animal não tenha, digite 0 : \n";
+  std::cout << " Digite o id do Veterinário. Caso o animal não tenha, digite 0: \n";
   std::cin >> aux;
   std::cin.ignore();
 
   while(this->mymapF.find(aux) == this->mymapF.end() && aux != 0){
-    std::cout << "Digite o id do Veterinario, caso o animal não tenha, digite 0";
+    std::cout << " Digite o id do Veterinário. Caso o animal não tenha, digite 0.";
     std::cin >> aux;
     std::cin.ignore();
   }
@@ -491,12 +489,12 @@ void System::inserirAnimalDigitando(){
     veterinario_ = dynamic_cast<Veterinario*> (mymapF.find(aux)->second);
   }
 
-  std::cout << "Digite o id do Tratador, caso o animal não tenha, digite 0 :\n";
+  std::cout << " Digite o id do Tratador. Caso o animal não tenha, digite 0: \n";
   std::cin >> aux;
   std::cin.ignore();
 
   while(this->mymapF.find(aux) == this->mymapF.end() && aux != 0){
-    std::cout << "Digite o id do Tratador, caso o animal não tenha, digite 0 : \n";
+    std::cout << " Digite o id do Tratador. Caso o animal não tenha, digite 0: \n";
     std::cin >> aux;
     std::cin.ignore();
   }
@@ -505,10 +503,9 @@ void System::inserirAnimalDigitando(){
     tratador_ = dynamic_cast<Tratador*> (mymapF.find(aux)->second);
   }
 
-
   //Condição de parada sem funcionario cuidador
     if(veterinario_ == nullptr && tratador_ == nullptr){
-    std::cout << "Erro: Não foram atrelados funcionarios para cuidar dos animais\n" << std::endl;
+    std::cout << "Erro: Não foram atrelados funcionários para cuidar dos animais. \n" << std::endl;
     delete veterinario_;
     delete tratador_;
     return;
@@ -527,7 +524,7 @@ void System::inserirAnimalDigitando(){
 
   if(classe_ == "Ave"){
     infoMaiorQZero(tamanho_do_bico_cm_,
-          "Qual o tamanho do bico do animal? (em centímentros)");
+        "Qual o tamanho do bico do animal? (em centímentros)");
     infoMaiorQZero(envergadura_das_asas_,
         "Qual o tamanho da envergadura das asas do animal? (em centímentros)");
   }
@@ -553,8 +550,6 @@ void System::inserirAnimalDigitando(){
   else if( naturalidade_ == "Nativo"){
     infoString(uf_origem_, "Qual o Uf origem do animal?");
   }
-
-
 
   if(classe_ == "Ave" && naturalidade_ == "Exotico"){
     AveExo * animal = new AveExo(id_,
@@ -718,7 +713,6 @@ void System::consultaAnimaisDoTratador(int Id){
 
   }
 }
-
 //Excluir
 
 void System::excluiAnimal(int Id){

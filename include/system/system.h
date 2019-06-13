@@ -68,7 +68,7 @@ class System{
     void infoAnimalId(int &id_);
     void infoAnimalClasse(std::string &classe_);
     void infoAnimalNaturalidade(std::string &naturalidade_);
-    void infoAnimalNomeCientifico(string &nome_cientifico_);
+    void infoAnimalNomeCientifico(std::string &nome_cientifico_);
     void infoAnimalSexo(char &sexo);
 
     void infoMaiorQZero(double &generico, std::string os);
