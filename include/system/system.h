@@ -95,6 +95,7 @@ class System{
     void infoString(std::string &generico, std::string os);
 
 
+    //Pesquisa
     Tratador * consultaTratador(int Id);
     Veterinario * consultaVeterinario(int Id);
 
@@ -125,6 +126,10 @@ class System{
     void MenuRemover1();
     void MenuRemover1_1();
     void MenuRemover1_2();
+    void MenuPesquisar1();
+    void MenuPesquisar1_1();
+    void MenuPesquisar1_2();
+    void MenuEditar1();
 
     //Cout's das opções dos menus
     void PrintMenuPrincipal();
@@ -137,6 +142,11 @@ class System{
     void PrintRemover1();
     void PrintRemover1_1();
     void PrintRemover1_2();
+    void PrintPesquisar1();
+    void PrintPesquisar1_1();
+    void PrintPesquisar1_2();
+    void PrintEditar1();
+    void PrintEditar1_1();
 
 
 
@@ -146,7 +156,6 @@ class System{
     void printMenuRemover1();
     void printMenuRemover1_1();
     void printMenuRemover1_2();
-    void printMenuPesquisar1();
     void printMenuPesquisar1_1();
     void printMenuPesquisar1_2();
     void printMenuEditar1();

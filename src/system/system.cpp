@@ -44,6 +44,7 @@ void System::Print_MyMapA_Tela(){
     std::cout << "Animal : " <<  it->first << " \n" << *it->second << "\n\n";
   }
 }
+
 void System::Print_MyMapF_Tela(){
   if(this->mymapF.size() == 0){
     std::cout << "Nenhum funcionario instanciado\n" << std::endl;
@@ -56,6 +57,7 @@ void System::Print_MyMapF_Tela(){
         std::cout << "Funcionario : " <<  it->first << " \n" << *it->second << "\n\n";
     }
 }
+
 void System::Print_MyMapA_Func_Tela(int Id){
   for (std::map<int,Animal*>::iterator it = this->mymapA.begin();
   it!= this->mymapA.end();
@@ -67,8 +69,6 @@ void System::Print_MyMapA_Func_Tela(int Id){
   }
 }
 
-
-//Falta implementar
 void System::Print_MyMapA_CSV(std::string nomeArquivo){
   ofstream file; // Cria arquivo.
 	file.open(nomeArquivo);
@@ -158,6 +158,7 @@ void System::Inserir_Func_MyMapF(){
     inserirFuncionarioMyMapF(funcionario);
   }
 }
+
 void System::Inserir_Animal_MyMapA(){
   //Condição de parada, se nao existir funcionarios
   if(mymapF.size() == 0){
@@ -429,6 +430,7 @@ void System::inserirFuncionarioMyMapF(Tratador * funcionario){
   }
   this->mymapF.insert(std::pair<int, Tratador*>(funcionario->getId(),funcionario));
 }
+
 void System::inserirFuncionarioMyMapF(Veterinario * funcionario){
   if( mymapF.find(funcionario->getId()) != mymapF.end()){
     std::cout << "\n Erro. Id já existe!" << std::endl;
@@ -446,6 +448,7 @@ void System::inserirAnimalMyMapA(AveExo * animal){
   }
   this->mymapA.insert(std::pair<int, AveExo*>(animal->getId(),animal));
 }
+
 void System::inserirAnimalMyMapA(AveNat * animal){
   if( mymapA.find(animal->getId()) != mymapA.end()){
     std::cout << "\n Erro. Id já existe!" << std::endl;
@@ -453,6 +456,7 @@ void System::inserirAnimalMyMapA(AveNat * animal){
   }
   this->mymapA.insert(std::pair<int, AveNat*>(animal->getId(),animal));
 }
+
 void System::inserirAnimalMyMapA(ReptilExo * animal){
   if( mymapA.find(animal->getId()) != mymapA.end()){
     std::cout << "\n Erro. Id já existe!" << std::endl;
@@ -460,6 +464,7 @@ void System::inserirAnimalMyMapA(ReptilExo * animal){
   }
   this->mymapA.insert(std::pair<int, ReptilExo*>(animal->getId(),animal));
 }
+
 void System::inserirAnimalMyMapA(ReptilNat * animal){
   if( mymapA.find(animal->getId()) != mymapA.end()){
     std::cout << "\n Erro. Id já existe!" << std::endl;
@@ -467,6 +472,7 @@ void System::inserirAnimalMyMapA(ReptilNat * animal){
   }
   this->mymapA.insert(std::pair<int, ReptilNat*>(animal->getId(),animal));
 }
+
 void System::inserirAnimalMyMapA(MamiferoExo * animal){
   if( mymapA.find(animal->getId()) != mymapA.end()){
     std::cout << "\n Erro. Id já existe!" << std::endl;
@@ -475,6 +481,7 @@ void System::inserirAnimalMyMapA(MamiferoExo * animal){
   this->mymapA.insert(std::pair<int, MamiferoExo*>(animal->getId(),animal));
 
 }
+
 void System::inserirAnimalMyMapA(MamiferoNat * animal){
   if( mymapA.find(animal->getId()) != mymapA.end()){
     std::cout << "\n Erro. Id já existe!" << std::endl;
@@ -483,6 +490,7 @@ void System::inserirAnimalMyMapA(MamiferoNat * animal){
   this->mymapA.insert(std::pair<int, MamiferoNat*>(animal->getId(),animal));
 
 }
+
 void System::inserirAnimalMyMapA(AnfibioExo * animal){
   if( mymapA.find(animal->getId()) != mymapA.end()){
     std::cout << "\n Erro. Id já existe!" << std::endl;
@@ -491,6 +499,7 @@ void System::inserirAnimalMyMapA(AnfibioExo * animal){
   this->mymapA.insert(std::pair<int, AnfibioExo*>(animal->getId(),animal));
 
 }
+
 void System::inserirAnimalMyMapA(AnfibioNat * animal){
   if( mymapA.find(animal->getId()) != mymapA.end()){
     std::cout << "\n Erro. Id já existe!" << std::endl;
@@ -505,6 +514,7 @@ void System::inserirAnimalMyMapA(AnfibioNat * animal){
 void System::RemoverAnimal(int &id_){
   this->mymapA.erase(id_);
 }
+
 void System::RemoverFuncionario(int &id_){
   this->mymapF.erase(id_);
 }
@@ -524,6 +534,7 @@ void System::DefIdFunc(int &id_){
     std::cin >> id_; std::cin.ignore();
   }
 }
+
 void System::DefFuncaoFunc(std::string &funcao_){
   system("clear");
   std::cout << "Qual a funcao do Funcionario: (Veterinario) ou (Tratador)" << std::endl;
@@ -538,6 +549,7 @@ void System::DefFuncaoFunc(std::string &funcao_){
     std::cin.ignore();
   }
 }
+
 void System::DefTipoSangueFunc(std::string &tipo_sanguineo_){
   system("clear");
   std::cout << "Qual o tipo_sanguineo do funcionario?" << std::endl;
@@ -556,6 +568,7 @@ void System::DefTipoSangueFunc(std::string &tipo_sanguineo_){
   }
 
 }
+
 void System::DefFatorRhFunc(char &fator_rh_){
   system("clear");
   std::cout << "Qual o fator rh do funcionario?" << std::endl;
@@ -571,6 +584,7 @@ void System::DefFatorRhFunc(char &fator_rh_){
     std::cin >> fator_rh_; std::cin.ignore();
   }
 }
+
 void System::DefNivSecurityFunc(int &nivel_de_seguranca_){
   system("clear");
   std::cout << " Qual o nivel de segurança do funcionario" << std::endl;
@@ -607,6 +621,7 @@ void System::DefAnimalId(int &id_){
   }
   system("clear");
 }
+
 void System::DefAnimalClasse(std::string &classe_){
 
   std::cout << "Qual a classe do animal Ave, Reptil, Mamifero ou Anfibio?"
@@ -626,6 +641,7 @@ void System::DefAnimalClasse(std::string &classe_){
   }
   system("clear");
 }
+
 void System::DefAnimalNaturalidade(std::string &naturalidade_){
   std::cout << "Qual a naturalidade do animal ? Exotico ou Nativo"
   << std::endl;
@@ -643,12 +659,14 @@ void System::DefAnimalNaturalidade(std::string &naturalidade_){
   }
   system("clear");
 }
+
 void System::DefAnimalNomeCientifico(string &nome_cientifico_){
   //Pergunta nome Cientifico
   std::cout << " Qual o nome científico do animal? " << std::endl;
   std::cin >> nome_cientifico_; std::cin.ignore();
   system("clear");
 }
+
 void System::DefAnimalSexo(char &sexo_){
     //Pergunta sexo do animal
     std::cout << " Qual o sexo do animal? (Digite M para macho e F para fêmea)" << std::endl;
@@ -708,6 +726,7 @@ void System::infoMaiorQZero(double &generico, std::string os){
   }
   system("clear");
 }
+
 void System::infoMaiorQZero(short &generico, std::string os){
   std::cout << os << std::endl;
   std::cin >> generico;
@@ -722,6 +741,7 @@ void System::infoMaiorQZero(short &generico, std::string os){
   }
   system("clear");
 }
+
 void System::infoMaiorQZero(int &generico, std::string os){
   std::cout << os << std::endl;
   std::cin >> generico;
@@ -736,6 +756,7 @@ void System::infoMaiorQZero(int &generico, std::string os){
   }
   system("clear");
 }
+
 void System::infoString(std::string &generico, std::string os){
   //Função generica que recebe dois parametros string
   // onde "os" esta com a pergunta a ser respondida no
@@ -799,19 +820,24 @@ void System::MenuInicial(){
 
       switch(alternativa){
         case 1 :
+          system("clear");
           MenuListar1(); // Menu Inicial >> Listar
           break;
         case 2 :
+          system("clear");
           MenuInserir1(); // Menu Inicial >> Inserir
           break;
         case 3 :
+          system("clear");
           MenuRemover1(); // Menu Inicial >> Remover
           break;
         case 4 :
-    //      MenuPesquisar1(); // Menu Inicial >> Pesquisar
+          system("clear");
+          MenuPesquisar1(); // Menu Inicial >> Pesquisar
           break;
         case 5 :
-    //      MenuEditar1(); // Menu Inicial >> Editar
+          system("clear");
+          MenuEditar1(); // Menu Inicial >> Editar
           break;
         case 0 : // Salva em arquivo CSV e sai do menu.
           //Função a implementar
@@ -822,6 +848,7 @@ void System::MenuInicial(){
       }
   } while (alternativa != 0);
 }
+
 void System::MenuListar1(){
   int alternativa = -1;
   do{
@@ -831,9 +858,11 @@ void System::MenuListar1(){
 
       switch(alternativa){
         case 1 :
+          system("clear");
           MenuListar1_1(); // Menu Inicial >> Listar >> Animais
           break;
         case 2 :
+          system("clear");
           MenuListar1_2(); // Menu Inicial >> Listar >> Funcionários
           break;
         case 0 : // Nenhuma ação. Somente sai do menu.
@@ -844,8 +873,10 @@ void System::MenuListar1(){
       }
   } while (alternativa != 0);
 }
+
 void System::MenuListar1_1(){
   int alternativa = -1;
+  std::string nomeArquivo;
   do{
       PrintListar1_1();
       std::cout << " Alternativa escolhida: ";
@@ -853,10 +884,13 @@ void System::MenuListar1_1(){
 
       switch(alternativa){
         case 1 :
+          system("clear");
           Print_MyMapA_Tela(); // Menu Inicial >> Listar >> Animais >> Tela
           break;
         case 2 :
-          //listarAnimaisEmArquivoCSV(); // Menu Inicial >> Listar >> Animais >> Arquivo CSV
+          system("clear");
+          infoString(nomeArquivo, "Qual o nome do arquivo a ser salvo?");
+          Print_MyMapA_CSV(nomeArquivo); // Menu Inicial >> Listar >> Animais >> Arquivo CSV
           break;
         case 3 :
           //listarAnimaisComFiltroNaTela(); // Menu Inicial >> Listar >> Animais >> Tela & Filtro
@@ -872,8 +906,10 @@ void System::MenuListar1_1(){
       }
   } while (alternativa != 0);
 }
+
 void System::MenuListar1_2(){
   int alternativa = -1;
+  std::string nomeArquivo;
   do{
       PrintListar1_2();
       std::cout  << " Alternativa escolhida: ";
@@ -881,10 +917,13 @@ void System::MenuListar1_2(){
 
       switch(alternativa){
         case 1 :
+          system("clear");
           Print_MyMapF_Tela(); // Menu Inicial >> Listar >> Funcionários >> Tela
           break;
         case 2 :
-        //  listarFuncionariosEmArquivoCSV(); // Menu Inicial >> Listar >> Funcionários >> Arquivo CSV
+          system("clear");
+          infoString(nomeArquivo, "Qual o nome do arquivo a ser salvo?");
+          Print_MyMapF_CSV(nomeArquivo); // Menu Inicial >> Listar >> Funcionários >> Arquivo CSV
           break;
         case 3 :
     //      listarFuncionariosComFiltroNaTela(); // Menu Inicial >> Listar >> Funcionários >> Tela & Filtro
@@ -900,6 +939,7 @@ void System::MenuListar1_2(){
       }
   } while (alternativa != 0);
 }
+
 void System::MenuInserir1(){
 
     int alternativa = -1;
@@ -909,9 +949,11 @@ void System::MenuInserir1(){
         std::cin   >> alternativa; std::cin.ignore();
         switch(alternativa){
           case 1 :
+            system("clear");
             MenuInserir1_1(); // Menu Inicial >> Inserir >> Animais
             break;
           case 2 :
+            system("clear");
             MenuInserir1_2(); // Menu Inicial >> Inserir >> Funcionários
             break;
           case 0: // Nenhuma ação. Somente sai do menu.
@@ -922,10 +964,11 @@ void System::MenuInserir1(){
         }
     } while (alternativa != 0);
 }
+
 void System::MenuInserir1_1(){
   int alternativa = -1;
   do{
-      PrintInserir1_2();
+      PrintInserir1_1();
       std::cout  << " Alternativa escolhida: ";
       std::cin   >> alternativa; std::cin.ignore();
 
@@ -944,6 +987,7 @@ void System::MenuInserir1_1(){
       }
     } while (alternativa != 0);
 }
+
 void System::MenuInserir1_2(){
   int alternativa = -1;
   do{
@@ -965,6 +1009,7 @@ void System::MenuInserir1_2(){
       }
   } while (alternativa != 0);
 }
+
 void System::MenuRemover1(){
   int alternativa = -1;
   do{
@@ -973,9 +1018,11 @@ void System::MenuRemover1(){
       std::cin   >> alternativa; std::cin.ignore();
       switch(alternativa){
         case 1 :
+          system("clear");
           MenuRemover1_1(); // Menu Inicial >> Remover >> Animais
           break;
         case 2 :
+          system("clear");
           MenuRemover1_2(); // Menu Inicial >> Remover >> Funcionários
           break;
         case 0 : // Nenhuma ação. Somente sai do menu.
@@ -986,6 +1033,7 @@ void System::MenuRemover1(){
       }
   } while (alternativa != 0);
 }
+
 void System::MenuRemover1_1(){
   int alternativa = -1;
   do{
@@ -1001,6 +1049,7 @@ void System::MenuRemover1_1(){
 
   } while (alternativa != 0);
 }
+
 void System::MenuRemover1_2(){
   int alternativa = -1;
   do{
@@ -1018,6 +1067,116 @@ void System::MenuRemover1_2(){
   } while (alternativa != 0);
 }
 
+void System::MenuPesquisar1(){
+  int alternativa = -1;
+  do{
+    PrintPesquisar1();
+    std::cout  << " Alternativa escolhida: ";
+    std::cin   >> alternativa;
+    std::cin.ignore();
+
+    switch(alternativa){
+      case 1 :
+      //      MenuPesquisar1_1(); // Pesquisar >> Animais
+      break;
+      case 2 :
+      //      MenuPesquisar1_2(); // Pesquisar >> Funcionarios
+      break;
+      case 0 :
+      break;
+      default:
+      system("clear");
+      std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
+    }
+  } while (alternativa != 0);
+
+}
+
+void System::MenuPesquisar1_1(){
+  int id;
+  int alternativa = -1;
+  do{
+      PrintPesquisar1_1();
+      std::cout  << " Alternativa escolhida: ";
+      std::cin   >> alternativa;
+      std::cin.ignore();
+
+      switch(alternativa){
+        case 1 :
+          system("clear");
+          std::cout  << " Digite o Id ";
+          std::cin   >> id;
+          std::cin.ignore();
+          if( this->mymapA.find(id) != this->mymapA.end()){
+            std::cout << this->mymapA.find(id)->second;
+          }else{
+            std::cout << "Animal com esse identificador não existe";
+          }
+          break;
+        case 0 :
+          break;
+        default:
+          system("clear");
+          std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
+      }
+    } while (alternativa != 0);
+}
+
+void System::MenuPesquisar1_2(){
+  int id;
+  int alternativa = -1;
+  do{
+      PrintPesquisar1_2();
+      std::cout  << " Alternativa escolhida: ";
+      std::cin   >> alternativa;
+      std::cin.ignore();
+
+      switch(alternativa){
+        case 1 :
+          system("clear");
+          std::cout  << " Digite o Id ";
+          std::cin   >> id;
+          std::cin.ignore();
+          if( this->mymapF.find(id) != this->mymapF.end()){
+            std::cout << this->mymapF.find(id)->second;
+          }else{
+            std::cout << "Funcionario com esse identificador não existe";
+          }
+          break;
+        case 0 :
+          break;
+        default:
+          system("clear");
+          std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
+      }
+    } while (alternativa != 0);
+}
+
+void System::MenuEditar1(){
+  int alternativa = -1;
+  do{
+      PrintEditar1();
+      std::cout  << " Alternativa escolhida: ";
+      std::cin   >> alternativa;
+      std::cin.ignore();
+
+      switch(alternativa){
+        case 1 :
+          //MenuEditar1_1(); // Edita >> Animais
+          break;
+        case 2 :
+          //MenuEditar1_2(); // Editar >> Funcionarios
+          break;
+        case 0 :
+          break;
+        default:
+          system("clear");
+          std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
+      }
+    } while (alternativa != 0);
+}
+
+
 //Cout's das opções dos menus
 void System::PrintMenuPrincipal(){
   std::cout  << "\n\n"
@@ -1033,6 +1192,7 @@ void System::PrintMenuPrincipal(){
              << " \n ++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << std::endl;
 }
+
 void System::PrintListar1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Listar Dados no Banco \n"
@@ -1042,25 +1202,27 @@ void System::PrintListar1(){
              << " Digite '0' para: Voltar ao Menu Anterior \n"
              << std::endl;
 }
+
 void System::PrintListar1_1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Listar Dados de Animais \n"
              << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Escolha uma das seguintes alternativas abaixo: \n"
              << " Digite '1' para: Listar todos os animais na tela\n"
-      //       << " Digite '2' para: Listar todos os animais em um arquivo csv\n"
+             << " Digite '2' para: Listar todos os animais em um arquivo csv\n"
       //       << " Digite '3' para: Listar animais na tela por Filtro\n"
       //       << " Digite '4' para: Listar animais em um arquivo csv por Filtro\n"
              << " Digite '0' para: Voltar ao Menu Anterior \n"
              << std::endl;
 }
+
 void System::PrintListar1_2(){
   std::cout  << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Listar Dados de Funcionários \n"
              << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Escolha uma das seguintes alternativas abaixo: \n"
              << " Digite '1' para: Listar todos os funcionários na tela\n"
-  //           << " Digite '2' para: Listar todos os funcionários em arquivo csv\n"
+             << " Digite '2' para: Listar todos os funcionários em arquivo csv\n"
   //           << " Digite '3' para: Listar todos os funcionários na tela com Filtro\n"
   //           << " Digite '4' para: Listar todos os funcionários em arquivo csv com Filtro\n"
              << " Digite '0' para: Voltar ao Menu Anterior \n"
@@ -1077,6 +1239,7 @@ void System::PrintInserir1(){
              << " Digite '0' para: Voltar ao Menu Anterior \n"
              << std::endl;
 }
+
 void System::PrintInserir1_1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Inserir Dados de Animal \n"
@@ -1087,6 +1250,7 @@ void System::PrintInserir1_1(){
              << " Digite '0' para: Voltar ao Menu Anterior \n"
              << std::endl;
 }
+
 void System::PrintInserir1_2(){
   std::cout  << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Inserir Dados de Funcionário \n"
@@ -1108,6 +1272,7 @@ void System::PrintRemover1(){
              << " Digite '0' para: Voltar ao Menu Anterior \n"
              << std::endl;
 }
+
 void System::PrintRemover1_1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Remover um Animal \n"
@@ -1117,6 +1282,7 @@ void System::PrintRemover1_1(){
              << " ou digite '0' para voltar ao menu anterior \n"
              << std::endl;
 }
+
 void System::PrintRemover1_2(){
   std::cout  << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Remover Dados de Funcionário \n"
@@ -1127,134 +1293,52 @@ void System::PrintRemover1_2(){
              << std::endl;
 }
 
-/*
-
-void System::printMenuRemover1_2(){
-  int alternativa = -1;
-  do{
-      std::cout  << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
-                 << " \n Você escolheu a alternativa: Remover Dados de Funcionário \n"
-                 << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
-                 << " \n Escolha uma das seguintes alternativas abaixo: \n"
-                 << " Digite o ID do funcionário"
-                 << " ou digite '0' para voltar ao menu anterior \n"
-                 << std::endl
-                 << " Alternativa escolhida: ";
-      std::cin   >> alternativa; std::cin.ignore();
-      excluiFuncionario(alternativa);
-
-      system("clear");
-
-      std::cout << "Caso deseje excluir outro funcionario -> digite\" 1\""
-                << "Caso deseje voltar ao menu anterior digite \"0\"" << std::endl;
-      std::cin   >> alternativa; std::cin.ignore();
-
-  } while (alternativa != 0);
-}
-
-void System::printMenuPesquisar1(){
-
-}
-
-void System::printMenuPesquisar1_1(){
-
-}
-
-void System::printMenuPesquisar1_2(){
-
-}
-
-void System::printMenuEditar1(){
-  int alternativa = -1;
-  do{
+void System::PrintPesquisar1(){
       std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
-                 << " \n Você escolheu a alternativa: Editar Dados do Banco \n"
+                 << " \n Você escolheu a alternativa: Pesquisar Dados do Banco \n"
                  << " \n Escolha uma das seguintes alternativas abaixo: \n"
-                 << " Digite '1' para: Editar Dados dos Animais\n"
-                 << " Digite '2' para: Editar Dados dos Funcionarios\n"
+                 << " Digite '1' para: Pesquisar Dados dos Animais\n"
+                 << " Digite '2' para: Pesquisar Dados dos Funcionarios\n"
                  << " Digite '0' para: Voltar ao Menu Anterior \n"
-                 << std::endl
-                 << " Alternativa escolhida: ";
-      std::cin   >> alternativa;
-      std::cin.ignore();
-
-      switch(alternativa){
-        case 1 :
-          printMenuEditar1_1(); // Edita >> Animais
-          break;
-        case 2 :
-          printMenuEditar1_2(); // Editar >> Funcionarios
-          break;
-        case 0 :
-          break;
-        default:
-          system("clear");
-          std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
-      }
-    } while (alternativa != 0);
-
+                 << std::endl;
 }
 
-void System::printMenuEditar1_1(){
-  std::cout << " \n FALTA IMPLEMENTAR!\n " << endl;
-  /*
-  int alternativa = -1;
-  do{
-      std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
-                 << " \n Você escolheu a alternativa: Editar Dados dos Animais \n"
-                 << " \n Escolha uma das seguintes alternativas abaixo: \n"
-                 << " Digite '1' para: Editar Dados dos Animais\n"
-                 << " Digite '2' para: Editar Dados dos Funcionarios\n"
-                 << " Digite '0' para: Voltar ao Menu Anterior \n"
-                 << std::endl
-                 << " Alternativa escolhida: ";
-      std::cin   >> alternativa;
-      std::cin.ignore();
-
-      switch(alternativa){
-        case 1 :
-          printMenuEditar1_1(); // Edita >> Animais
-          break;
-        case 2 :
-          printMenuEditar1_2(); // Editar >> Funcionarios
-          break;
-        case 0 :
-          break;
-        default:
-          system("clear");
-          std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
-      }
-    } while (alternativa != 0);
-*/
-//}
-/*
-void System::printMenuEditar1_2(){
-  int alternativa = -1;
-  do{
-      std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
-                 << " \n Você escolheu a alternativa: Editar Dados dos Funcionario \n"
-                 << " \n Escolha uma das seguintes alternativas abaixo: \n"
-                 << " Digite '1' para: Editar Dados dos Animais\n"
-                 << " Digite '2' para: Editar Dados dos Funcionarios\n"
-                 << " Digite '0' para: Voltar ao Menu Anterior \n"
-                 << std::endl
-                 << " Alternativa escolhida: ";
-      std::cin   >> alternativa;
-      std::cin.ignore();
-
-      switch(alternativa){
-        case 1 :
-          printMenuEditar1_1(); // Edita >> Animais
-          break;
-        case 2 :
-          printMenuEditar1_2(); // Editar >> Funcionarios
-          break;
-        case 0 :
-          break;
-        default:
-          system("clear");
-          std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
-      }
-    } while (alternativa != 0);
+void System::PrintPesquisar1_1(){
+  std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
+             << " \n Você escolheu a alternativa: Pesquisar dados dos animais \n"
+             << " \n Escolha uma das seguintes alternativas abaixo: \n"
+             << " Digite '1' para: Pesquisar por Id\n"
+             //<< " Digite '2' para: \n"
+             << " Digite '0' para: Voltar ao Menu Anterior \n"
+             << std::endl;
 }
-*/
+
+void System::PrintPesquisar1_2(){
+  std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
+             << " \n Você escolheu a alternativa: Pesquisar dados dos funcionario \n"
+             << " \n Escolha uma das seguintes alternativas abaixo: \n"
+             << " Digite '1' para: Pesquisar por Id\n"
+             //<< " Digite '2' para: \n"
+             << " Digite '0' para: Voltar ao Menu Anterior \n"
+             << std::endl;
+}
+
+void System::PrintEditar1(){
+  std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
+             << " \n Você escolheu a alternativa: Editar Dados dos Banco \n"
+             << " \n Escolha uma das seguintes alternativas abaixo: \n"
+             << " Digite '1' para: Editar Dados dos Animais\n"
+             << " Digite '2' para: Editar Dados dos Funcionarios\n"
+             << " Digite '0' para: Voltar ao Menu Anterior \n"
+             << std::endl;
+}
+
+void System::PrintEditar1_1(){
+  std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
+             << " \n Você escolheu a alternativa: Editar Dados dos Animais \n"
+             << " \n Escolha uma das seguintes alternativas abaixo: \n"
+             << " Digite '1' para: Editar Dados dos Animais\n"
+             << " Digite '2' para: Editar Dados dos Funcionarios\n"
+             << " Digite '0' para: Voltar ao Menu Anterior \n"
+             << std::endl;
+}
