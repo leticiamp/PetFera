@@ -1,12 +1,9 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file ave.h
+* @brief Classe das aves
+* @author Victor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 16/06/2019
 */
 
 #ifndef _AVE_H_
@@ -15,14 +12,17 @@
 #include <string>
 #include "animal.h"
 
+/** @brief Classe responsável pelo controle das aves */
+
 class Ave : public Animal{
 	private:
 
 	protected:
-		double m_tamanho_do_bico_cm;
-		double m_envergadura_das_asas;
+		double m_tamanho_do_bico_cm; /**< Define o tamanho do bico em centímetros*/
+		double m_envergadura_das_asas; /**< Define a envergadura das asas da ave*/
 
 	public:
+		/** @brief Construtor parametrizado. */
 		Ave(int id_,
 				std::string classe_,
 				std::string nome_cientifico_,
@@ -36,7 +36,7 @@ class Ave : public Animal{
 				double tamanho_do_bico_cm_,
 				double envergadura_das_asas_);
 
-		~Ave();
+		~Ave(); /**< Destrutor padrão*/
 
 		double getTamanhoBicoCm();
 		double getEnvergaduraAsas();

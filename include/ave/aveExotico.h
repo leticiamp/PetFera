@@ -1,12 +1,9 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file aveExotico.h
+* @brief Classe das aves exóticas
+* @author Victor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 16/06/2019
 */
 
 #ifndef _AVE_EXOTICO_H_
@@ -22,6 +19,7 @@ class AveExo : public Ave, AnimalExo{
 	protected:
 
 	public:
+		/** @brief Construtor parametrizado. */
 		AveExo(int id_,
 					std::string classe_,
 					std::string nome_cientifico_,
@@ -37,7 +35,7 @@ class AveExo : public Ave, AnimalExo{
 					std::string cidade_origem_,
 					std::string auto_ibama_);
 
-		~AveExo();
+		~AveExo(); /**< Destrutor padrão*/
 
 };
 
