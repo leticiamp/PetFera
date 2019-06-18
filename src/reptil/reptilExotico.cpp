@@ -54,20 +54,21 @@ std::ostream& ReptilExo::print(std::ostream& os)const{
 		 << m_sexo << ";" << m_tamanho << ";" << m_dieta << ";"
 		 << m_nome_batismo << ";" << m_naturalidade << ";"
      << m_venenoso << ";" << m_tipo_veneno << ";";
-     if(m_veterinario == nullptr){
- 			os << "Veterinario Responsavel: 0" << std::endl;
+
+    if(m_veterinario == nullptr){
+ 			os << "0" << ";";
  		}else{
- 			os << "Veterinario Responsavel: \n"	<< *m_veterinario << std::endl;
+ 			os << m_veterinario->getId() << ";";
  		}
 
  		if(m_tratador == nullptr){
- 			os << "Tratador Responsavel: 0" << std::endl;
+ 			os << "0" << ";";
  		}else{
- 			os << "Tratador Responsavel: \n"	<< *m_tratador	<< std::endl;
+ 			os << m_tratador->getId()	<< ";";
  		}
 
  		os  << m_pais_origem << ";" << m_cidade_origem  << ";"
  				<< m_autorizacao_ibama  << ";" << std::endl;
-        
+
   return os;
 }

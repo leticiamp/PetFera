@@ -536,22 +536,27 @@ void System::inserirAnimalMyMapA(AnfibioNat * animal){
 
 //Metodos de remoção do MyMap
 void System::RemoverAnimal(int &id_){
+  delete this->mymapA.find(id_)->second;
   this->mymapA.erase(id_);
+  std::cout << "Animal deletado" << std::endl;
 }
 
 void System::RemoverFuncionario(int &id_){
   //se não existir nenhum animal
   if(this->mymapA.size() == 0){
+    delete this->mymapF.find(id_)->second;
     this->mymapF.erase(id_);
+    std::cout << "Funcionario deletado" << std::endl;
     return;
   }
 
   //Se existir animais
 
-  //verifica a funcao do funcionario
+    //verifica a funcao do funcionario
   std::string funcao = this->mymapF.find(id_)->second->getFuncao();
 
-  if(funcao == "Veterinario "){
+  if(funcao == "Veterinario")
+  {
     for (std::map<int,Animal*>::iterator it = this->mymapA.begin(); it!= this->mymapA.end(); ++it)
     {
       Veterinario * vet = it->second->getVeterinario();
@@ -571,13 +576,52 @@ void System::RemoverFuncionario(int &id_){
         Veterinario * vet = it->second->getVeterinario();
           if(vet!= nullptr){
             if(vet->getId() == id_){
-             vet = nullptr;
+             it->second->setVeterinario(nullptr);
             }
           }
     }
 
+    //Deletando o funcionario
+    delete this->mymapF.find(id_)->second;
+    this->mymapF.erase(id_);
+
+    std::cout << "Funcionario deletado" << std::endl;
+    return;
   }
 
+  if(funcao == "Tratador")
+  {
+    for (std::map<int,Animal*>::iterator it = this->mymapA.begin(); it!= this->mymapA.end(); ++it)
+    {
+      Veterinario * vet = it->second->getVeterinario();
+      Tratador * trat = it->second->getTratador();
+        if(trat!= nullptr){
+          if(trat->getId() == id_ && vet == nullptr){
+            std::cout << "Erro, existem animais que só possuem esse Tratador\n"
+            << "ação abortada\n";
+            return;
+          }
+        }
+    }
+
+    //Deletando do local dos animais
+    for (std::map<int,Animal*>::iterator it = this->mymapA.begin(); it!= this->mymapA.end(); ++it)
+    {
+        Tratador * trat = it->second->getTratador();
+          if(trat!= nullptr){
+            if(trat->getId() == id_){
+             it->second->setTratador(nullptr);
+            }
+          }
+    }
+
+    //Deletando o funcionario
+    delete this->mymapF.find(id_)->second;
+    this->mymapF.erase(id_);
+
+    std::cout << "Funcionario deletado" << std::endl;
+    return;
+  }
 }
 
 
@@ -1076,12 +1120,8 @@ void System::MenuRemover1_1(){
       PrintRemover1_1();
       std::cout  << " Alternativa escolhida: ";
       std::cin   >> alternativa; std::cin.ignore();
-      RemoverAnimal(alternativa);
-
       system("clear");
-      std::cout << "Caso deseje excluir outro animal -> digite\" 1\""
-                << "Caso deseje voltar ao menu anterior digite \"0\"" << std::endl;
-      std::cin   >> alternativa; std::cin.ignore();
+      RemoverAnimal(alternativa);
 
   } while (alternativa != 0);
 }
@@ -1092,13 +1132,8 @@ void System::MenuRemover1_2(){
       PrintRemover1_2();
       std::cout  << " Alternativa escolhida: ";
       std::cin   >> alternativa; std::cin.ignore();
-      RemoverFuncionario(alternativa);
-
       system("clear");
-
-      std::cout << "Caso deseje excluir outro funcionario -> digite\" 1\""
-                << "Caso deseje voltar ao menu anterior digite \"0\"" << std::endl;
-      std::cin   >> alternativa; std::cin.ignore();
+      RemoverFuncionario(alternativa);
 
   } while (alternativa != 0);
 }

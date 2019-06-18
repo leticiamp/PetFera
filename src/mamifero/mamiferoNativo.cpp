@@ -50,17 +50,17 @@ std::ostream& MamiferoNat::print(std::ostream& os)const{
 		 << m_cor_pelo	<<";";
 
 
-	if(m_veterinario == nullptr){
-		os << "Veterinario Responsavel: 0" << std::endl;
-	}else{
-		os << "Veterinario Responsavel: \n"	<< *m_veterinario << std::endl;
-	}
+	 if(m_veterinario == nullptr){
+	 	os << "0" << ";";
+	 }else{
+	 	os << m_veterinario->getId() << ";";
+	 }
 
-	if(m_tratador == nullptr){
-		os << "Tratador Responsavel: 0" << std::endl;
-	}else{
-		os << "Tratador Responsavel: \n"	<< *m_tratador	<< std::endl;
-	}
+	 if(m_tratador == nullptr){
+	 	os << "0" << ";";
+	 }else{
+	 	os << m_tratador->getId()	<< ";";
+	 }
 
 	os  << m_uf_origem << ";"<< m_autorizacao_ibama << ";" << std::endl;
 	return os;
