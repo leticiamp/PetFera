@@ -10,31 +10,34 @@ SRC = ./src
 BIN = ./bin
 INC = ./include
 
-CPPFLAGS = -Wall -pedantic -std=c++11 -I -O0 $(INC)
+CPPFLAGS = -Wall -pedantic -std=c++11 -I $(INC) -g -O0
 
 OBJS = $(OBJ)/anfibio.o $(OBJ)/anfibioExotico.o $(OBJ)/anfibioNativo.o $(OBJ)/animal.o \
-		$(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o $(OBJ)/ave.o $(OBJ)/aveExotico.o \
-		$(OBJ)/aveNativo.o $(OBJ)/funcionario.o $(OBJ)/tratador.o $(OBJ)/veterinario.o $(OBJ)/mamifero.o \
-		$(OBJ)/mamiferoExotico.o $(OBJ)/mamiferoNativo.o $(OBJ)/reptil.o $(OBJ)/reptilExotico.o $(OBJ)/reptilNativo.o \
-		$(OBJ)/system.o $(OBJ)/main.o
+	$(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o $(OBJ)/ave.o $(OBJ)/aveExotico.o \
+	$(OBJ)/aveNativo.o $(OBJ)/funcionario.o $(OBJ)/tratador.o $(OBJ)/veterinario.o $(OBJ)/mamifero.o \
+	$(OBJ)/mamiferoExotico.o $(OBJ)/mamiferoNativo.o $(OBJ)/reptil.o $(OBJ)/reptilExotico.o $(OBJ)/reptilNativo.o \
+	$(OBJ)/system.o $(OBJ)/main.o
 
-all: $(PROG)
-		$(PROG)
+all: mkdirs $(PROG)
+
+mkdirs:
+	mkdir -p $(OBJ)
+	mkdir -p $(BIN)
 
 $(PROG): $(OBJS)
-		$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
+	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
 
 $(OBJ)/anfibio.o:$(INC)/anfibio.h
-		$(CC) $(CPPFLAGS) -c $(SRC)/anfibio.cpp -o $(OBJ)/anfibio.o
+	$(CC) $(CPPFLAGS) -c $(SRC)/anfibio.cpp -o $(OBJ)/anfibio.o
 
 $(OBJ)/anfibioExotico.o: $(INC)/anfibioExotico.h
-		$(CC) $(CPPFLAGS) -c $(SRC)/anfibioExotico.cpp -o $(OBJ)/anfibioExotico.o
+	$(CC) $(CPPFLAGS) -c $(SRC)/anfibioExotico.cpp -o $(OBJ)/anfibioExotico.o
 
 $(OBJ)/anfibioNativo.o: $(INC)/anfibioNativo.h
-		$(CC) $(CPPFLAGS) -c $(SRC)/anfibioNativo.cpp -o $(OBJ)/anfibioNativo.o
+	$(CC) $(CPPFLAGS) -c $(SRC)/anfibioNativo.cpp -o $(OBJ)/anfibioNativo.o
 
 $(OBJ)/animal.o: $(INC)/animal.h
-		$(CC) $(CPPFLAGS) -c $(SRC)/animal.cpp -o $(OBJ)/animal.o
+	$(CC) $(CPPFLAGS) -c $(SRC)/animal.cpp -o $(OBJ)/animal.o
 
 $(OBJ)/animalExotico.o: $(INC)/animalExotico.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/animalExotico.cpp -o $(OBJ)/animalExotico.o

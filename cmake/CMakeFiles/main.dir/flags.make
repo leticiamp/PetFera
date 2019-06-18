@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/andrevms/Projeto-LPI/include/animal -I/home/andrevms/Projeto-LPI/include/anfibio -I/home/andrevms/Projeto-LPI/include/ave -I/home/andrevms/Projeto-LPI/include/reptil -I/home/andrevms/Projeto-LPI/include/funcionario -I/home/andrevms/Projeto-LPI/include/mamifero -I/home/andrevms/Projeto-LPI/include/system 
+CXX_INCLUDES = -I/home/andrevms/Projeto-LPI/include 
 
