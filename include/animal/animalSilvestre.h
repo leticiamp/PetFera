@@ -1,7 +1,7 @@
 /**
 * @file animalSilvestre.h
 * @brief Classe dos animais silvestres
-* @author Victor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
 * @date 15/06/2019
 */

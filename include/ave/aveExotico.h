@@ -1,7 +1,7 @@
 /**
 * @file aveExotico.h
 * @brief Classe das aves exóticas
-* @author Victor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santosos
 * @since 25/04/2019
 * @date 16/06/2019
 */
