@@ -20,7 +20,7 @@
 
 class Anfibio : public Animal{
 	private:
-
+		virtual std::ostream& print(std::ostream& os) const = 0;
 	protected:
 		int m_total_de_mudas;
 //		Date m_ultima_muda;

@@ -18,6 +18,7 @@
 
 class AnimalSilv{
 	private:
+		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
 		std::string m_autorizacao_ibama; /**< Define qual a autorização do IBAMA*/

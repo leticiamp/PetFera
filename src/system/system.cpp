@@ -540,8 +540,46 @@ void System::RemoverAnimal(int &id_){
 }
 
 void System::RemoverFuncionario(int &id_){
-  this->mymapF.erase(id_);
+  //se não existir nenhum animal
+  if(this->mymapA.size() == 0){
+    this->mymapF.erase(id_);
+    return;
+  }
+
+  //Se existir animais
+
+  //verifica a funcao do funcionario
+  std::string funcao = this->mymapF.find(id_)->second->getFuncao();
+
+  if(funcao == "Veterinario "){
+    for (std::map<int,Animal*>::iterator it = this->mymapA.begin(); it!= this->mymapA.end(); ++it)
+    {
+      Veterinario * vet = it->second->getVeterinario();
+      Tratador * trat = it->second->getTratador();
+        if(vet!= nullptr){
+          if(vet->getId() == id_ && trat == nullptr){
+            std::cout << "Erro, existem animais que só possuem esse Veterinario\n"
+            << "ação abortada\n";
+            return;
+          }
+        }
+    }
+
+    //Deletando do local dos animais
+    for (std::map<int,Animal*>::iterator it = this->mymapA.begin(); it!= this->mymapA.end(); ++it)
+    {
+        Veterinario * vet = it->second->getVeterinario();
+          if(vet!= nullptr){
+            if(vet->getId() == id_){
+             vet = nullptr;
+            }
+          }
+    }
+
+  }
+
 }
+
 
 
 //Metodos com os tratamentos utilizados p/ "set" atributos  de funcionaris

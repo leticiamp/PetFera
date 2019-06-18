@@ -20,6 +20,7 @@ como seu estado de origem.
 
 class AnimalNat : public AnimalSilv {
 	private:
+		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
 		std::string m_uf_origem; /**< Define o nome da UF de origem do animal*/

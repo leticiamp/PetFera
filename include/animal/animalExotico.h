@@ -20,6 +20,7 @@ como seu país e cidade de origem.
 
 class AnimalExo : public AnimalSilv{
 	private:
+		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
 		std::string m_pais_origem; /**< Define o nome do país de origem do animal*/
@@ -30,7 +31,7 @@ class AnimalExo : public AnimalSilv{
 		AnimalExo(std::string pais_origem_,
 							std::string cidade_origem_,
 							std::string auto_ibama_);
-		
+
 		~AnimalExo(); /**< Destrutor padrão*/
 
 		std::string getPaisOrigem();

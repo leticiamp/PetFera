@@ -17,6 +17,7 @@
 
 class Reptil : public Animal{
 	private:
+		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
 		bool m_venenoso;
