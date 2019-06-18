@@ -12,6 +12,7 @@
 #include <string>
 #include <fstream>
 #include "system.h"
+#include <iostream>
 
 
 System::System(){}
@@ -82,8 +83,9 @@ void System::Print_MyMapA_CSV(std::string nomeArquivo){
       file <<  *it->second;
   }
 
-
 	file.close();
+
+  std::cout <<"Arquivo modificado com sucesso" << std::endl;
 }
 
 void System::Print_MyMapF_CSV(std::string nomeArquivo){
@@ -100,6 +102,8 @@ void System::Print_MyMapF_CSV(std::string nomeArquivo){
       file <<  *it->second;
   }
 	file.close();
+
+  std::cout <<"Arquivo modificado com sucesso" << std::endl;
 }
 
 //Metodos de Leitura de csv - Imcompleto
