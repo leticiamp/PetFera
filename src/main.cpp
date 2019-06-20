@@ -13,9 +13,8 @@
 
 int main(){
 
-  	//System on;
-  	//on.MenuInicial();
-    AnfibioExo test;
-    std::cout << test << std::endl; 
+  	System on;
+  	on.MenuInicial();
+
   return 0;
 }

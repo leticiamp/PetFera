@@ -54,6 +54,7 @@ class System{
 
     //Metodos de instanciação de objetos
     void Inserir_Func_MyMapF();
+    void Inserir_Animal_MyMapA();
 
     Tratador * NewTratador();
     Veterinario * NewVeterinario();
@@ -69,18 +70,24 @@ class System{
 
 
     //Metodos de inserção no MyMapF
-    void inserirFuncionarioMyMapF(Tratador * funcionario);
-    void inserirFuncionarioMyMapF(Veterinario * funcionario);
+    template<typename T>
+    void inserirFuncionarioMyMapF(T * funcionario){
+      if( this->mymapF.find(funcionario->getId()) != mymapF.end()){
+        std::cout << "\n Erro. Id já existe! " << std::endl;
+        return;
+      }
+      this->mymapF.insert(std::pair<int, T*>(funcionario->getId(),funcionario));
+    }
 
     //Metodos de inserção no MyMapA
-    void inserirAnimalMyMapA(AveExo * animal);
-    void inserirAnimalMyMapA(AveNat * animal);
-    void inserirAnimalMyMapA(ReptilExo * animal);
-    void inserirAnimalMyMapA(ReptilNat * animal);
-    void inserirAnimalMyMapA(MamiferoExo * animal);
-    void inserirAnimalMyMapA(MamiferoNat * animal);
-    void inserirAnimalMyMapA(AnfibioExo * animal);
-    void inserirAnimalMyMapA(AnfibioNat * animal);
+    template<typename T>
+    void inserirAnimalMyMapA(T * animal){
+      if( mymapA.find(animal->getId()) != mymapA.end()){
+        std::cout << "\n Erro. Id já existe!" << std::endl;
+        return;
+      }
+      this->mymapA.insert(std::pair<int, T*>(animal->getId(),animal));
+    }
 
     //Metodos de remoção do MyMap
     void RemoverAnimal(int &id_);

@@ -200,7 +200,7 @@ AveExo * System::NewAveExo(){
   return animal;
 }
 
-/*
+
 void System::Inserir_Animal_MyMapA(){
   //Condição de parada, se nao existir funcionarios
   if(mymapF.size() == 0){
@@ -341,6 +341,7 @@ void System::Inserir_Animal_MyMapA(){
                                   veterinario_,
                                   tratador_,
                                   nome_batismo_,
+                                  naturalidade_,
                                   tamanho_do_bico_cm_,
                                   envergadura_das_asas_,
                                   pais_origem_,
@@ -358,6 +359,7 @@ void System::Inserir_Animal_MyMapA(){
                                   veterinario_,
                                   tratador_,
                                   nome_batismo_,
+                                  naturalidade_,
                                   cor_pelo_,
                                   pais_origem_,
                                   cidade_origem_,
@@ -374,6 +376,7 @@ void System::Inserir_Animal_MyMapA(){
                                   veterinario_,
                                   tratador_,
                                   nome_batismo_,
+                                  naturalidade_,
                                   venenoso_,
                                   tipo_veneno_,
                                   pais_origem_,
@@ -391,6 +394,7 @@ void System::Inserir_Animal_MyMapA(){
                                   veterinario_,
                                   tratador_,
                                   nome_batismo_,
+                                  naturalidade_,
                                   mudas_,
                                   pais_origem_,
                                   cidade_origem_,
@@ -409,6 +413,7 @@ void System::Inserir_Animal_MyMapA(){
                                   veterinario_,
                                   tratador_,
                                   nome_batismo_,
+                                  naturalidade_,
                                   tamanho_do_bico_cm_,
                                   envergadura_das_asas_,
                                   uf_origem_,
@@ -425,6 +430,7 @@ void System::Inserir_Animal_MyMapA(){
                                   veterinario_,
                                   tratador_,
                                   nome_batismo_,
+                                  naturalidade_,
                                   cor_pelo_,
                                   uf_origem_,
                                   auto_ibama_);
@@ -440,6 +446,7 @@ void System::Inserir_Animal_MyMapA(){
                                   veterinario_,
                                   tratador_,
                                   nome_batismo_,
+                                  naturalidade_,
                                   venenoso_,
                                   tipo_veneno_,
                                   uf_origem_,
@@ -456,99 +463,12 @@ void System::Inserir_Animal_MyMapA(){
                                   veterinario_,
                                   tratador_,
                                   nome_batismo_,
+                                  naturalidade_,
                                   mudas_,
                                   uf_origem_,
                                   auto_ibama_);
     inserirAnimalMyMapA(animal);
   }
-}
-*/
-
-//Metodos de inserção no MyMapF
-void System::inserirFuncionarioMyMapF(Tratador * funcionario){
-  if( mymapF.find(funcionario->getId()) != mymapF.end()){
-    std::cout << "\n Erro. Id já existe! " << std::endl;
-    return;
-  }
-  this->mymapF.insert(std::pair<int, Tratador*>(funcionario->getId(),funcionario));
-}
-
-void System::inserirFuncionarioMyMapF(Veterinario * funcionario){
-  if( mymapF.find(funcionario->getId()) != mymapF.end()){
-    std::cout << "\n Erro. Id já existe!" << std::endl;
-    return;
-  }
-  this->mymapF.insert(std::pair<int, Veterinario*>(funcionario->getId(),funcionario));
-}
-
-
-//Metodos de inserção no MyMapA
-void System::inserirAnimalMyMapA(AveExo * animal){
-  if( mymapA.find(animal->getId()) != mymapA.end()){
-    std::cout << "\n Erro. Id já existe!" << std::endl;
-    return;
-  }
-  this->mymapA.insert(std::pair<int, AveExo*>(animal->getId(),animal));
-}
-
-void System::inserirAnimalMyMapA(AveNat * animal){
-  if( mymapA.find(animal->getId()) != mymapA.end()){
-    std::cout << "\n Erro. Id já existe!" << std::endl;
-    return;
-  }
-  this->mymapA.insert(std::pair<int, AveNat*>(animal->getId(),animal));
-}
-
-void System::inserirAnimalMyMapA(ReptilExo * animal){
-  if( mymapA.find(animal->getId()) != mymapA.end()){
-    std::cout << "\n Erro. Id já existe!" << std::endl;
-    return;
-  }
-  this->mymapA.insert(std::pair<int, ReptilExo*>(animal->getId(),animal));
-}
-
-void System::inserirAnimalMyMapA(ReptilNat * animal){
-  if( mymapA.find(animal->getId()) != mymapA.end()){
-    std::cout << "\n Erro. Id já existe!" << std::endl;
-    return;
-  }
-  this->mymapA.insert(std::pair<int, ReptilNat*>(animal->getId(),animal));
-}
-
-void System::inserirAnimalMyMapA(MamiferoExo * animal){
-  if( mymapA.find(animal->getId()) != mymapA.end()){
-    std::cout << "\n Erro. Id já existe!" << std::endl;
-    return;
-  }
-  this->mymapA.insert(std::pair<int, MamiferoExo*>(animal->getId(),animal));
-
-}
-
-void System::inserirAnimalMyMapA(MamiferoNat * animal){
-  if( mymapA.find(animal->getId()) != mymapA.end()){
-    std::cout << "\n Erro. Id já existe!" << std::endl;
-    return;
-  }
-  this->mymapA.insert(std::pair<int, MamiferoNat*>(animal->getId(),animal));
-
-}
-
-void System::inserirAnimalMyMapA(AnfibioExo * animal){
-  if( mymapA.find(animal->getId()) != mymapA.end()){
-    std::cout << "\n Erro. Id já existe!" << std::endl;
-    return;
-  }
-  this->mymapA.insert(std::pair<int, AnfibioExo*>(animal->getId(),animal));
-
-}
-
-void System::inserirAnimalMyMapA(AnfibioNat * animal){
-  if( mymapA.find(animal->getId()) != mymapA.end()){
-    std::cout << "\n Erro. Id já existe!" << std::endl;
-    return;
-  }
-  this->mymapA.insert(std::pair<int, AnfibioNat*>(animal->getId(),animal));
-
 }
 
 
@@ -1072,7 +992,7 @@ void System::MenuInserir1_1(){
 
       switch(alternativa){
         case 1 :
-        //  Inserir_Animal_MyMapA(); // Menu Inicial >> Inserir >> Animais >> Digitando
+         Inserir_Animal_MyMapA(); // Menu Inicial >> Inserir >> Animais >> Digitando
           break;
         case 2 :
       //    inserirAnimalViaArquivoCSV(); // Menu Inicial >> Inserir >> Animais >> Arquivo CSV
