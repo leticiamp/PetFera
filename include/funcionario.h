@@ -38,7 +38,7 @@ class Funcionario{
 								char fator_rh_,
 								std::string especialidade_);
 		Funcionario();
-		~Funcionario();
+	virtual	~Funcionario();
 
 		//get's
 		int getId();

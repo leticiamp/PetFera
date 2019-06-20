@@ -11,8 +11,6 @@
 
 #include <iostream>
 
-using namespace std;
-
 #include "animalSilvestre.h"
 
 AnimalSilv::AnimalSilv(std::string auto_ibama_):

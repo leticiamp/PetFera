@@ -50,7 +50,7 @@ class Animal{
 				std::string nome_batismo_,
 				std::string naturalidade_);
 
-		~Animal(); /**< Destrutor padrão*/
+	virtual	~Animal(); /**< Destrutor padrão*/
 
 		int getId();
 		std::string getClasse();

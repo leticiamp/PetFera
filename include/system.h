@@ -46,15 +46,27 @@ class System{
 
     void Print_MyMapA_Func_Tela(int Id); // Imprime todos os animais pelo Id do funcionario
 
-    void Print_MyMapA_CSV(std::string nomeArquivo);
-    void Print_MyMapF_CSV(std::string nomeArquivo);
+    void Print_MyMapA_CSV(std::string nomeArquivo); //Imprime os animais em um arquivo csv
+    void Print_MyMapF_CSV(std::string nomeArquivo); //Imprime os funcionarios em um arquivo csv
 
     //Metodos de Leitura de csv
     void Receive_CSV_To_MyMapF(std::string nomeArquivo);
 
-    //Metodos de controle de inserção no MyMap
+    //Metodos de instanciação de objetos
     void Inserir_Func_MyMapF();
-    void Inserir_Animal_MyMapA();
+
+    Tratador * NewTratador();
+    Veterinario * NewVeterinario();
+
+    AveExo * NewAveExo();
+    AveNat * NewAveNat();
+    ReptilExo * NewReptilExo();
+    ReptilNat * NewReptilNat();
+    MamiferoExo * NewMamiferoExo();
+    MamiferoNat * NewMamiferoNat();
+    AnfibioExo * NewAnfibioExo();
+    AnfibioNat * NewAnfibioNat();
+
 
     //Metodos de inserção no MyMapF
     void inserirFuncionarioMyMapF(Tratador * funcionario);

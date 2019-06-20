@@ -15,8 +15,8 @@
 
 AnimalNat::AnimalNat(std::string uf_origem_,
 											std::string auto_ibama_):
-	m_uf_origem(uf_origem_),
-	AnimalSilv(auto_ibama_)
+  AnimalSilv(auto_ibama_),
+	m_uf_origem(uf_origem_)
 {}
 
 AnimalNat::~AnimalNat(){}

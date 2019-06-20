@@ -1,3 +1,0 @@
-/home/andrevms/Projeto-LPI/cmake/CMakeFiles/rebuild_cache.dir
-/home/andrevms/Projeto-LPI/cmake/CMakeFiles/main.dir
-/home/andrevms/Projeto-LPI/cmake/CMakeFiles/edit_cache.dir

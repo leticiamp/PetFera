@@ -16,9 +16,9 @@
 AnimalExo::AnimalExo(std::string pais_origem_,
 										 std::string cidade_origem_,
 										 std::string auto_ibama_):
+										 AnimalSilv(auto_ibama_),
 										 m_pais_origem(pais_origem_),
-										 m_cidade_origem(cidade_origem_),
-										 AnimalSilv(auto_ibama_)
+										 m_cidade_origem(cidade_origem_)
 {}
 
 AnimalExo::~AnimalExo(){}

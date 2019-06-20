@@ -17,6 +17,7 @@
 
 System::System(){}
 System::~System(){
+
   if(this->mymapF.size() != 0){
     for (std::map<int,Funcionario*>::iterator it = this->mymapF.begin();
     it!= this->mymapF.end();
@@ -187,6 +188,47 @@ void System::Inserir_Func_MyMapF(){
   }
 }
 
+AveExo * System::NewAveExo(){
+
+  //Condição de parada, se nao existir funcionarios
+  if(mymapF.size() == 0){
+    std::cout << " Não existem funcionarios para cuidar dos animais\n" << std::endl;
+    return;
+  }
+
+  std::string classe_ = "Ave";
+  std::string naturalidade_ = "Exotico";
+
+  int id_; //Id do animal
+  DefAnimalId(id_); // Perguntando a classe do animal
+
+  std::string nome_cientifico_; //Nome Cientifico do animal
+  DefAnimalNomeCientifico(nome_cientifico_); // Perguntando o nome Cienficio do animal
+
+  char sexo_; // Sexo do animal
+  DefAnimalSexo(sexo_); // Perguntando o sexo do animal
+
+  double tamanho_; // Tamanho do animal
+  //perguntando o tamanho do animal
+  infoMaiorQZero(tamanho_, "Qual o tamanho do animal? (em centímentros)");
+
+  std::string dieta_; //Dieta do animal
+  infoString(dieta_, "Qual a dieta do animal?" ); // Perguntando a dieta do animal
+
+  std::string nome_batismo_; // Nome do animal
+  //Perguntando nome do animal
+  infoString(nome_batismo_, "Qual o nome de batismo do animal?");
+
+  std::string auto_ibama_; // autorização do ibama do animal
+  //perguntando autorização do ibama do animal
+  infoString(auto_ibama_, "Qual a autorização do ibama do animal?");
+
+
+
+}
+
+
+/*
 void System::Inserir_Animal_MyMapA(){
   //Condição de parada, se nao existir funcionarios
   if(mymapF.size() == 0){
@@ -448,7 +490,7 @@ void System::Inserir_Animal_MyMapA(){
     inserirAnimalMyMapA(animal);
   }
 }
-
+*/
 
 //Metodos de inserção no MyMapF
 void System::inserirFuncionarioMyMapF(Tratador * funcionario){
@@ -1058,7 +1100,7 @@ void System::MenuInserir1_1(){
 
       switch(alternativa){
         case 1 :
-          Inserir_Animal_MyMapA(); // Menu Inicial >> Inserir >> Animais >> Digitando
+        //  Inserir_Animal_MyMapA(); // Menu Inicial >> Inserir >> Animais >> Digitando
           break;
         case 2 :
       //    inserirAnimalViaArquivoCSV(); // Menu Inicial >> Inserir >> Animais >> Arquivo CSV
