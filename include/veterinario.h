@@ -24,6 +24,7 @@ class Veterinario : public Funcionario{
 	public:
 		//Construtores
 		Veterinario(int id_ = 0,
+						 std::string funcao_ = "Veterinario",
 						 std::string nome_ = "NOTDEF",
 						 std::string cpf_ = "NOTDEF",
 						 short idade_ = -1,

@@ -15,6 +15,7 @@
 #include "veterinario.h"
 
 Veterinario::Veterinario(int id_,
+				 std::string funcao_,
 				 std::string nome_,
 				 std::string cpf_,
 				 short idade_,
@@ -23,7 +24,7 @@ Veterinario::Veterinario(int id_,
 				 std::string especialidade_,
 			 	 std::string crmv_):
 	Funcionario(id_,
-							"Veterinario",
+							funcao_,
 					 		nome_,
 					 		cpf_,
 					 		idade_,

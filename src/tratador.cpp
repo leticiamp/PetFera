@@ -14,6 +14,7 @@
 #include "tratador.h"
 
 Tratador::Tratador(int id_,
+				 std::string funcao_,
 			   std::string nome_,
 				 std::string cpf_,
 				 short idade_,
@@ -22,7 +23,7 @@ Tratador::Tratador(int id_,
 				 std::string especialidade_,
 				 int nivel_de_seguranca_):
 	Funcionario(id_,
-							"Tratador",
+							funcao_,
 					 		nome_,
 					 		cpf_,
 					 		idade_,

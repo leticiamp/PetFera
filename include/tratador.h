@@ -25,10 +25,11 @@ class Tratador : public Funcionario{
 
 		//Metodos Construtor
 		Tratador(int id_ = 0,
+						 std::string funcao_ = "Tratador",
 						 std::string nome_ = "NOTDEF",
 						 std::string cpf_ = "NOTDEF",
 						 short idade_ = -1,
-				 		 std::string tipo_sanguineo_ = " NOTDEF",
+				 		 std::string tipo_sanguineo_ = "NOTDEF",
 						 char fator_rh_ = 'N',
 						 std::string especialidade_= "NOTDEF",
 						 int nivel_de_seguranca_ = 0);

@@ -162,6 +162,7 @@ void System::Inserir_Func_MyMapF(){
       system("clear");
 
       Veterinario * funcionario = new Veterinario(  id_,
+                                                    funcao_,
                                                     nome_,
                                                     cpf_,
                                                     idade_,
@@ -178,6 +179,7 @@ void System::Inserir_Func_MyMapF(){
     system("clear");
 
     Tratador * funcionario = new Tratador(  id_,
+                                            funcao_,
                                             nome_,
                                             cpf_,
                                             idade_,
@@ -194,8 +196,6 @@ AveExo * System::NewAveExo(){
 
   AveExo * animal = new AveExo();
   //Já é instanciado com a classe  = "Ave" e naturalidade = "Exotico"
-
-  int id_;
 
   return animal;
 }
@@ -491,9 +491,9 @@ void System::RemoverFuncionario(int &id_){
   //Se existir animais
 
     //verifica a funcao do funcionario
-  std::string funcao = this->mymapF.find(id_)->second->getFuncao();
+  std::string funcao_ = this->mymapF.find(id_)->second->getFuncao();
 
-  if(funcao == "Veterinario")
+  if(funcao_ == "Veterinario")
   {
     for (std::map<int,Animal*>::iterator it = this->mymapA.begin(); it!= this->mymapA.end(); ++it)
     {
@@ -527,7 +527,7 @@ void System::RemoverFuncionario(int &id_){
     return;
   }
 
-  if(funcao == "Tratador")
+  if(funcao_ == "Tratador")
   {
     for (std::map<int,Animal*>::iterator it = this->mymapA.begin(); it!= this->mymapA.end(); ++it)
     {
