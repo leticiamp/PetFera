@@ -22,20 +22,21 @@ class ReptilExo : public Reptil, AnimalExo{
 	protected:
 
 	public:
-		ReptilExo(int id_,
-							std::string classe_,
-							std::string nome_cientifico_,
-							char sexo_,
-							double tamanho_,
-							std::string dieta_,
-							Veterinario * veterinario_,
-							Tratador * tratador_,
-							std::string nome_batismo_,
-							bool venenoso_,
-							std::string tipo_veneno_,
-							std::string pais_origem_,
-							std::string cidade_origem_,
-							std::string auto_ibama_);
+		ReptilExo(int id_ = 0,
+							std::string classe_ = "Reptil",
+							std::string nome_cientifico_ = "NOTDEF",
+							char sexo_ = '-',
+							double tamanho_ = 0,
+							std::string dieta_ = "NOTDEF",
+							Veterinario * veterinario_ = nullptr,
+							Tratador * tratador_ = nullptr,
+							std::string nome_batismo_ = "NOTDEF",
+							std::string naturalidade_ = "Exotico",
+							bool venenoso_ = false,
+							std::string tipo_veneno_ = "NOTDEF",
+							std::string pais_origem_ = "NOTDEF",
+							std::string cidade_origem_ = "NOTDEF",
+							std::string auto_ibama_ = "NOTDEF");
 		~ReptilExo();
 
 };

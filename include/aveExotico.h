@@ -20,20 +20,21 @@ class AveExo : public Ave, AnimalExo{
 
 	public:
 		/** @brief Construtor parametrizado. */
-		AveExo(int id_,
-					std::string classe_,
-					std::string nome_cientifico_,
-					char sexo_,
-					double tamanho_,
-					std::string dieta_,
-					Veterinario * veterinario_,
-					Tratador * tratador_,
-					std::string nome_batismo_,
-					double tamanho_do_bico_cm_,
-					double envergadura_das_asas_,
-					std::string pais_origem_,
-					std::string cidade_origem_,
-					std::string auto_ibama_);
+		AveExo(int id_ = 0,
+					std::string classe_ = "Ave",
+					std::string nome_cientifico_ = "NO",
+					char sexo_ = '-',
+					double tamanho_ = 0,
+					std::string dieta_ = "NOTDEF",
+					Veterinario * veterinario_ = nullptr,
+					Tratador * tratador_ = nullptr,
+					std::string nome_batismo_ = "NOTDEF",
+					std::string naturalidade_ = "Exotico",
+					double tamanho_do_bico_cm_ = 0,
+					double envergadura_das_asas_ = 0,
+					std::string pais_origem_ = "NOTDEF",
+					std::string cidade_origem_ = "NOTDEF",
+					std::string auto_ibama_ = "NOTDEF");
 
 		~AveExo(); /**< Destrutor padrão*/
 

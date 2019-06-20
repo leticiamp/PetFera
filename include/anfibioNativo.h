@@ -22,18 +22,19 @@ class AnfibioNat : public Anfibio, AnimalNat{
 	protected:
 
 	public:
-		AnfibioNat( int id_,
-								std::string classe_,
-								std::string nome_cientifico_,
-								char sexo_,
-								double tamanho_,
-								std::string dieta_,
-								Veterinario * veterinario_,
-								Tratador * tratador_,
-								std::string nome_batismo_,
-								int mudas_,
-								std::string uf_origem_,
-								std::string auto_ibama_
+		AnfibioNat( int id_ = 0,
+								std::string classe_ = "Anfibio",
+								std::string nome_cientifico_ = "NOTDEF",
+								char sexo_ = '-',
+								double tamanho_  = 0,
+								std::string dieta_ = "NOTDEF",
+								Veterinario * veterinario_ = nullptr,
+								Tratador * tratador_ = nullptr,
+								std::string nome_batismo_ = "NOTDEF",
+								std::string naturalidade = "Nativo",
+								int mudas_ = 0,
+								std::string uf_origem_ = "NOTDEF",
+								std::string auto_ibama_ = "NOTDEF"
 							);
 		~AnfibioNat();
 

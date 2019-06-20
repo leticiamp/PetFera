@@ -22,18 +22,19 @@ class MamiferoNat : public Mamifero, AnimalNat{
 	protected:
 
 	public:
-		MamiferoNat(int id_,
-								std::string classe_,
-								std::string nome_cientifico_,
-								char sexo_,
-								double tamanho_,
-								std::string dieta_,
-								Veterinario * veterinario_,
-								Tratador * tratador_,
-								std::string nome_batismo_,
-								std::string cor_pelo_,
-								std::string uf_origem_,
-								std::string auto_ibama_);
+		MamiferoNat(int id_ = 0,
+								std::string classe_ = "Mamifero",
+								std::string nome_cientifico_ = "NOTDEF",
+								char sexo_ = '-',
+								double tamanho_ = 0,
+								std::string dieta_ = "NOTDEF",
+								Veterinario * veterinario_ = nullptr,
+								Tratador * tratador_ = nullptr,
+								std::string nome_batismo_ = "NOTDEF",
+								std::string naturalidade_ = "Nativo",
+								std::string cor_pelo_ = "NOTDEF",
+								std::string uf_origem_ = "NOTDEF",
+								std::string auto_ibama_ = "NOTDEF");
 		~MamiferoNat();
 
 };

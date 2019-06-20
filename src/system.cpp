@@ -108,7 +108,7 @@ void System::Print_MyMapF_CSV(std::string nomeArquivo){
 }
 
 //Metodos de Leitura de csv - Imcompleto
-void System::Receive_CSV_To_MyMapF(std::string nomeArquivo){
+void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
   ifstream file;
   file.open(nomeArquivo);
 
@@ -119,7 +119,8 @@ void System::Receive_CSV_To_MyMapF(std::string nomeArquivo){
   file.close();
 }
 
-//Metodos de constrole de inserção no MyMap
+//Metodos de instanciação de objetos
+
 void System::Inserir_Func_MyMapF(){
 
   int id_;
@@ -188,45 +189,16 @@ void System::Inserir_Func_MyMapF(){
   }
 }
 
+
 AveExo * System::NewAveExo(){
 
-  //Condição de parada, se nao existir funcionarios
-  if(mymapF.size() == 0){
-    std::cout << " Não existem funcionarios para cuidar dos animais\n" << std::endl;
-    return;
-  }
+  AveExo * animal = new AveExo();
+  //Já é instanciado com a classe  = "Ave" e naturalidade = "Exotico"
 
-  std::string classe_ = "Ave";
-  std::string naturalidade_ = "Exotico";
+  int id_;
 
-  int id_; //Id do animal
-  DefAnimalId(id_); // Perguntando a classe do animal
-
-  std::string nome_cientifico_; //Nome Cientifico do animal
-  DefAnimalNomeCientifico(nome_cientifico_); // Perguntando o nome Cienficio do animal
-
-  char sexo_; // Sexo do animal
-  DefAnimalSexo(sexo_); // Perguntando o sexo do animal
-
-  double tamanho_; // Tamanho do animal
-  //perguntando o tamanho do animal
-  infoMaiorQZero(tamanho_, "Qual o tamanho do animal? (em centímentros)");
-
-  std::string dieta_; //Dieta do animal
-  infoString(dieta_, "Qual a dieta do animal?" ); // Perguntando a dieta do animal
-
-  std::string nome_batismo_; // Nome do animal
-  //Perguntando nome do animal
-  infoString(nome_batismo_, "Qual o nome de batismo do animal?");
-
-  std::string auto_ibama_; // autorização do ibama do animal
-  //perguntando autorização do ibama do animal
-  infoString(auto_ibama_, "Qual a autorização do ibama do animal?");
-
-
-
+  return animal;
 }
-
 
 /*
 void System::Inserir_Animal_MyMapA(){
