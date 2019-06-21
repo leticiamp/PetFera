@@ -50,6 +50,7 @@ class System{
     void Print_MyMapF_CSV(std::string nomeArquivo); //Imprime os funcionarios em um arquivo csv
 
     //Metodos de Leitura de csv
+    void Import_CSV_To_MyMapA(std::string nomeArquivo);
     void Import_CSV_To_MyMapF(std::string nomeArquivo);
 
     //Metodos de instanciação de objetos

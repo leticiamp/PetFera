@@ -13,6 +13,7 @@
 #include <fstream>
 #include "system.h"
 #include <iostream>
+#include <sstream>
 
 
 System::System(){}
@@ -99,7 +100,9 @@ void System::Print_MyMapF_CSV(std::string nomeArquivo){
     exit(1);
   }
 
-	for (std::map<int,Funcionario*>::iterator it = this->mymapF.begin();it!= this->mymapF.end(); ++it){
+	for (std::map<int,Funcionario*>::iterator it = this->mymapF.begin();
+      it!= this->mymapF.end();
+      ++it){
       file <<  *it->second;
   }
 	file.close();
@@ -107,7 +110,56 @@ void System::Print_MyMapF_CSV(std::string nomeArquivo){
   std::cout <<"Arquivo modificado com sucesso" << std::endl;
 }
 
-//Metodos de Leitura de csv - Imcompleto
+//Metodos de Leitura de csv - Incompleto
+void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
+  ifstream file("nomeArquivo");
+  //file.open(nomeArquivo);
+
+  if(file.bad()){
+    std::cerr << "Arquivo não foi aberto." << std::endl;
+    exit(1);
+  }
+
+  std::string p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14;
+
+  std::string line;
+  // Pesquisar sobre "stringstream" e sanar e sanar esse erro.
+  /* 
+  while(getline(file, line)){
+    std::stringstream ss(line);
+    std::getline(ss, p1, ";");
+    std::getline(ss, p2, ";");
+    std::getline(ss, p3, ";");
+    std::getline(ss, p4, ";");
+    std::getline(ss, p5, ";");
+    std::getline(ss, p6, ";");
+    std::getline(ss, p7, ";");
+    std::getline(ss, p8, ";");
+    std::getline(ss, p9, ";");
+    std::getline(ss, p10, ";");
+    std::getline(ss, p11, ";");
+    std::getline(ss, p12, ";");
+    std::getline(ss, p13, ";");
+    std::getline(ss, p14, "\n");
+    std::cout << p1
+              << p2
+              << p3
+              << p4
+              << p5
+              << p6
+              << p7
+              << p8
+              << p9
+              << p10
+              << p11
+              << p12
+              << p13
+              << p14 << std::endl;
+
+  }*/
+  file.close();
+}
+
 void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
   ifstream file;
   file.open(nomeArquivo);
@@ -116,6 +168,10 @@ void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
     std::cerr << "Arquivo não foi aberto" << std::endl;
     exit(1);
   }
+
+
+
+
   file.close();
 }
 
