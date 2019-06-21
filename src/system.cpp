@@ -112,7 +112,7 @@ void System::Print_MyMapF_CSV(std::string nomeArquivo){
 
 //Metodos de Leitura de csv - Incompleto
 void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
-  ifstream file("nomeArquivo");
+  ifstream file(nomeArquivo);
   //file.open(nomeArquivo);
 
   if(file.bad()){
@@ -123,41 +123,40 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
   std::string p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14;
 
   std::string line;
-  // Pesquisar sobre "stringstream" e sanar e sanar esse erro.
-  /* 
-  while(getline(file, line)){
-    std::stringstream ss(line);
-    std::getline(ss, p1, ";");
-    std::getline(ss, p2, ";");
-    std::getline(ss, p3, ";");
-    std::getline(ss, p4, ";");
-    std::getline(ss, p5, ";");
-    std::getline(ss, p6, ";");
-    std::getline(ss, p7, ";");
-    std::getline(ss, p8, ";");
-    std::getline(ss, p9, ";");
-    std::getline(ss, p10, ";");
-    std::getline(ss, p11, ";");
-    std::getline(ss, p12, ";");
-    std::getline(ss, p13, ";");
-    std::getline(ss, p14, "\n");
-    std::cout << p1
-              << p2
-              << p3
-              << p4
-              << p5
-              << p6
-              << p7
-              << p8
-              << p9
-              << p10
-              << p11
-              << p12
-              << p13
-              << p14 << std::endl;
-
-  }*/
+  
+  while(std::getline(file, line)){
+    std::istringstream ss(line);
+    std::getline(ss, p1, ',');
+    std::getline(ss, p2, ',');
+    std::getline(ss, p3, ',');
+    std::getline(ss, p4, ',');
+    std::getline(ss, p5, ',');
+    std::getline(ss, p6, ',');
+    std::getline(ss, p7, ',');
+    std::getline(ss, p8, ',');
+    std::getline(ss, p9, ',');
+    std::getline(ss, p10, ',');
+    std::getline(ss, p11, ',');
+    std::getline(ss, p12, ',');
+    std::getline(ss, p13, ',');
+    std::getline(ss, p14, '\n');
+    std::cout << p1 << std::endl;
+    std::cout << p2 << std::endl;
+    std::cout << p3 << std::endl;
+    std::cout << p4 << std::endl;
+    std::cout << p5 << std::endl;
+    std::cout << p6 << std::endl;
+    std::cout << p7 << std::endl;
+    std::cout << p8 << std::endl;
+    std::cout << p9 << std::endl;
+    std::cout << p10 << std::endl;
+    std::cout << p11 << std::endl;
+    std::cout << p12 << std::endl;
+    std::cout << p13 << std::endl;
+    std::cout << p14 << std::endl;
+  }
   file.close();
+  std::cout << "Pronto! Os animais acima foram salvos no banco de dados." << std::endl;
 }
 
 void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
@@ -527,7 +526,6 @@ void System::Inserir_Animal_MyMapA(){
   }
 }
 
-
 //Metodos de remoção do MyMap
 void System::RemoverAnimal(int &id_){
   delete this->mymapA.find(id_)->second;
@@ -877,13 +875,10 @@ Veterinario * System::consultaVeterinario(int Id){
 }
 
 
-
-
-
-
-
 //Menus que controlam as opções do usuario
 void System::MenuInicial(){
+  Import_CSV_To_MyMapA("animais.csv");
+  Import_CSV_To_MyMapF("funcionarios.csv");
   int alternativa = -1;
   do{
       PrintMenuPrincipal();

@@ -49,9 +49,9 @@ class System{
     void Print_MyMapA_CSV(std::string nomeArquivo); //Imprime os animais em um arquivo csv
     void Print_MyMapF_CSV(std::string nomeArquivo); //Imprime os funcionarios em um arquivo csv
 
-    //Metodos de Leitura de csv
-    void Import_CSV_To_MyMapA(std::string nomeArquivo);
-    void Import_CSV_To_MyMapF(std::string nomeArquivo);
+    //Metodos de Importação Inicial da Dados para o Banco.
+    void Import_CSV_To_MyMapA(std::string nomeArquivo); 
+    void Import_CSV_To_MyMapF(std::string nomeArquivo); 
 
     //Metodos de instanciação de objetos
     void Inserir_Func_MyMapF();
