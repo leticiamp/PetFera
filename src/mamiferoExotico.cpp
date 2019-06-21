@@ -65,6 +65,6 @@ std::ostream& MamiferoExo::print(std::ostream& os)const{
 	 	}
 
 	os  << m_pais_origem << ";" << m_cidade_origem  << ";"
-			<< m_autorizacao_ibama  << ";" << std::endl;
+			<< m_autorizacao_ibama  << std::endl;
 	return os;
 }

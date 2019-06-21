@@ -110,68 +110,283 @@ void System::Print_MyMapF_CSV(std::string nomeArquivo){
   std::cout <<"Arquivo modificado com sucesso" << std::endl;
 }
 
-//Metodos de Leitura de csv - Incompleto
+/* Lê dados de funcionários de arquivo CSV - quase pronto. */
 void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
+  /*
   ifstream file(nomeArquivo);
-  //file.open(nomeArquivo);
-
   if(file.bad()){
     std::cerr << "Arquivo não foi aberto." << std::endl;
     exit(1);
   }
-
-  std::string p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14;
-
+  std::string id_, classe_, nome_cientifico_, sexo_;
+  std::string tamanho_, dieta_, veterinario_, tratador_;
+  std::string nome_batismo_, naturalidade_, p11, p12, p13, p14, p15;
   std::string line;
-  
   while(std::getline(file, line)){
     std::istringstream ss(line);
-    std::getline(ss, p1, ',');
-    std::getline(ss, p2, ',');
-    std::getline(ss, p3, ',');
-    std::getline(ss, p4, ',');
-    std::getline(ss, p5, ',');
-    std::getline(ss, p6, ',');
-    std::getline(ss, p7, ',');
-    std::getline(ss, p8, ',');
-    std::getline(ss, p9, ',');
-    std::getline(ss, p10, ',');
-    std::getline(ss, p11, ',');
-    std::getline(ss, p12, ',');
-    std::getline(ss, p13, ',');
+    std::getline(ss, id_, ';');
+    int id_ = const_cast<int>(id_);
+    std::getline(ss, classe_, ';');
+    std::getline(ss, nome_cientifico_, ';');
+    std::getline(ss, sexo_, ';');
+    std::getline(ss, tamanho_, ';');
+    int tamanho_ = const_cast<int>(tamanho_);
+    std::getline(ss, dieta_, ';');
+    std::getline(ss, veterinario_, ';');
+    std::getline(ss, tratador_, ';');
+    std::getline(ss, nome_batismo_, ';');
+    std::getline(ss, naturalidade_, ';');
+    std::getline(ss, p11, ';');
+    std::getline(ss, p12, ';');
+
+  if( classe_ == "Ave" && naturalidade_ == "Exotico"){
+    std::getline(ss, p13, ';');
+    std::getline(ss, p14, ';');
+    std::getline(ss, p15, '\n');
+    int tamanho_do_bico_cm_ = const_cast<int>(p11);
+    int envergadura_das_asas_ = const_cast<int>(p12);
+    std::string pais_origem_ = p13;
+    std::string cidade_origem_ = p14;
+    std::string auto_ibama_ = p15;
+    AveExo * animal = new AveExo(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  naturalidade_,
+                                  tamanho_do_bico_cm_,
+                                  envergadura_das_asas_,
+                                  pais_origem_,
+                                  cidade_origem_,
+                                  auto_ibama_);
+    inserirAnimalMyMapA(animal);
+  }
+  if(classe_ == "Mamifero" && naturalidade_ == "Exotico"){
+    std::getline(ss, p13, ';');
     std::getline(ss, p14, '\n');
-    std::cout << p1 << std::endl;
-    std::cout << p2 << std::endl;
-    std::cout << p3 << std::endl;
-    std::cout << p4 << std::endl;
-    std::cout << p5 << std::endl;
-    std::cout << p6 << std::endl;
-    std::cout << p7 << std::endl;
-    std::cout << p8 << std::endl;
-    std::cout << p9 << std::endl;
-    std::cout << p10 << std::endl;
-    std::cout << p11 << std::endl;
-    std::cout << p12 << std::endl;
-    std::cout << p13 << std::endl;
-    std::cout << p14 << std::endl;
+    std::string cor_pelo_ = p11;
+    std::string pais_origem_ = p12;
+    std::string cidade_origem_ = p13;
+    std::string auto_ibama_ = p14;  
+    MamiferoExo * animal = new MamiferoExo(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  naturalidade_,
+                                  cor_pelo_,
+                                  pais_origem_,
+                                  cidade_origem_,
+                                  auto_ibama_);
+    inserirAnimalMyMapA(animal);
+  }
+  if(classe_ == "Reptil" && naturalidade_ == "Exotico"){
+    std::getline(ss, p13, ';');
+    std::getline(ss, p14, ';');
+    std::getline(ss, p15, '\n');
+    bool venenoso_ = const_cast<bool>(p11);
+    std::string tipo_veneno_ = p12;
+    std::string pais_origem_ = p13;
+    std::string cidade_origem_ = p14;
+    std::string auto_ibama_ = p15;
+    ReptilExo * animal = new ReptilExo(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  naturalidade_,
+                                  venenoso_,
+                                  tipo_veneno_,
+                                  pais_origem_,
+                                  cidade_origem_,
+                                  auto_ibama_);
+    inserirAnimalMyMapA(animal);
+  }
+  if(classe_ == "Anfibio" && naturalidade_ == "Exotico"){
+    std::getline(ss, p13, ';');
+    std::getline(ss, p14, '\n');
+    int mudas_ = const_cast<int>(p11);
+    std::string pais_origem_ = p12;
+    std::string cidade_origem_ = p13;
+    std::string auto_ibama_ = p14;
+    AnfibioExo * animal = new AnfibioExo(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  naturalidade_,
+                                  mudas_,
+                                  pais_origem_,
+                                  cidade_origem_,
+                                  auto_ibama_);
+    inserirAnimalMyMapA(animal);
+  }
+  if(classe_ == "Ave" && naturalidade_ == "Nativo"){
+    std::getline(ss, p13, ';');
+    std::getline(ss, p14, '\n');
+    int tamanho_do_bico_cm_ = const_cast<int>(p11);
+    int envergadura_das_asas_ = const_cast<int>(p12);
+    std::string uf_origem_ = p13;
+    std::string auto_ibama_ = p14;
+    AveNat * animal = new AveNat  (id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  naturalidade_,
+                                  tamanho_do_bico_cm_,
+                                  envergadura_das_asas_,
+                                  uf_origem_,
+                                  auto_ibama_);
+    inserirAnimalMyMapA(animal);
+  }
+  if(classe_ == "Mamifero" && naturalidade_ == "Nativo"){
+    std::getline(ss, p13, '\n');
+    std::string cor_pelo_ = p11;
+    std::string uf_origem_ = p12;
+    std::string auto_ibama_ = p13;
+    MamiferoNat * animal = new MamiferoNat(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  naturalidade_,
+                                  cor_pelo_,
+                                  uf_origem_,
+                                  auto_ibama_);
+    inserirAnimalMyMapA(animal);
+  }
+  if(classe_ == "Reptil" && naturalidade_ == "Nativo"){
+    std::getline(ss, p13, ';');
+    std::getline(ss, p14, '\n');
+    bool venenoso_ = const_cast<bool>(p11);
+    std::string tipo_veneno_ = p12;
+    std::string uf_origem_ = p13;
+    std::string auto_ibama_ = p14;
+    ReptilNat * animal = new ReptilNat(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  naturalidade_,
+                                  venenoso_,
+                                  tipo_veneno_,
+                                  uf_origem_,
+                                  auto_ibama_);
+    inserirAnimalMyMapA(animal);
+  }
+  if(classe_ == "Anfibio" && naturalidade_ == "Nativo"){
+    std::getline(ss, p13, '\n');
+    int mudas_ = const_cast<int>(p11);
+    std::string uf_origem_ = p12;
+    std::string auto_ibama_ = p13;
+    AnfibioNat * animal = new AnfibioNat(id_,
+                                  classe_,
+                                  nome_cientifico_,
+                                  sexo_,
+                                  tamanho_,
+                                  dieta_,
+                                  veterinario_,
+                                  tratador_,
+                                  nome_batismo_,
+                                  naturalidade_,
+                                  mudas_,
+                                  uf_origem_,
+                                  auto_ibama_);
+    inserirAnimalMyMapA(animal);
+  }
+
   }
   file.close();
   std::cout << "Pronto! Os animais acima foram salvos no banco de dados." << std::endl;
+*/
 }
-
+/* Lê dados de funcionários de arquivo CSV - quase pronto. */
 void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
-  ifstream file;
-  file.open(nomeArquivo);
-
+/*
+  ifstream file(nomeArquivo);
   if(file.bad()){
-    std::cerr << "Arquivo não foi aberto" << std::endl;
+    std::cerr << "Arquivo não foi aberto." << std::endl;
     exit(1);
   }
+  std::string id_, funcao_, nome_, cpf_;
+  std::string idade_, tipo_sanguineo_, fator_rh_;
+  std::string especialidade_, p9;
+  std::string line;
+  while(std::getline(file, line)){
+    std::istringstream ss(line);
+    std::getline(ss, id_, ';');
+    int id_ = const_cast<int>(id_);
+    std::getline(ss, funcao_, ';');
+    std::getline(ss, nome_, ';');
+    std::getline(ss, cpf_, ';');
+    std::getline(ss, idade_, ';');
+    int idade_ = const_cast<int>(idade_);
+    std::getline(ss, tipo_sanguineo_, ';');
+    std::getline(ss, fator_rh_, ';');
+    std::getline(ss, especialidade_, ';');
+    std::getline(ss, p9, '\n');
+    if(funcao_ == "Veterinario" ){
+      std::string crmv_ = p9;
+      Veterinario * funcionario = new Veterinario(  id_,
+                                                    funcao_,
+                                                    nome_,
+                                                    cpf_,
+                                                    idade_,
+                                                    tipo_sanguineo_,
+                                                    fator_rh_,
+                                                    especialidade_,
+                                                    crmv_);
+    inserirFuncionarioMyMapF(funcionario);
+  }
 
+  if(funcao_ == "Tratador"){
+    int nivel_de_seguranca_ = const_cast<int>(p9);
+    Tratador * funcionario = new Tratador(  id_,
+                                            funcao_,
+                                            nome_,
+                                            cpf_,
+                                            idade_,
+                                            tipo_sanguineo_,
+                                            fator_rh_,
+                                            especialidade_,
+                                            nivel_de_seguranca_);
+    inserirFuncionarioMyMapF(funcionario);
+  }
+}
 
 
 
   file.close();
+*/
 }
 
 //Metodos de instanciação de objetos
@@ -383,8 +598,6 @@ void System::Inserir_Animal_MyMapA(){
   else if( naturalidade_ == "Nativo"){
     infoString(uf_origem_, "Qual o Uf origem do animal?");
   }
-
-
 
   if(classe_ == "Ave" && naturalidade_ == "Exotico"){
     AveExo * animal = new AveExo(id_,
@@ -685,7 +898,7 @@ void System::DefFatorRhFunc(char &fator_rh_){
 
 void System::DefNivSecurityFunc(int &nivel_de_seguranca_){
   system("clear");
-  std::cout << " Qual o nivel de segurança do funcionario" << std::endl;
+  std::cout << " Qual o nivel de segurança do funcionario? (0 ou 1 ou 2)" << std::endl;
   std::cin >> nivel_de_seguranca_;
   std::cin.ignore();
 
@@ -694,7 +907,7 @@ void System::DefNivSecurityFunc(int &nivel_de_seguranca_){
     nivel_de_seguranca_ != 2)
     {
       system("clear");
-      std::cout << "Entrada invalida, digite novamente\n";
+      std::cout << "Entrada invalida. Digite novamente.\n";
       std::cout << " Qual o nivel de segurança do funcionario" << std::endl;
       std::cin >> nivel_de_seguranca_;
       std::cin.ignore();
@@ -877,8 +1090,8 @@ Veterinario * System::consultaVeterinario(int Id){
 
 //Menus que controlam as opções do usuario
 void System::MenuInicial(){
-  Import_CSV_To_MyMapA("animais.csv");
   Import_CSV_To_MyMapF("funcionarios.csv");
+  Import_CSV_To_MyMapA("animais.csv");
   int alternativa = -1;
   do{
       PrintMenuPrincipal();

@@ -64,6 +64,6 @@ std::ostream& AveNat::print(std::ostream& os)const{
       os << m_tratador->getId()	<< ";";
     }
 
-    os  << m_uf_origem << ";"<< m_autorizacao_ibama << ";" << std::endl;
+    os  << m_uf_origem << ";"<< m_autorizacao_ibama << std::endl;
 		return os;
 }
