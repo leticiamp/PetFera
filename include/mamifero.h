@@ -17,7 +17,8 @@
 
 class Mamifero : public Animal{
 	private :
-	virtual std::ostream& print(std::ostream& os) const = 0;
+		/** Transforma a classe em abstrata, impedindo a instanciação de um objeto */
+		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
 		std::string m_cor_pelo;

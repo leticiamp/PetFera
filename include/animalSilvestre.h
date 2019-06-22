@@ -18,7 +18,7 @@
 
 class AnimalSilv{
 	private:
-		/** Transforma a classe em abstrata, impedindo a instanciação de um objeto */
+		/** Sobrecarga do operador de saída */
 		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:

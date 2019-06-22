@@ -16,6 +16,7 @@
 
 class Ave : public Animal{
 	private:
+		/** Transforma a classe em abstrata, impedindo a instanciação de um objeto */
 		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:

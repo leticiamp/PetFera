@@ -24,7 +24,7 @@ subclasses, assim como suas configurações específicas (dieta, nome científic
 class Animal{
 
 	private:
-		/** Transforma a classe em abstrata, impedindo a instanciação de um objeto */
+		/** Sobrecarga do operador de saída */
 		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:

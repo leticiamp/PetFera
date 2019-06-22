@@ -14,6 +14,7 @@
 
 class AveNat : public Ave, AnimalNat{
 	private:
+		/** Sobrecarga do operador de saída */
 		std::ostream& print(std::ostream& os)const;
 	protected:
 

@@ -15,6 +15,7 @@
 
 class AveExo : public Ave, AnimalExo{
 	private:
+		/** Sobrecarga do operador de saída */
 		std::ostream& print(std::ostream& os)const;
 	protected:
 

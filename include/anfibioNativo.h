@@ -18,6 +18,7 @@
 
 class AnfibioNat : public Anfibio, AnimalNat{
 	private:
+			/** Sobrecarga do operador de saída */
 			std::ostream& print(std::ostream& os)const;
 	protected:
 
