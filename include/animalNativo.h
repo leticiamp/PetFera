@@ -3,7 +3,7 @@
 * @brief Classe dos animais nativos
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 15/06/2019
+* @date 21/06/2019
 */
 
 #ifndef _ANIMAL_NATIVO_H_
@@ -20,6 +20,7 @@ como seu estado de origem.
 
 class AnimalNat : public AnimalSilv {
 	private:
+		/** Transforma a classe em abstrata, impedindo a instanciação de um objeto */
 		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:

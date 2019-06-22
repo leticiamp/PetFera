@@ -3,7 +3,7 @@
 * @brief Classe base dos animais
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 15/06/2019
+* @date 21/06/2019
 */
 
 #ifndef _ANIMAL_H_
@@ -24,6 +24,7 @@ subclasses, assim como suas configurações específicas (dieta, nome científic
 class Animal{
 
 	private:
+		/** Transforma a classe em abstrata, impedindo a instanciação de um objeto */
 		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
@@ -36,7 +37,7 @@ class Animal{
 		Veterinario * m_veterinario; /**< Define o veterinário associado ao animal */
 		Tratador * m_tratador; /**< Define o tratador associado ao animal */
 		std::string m_nome_batismo; /**< Define o nome de batismo (nome pelo qual o animal atende) */
-		std::string m_naturalidade;
+		std::string m_naturalidade; /**< Define a naturalidade do animal */
 	public:
 		/** @brief Construtor parametrizado. */
 		Animal(	int id_,

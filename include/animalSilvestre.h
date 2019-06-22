@@ -3,7 +3,7 @@
 * @brief Classe dos animais silvestres
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 15/06/2019
+* @date 21/06/2019
 */
 
 #ifndef _ANIMAL_SILVESTRE_H_
@@ -18,6 +18,7 @@
 
 class AnimalSilv{
 	private:
+		/** Transforma a classe em abstrata, impedindo a instanciação de um objeto */
 		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
