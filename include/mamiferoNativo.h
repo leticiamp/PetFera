@@ -16,7 +16,7 @@
 #include "mamifero.h"
 #include "animalNativo.h"
 
-class MamiferoNat : public Mamifero, AnimalNat{
+class MamiferoNat : public Mamifero, public AnimalNat{
 	private:
 		std::ostream& print(std::ostream& os)const;
 	protected:

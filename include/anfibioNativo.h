@@ -16,7 +16,7 @@
 #include "anfibio.h"
 #include "animalNativo.h"
 
-class AnfibioNat : public Anfibio, AnimalNat{
+class AnfibioNat : public Anfibio, public AnimalNat{
 	private:
 			/** Sobrecarga do operador de saída */
 			std::ostream& print(std::ostream& os)const;

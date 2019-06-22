@@ -17,6 +17,9 @@
 #include <string>
 
 #include "animal.h"
+#include "animalExotico.h"
+#include "animalNativo.h"
+#include "animalSilvestre.h"
 #include "funcionario.h"
 
 #include "anfibioExotico.h"
@@ -49,7 +52,7 @@ class System{
     void Print_MyMapA_CSV(std::string nomeArquivo); //Imprime os animais em um arquivo csv
     void Print_MyMapF_CSV(std::string nomeArquivo); //Imprime os funcionarios em um arquivo csv
 
-    //Metodos de Importação Inicial da Dados para o Banco. 
+    //Metodos de Importação Inicial da Dados para o Banco.
     void Import_CSV_To_MyMapF(std::string nomeArquivo);
     void Import_CSV_To_MyMapA(std::string nomeArquivo);
 
@@ -360,13 +363,120 @@ class System{
 
     }
 
-    /*
-      Metodos com os tratamentos utilizados p/ "set" atributos de animais das classes Filhos
-      Caso queira mudar ou utilizar esse metodo em uma classe nova
-      acrescente o nome da classe a metodos de tratamento
-    */
-    //tem que botar um ponteiro de função que passe o Cast para qual Tipo de animal vai ser
-    //Lembrar de implementar
+    template <typename T>
+    void setAnimalTamanhoDoBico(T * animal){
+      system("clear");
+
+      if (FlagTamanhoDoBico(animal) == false){
+        std::cerr << "O animal não possue esse atributo" << std::endl;
+        return;
+      }
+
+      double tamanho_do_bico_cm_;
+      std::cout << "Qual o tamanho do bico do animal ? (em cm)"  << std::endl;
+      std::cin >> tamanho_do_bico_cm_;
+      std::cin.ignore();
+
+      while(tamanho_do_bico_cm_ < 0)
+      {
+        std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                  << "Qual o tamanho do bico do animal ? (em cm)"  << std::endl;
+        std::cin >> tamanho_do_bico_cm_;
+        std::cin.ignore();
+      }
+
+      animal->setTamanhoBicoCm(tamanho_do_bico_cm_);
+    }
+
+    template <typename T>
+    void setAnimalEnvergaduraAsas(T * animal){
+      system("clear");
+
+      if (FlagEnvergaduraAsas(animal) == false){
+        std::cerr << "O animal não possue esse atributo" << std::endl;
+        return;
+      }
+
+      double envergadura_das_asas_;
+      std::cout << "Qual o tamanho das asas do animal ? (em cm)"  << std::endl;
+      std::cin >> envergadura_das_asas_;
+      std::cin.ignore();
+
+      while(envergadura_das_asas_ < 0)
+      {
+        std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                  << "Qual o tamanho das asas do animal ? (em cm)"  << std::endl;
+        std::cin >> envergadura_das_asas_;
+        std::cin.ignore();
+      }
+
+      animal->setEnvergaduraAsas(envergadura_das_asas_);
+    }
+
+    template <typename T>
+    void setAnimalPaisOrigem(T * animal){
+      system("clear");
+
+      if (FlagPaisOrigem(animal) == false){
+        std::cerr << "O animal não possue esse atributo" << std::endl;
+        return;
+      }
+
+      std::string pais_origem_;
+      std::cout <<  "Qual o pais de origem do animal?" << std::endl;
+      std::cin >> pais_origem_;
+      std::cin.ignore();
+      animal->setPaisOrigem(pais_origem_);
+    }
+
+    template <typename T>
+    void setAnimalCidadeOrigem(T * animal){
+      system("clear");
+
+      if (FlagCidadeOrigem(animal) == false){
+        std::cerr << "O animal não possue esse atributo" << std::endl;
+        return;
+      }
+
+      std::string cidade_origem_;
+      std::cout <<  "Qual cidade de origem do animal?" << std::endl;
+      std::cin >> cidade_origem_;
+      std::cin.ignore();
+      animal->setCidadeOrigem(cidade_origem_);
+    }
+
+    template <typename T>
+    void setAnimalAutoIbama(T * animal){
+      system("clear");
+
+      if (FlagAutoIbama(animal) == false){
+        std::cerr << "O animal não possue esse atributo" << std::endl;
+        return;
+      }
+
+      std::string auto_ibama_;
+      std::cout <<  "Qual a autorização do ibama do animal?" << std::endl;
+      std::cin >> auto_ibama_;
+      std::cin.ignore();
+      animal->setAutoIbama(auto_ibama_);
+    }
+
+    template <typename T>
+    void setAnimalUfOrigem(T * animal){
+      system("clear");
+
+      if (FlagUfOrigem(animal) == false){
+        std::cerr << "O animal não possue esse atributo" << std::endl;
+        return;
+      }
+
+      std::string uf_origem_;
+      std::cout <<  "Qual a Uf de origem do animal?" << std::endl;
+      std::cin >> uf_origem_;
+      std::cin.ignore();
+      animal->setUfOrigem(uf_origem_);
+    }
+
     template <typename T>
     void setAnimalVenenoso(T * animal){
       system("clear");
@@ -394,13 +504,149 @@ class System{
       }
 
       venenoso_ = aux;
+      animal->setVenenoso(venenoso_);
+    }
 
+    template <typename T>
+    void setAnimalTipoVeneno(T * animal){
+      system("clear");
+
+      if (FlagTipoVeneno(animal) == false){
+        std::cerr << "O animal não possue esse atributo" << std::endl;
+        return;
+      }
+
+      std::string tipo_veneno_;
+      std::cout <<  "Qual o tipo do veneno do animal?" << std::endl;
+      std::cin >> tipo_veneno_;
+      std::cin.ignore();
+      animal->setTipoVenenoso(tipo_veneno_);
+    }
+
+    template <typename T>
+    void setAnimalNumMudas(T * animal){
+      system("clear");
+
+      if (FlagNumMudas(animal) == false){
+        std::cerr << "O animal não possue esse atributo" << std::endl;
+        return;
+      }
+
+      int mudas_;
+      std::cout <<  "Quantas mudas o animal possue?" << std::endl;
+      std::cin >> mudas_;
+      std::cin.ignore();
+
+      while(mudas_ < 0)
+      {
+        std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                  << "Quantas mudas o animal possue?"  << std::endl;
+        std::cin >> mudas_;
+        std::cin.ignore();
+      }
+
+      animal->set_m_total_de_mudas(mudas_);
+    }
+
+    template <typename T>
+    void setAnimalCorDoPelo(T * animal){
+      system("clear");
+
+      if (FlagCorDoPelo(animal) == false){
+        std::cerr << "O animal não possue esse atributo" << std::endl;
+        return;
+      }
+
+      std::string CorDoPelo;
+      std::cout <<  "Qual a cor do pelo do animal?" << std::endl;
+      std::cin >> CorDoPelo;
+      std::cin.ignore();
+      animal->setCorPelo(CorDoPelo);
+    }
+
+    /*
+      Metodos com os tratamentos utilizados p/ "set" atributos de animais das classes Filhos
+      Caso queira mudar ou utilizar esse metodo em uma classe nova
+      acrescente o nome da classe a metodos de tratamento
+    */
+
+    template <typename T>
+    bool FlagCorDoPelo(T * animal){
+      if(animal->getClasse() == "Mamifero"){
+        return true;
+      }
+      return false;
+    }
+
+    template <typename T>
+    bool FlagNumMudas(T * animal){
+      if(animal->getClasse() == "Anfibio"){
+        return true;
+      }
+      return false;
+    }
+
+    template <typename T>
+    bool FlagTipoVeneno(T * animal){
+      if(animal->getClasse() == "Reptil"){
+        return true;
+      }
+      return false;
+    }
+
+    template <typename T>
+    bool FlagUfOrigem(T * animal){
+     if(animal->getNaturalidade() == "Nativo"){
+       return true;
+     }
+     return false;
+   }
+
+    template <typename T>
+    bool FlagAutoIbama(T * animal){
+      if(animal->getNaturalidade() == "Exotico" ||
+        animal->getNaturalidade() == "Nativo"){
+        return true;
+      }
+      return false;
+    }
+
+    template <typename T>
+    bool FlagCidadeOrigem(T * animal){
+      if(animal->getNaturalidade() == "Exotico"){
+        return true;
+      }
+      return false;
+    }
+
+    template <typename T>
+    bool FlagPaisOrigem(T * animal){
+      if(animal->getNaturalidade() == "Exotico"){
+        return true;
+      }
+      return false;
+    }
+
+    template <typename T>
+    bool FlagTamanhoDoBico(T * animal){
+      if(animal->getClasse() == "Ave"){
+        return true;
+      }
+      return false;
+    }
+
+    template <typename T>
+    bool FlagEnvergaduraAsas(T * animal){
+      if(animal->getClasse() == "Ave"){
+        return true;
+      }
+      return false;
     }
 
     //Metodos de tratamento
     template <typename T>
     bool FlagVenenoso(T * animal){
-      if(animal->getFuncao() == "Reptil"){
+      if(animal->getClasse() == "Reptil"){
         return true;
       }
 

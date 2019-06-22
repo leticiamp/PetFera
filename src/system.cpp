@@ -171,7 +171,7 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
     std::string cor_pelo_ = p11;
     std::string pais_origem_ = p12;
     std::string cidade_origem_ = p13;
-    std::string auto_ibama_ = p14;  
+    std::string auto_ibama_ = p14;
     MamiferoExo * animal = new MamiferoExo(id_,
                                   classe_,
                                   nome_cientifico_,
@@ -466,9 +466,157 @@ AveExo * System::NewAveExo(){
 
   AveExo * animal = new AveExo();
   //Já é instanciado com a classe  = "Ave" e naturalidade = "Exotico"
+  setAnimalId(animal);
+  setAnimalNomeCientifico(animal);
+  setAnimalSexo(animal);
+  setAnimalTamanho(animal);
+  setAnimalDieta(animal);
+  setAnimalVeterinario(animal);
+  setAnimalTratador(animal);
+  setAnimalNomeBatismo(animal);
+  setAnimalTamanhoDoBico(animal);
+  setAnimalEnvergaduraAsas(animal);
+  setAnimalPaisOrigem(animal);
+  setAnimalCidadeOrigem(animal);
+  setAnimalAutoIbama(animal);
 
   return animal;
 }
+AveNat * System::NewAveNat(){
+
+  AveNat * animal = new AveNat();
+  //Já é instanciado com a classe  = "Ave" e naturalidade = "Nativo"
+  setAnimalId(animal);
+  setAnimalNomeCientifico(animal);
+  setAnimalSexo(animal);
+  setAnimalTamanho(animal);
+  setAnimalDieta(animal);
+  setAnimalVeterinario(animal);
+  setAnimalTratador(animal);
+  setAnimalNomeBatismo(animal);
+  setAnimalTamanhoDoBico(animal);
+  setAnimalEnvergaduraAsas(animal);
+  setAnimalUfOrigem(animal);
+  setAnimalAutoIbama(animal);
+
+  return animal;
+}
+ReptilExo * System::NewReptilExo(){
+
+  ReptilExo * animal = new ReptilExo();
+  //Já é instanciado com a classe  = "Reptil" e naturalidade = "Exotico"
+  setAnimalId(animal);
+  setAnimalNomeCientifico(animal);
+  setAnimalSexo(animal);
+  setAnimalTamanho(animal);
+  setAnimalDieta(animal);
+  setAnimalVeterinario(animal);
+  setAnimalTratador(animal);
+  setAnimalNomeBatismo(animal);
+  setAnimalVenenoso(animal);
+  setAnimalTipoVeneno(animal);
+  setAnimalPaisOrigem(animal);
+  setAnimalCidadeOrigem(animal);
+  setAnimalAutoIbama(animal);
+
+  return animal;
+}
+ReptilNat * System::NewReptilNat(){
+
+  ReptilNat * animal = new ReptilNat();
+  //Já é instanciado com a classe  = "Reptil" e naturalidade = "Nativo"
+  setAnimalId(animal);
+  setAnimalNomeCientifico(animal);
+  setAnimalSexo(animal);
+  setAnimalTamanho(animal);
+  setAnimalDieta(animal);
+  setAnimalVeterinario(animal);
+  setAnimalTratador(animal);
+  setAnimalNomeBatismo(animal);
+  setAnimalVenenoso(animal);
+  setAnimalTipoVeneno(animal);
+  setAnimalUfOrigem(animal);
+  setAnimalAutoIbama(animal);
+
+  return animal;
+}
+MamiferoExo * System::NewMamiferoExo(){
+
+  MamiferoExo * animal = new MamiferoExo();
+  //Já é instanciado com a classe  = "Mamifero" e naturalidade = "Exotico"
+  setAnimalId(animal);
+  setAnimalNomeCientifico(animal);
+  setAnimalSexo(animal);
+  setAnimalTamanho(animal);
+  setAnimalDieta(animal);
+  setAnimalVeterinario(animal);
+  setAnimalTratador(animal);
+  setAnimalNomeBatismo(animal);
+  setAnimalCorDoPelo(animal);
+  setAnimalPaisOrigem(animal);
+  setAnimalCidadeOrigem(animal);
+  setAnimalAutoIbama(animal);
+
+  return animal;
+}
+MamiferoNat * System::NewMamiferoNat(){
+
+  MamiferoNat * animal = new MamiferoNat();
+  //Já é instanciado com a classe  = "Mamifero" e naturalidade = "Nativo"
+  setAnimalId(animal);
+  setAnimalNomeCientifico(animal);
+  setAnimalSexo(animal);
+  setAnimalTamanho(animal);
+  setAnimalDieta(animal);
+  setAnimalVeterinario(animal);
+  setAnimalTratador(animal);
+  setAnimalNomeBatismo(animal);
+  setAnimalCorDoPelo(animal);
+  setAnimalUfOrigem(animal);
+  setAnimalAutoIbama(animal);
+
+  return animal;
+}
+AnfibioExo * System::NewAnfibioExo(){
+
+  AnfibioExo * animal = new AnfibioExo();
+  //Já é instanciado com a classe  = "Anfibio" e naturalidade = "Exotico"
+  setAnimalId(animal);
+  setAnimalNomeCientifico(animal);
+  setAnimalSexo(animal);
+  setAnimalTamanho(animal);
+  setAnimalDieta(animal);
+  setAnimalVeterinario(animal);
+  setAnimalTratador(animal);
+  setAnimalNomeBatismo(animal);
+  setAnimalNumMudas(animal);
+  setAnimalPaisOrigem(animal);
+  setAnimalCidadeOrigem(animal);
+  setAnimalAutoIbama(animal);
+
+  return animal;
+}
+AnfibioNat * System::NewAnfibioNat(){
+
+  AnfibioNat * animal = new AnfibioNat();
+  //Já é instanciado com a classe  = "Anfibio" e naturalidade = "Nativo"
+  setAnimalId(animal);
+  setAnimalNomeCientifico(animal);
+  setAnimalSexo(animal);
+  setAnimalTamanho(animal);
+  setAnimalDieta(animal);
+  setAnimalVeterinario(animal);
+  setAnimalTratador(animal);
+  setAnimalNomeBatismo(animal);
+  setAnimalNumMudas(animal);
+  setAnimalUfOrigem(animal);
+  setAnimalAutoIbama(animal);
+
+  return animal;
+}
+
+
+
 
 
 void System::Inserir_Animal_MyMapA(){

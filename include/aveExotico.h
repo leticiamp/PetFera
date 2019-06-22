@@ -13,7 +13,7 @@
 #include "ave.h"
 #include "animalExotico.h"
 
-class AveExo : public Ave, AnimalExo{
+class AveExo : public Ave, public AnimalExo{
 	private:
 		/** Sobrecarga do operador de saída */
 		std::ostream& print(std::ostream& os)const;

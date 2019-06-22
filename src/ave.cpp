@@ -61,6 +61,6 @@ Ave::setTamanhoBicoCm(double tamanho_do_bico_cm_){
 }
 
 void
-Ave::setEnevergaduraAsas(double envergadura_das_asas_){
+Ave::setEnvergaduraAsas(double envergadura_das_asas_){
 	this->m_envergadura_das_asas = envergadura_das_asas_;
 }

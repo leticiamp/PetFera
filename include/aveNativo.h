@@ -12,7 +12,7 @@
 #include "ave.h"
 #include "animalNativo.h"
 
-class AveNat : public Ave, AnimalNat{
+class AveNat : public Ave, public AnimalNat{
 	private:
 		/** Sobrecarga do operador de saída */
 		std::ostream& print(std::ostream& os)const;

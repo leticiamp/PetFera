@@ -18,7 +18,7 @@
 
 using namespace std;
 
-class ReptilNat : public Reptil, AnimalNat{
+class ReptilNat : public Reptil, public AnimalNat{
 	private:
 		std::ostream& print(std::ostream& os)const;
 	protected:

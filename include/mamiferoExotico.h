@@ -16,7 +16,7 @@
 #include "mamifero.h"
 #include "animalExotico.h"
 
-class MamiferoExo : public Mamifero, AnimalExo{
+class MamiferoExo : public Mamifero, public AnimalExo{
 	private:
 		std::ostream& print(std::ostream& os)const;
 	protected:
