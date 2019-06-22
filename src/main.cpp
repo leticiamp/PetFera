@@ -14,6 +14,6 @@
 int main(){
 
   	System on;
-  	//on.MenuInicial();
+  	on.MenuInicial();
   return 0;
 }

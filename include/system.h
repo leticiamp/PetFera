@@ -137,7 +137,7 @@ class System{
     }
 
     template <typename T>
-    void setIdade(T * funcionario){
+    void setFuncIdade(T * funcionario){
       system("clear");
       short idade_;
       std::cout << "Qual a idade do funcionario?" << std::endl;
@@ -191,10 +191,11 @@ class System{
                   << "Qual o fator rh do funcionario?" << std::endl;
         std::cin >> fator_rh_; std::cin.ignore();
       }
+      funcionario->setFator_rh(fator_rh_);
     }
 
     template <typename T>
-    void setEspecialidade(T * funcionario){
+    void setFuncEspecialidade(T * funcionario){
       system("clear");
       std::string especialidade_;
       std::cout <<  "Qual é a especialidade do Funcionario?" << std::endl;
@@ -203,12 +204,67 @@ class System{
       funcionario->setEspecialidade(especialidade_);
     }
 
+    template <typename T>
+    void setFuncNivDeSeguranca(T * funcionario){
+      system("clear");
 
-    void DefIdFunc(int &id_);
+      if (FlagNivDeSeguranca(funcionario) == false){
+        std::cerr << "O funcionario não possue esse atributo" << std::endl;
+        return;
+      }
+
+      int nivel_de_seguranca_;
+      std::cout << "Qual o nivel de segurança do funcionario? (0, 1 ou 2)"  << std::endl;
+      std::cin >> nivel_de_seguranca_;
+      std::cin.ignore();
+
+      while(nivel_de_seguranca_ != 0 &&
+            nivel_de_seguranca_ != 1 &&
+            nivel_de_seguranca_ != 2)
+      {
+        std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
+                  << "Qual o nivel de segurança do funcionario? (0, 1 ou 2)" << std::endl;
+        std::cin >> nivel_de_seguranca_;
+        std::cin.ignore();
+      }
+      funcionario->setNivel_de_Seguranca(nivel_de_seguranca_);
+    }
+
+
+    template <typename T>
+    void setFuncCrmv(T * funcionario){
+      system("clear");
+
+      if (FlagCrmv(funcionario) == false){
+        std::cerr << "O funcionario não possue esse atributo" << std::endl;
+        return;
+      }
+
+      std::string crmv_;
+      std::cout << "Qual o crmv do funcionario?"  << std::endl;
+      std::cin >> crmv_;
+      std::cin.ignore();
+
+      funcionario->set_crmv(crmv_);
+    }
+
+    template <typename T>
+    bool FlagNivDeSeguranca(T * funcionario){
+      if(funcionario->getFuncao() == "Tratador"){
+        return true;
+      }
+      return false;
+    }
+
+    template <typename T>
+    bool FlagCrmv(T * funcionario){
+      if(funcionario->getFuncao() == "Veterinario"){
+        return true;
+      }
+      return false;
+    }
+
     void DefFuncaoFunc(std::string &funcao_);
-    void DefTipoSangueFunc(std::string &tipo_sanguineo_);
-    void DefFatorRhFunc(char &fator_rh_);
-    void DefNivSecurityFunc(int &nivel_de_seguranca_);
 
     //Metodos com os tratamentos utilizados p/ "set" atributos de animais da classe base
 
@@ -643,7 +699,7 @@ class System{
       return false;
     }
 
-    //Metodos de tratamento
+
     template <typename T>
     bool FlagVenenoso(T * animal){
       if(animal->getClasse() == "Reptil"){
@@ -653,21 +709,8 @@ class System{
       return false;
     }
 
-    void DefAnimalId(int &id_);
     void DefAnimalClasse(std::string &classe_);
     void DefAnimalNaturalidade(std::string &naturalidade_);
-    void DefAnimalNomeCientifico(string &nome_cientifico_);
-    void DefAnimalSexo(char &sexo);
-
-    //Metodo expecifico de tratamento na instanciação da classe Reptil
-    void boolReptilVenenoso(bool &venenoso_);
-
-    //Metodos usados para instanciação de atributos sem restrição
-    void infoMaiorQZero(double &generico, std::string os);
-    void infoMaiorQZero(short &generico, std::string os);
-    void infoMaiorQZero(int &generico, std::string os);
-    void infoString(std::string &generico, std::string os);
-
 
     //Pesquisa
     Tratador * consultaTratador(int Id);
