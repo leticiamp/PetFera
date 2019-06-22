@@ -14,6 +14,8 @@
 int main(){
 
   	System on;
-  	on.MenuInicial();
+  	//on.MenuInicial();
+    on.Import_CSV_To_MyMapF("testingF.csv");
+    on.Print_MyMapF_Tela();
   return 0;
 }

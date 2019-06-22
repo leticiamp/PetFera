@@ -77,7 +77,8 @@ class System{
     template<typename T>
     void inserirFuncionarioMyMapF(T * funcionario){
       if( this->mymapF.find(funcionario->getId()) != mymapF.end()){
-        std::cout << "\n Erro. Id já existe! " << std::endl;
+        std::cout << "\nErro. Id já existe! " << std::endl;
+        delete funcionario;
         return;
       }
       this->mymapF.insert(std::pair<int, T*>(funcionario->getId(),funcionario));
@@ -88,6 +89,7 @@ class System{
     void inserirAnimalMyMapA(T * animal){
       if( mymapA.find(animal->getId()) != mymapA.end()){
         std::cout << "\n Erro. Id já existe!" << std::endl;
+        delete animal;
         return;
       }
       this->mymapA.insert(std::pair<int, T*>(animal->getId(),animal));
@@ -711,6 +713,10 @@ class System{
 
     void DefAnimalClasse(std::string &classe_);
     void DefAnimalNaturalidade(std::string &naturalidade_);
+
+
+    void infoString(std::string &generico, std::string os);
+
 
     //Pesquisa
     Tratador * consultaTratador(int Id);

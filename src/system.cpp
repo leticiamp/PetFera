@@ -57,7 +57,7 @@ void System::Print_MyMapF_Tela(){
   for (std::map<int,Funcionario*>::iterator it = this->mymapF.begin();
         it!= this->mymapF.end();
         ++it){
-        std::cout << "Funcionario : " <<  it->first << " \n" << *it->second << "\n\n";
+        std::cout << "Funcionario : " <<  it->first << " \n" << *it->second << "\n";
     }
 }
 
@@ -331,31 +331,40 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
 }
 /* Lê dados de funcionários de arquivo CSV - quase pronto. */
 void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
-/*
+
   ifstream file(nomeArquivo);
   if(file.bad()){
     std::cerr << "Arquivo não foi aberto." << std::endl;
     exit(1);
   }
-  std::string id_, funcao_, nome_, cpf_;
-  std::string idade_, tipo_sanguineo_, fator_rh_;
-  std::string especialidade_, p9;
   std::string line;
+  std::string coluna;
+
+  int id_;
+  std::string funcao_;
+  std::string nome_;
+  std::string cpf_;
+  short idade_;
+  std::string tipo_sanguineo_;
+  char fator_rh_;
+  std::string especialidade_;
+
   while(std::getline(file, line)){
     std::istringstream ss(line);
-    std::getline(ss, id_, ';');
-    int id_ = const_cast<int>(id_);
+    std::getline(ss, coluna, ';');
+    id_ = std::stoi(coluna);
     std::getline(ss, funcao_, ';');
     std::getline(ss, nome_, ';');
     std::getline(ss, cpf_, ';');
-    std::getline(ss, idade_, ';');
-    int idade_ = const_cast<int>(idade_);
+    std::getline(ss, coluna, ';');
+    idade_ = std::stoi(coluna);
     std::getline(ss, tipo_sanguineo_, ';');
-    std::getline(ss, fator_rh_, ';');
+    std::getline(ss, coluna, ';');
+    fator_rh_ = coluna[0];
     std::getline(ss, especialidade_, ';');
-    std::getline(ss, p9, '\n');
+    std::getline(ss, coluna, '\n');
+
     if(funcao_ == "Veterinario" ){
-      std::string crmv_ = p9;
       Veterinario * funcionario = new Veterinario(  id_,
                                                     funcao_,
                                                     nome_,
@@ -364,29 +373,26 @@ void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
                                                     tipo_sanguineo_,
                                                     fator_rh_,
                                                     especialidade_,
-                                                    crmv_);
-    inserirFuncionarioMyMapF(funcionario);
+                                                    coluna);
+      inserirFuncionarioMyMapF(funcionario);
+    }
+
+    if(funcao_ == "Tratador"){
+      int nivel_de_seguranca_ = std::stoi(coluna);
+      Tratador * funcionario = new Tratador(  id_,
+                                              funcao_,
+                                              nome_,
+                                              cpf_,
+                                              idade_,
+                                              tipo_sanguineo_,
+                                              fator_rh_,
+                                              especialidade_,
+                                              nivel_de_seguranca_);
+      inserirFuncionarioMyMapF(funcionario);
+    }
   }
-
-  if(funcao_ == "Tratador"){
-    int nivel_de_seguranca_ = const_cast<int>(p9);
-    Tratador * funcionario = new Tratador(  id_,
-                                            funcao_,
-                                            nome_,
-                                            cpf_,
-                                            idade_,
-                                            tipo_sanguineo_,
-                                            fator_rh_,
-                                            especialidade_,
-                                            nivel_de_seguranca_);
-    inserirFuncionarioMyMapF(funcionario);
-  }
-}
-
-
 
   file.close();
-*/
 }
 
 //Metodos de instanciação de objetos
@@ -749,6 +755,7 @@ void System::DefFuncaoFunc(std::string &funcao_){
     std::cin.ignore();
   }
 }
+
 void System::DefAnimalClasse(std::string &classe_){
 
   std::cout << "Qual a classe do animal Ave, Reptil, Mamifero ou Anfibio?"
@@ -768,6 +775,7 @@ void System::DefAnimalClasse(std::string &classe_){
   }
   system("clear");
 }
+
 void System::DefAnimalNaturalidade(std::string &naturalidade_){
   std::cout << "Qual a naturalidade do animal ? Exotico ou Nativo"
   << std::endl;
@@ -787,6 +795,16 @@ void System::DefAnimalNaturalidade(std::string &naturalidade_){
 }
 
 
+void System::infoString(std::string &generico, std::string os){
+  //Função generica que recebe dois parametros string
+  // onde "os" esta com a pergunta a ser respondida no
+  // genericos
+  std::cout <<  os << std::endl;
+  std::cin >> generico;
+  std::cin.ignore();
+
+  system("clear");
+}
 
 //Consulta -> pode dar erro
 Tratador * System::consultaTratador(int Id){
