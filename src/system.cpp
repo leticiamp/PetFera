@@ -110,226 +110,320 @@ void System::Print_MyMapF_CSV(std::string nomeArquivo){
   std::cout <<"Arquivo modificado com sucesso" << std::endl;
 }
 
-/* Lê dados de funcionários de arquivo CSV - quase pronto. */
+/* Lê dados de funcionários de arquivo CSV */
 void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
-  /*
+
   ifstream file(nomeArquivo);
   if(file.bad()){
     std::cerr << "Arquivo não foi aberto." << std::endl;
     exit(1);
   }
-  std::string id_, classe_, nome_cientifico_, sexo_;
-  std::string tamanho_, dieta_, veterinario_, tratador_;
-  std::string nome_batismo_, naturalidade_, p11, p12, p13, p14, p15;
+
   std::string line;
+  std::string coluna;
+
+  int id_;
+  std::string classe_;
+  std::string nome_cientifico_;
+  char sexo_;
+  double tamanho_;
+  std::string dieta_;
+  Veterinario * veterinario_ = nullptr;
+  Tratador * tratador_ = nullptr;
+  std::string nome_batismo_;
+  std::string naturalidade_;
+
   while(std::getline(file, line)){
     std::istringstream ss(line);
-    std::getline(ss, id_, ';');
-    int id_ = const_cast<int>(id_);
+    std::getline(ss, coluna, ';');
+    id_ = std::stoi(coluna);
     std::getline(ss, classe_, ';');
     std::getline(ss, nome_cientifico_, ';');
-    std::getline(ss, sexo_, ';');
-    std::getline(ss, tamanho_, ';');
-    int tamanho_ = const_cast<int>(tamanho_);
+    std::getline(ss, coluna, ';');
+    sexo_ = coluna[0];
+    std::getline(ss, coluna, ';');
+    tamanho_ = std::stod(coluna);
     std::getline(ss, dieta_, ';');
-    std::getline(ss, veterinario_, ';');
-    std::getline(ss, tratador_, ';');
+    std::getline(ss, coluna, ';');
+
+    //Veterinario
+    int aux = std::stoi(coluna);
+    if(aux == 0){
+        veterinario_ = nullptr;
+    }else{
+        auto it = this->mymapF.find(aux);
+        if( it != this->mymapF.end()){
+            if(it->second->getFuncao() != "Veterinario"){
+              veterinario_ = nullptr;
+              std::cout << "Tentativa de inserção de Id funcionario em posição errada" << std::endl;
+            }else{
+              veterinario_ = dynamic_cast<Veterinario*> (it->second);
+            }
+        }else{
+          std::cout << "Veterinario não existe" << std::endl;
+          veterinario_ = nullptr;
+        }
+    }
+
+
+    //Tratador
+    std::getline(ss, coluna, ';');
+    aux = std::stoi(coluna);
+    if(aux == 0){
+      tratador_ = nullptr;
+    }else{
+        auto it = this->mymapF.find(aux);
+        if( it != this->mymapF.end()){
+            if(it->second->getFuncao() != "Tratador"){
+              tratador_ = nullptr;
+              std::cerr << "Tentativa de inserção de Id funcionario em posição errada" << std::endl;
+            }else{
+              tratador_ = dynamic_cast<Tratador*> (it->second);;
+            }
+        }else{
+          std::cout << "Tratador não existe" << std::endl;
+          tratador_ = nullptr;
+        }
+    }
+
     std::getline(ss, nome_batismo_, ';');
     std::getline(ss, naturalidade_, ';');
-    std::getline(ss, p11, ';');
-    std::getline(ss, p12, ';');
 
-  if( classe_ == "Ave" && naturalidade_ == "Exotico"){
-    std::getline(ss, p13, ';');
-    std::getline(ss, p14, ';');
-    std::getline(ss, p15, '\n');
-    int tamanho_do_bico_cm_ = const_cast<int>(p11);
-    int envergadura_das_asas_ = const_cast<int>(p12);
-    std::string pais_origem_ = p13;
-    std::string cidade_origem_ = p14;
-    std::string auto_ibama_ = p15;
-    AveExo * animal = new AveExo(id_,
-                                  classe_,
-                                  nome_cientifico_,
-                                  sexo_,
-                                  tamanho_,
-                                  dieta_,
-                                  veterinario_,
-                                  tratador_,
-                                  nome_batismo_,
-                                  naturalidade_,
-                                  tamanho_do_bico_cm_,
-                                  envergadura_das_asas_,
-                                  pais_origem_,
-                                  cidade_origem_,
-                                  auto_ibama_);
-    inserirAnimalMyMapA(animal);
-  }
-  if(classe_ == "Mamifero" && naturalidade_ == "Exotico"){
-    std::getline(ss, p13, ';');
-    std::getline(ss, p14, '\n');
-    std::string cor_pelo_ = p11;
-    std::string pais_origem_ = p12;
-    std::string cidade_origem_ = p13;
-    std::string auto_ibama_ = p14;
-    MamiferoExo * animal = new MamiferoExo(id_,
-                                  classe_,
-                                  nome_cientifico_,
-                                  sexo_,
-                                  tamanho_,
-                                  dieta_,
-                                  veterinario_,
-                                  tratador_,
-                                  nome_batismo_,
-                                  naturalidade_,
-                                  cor_pelo_,
-                                  pais_origem_,
-                                  cidade_origem_,
-                                  auto_ibama_);
-    inserirAnimalMyMapA(animal);
-  }
-  if(classe_ == "Reptil" && naturalidade_ == "Exotico"){
-    std::getline(ss, p13, ';');
-    std::getline(ss, p14, ';');
-    std::getline(ss, p15, '\n');
-    bool venenoso_ = const_cast<bool>(p11);
-    std::string tipo_veneno_ = p12;
-    std::string pais_origem_ = p13;
-    std::string cidade_origem_ = p14;
-    std::string auto_ibama_ = p15;
-    ReptilExo * animal = new ReptilExo(id_,
-                                  classe_,
-                                  nome_cientifico_,
-                                  sexo_,
-                                  tamanho_,
-                                  dieta_,
-                                  veterinario_,
-                                  tratador_,
-                                  nome_batismo_,
-                                  naturalidade_,
-                                  venenoso_,
-                                  tipo_veneno_,
-                                  pais_origem_,
-                                  cidade_origem_,
-                                  auto_ibama_);
-    inserirAnimalMyMapA(animal);
-  }
-  if(classe_ == "Anfibio" && naturalidade_ == "Exotico"){
-    std::getline(ss, p13, ';');
-    std::getline(ss, p14, '\n');
-    int mudas_ = const_cast<int>(p11);
-    std::string pais_origem_ = p12;
-    std::string cidade_origem_ = p13;
-    std::string auto_ibama_ = p14;
-    AnfibioExo * animal = new AnfibioExo(id_,
-                                  classe_,
-                                  nome_cientifico_,
-                                  sexo_,
-                                  tamanho_,
-                                  dieta_,
-                                  veterinario_,
-                                  tratador_,
-                                  nome_batismo_,
-                                  naturalidade_,
-                                  mudas_,
-                                  pais_origem_,
-                                  cidade_origem_,
-                                  auto_ibama_);
-    inserirAnimalMyMapA(animal);
-  }
-  if(classe_ == "Ave" && naturalidade_ == "Nativo"){
-    std::getline(ss, p13, ';');
-    std::getline(ss, p14, '\n');
-    int tamanho_do_bico_cm_ = const_cast<int>(p11);
-    int envergadura_das_asas_ = const_cast<int>(p12);
-    std::string uf_origem_ = p13;
-    std::string auto_ibama_ = p14;
-    AveNat * animal = new AveNat  (id_,
-                                  classe_,
-                                  nome_cientifico_,
-                                  sexo_,
-                                  tamanho_,
-                                  dieta_,
-                                  veterinario_,
-                                  tratador_,
-                                  nome_batismo_,
-                                  naturalidade_,
-                                  tamanho_do_bico_cm_,
-                                  envergadura_das_asas_,
-                                  uf_origem_,
-                                  auto_ibama_);
-    inserirAnimalMyMapA(animal);
-  }
-  if(classe_ == "Mamifero" && naturalidade_ == "Nativo"){
-    std::getline(ss, p13, '\n');
-    std::string cor_pelo_ = p11;
-    std::string uf_origem_ = p12;
-    std::string auto_ibama_ = p13;
-    MamiferoNat * animal = new MamiferoNat(id_,
-                                  classe_,
-                                  nome_cientifico_,
-                                  sexo_,
-                                  tamanho_,
-                                  dieta_,
-                                  veterinario_,
-                                  tratador_,
-                                  nome_batismo_,
-                                  naturalidade_,
-                                  cor_pelo_,
-                                  uf_origem_,
-                                  auto_ibama_);
-    inserirAnimalMyMapA(animal);
-  }
-  if(classe_ == "Reptil" && naturalidade_ == "Nativo"){
-    std::getline(ss, p13, ';');
-    std::getline(ss, p14, '\n');
-    bool venenoso_ = const_cast<bool>(p11);
-    std::string tipo_veneno_ = p12;
-    std::string uf_origem_ = p13;
-    std::string auto_ibama_ = p14;
-    ReptilNat * animal = new ReptilNat(id_,
-                                  classe_,
-                                  nome_cientifico_,
-                                  sexo_,
-                                  tamanho_,
-                                  dieta_,
-                                  veterinario_,
-                                  tratador_,
-                                  nome_batismo_,
-                                  naturalidade_,
-                                  venenoso_,
-                                  tipo_veneno_,
-                                  uf_origem_,
-                                  auto_ibama_);
-    inserirAnimalMyMapA(animal);
-  }
-  if(classe_ == "Anfibio" && naturalidade_ == "Nativo"){
-    std::getline(ss, p13, '\n');
-    int mudas_ = const_cast<int>(p11);
-    std::string uf_origem_ = p12;
-    std::string auto_ibama_ = p13;
-    AnfibioNat * animal = new AnfibioNat(id_,
-                                  classe_,
-                                  nome_cientifico_,
-                                  sexo_,
-                                  tamanho_,
-                                  dieta_,
-                                  veterinario_,
-                                  tratador_,
-                                  nome_batismo_,
-                                  naturalidade_,
-                                  mudas_,
-                                  uf_origem_,
-                                  auto_ibama_);
-    inserirAnimalMyMapA(animal);
+    if( classe_ == "Ave" && naturalidade_ == "Exotico"){
+      std::getline(ss, coluna, ';');
+      double tamanho_do_bico_cm_ = std::stod(coluna);
+      std::getline(ss, coluna, ';');
+      double envergadura_das_asas_ = std::stod(coluna);
+
+      std::string pais_origem_;
+      std::string cidade_origem_;
+      std::string auto_ibama_;
+
+      std::getline(ss, pais_origem_, ';');
+      std::getline(ss, cidade_origem_, ';');
+      std::getline(ss, auto_ibama_, ';');
+      AveExo * animal = new AveExo(id_,
+                                    classe_,
+                                    nome_cientifico_,
+                                    sexo_,
+                                    tamanho_,
+                                    dieta_,
+                                    veterinario_,
+                                    tratador_,
+                                    nome_batismo_,
+                                    naturalidade_,
+                                    tamanho_do_bico_cm_,
+                                    envergadura_das_asas_,
+                                    pais_origem_,
+                                    cidade_origem_,
+                                    auto_ibama_);
+      inserirAnimalMyMapA(animal);
+    }
+
+    if(classe_ == "Mamifero" && naturalidade_ == "Exotico"){
+      std::string cor_pelo_;
+      std::getline(ss, cor_pelo_, ';');
+
+      std::string pais_origem_;
+      std::getline(ss, pais_origem_, ';');
+
+      std::string cidade_origem_;
+      std::getline(ss, cidade_origem_, ';');
+
+      std::string auto_ibama_;
+      std::getline(ss, auto_ibama_, ';');
+
+      MamiferoExo * animal = new MamiferoExo(id_,
+                                    classe_,
+                                    nome_cientifico_,
+                                    sexo_,
+                                    tamanho_,
+                                    dieta_,
+                                    veterinario_,
+                                    tratador_,
+                                    nome_batismo_,
+                                    naturalidade_,
+                                    cor_pelo_,
+                                    pais_origem_,
+                                    cidade_origem_,
+                                    auto_ibama_);
+      inserirAnimalMyMapA(animal);
+    }
+
+    if(classe_ == "Reptil" && naturalidade_ == "Exotico"){
+      std::getline(ss, coluna, ';');
+      bool venenoso_ = std::stoi(coluna);
+
+      std::string tipo_veneno_;
+      std::getline(ss,tipo_veneno_,';');
+
+      std::string pais_origem_;
+      std::getline(ss, pais_origem_, ';');
+
+      std::string cidade_origem_;
+      std::getline(ss, cidade_origem_, ';');
+
+      std::string auto_ibama_;
+      std::getline(ss, auto_ibama_, ';');
+
+      ReptilExo * animal = new ReptilExo(id_,
+                                    classe_,
+                                    nome_cientifico_,
+                                    sexo_,
+                                    tamanho_,
+                                    dieta_,
+                                    veterinario_,
+                                    tratador_,
+                                    nome_batismo_,
+                                    naturalidade_,
+                                    venenoso_,
+                                    tipo_veneno_,
+                                    pais_origem_,
+                                    cidade_origem_,
+                                    auto_ibama_);
+      inserirAnimalMyMapA(animal);
+    }
+
+    if(classe_ == "Anfibio" && naturalidade_ == "Exotico"){
+      std::getline(ss, coluna, ';');
+      int mudas_ = std::stoi(coluna);
+      std::string pais_origem_;
+      std::getline(ss, pais_origem_, ';');
+      std::string cidade_origem_;
+      std::getline(ss, cidade_origem_, ';');
+      std::string auto_ibama_;
+      std::getline(ss, auto_ibama_,';');
+
+      AnfibioExo * animal = new AnfibioExo(id_,
+                                    classe_,
+                                    nome_cientifico_,
+                                    sexo_,
+                                    tamanho_,
+                                    dieta_,
+                                    veterinario_,
+                                    tratador_,
+                                    nome_batismo_,
+                                    naturalidade_,
+                                    mudas_,
+                                    pais_origem_,
+                                    cidade_origem_,
+                                    auto_ibama_);
+      inserirAnimalMyMapA(animal);
+    }
+
+    if(classe_ == "Ave" && naturalidade_ == "Nativo"){
+      std::getline(ss, coluna, ';');
+      double tamanho_do_bico_cm_ = std::stod(coluna);
+      std::getline(ss, coluna, ';');
+      double envergadura_das_asas_ = std::stod(coluna);
+
+      std::string uf_origem_;
+      std::getline(ss, uf_origem_, ';');
+      std::string auto_ibama_;
+      std::getline(ss, auto_ibama_,';');
+
+      AveNat * animal = new AveNat  (id_,
+                                    classe_,
+                                    nome_cientifico_,
+                                    sexo_,
+                                    tamanho_,
+                                    dieta_,
+                                    veterinario_,
+                                    tratador_,
+                                    nome_batismo_,
+                                    naturalidade_,
+                                    tamanho_do_bico_cm_,
+                                    envergadura_das_asas_,
+                                    uf_origem_,
+                                    auto_ibama_);
+      inserirAnimalMyMapA(animal);
+    }
+
+    if(classe_ == "Mamifero" && naturalidade_ == "Nativo"){
+      std::string cor_pelo_;
+      std::getline(ss, cor_pelo_, ';');
+
+      std::string uf_origem_;
+      std::getline(ss, uf_origem_, ';');
+      std::string auto_ibama_;
+      std::getline(ss, auto_ibama_,';');
+
+      MamiferoNat * animal = new MamiferoNat(id_,
+                                    classe_,
+                                    nome_cientifico_,
+                                    sexo_,
+                                    tamanho_,
+                                    dieta_,
+                                    veterinario_,
+                                    tratador_,
+                                    nome_batismo_,
+                                    naturalidade_,
+                                    cor_pelo_,
+                                    uf_origem_,
+                                    auto_ibama_);
+      inserirAnimalMyMapA(animal);
+    }
+
+    if(classe_ == "Reptil" && naturalidade_ == "Nativo"){
+      std::getline(ss, coluna, ';');
+      bool venenoso_ = std::stoi(coluna);
+
+      std::string tipo_veneno_;
+      std::getline(ss,tipo_veneno_,';');
+
+      std::string uf_origem_;
+      std::getline(ss, uf_origem_, ';');
+      std::string auto_ibama_;
+      std::getline(ss, auto_ibama_,';');
+
+      ReptilNat * animal = new ReptilNat(id_,
+                                    classe_,
+                                    nome_cientifico_,
+                                    sexo_,
+                                    tamanho_,
+                                    dieta_,
+                                    veterinario_,
+                                    tratador_,
+                                    nome_batismo_,
+                                    naturalidade_,
+                                    venenoso_,
+                                    tipo_veneno_,
+                                    uf_origem_,
+                                    auto_ibama_);
+      inserirAnimalMyMapA(animal);
+    }
+
+    if(classe_ == "Anfibio" && naturalidade_ == "Nativo"){
+      std::getline(ss, coluna, ';');
+      int mudas_ = std::stoi(coluna);
+
+      std::string uf_origem_;
+      std::getline(ss, uf_origem_, ';');
+      std::string auto_ibama_;
+      std::getline(ss, auto_ibama_,';');
+
+      AnfibioNat * animal = new AnfibioNat(id_,
+                                    classe_,
+                                    nome_cientifico_,
+                                    sexo_,
+                                    tamanho_,
+                                    dieta_,
+                                    veterinario_,
+                                    tratador_,
+                                    nome_batismo_,
+                                    naturalidade_,
+                                    mudas_,
+                                    uf_origem_,
+                                    auto_ibama_);
+      inserirAnimalMyMapA(animal);
+    }
   }
 
-  }
   file.close();
   std::cout << "Pronto! Os animais acima foram salvos no banco de dados." << std::endl;
-*/
+
 }
-/* Lê dados de funcionários de arquivo CSV - quase pronto. */
+/* Lê dados de funcionários de arquivo CSV  */
 void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
 
   ifstream file(nomeArquivo);

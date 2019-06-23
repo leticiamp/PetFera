@@ -87,8 +87,18 @@ class System{
     //Metodos de inserção no MyMapA
     template<typename T>
     void inserirAnimalMyMapA(T * animal){
+      if(animal->getTratador() == nullptr
+         && animal->getVeterinario( ) == nullptr){
+           std::cerr << "\nErro. Animal sem funcionario responsável" << std::endl;
+           delete animal->getTratador();
+           delete animal->getVeterinario();
+           delete animal;
+           return;
+         }
       if( mymapA.find(animal->getId()) != mymapA.end()){
-        std::cout << "\n Erro. Id já existe!" << std::endl;
+        std::cerr << "\nErro. Id já existe!" << std::endl;
+        delete animal->getTratador();
+        delete animal->getVeterinario();
         delete animal;
         return;
       }
