@@ -1,9 +1,14 @@
-# Makefile da disciplina Linguagem de Programação I
-# Alunos: André Vitor Macedo Soares, Letícia Moura Pinheiro e odilon Júlio dos Santos
-# Projeto PetFera
+# Disciplina: Linguagem de Programação I
+# Professor: Silvio Sampaio
+# Alunos:
+# ANDRE VITOR MACEDO SOARES
+# LETICIA MOURA PINHEIRO
+# ODILON JULIO DOS SANTOS
+# Projeto Final "PetFera"
+# =============================== MAKEFILE ===============================
 
 CC = g++
-PROG = $(BIN)/Projeto-LPI
+PROG = Projeto-LPI
 
 OBJ = ./build
 SRC = ./src
@@ -13,10 +18,11 @@ INC = ./include
 CPPFLAGS = -Wall -pedantic -std=c++11 -I $(INC) -g -O0
 
 OBJS = $(OBJ)/anfibio.o $(OBJ)/anfibioExotico.o $(OBJ)/anfibioNativo.o $(OBJ)/animal.o \
-	$(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o $(OBJ)/ave.o $(OBJ)/aveExotico.o \
-	$(OBJ)/aveNativo.o $(OBJ)/funcionario.o $(OBJ)/tratador.o $(OBJ)/veterinario.o $(OBJ)/mamifero.o \
-	$(OBJ)/mamiferoExotico.o $(OBJ)/mamiferoNativo.o $(OBJ)/reptil.o $(OBJ)/reptilExotico.o $(OBJ)/reptilNativo.o \
-	$(OBJ)/system.o $(OBJ)/main.o
+	$(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o $(OBJ)/ave.o \
+	$(OBJ)/aveExotico.o $(OBJ)/aveNativo.o $(OBJ)/funcionario.o $(OBJ)/tratador.o \
+	$(OBJ)/veterinario.o $(OBJ)/mamifero.o $(OBJ)/mamiferoExotico.o $(OBJ)/mamiferoNativo.o \
+	$(OBJ)/reptil.o $(OBJ)/reptilExotico.o $(OBJ)/reptilNativo.o \
+	$(OBJ)/arquivoNaoAberto.o $(OBJ)/system.o $(OBJ)/main.o
 
 all: mkdirs $(PROG)
 
@@ -26,6 +32,9 @@ mkdirs:
 
 $(PROG): $(OBJS)
 	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
+
+$(OBJ)/arquivoNaoAberto.o:$(INC)/arquivoNaoAberto.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/arquivoNaoAberto.cpp -o $(OBJ)/arquivoNaoAberto.o
 
 $(OBJ)/anfibio.o:$(INC)/anfibio.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/anfibio.cpp -o $(OBJ)/anfibio.o

@@ -1,19 +1,18 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file system.cpp
+* @brief Sistema central que controla as principais ações do SuperFera.
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santosos
+* @since 25/04/2019
+* @date 23/06/2019
 */
 
 #include <string>
 #include <fstream>
-#include "system.h"
 #include <iostream>
 #include <sstream>
+
+#include "system.h"
+#include "arquivoNaoAberto.h"
 
 
 System::System(){}
@@ -40,24 +39,24 @@ System::~System(){
 //Metodos de listagem
 void System::Print_MyMapA_Tela(){
   if(this->mymapA.size() == 0){
-    std::cout << "Nenhum animal instanciado\n" << std::endl;
+    std::cout << " Nenhum animal instanciado. \n" << std::endl;
     return;
   }
   for (std::map<int,Animal*>::iterator it = this->mymapA.begin(); it!= this->mymapA.end(); ++it){
-    std::cout << "Animal : " <<  it->first << " \n" << *it->second << "\n\n";
+    std::cout << " Animal : " <<  it->first << " \n" << *it->second << "\n\n";
   }
 }
 
 void System::Print_MyMapF_Tela(){
   if(this->mymapF.size() == 0){
-    std::cout << "Nenhum funcionario instanciado\n" << std::endl;
+    std::cout << " Nenhum funcionario instanciado. \n" << std::endl;
     return;
   }
 
   for (std::map<int,Funcionario*>::iterator it = this->mymapF.begin();
         it!= this->mymapF.end();
         ++it){
-        std::cout << "Funcionario : " <<  it->first << " \n" << *it->second << "\n";
+        std::cout << " Funcionario : " <<  it->first << " \n" << *it->second << "\n";
     }
 }
 
@@ -66,7 +65,7 @@ void System::Print_MyMapA_Func_Tela(int Id){
   it!= this->mymapA.end();
   ++it){
     if( it->second->getTratador()->getId() == Id){
-      std::cout << "Animal " << *it->second;
+      std::cout << " Animal " << *it->second;
     }
 
   }
@@ -75,16 +74,23 @@ void System::Print_MyMapA_Func_Tela(int Id){
 void System::Print_MyMapA_CSV(std::string nomeArquivo){
   ofstream file; // Cria arquivo.
 	file.open(nomeArquivo);
-
-  if(file.bad()){
-    std::cerr << "Arquivo não foi aberto" << std::endl;
-    exit(1);
+  /** @brief Trata a exceção, caso o arquivo não abra. */
+  try{
+    if(file.bad()){
+      throw ArquivoNaoAberto();
+    }
+    else{
+      for (std::map<int,Animal*>::iterator it = this->mymapA.begin();
+           it!= this->mymapA.end(); ++it){
+        file <<  *it->second;
+      }
+    }
+  } catch (ArquivoNaoAberto &err){
+      std::cerr << err.what() << std::endl;
+  } catch (...) {
+      std::cerr << "Erro desconhecido ao tentar abrir o arquivo." << std::endl;
   }
-
-	for (std::map<int,Animal*>::iterator it = this->mymapA.begin();it!= this->mymapA.end(); ++it){
-      file <<  *it->second;
-  }
-
+ 
 	file.close();
 
   std::cout <<"Arquivo modificado com sucesso" << std::endl;
@@ -95,115 +101,123 @@ void System::Print_MyMapF_CSV(std::string nomeArquivo){
   ofstream file; // Cria arquivo.
 	file.open(nomeArquivo);
 
-  if(file.bad()){
-    std::cerr << "Arquivo não foi aberto" << std::endl;
-    exit(1);
+  /** @brief Trata a exceção, caso o arquivo não abra. */
+  try{
+    if(file.bad()){
+      throw ArquivoNaoAberto();
+    }
+    else{
+	    for (std::map<int,Funcionario*>::iterator it = this->mymapF.begin();
+      it!= this->mymapF.end();++it){
+      file <<  *it->second;
+      }
+    }
+  }
+  } catch (ArquivoNaoAberto &err){
+      std::cerr << err.what() << std::endl;
+  } catch (...) {
+      std::cerr << "Erro desconhecido ao tentar abrir o arquivo." << std::endl;
   }
 
-	for (std::map<int,Funcionario*>::iterator it = this->mymapF.begin();
-      it!= this->mymapF.end();
-      ++it){
-      file <<  *it->second;
-  }
 	file.close();
 
   std::cout <<"Arquivo modificado com sucesso" << std::endl;
 }
 
-/* Lê dados de funcionários de arquivo CSV */
+/** @brief Importa dados de animais de arquivo CSV para o banco. */
 void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
 
   ifstream file(nomeArquivo);
-  if(file.bad()){
-    std::cerr << "Arquivo não foi aberto." << std::endl;
-    exit(1);
-  }
+  /** @brief Trata a exceção, caso o arquivo não abra. */
+  try{
+    if(file.bad()){
+      throw ArquivoNaoAberto();
+    }
+    else{
+      std::string line;
+      std::string coluna;
+      
+      int id_;
+      std::string classe_;
+      std::string nome_cientifico_;
+      char sexo_;
+      double tamanho_;
+      std::string dieta_;
+      Veterinario * veterinario_ = nullptr;
+      Tratador * tratador_ = nullptr;
+      std::string nome_batismo_;
+      std::string naturalidade_;
 
-  std::string line;
-  std::string coluna;
+      while(std::getline(file, line)){
+        std::istringstream ss(line);
+        std::getline(ss, coluna, ';');
+        id_ = std::stoi(coluna);
+        std::getline(ss, classe_, ';');
+        std::getline(ss, nome_cientifico_, ';');
+        std::getline(ss, coluna, ';');
+        sexo_ = coluna[0];
+        std::getline(ss, coluna, ';');
+        tamanho_ = std::stod(coluna);
+        std::getline(ss, dieta_, ';');
+        std::getline(ss, coluna, ';');
 
-  int id_;
-  std::string classe_;
-  std::string nome_cientifico_;
-  char sexo_;
-  double tamanho_;
-  std::string dieta_;
-  Veterinario * veterinario_ = nullptr;
-  Tratador * tratador_ = nullptr;
-  std::string nome_batismo_;
-  std::string naturalidade_;
-
-  while(std::getline(file, line)){
-    std::istringstream ss(line);
-    std::getline(ss, coluna, ';');
-    id_ = std::stoi(coluna);
-    std::getline(ss, classe_, ';');
-    std::getline(ss, nome_cientifico_, ';');
-    std::getline(ss, coluna, ';');
-    sexo_ = coluna[0];
-    std::getline(ss, coluna, ';');
-    tamanho_ = std::stod(coluna);
-    std::getline(ss, dieta_, ';');
-    std::getline(ss, coluna, ';');
-
-    //Veterinario
-    int aux = std::stoi(coluna);
-    if(aux == 0){
-        veterinario_ = nullptr;
-    }else{
-        auto it = this->mymapF.find(aux);
-        if( it != this->mymapF.end()){
+        //Veterinario
+        int aux = std::stoi(coluna);
+        if(aux == 0){
+          veterinario_ = nullptr;
+        }else{
+          auto it = this->mymapF.find(aux);
+          if( it != this->mymapF.end()){
             if(it->second->getFuncao() != "Veterinario"){
               veterinario_ = nullptr;
               std::cout << "Tentativa de inserção de Id funcionario em posição errada" << std::endl;
             }else{
               veterinario_ = dynamic_cast<Veterinario*> (it->second);
             }
-        }else{
-          std::cout << "Veterinario não existe" << std::endl;
-          veterinario_ = nullptr;
+          }else{
+            std::cout << "Veterinario não existe" << std::endl;
+            veterinario_ = nullptr;
+          }
         }
-    }
 
-
-    //Tratador
-    std::getline(ss, coluna, ';');
-    aux = std::stoi(coluna);
-    if(aux == 0){
-      tratador_ = nullptr;
-    }else{
-        auto it = this->mymapF.find(aux);
-        if( it != this->mymapF.end()){
+        //Tratador
+        std::getline(ss, coluna, ';');
+        aux = std::stoi(coluna);
+        if(aux == 0){
+          tratador_ = nullptr;
+        }else{
+          auto it = this->mymapF.find(aux);
+          if( it != this->mymapF.end()){
             if(it->second->getFuncao() != "Tratador"){
               tratador_ = nullptr;
               std::cerr << "Tentativa de inserção de Id funcionario em posição errada" << std::endl;
             }else{
               tratador_ = dynamic_cast<Tratador*> (it->second);;
             }
-        }else{
-          std::cout << "Tratador não existe" << std::endl;
-          tratador_ = nullptr;
+          }else{
+            std::cout << "Tratador não existe" << std::endl;
+            tratador_ = nullptr;
+          }
         }
-    }
 
-    std::getline(ss, nome_batismo_, ';');
-    std::getline(ss, naturalidade_, ';');
+        std::getline(ss, nome_batismo_, ';');
+        std::getline(ss, naturalidade_, ';');
 
-    if( classe_ == "Ave" && naturalidade_ == "Exotico"){
-      std::getline(ss, coluna, ';');
-      double tamanho_do_bico_cm_ = std::stod(coluna);
-      std::getline(ss, coluna, ';');
-      double envergadura_das_asas_ = std::stod(coluna);
+        if( classe_ == "Ave" && naturalidade_ == "Exotico"){
+          std::getline(ss, coluna, ';');
+          double tamanho_do_bico_cm_ = std::stod(coluna);
+          std::getline(ss, coluna, ';');
+          double envergadura_das_asas_ = std::stod(coluna);
 
-      std::string pais_origem_;
-      std::string cidade_origem_;
-      std::string auto_ibama_;
+          std::string pais_origem_;
+          std::string cidade_origem_;
+          std::string auto_ibama_;
 
-      std::getline(ss, pais_origem_, ';');
-      std::getline(ss, cidade_origem_, ';');
-      std::getline(ss, auto_ibama_, ';');
-      AveExo * animal = new AveExo(id_,
-                                    classe_,
+          std::getline(ss, pais_origem_, ';');
+          std::getline(ss, cidade_origem_, ';');
+          std::getline(ss, auto_ibama_, ';');
+          AveExo * animal = new AveExo(id_,
+                                      classe_,
                                     nome_cientifico_,
                                     sexo_,
                                     tamanho_,
@@ -217,23 +231,23 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
                                     pais_origem_,
                                     cidade_origem_,
                                     auto_ibama_);
-      inserirAnimalMyMapA(animal);
-    }
+          inserirAnimalMyMapA(animal);
+        }
 
-    if(classe_ == "Mamifero" && naturalidade_ == "Exotico"){
-      std::string cor_pelo_;
-      std::getline(ss, cor_pelo_, ';');
+        if(classe_ == "Mamifero" && naturalidade_ == "Exotico"){
+          std::string cor_pelo_;
+          std::getline(ss, cor_pelo_, ';');
 
-      std::string pais_origem_;
-      std::getline(ss, pais_origem_, ';');
+          std::string pais_origem_;
+          std::getline(ss, pais_origem_, ';');
 
-      std::string cidade_origem_;
-      std::getline(ss, cidade_origem_, ';');
+          std::string cidade_origem_;
+          std::getline(ss, cidade_origem_, ';');
 
-      std::string auto_ibama_;
-      std::getline(ss, auto_ibama_, ';');
+          std::string auto_ibama_;
+          std::getline(ss, auto_ibama_, ';');
 
-      MamiferoExo * animal = new MamiferoExo(id_,
+          MamiferoExo * animal = new MamiferoExo(id_,
                                     classe_,
                                     nome_cientifico_,
                                     sexo_,
@@ -247,26 +261,26 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
                                     pais_origem_,
                                     cidade_origem_,
                                     auto_ibama_);
-      inserirAnimalMyMapA(animal);
-    }
+          inserirAnimalMyMapA(animal);
+        }
 
-    if(classe_ == "Reptil" && naturalidade_ == "Exotico"){
-      std::getline(ss, coluna, ';');
-      bool venenoso_ = std::stoi(coluna);
+        if(classe_ == "Reptil" && naturalidade_ == "Exotico"){
+          std::getline(ss, coluna, ';');
+          bool venenoso_ = std::stoi(coluna);
 
-      std::string tipo_veneno_;
-      std::getline(ss,tipo_veneno_,';');
+          std::string tipo_veneno_;
+          std::getline(ss,tipo_veneno_,';');
 
-      std::string pais_origem_;
-      std::getline(ss, pais_origem_, ';');
+          std::string pais_origem_;
+          std::getline(ss, pais_origem_, ';');
 
-      std::string cidade_origem_;
-      std::getline(ss, cidade_origem_, ';');
+          std::string cidade_origem_;
+          std::getline(ss, cidade_origem_, ';');
 
-      std::string auto_ibama_;
-      std::getline(ss, auto_ibama_, ';');
+          std::string auto_ibama_;
+          std::getline(ss, auto_ibama_, ';');
 
-      ReptilExo * animal = new ReptilExo(id_,
+          ReptilExo * animal = new ReptilExo(id_,
                                     classe_,
                                     nome_cientifico_,
                                     sexo_,
@@ -281,20 +295,20 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
                                     pais_origem_,
                                     cidade_origem_,
                                     auto_ibama_);
-      inserirAnimalMyMapA(animal);
-    }
+          inserirAnimalMyMapA(animal);
+        }
 
-    if(classe_ == "Anfibio" && naturalidade_ == "Exotico"){
-      std::getline(ss, coluna, ';');
-      int mudas_ = std::stoi(coluna);
-      std::string pais_origem_;
-      std::getline(ss, pais_origem_, ';');
-      std::string cidade_origem_;
-      std::getline(ss, cidade_origem_, ';');
-      std::string auto_ibama_;
-      std::getline(ss, auto_ibama_,';');
+        if(classe_ == "Anfibio" && naturalidade_ == "Exotico"){
+          std::getline(ss, coluna, ';');
+          int mudas_ = std::stoi(coluna);
+          std::string pais_origem_;
+          std::getline(ss, pais_origem_, ';');
+          std::string cidade_origem_;
+          std::getline(ss, cidade_origem_, ';');
+          std::string auto_ibama_;
+          std::getline(ss, auto_ibama_,';');
 
-      AnfibioExo * animal = new AnfibioExo(id_,
+          AnfibioExo * animal = new AnfibioExo(id_,
                                     classe_,
                                     nome_cientifico_,
                                     sexo_,
@@ -308,21 +322,21 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
                                     pais_origem_,
                                     cidade_origem_,
                                     auto_ibama_);
-      inserirAnimalMyMapA(animal);
-    }
+          inserirAnimalMyMapA(animal);
+        }
 
-    if(classe_ == "Ave" && naturalidade_ == "Nativo"){
-      std::getline(ss, coluna, ';');
-      double tamanho_do_bico_cm_ = std::stod(coluna);
-      std::getline(ss, coluna, ';');
-      double envergadura_das_asas_ = std::stod(coluna);
+        if(classe_ == "Ave" && naturalidade_ == "Nativo"){
+          std::getline(ss, coluna, ';');
+          double tamanho_do_bico_cm_ = std::stod(coluna);
+          std::getline(ss, coluna, ';');
+          double envergadura_das_asas_ = std::stod(coluna);
 
-      std::string uf_origem_;
-      std::getline(ss, uf_origem_, ';');
-      std::string auto_ibama_;
-      std::getline(ss, auto_ibama_,';');
+          std::string uf_origem_;
+          std::getline(ss, uf_origem_, ';');
+          std::string auto_ibama_;
+          std::getline(ss, auto_ibama_,';');
 
-      AveNat * animal = new AveNat  (id_,
+          AveNat * animal = new AveNat  (id_,
                                     classe_,
                                     nome_cientifico_,
                                     sexo_,
@@ -336,19 +350,19 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
                                     envergadura_das_asas_,
                                     uf_origem_,
                                     auto_ibama_);
-      inserirAnimalMyMapA(animal);
-    }
+          inserirAnimalMyMapA(animal);
+        }
 
-    if(classe_ == "Mamifero" && naturalidade_ == "Nativo"){
-      std::string cor_pelo_;
-      std::getline(ss, cor_pelo_, ';');
+        if(classe_ == "Mamifero" && naturalidade_ == "Nativo"){
+          std::string cor_pelo_;
+          std::getline(ss, cor_pelo_, ';');
 
-      std::string uf_origem_;
-      std::getline(ss, uf_origem_, ';');
-      std::string auto_ibama_;
-      std::getline(ss, auto_ibama_,';');
+          std::string uf_origem_;
+          std::getline(ss, uf_origem_, ';');
+          std::string auto_ibama_;
+          std::getline(ss, auto_ibama_,';');
 
-      MamiferoNat * animal = new MamiferoNat(id_,
+          MamiferoNat * animal = new MamiferoNat(id_,
                                     classe_,
                                     nome_cientifico_,
                                     sexo_,
@@ -361,22 +375,22 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
                                     cor_pelo_,
                                     uf_origem_,
                                     auto_ibama_);
-      inserirAnimalMyMapA(animal);
-    }
+          inserirAnimalMyMapA(animal);
+        }
 
-    if(classe_ == "Reptil" && naturalidade_ == "Nativo"){
-      std::getline(ss, coluna, ';');
-      bool venenoso_ = std::stoi(coluna);
+        if(classe_ == "Reptil" && naturalidade_ == "Nativo"){
+          std::getline(ss, coluna, ';');
+          bool venenoso_ = std::stoi(coluna);
 
-      std::string tipo_veneno_;
-      std::getline(ss,tipo_veneno_,';');
+          std::string tipo_veneno_;
+          std::getline(ss,tipo_veneno_,';');
 
-      std::string uf_origem_;
-      std::getline(ss, uf_origem_, ';');
-      std::string auto_ibama_;
-      std::getline(ss, auto_ibama_,';');
+          std::string uf_origem_;
+          std::getline(ss, uf_origem_, ';');
+          std::string auto_ibama_;
+          std::getline(ss, auto_ibama_,';');
 
-      ReptilNat * animal = new ReptilNat(id_,
+          ReptilNat * animal = new ReptilNat(id_,
                                     classe_,
                                     nome_cientifico_,
                                     sexo_,
@@ -390,19 +404,19 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
                                     tipo_veneno_,
                                     uf_origem_,
                                     auto_ibama_);
-      inserirAnimalMyMapA(animal);
-    }
+          inserirAnimalMyMapA(animal);
+        }
 
-    if(classe_ == "Anfibio" && naturalidade_ == "Nativo"){
-      std::getline(ss, coluna, ';');
-      int mudas_ = std::stoi(coluna);
+        if(classe_ == "Anfibio" && naturalidade_ == "Nativo"){
+          std::getline(ss, coluna, ';');
+          int mudas_ = std::stoi(coluna);
 
-      std::string uf_origem_;
-      std::getline(ss, uf_origem_, ';');
-      std::string auto_ibama_;
-      std::getline(ss, auto_ibama_,';');
+          std::string uf_origem_;
+          std::getline(ss, uf_origem_, ';');
+          std::string auto_ibama_;
+          std::getline(ss, auto_ibama_,';');
 
-      AnfibioNat * animal = new AnfibioNat(id_,
+          AnfibioNat * animal = new AnfibioNat(id_,
                                     classe_,
                                     nome_cientifico_,
                                     sexo_,
@@ -415,51 +429,59 @@ void System::Import_CSV_To_MyMapA(std::string nomeArquivo){
                                     mudas_,
                                     uf_origem_,
                                     auto_ibama_);
-      inserirAnimalMyMapA(animal);
+          inserirAnimalMyMapA(animal);
+        }
+      }
+    file.close();
+    std::cout << "Pronto! Os animais do arquivo foram salvos no banco de dados." << std::endl;
     }
   }
-
-  file.close();
-  std::cout << "Pronto! Os animais acima foram salvos no banco de dados." << std::endl;
-
+  } catch (ArquivoNaoAberto &err){
+      std::cerr << err.what() << std::endl;
+  } catch (...) {
+      std::cerr << "Erro desconhecido ao tentar abrir o arquivo." << std::endl;
+  }
 }
-/* Lê dados de funcionários de arquivo CSV  */
+
+/** @brief Importa dados de funcionários de arquivo CSV para o banco.  */
 void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
 
   ifstream file(nomeArquivo);
-  if(file.bad()){
-    std::cerr << "Arquivo não foi aberto." << std::endl;
-    exit(1);
-  }
-  std::string line;
-  std::string coluna;
+  /** @brief Trata a exceção, caso o arquivo não abra. */
+  try{
+    if(file.bad()){
+      throw ArquivoNaoAberto();
+    }
+    else{
+      std::string line;
+      std::string coluna;
 
-  int id_;
-  std::string funcao_;
-  std::string nome_;
-  std::string cpf_;
-  short idade_;
-  std::string tipo_sanguineo_;
-  char fator_rh_;
-  std::string especialidade_;
+      int id_;
+      std::string funcao_;
+      std::string nome_;
+      std::string cpf_;
+      short idade_;
+      std::string tipo_sanguineo_;
+      char fator_rh_;
+      std::string especialidade_;
 
-  while(std::getline(file, line)){
-    std::istringstream ss(line);
-    std::getline(ss, coluna, ';');
-    id_ = std::stoi(coluna);
-    std::getline(ss, funcao_, ';');
-    std::getline(ss, nome_, ';');
-    std::getline(ss, cpf_, ';');
-    std::getline(ss, coluna, ';');
-    idade_ = std::stoi(coluna);
-    std::getline(ss, tipo_sanguineo_, ';');
-    std::getline(ss, coluna, ';');
-    fator_rh_ = coluna[0];
-    std::getline(ss, especialidade_, ';');
-    std::getline(ss, coluna, '\n');
+      while(std::getline(file, line)){
+        std::istringstream ss(line);
+        std::getline(ss, coluna, ';');
+        id_ = std::stoi(coluna);
+        std::getline(ss, funcao_, ';');
+        std::getline(ss, nome_, ';');
+        std::getline(ss, cpf_, ';');
+        std::getline(ss, coluna, ';');
+        idade_ = std::stoi(coluna);
+        std::getline(ss, tipo_sanguineo_, ';');
+        std::getline(ss, coluna, ';');
+        fator_rh_ = coluna[0];
+        std::getline(ss, especialidade_, ';');
+        std::getline(ss, coluna, '\n');
 
-    if(funcao_ == "Veterinario" ){
-      Veterinario * funcionario = new Veterinario(  id_,
+        if(funcao_ == "Veterinario" ){
+          Veterinario * funcionario = new Veterinario(  id_,
                                                     funcao_,
                                                     nome_,
                                                     cpf_,
@@ -468,12 +490,12 @@ void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
                                                     fator_rh_,
                                                     especialidade_,
                                                     coluna);
-      inserirFuncionarioMyMapF(funcionario);
-    }
+          inserirFuncionarioMyMapF(funcionario);
+        }
 
-    if(funcao_ == "Tratador"){
-      int nivel_de_seguranca_ = std::stoi(coluna);
-      Tratador * funcionario = new Tratador(  id_,
+        if(funcao_ == "Tratador"){
+          int nivel_de_seguranca_ = std::stoi(coluna);
+          Tratador * funcionario = new Tratador(  id_,
                                               funcao_,
                                               nome_,
                                               cpf_,
@@ -482,11 +504,17 @@ void System::Import_CSV_To_MyMapF(std::string nomeArquivo){
                                               fator_rh_,
                                               especialidade_,
                                               nivel_de_seguranca_);
-      inserirFuncionarioMyMapF(funcionario);
+          inserirFuncionarioMyMapF(funcionario);
+        }
+      }
+    file.close();
+    std::cout << "Pronto! Os funcionários do arquivo foram salvos no banco de dados." << std::endl;
     }
+  } catch (ArquivoNaoAberto &err){
+      std::cerr << err.what() << std::endl;
+  } catch (...) {
+      std::cerr << "Erro desconhecido ao tentar abrir o arquivo." << std::endl;
   }
-
-  file.close();
 }
 
 //Metodos de instanciação de objetos
