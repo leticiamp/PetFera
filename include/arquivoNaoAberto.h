@@ -25,7 +25,3 @@ class ArquivoNaoAberto : public exception, public invalid_argument {
 
 
 #endif // _ARQUIVO_NAO_ABERTO_H_
-
-
-
-
