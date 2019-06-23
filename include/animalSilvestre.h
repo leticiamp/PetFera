@@ -32,4 +32,4 @@ class AnimalSilv{
 		void setAutoIbama(std::string auto_ibama_);
 };
 
-#endif // _ANIMAL_SILVESTRE_H_
+#endif

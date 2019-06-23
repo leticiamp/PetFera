@@ -85,4 +85,4 @@ class Animal{
 };
 
 
-#endif // _ANIMAL_H_
+#endif

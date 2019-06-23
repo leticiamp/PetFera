@@ -41,4 +41,4 @@ class AveExo : public Ave, public AnimalExo{
 
 };
 
-#endif // _AVE_EXOTICO_H_
+#endif

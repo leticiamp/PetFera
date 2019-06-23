@@ -1,12 +1,9 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file funcionario.h
+* @brief Classe responsável pelo controle dos funcionários
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 23/06/2019
 */
 
 #ifndef _FUNCIONARIO_H_
@@ -14,21 +11,27 @@
 
 #include <string>
 
+/**
+* @details Nesta classe, o usuário pode visualizar e modificar informações a respeito dos funcionários, tais como:
+*			Nome, CPF, tipo sanguíneo, especialidade, etc. 
+*/
+
 class Funcionario{
 	private:
 		virtual std::ostream& print(std::ostream&) const = 0;
 
 	protected:
-		int m_id;
-		std::string m_funcao;
-		std::string m_nome;
-		std::string m_cpf;
-		short m_idade;
-		std::string m_tipo_sanguineo;
-		char m_fator_rh;
-		std::string m_especialidade;
+		int m_id; /**< Define o número de identificação do funcionário*/
+		std::string m_funcao; /**< Define a função do funcionaŕio na empresa*/
+		std::string m_nome; /**< Define o nome do funcionário*/
+		std::string m_cpf; /**< Define o CPF do funcionário*/
+		short m_idade; /**< Define a idade do funcionário*/
+		std::string m_tipo_sanguineo; /**< Define o tipo sanguíneo do funcionário*/
+		char m_fator_rh; /**< Define o fator rh do funcionário*/
+		std::string m_especialidade; /**< Define a especialidade de trabalho do funcionário*/
 
 	public:
+		/** @brief Construtor parametrizado. */
 		Funcionario(int id_,
 								std::string funcao_,
 								std::string nome_,
@@ -37,8 +40,8 @@ class Funcionario{
 								std::string tipo_sanguineo_,
 								char fator_rh_,
 								std::string especialidade_);
-		Funcionario();
-	virtual	~Funcionario();
+		Funcionario(); /**< Construtor padrão*/
+	virtual	~Funcionario(); /**< Destrutor padrão*/
 
 		//get's
 		int getId();
@@ -67,4 +70,4 @@ class Funcionario{
 		}
 };
 
-#endif // _FUNCIONARIO_H_
+#endif

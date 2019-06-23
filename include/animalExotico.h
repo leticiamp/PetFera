@@ -42,4 +42,4 @@ class AnimalExo : public AnimalSilv{
 		void setCidadeOrigem(std::string cidade_origem_);
 };
 
-#endif // _ANIMAL_EXOTICO_H_
+#endif

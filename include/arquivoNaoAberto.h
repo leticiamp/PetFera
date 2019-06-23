@@ -12,6 +12,10 @@
 #include <stdexcept>
 #include <exception>
 
+/** 
+* @details Esta classe verifica se foi possível abrir ou não um arquivo, e informa ao usuário
+*/
+
 using std::exception;
 using std::invalid_argument;
 
@@ -24,4 +28,4 @@ class ArquivoNaoAberto : public exception, public invalid_argument {
 };
 
 
-#endif // _ARQUIVO_NAO_ABERTO_H_
+#endif

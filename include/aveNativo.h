@@ -1,9 +1,9 @@
 /**
-* @file aveExotico.h
-* @brief Classe das aves e nativas
+* @file aveNativo.h
+* @brief Classe das aves nativas
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 18/06/2019
+* @date 23/06/2019
 */
 #ifndef _AVE_NATIVO_H_
 #define _AVE_NATIVO_H_
@@ -39,4 +39,4 @@ class AveNat : public Ave, public AnimalNat{
 
 };
 
-#endif // _AVE_NATIVO_H_
+#endif

@@ -38,4 +38,4 @@ class AnimalNat : public AnimalSilv {
 
 };
 
-#endif // _ANIMAL_NATIVO_H_
+#endif

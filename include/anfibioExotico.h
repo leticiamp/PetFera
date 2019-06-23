@@ -1,12 +1,9 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file anfibioExotico.h
+* @brief Classe dos Anfíbios Exóticos
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 23/06/2019
 */
 
 #ifndef _ANFIBIO_EXOTICO_H_
@@ -23,6 +20,7 @@ class AnfibioExo : public Anfibio, public AnimalExo{
 	protected:
 
 	public:
+		/** @brief Construtor parametrizado. */
 		AnfibioExo(int id_ = 0,
 							std::string classe_ = "Anfibio",
 							std::string nome_cientifico_ = "NOTDEF",
@@ -38,7 +36,7 @@ class AnfibioExo : public Anfibio, public AnimalExo{
 							std::string cidade_origem_ = "NOTDEF",
 							std::string auto_ibama_ = "NOTDEF");
 
-		~AnfibioExo();
+		~AnfibioExo(); /**< Destrutor padrão*/
 };
 
-#endif // _ANFIBIO_EXOTICO_H_
+#endif

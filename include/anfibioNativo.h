@@ -1,12 +1,9 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file anfibioNativo.h
+* @brief Classe dos Anfíbios Nativos
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 23/06/2019
 */
 
 #ifndef _ANFIBIO_NATIVO_H_
@@ -23,6 +20,7 @@ class AnfibioNat : public Anfibio, public AnimalNat{
 	protected:
 
 	public:
+		/** @brief Construtor parametrizado. */
 		AnfibioNat( int id_ = 0,
 								std::string classe_ = "Anfibio",
 								std::string nome_cientifico_ = "NOTDEF",
@@ -37,8 +35,8 @@ class AnfibioNat : public Anfibio, public AnimalNat{
 								std::string uf_origem_ = "NOTDEF",
 								std::string auto_ibama_ = "NOTDEF"
 							);
-		~AnfibioNat();
+		~AnfibioNat(); /**< Destrutor padrão*/
 
 };
 
-#endif // _ANFIBIO_NATIVO_H_
+#endif 

@@ -48,4 +48,4 @@ class Ave : public Animal{
 
 };
 
-#endif // _AVE_H_
+#endif
