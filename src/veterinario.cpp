@@ -24,14 +24,14 @@ Veterinario::Veterinario(int id_,
 				 std::string especialidade_,
 			 	 std::string crmv_):
 	Funcionario(id_,
-							funcao_,
-					 		nome_,
-					 		cpf_,
-					 		idade_,
-					  	tipo_sanguineo_,
-					 		fator_rh_,
-					    especialidade_),
-	m_crmv(crmv_){}
+				funcao_,
+		 		nome_,
+		 		cpf_,
+		 		idade_,
+			  	tipo_sanguineo_,
+		 		fator_rh_,
+			    especialidade_),
+				m_crmv(crmv_){}
 
 Veterinario::~Veterinario(){}
 
@@ -47,12 +47,18 @@ Veterinario::set_crmv(std::string crmv_){
 	this->m_crmv = crmv_;
 }
 
-//imprime
-std::ostream& Veterinario::print(std::ostream& os)const{
-		os 	<< m_id << ";" << m_funcao << ";" << m_nome << ";"
-	 			<< m_cpf << ";" <<  m_idade	 << ";" << m_tipo_sanguineo << ";"
-				<< m_fator_rh << ";"	<< m_especialidade << ";"
-				<< m_crmv	<< ";"  << std::endl;
+/** @brief Método de saída dos atributos da Classe Veterinario. */
+std::ostream& 
+Veterinario::print(std::ostream& os)const{
+	os	<< m_id << ";" 
+		<< m_funcao << ";" 
+		<< m_nome << ";"
+	 	<< m_cpf << ";" 
+		<<  m_idade	 << ";" 
+		<< m_tipo_sanguineo << ";"
+		<< m_fator_rh << ";"
+		<< m_especialidade << ";"
+		<< m_crmv << std::endl;
 
 		return os;
 }

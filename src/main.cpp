@@ -14,13 +14,15 @@
 int main(){
 
   	System on;
-  	//on.MenuInicial();
+  	on.MenuInicial();
+/*
     on.Import_CSV_To_MyMapF("testingF.csv");
     on.Print_MyMapF_Tela();
-    on.Import_CSV_To_MyMapA("testing.csv");
+    on.Import_CSV_To_MyMapA("testingA.csv");
     on.Print_MyMapA_Tela();
     int id_ = 5;
     on.RemoverAnimal(id_);
     on.Print_MyMapA_Tela();
+*/  
   return 0;
 }

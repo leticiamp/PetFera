@@ -10,16 +10,16 @@
 #define _ARQUIVO_NAO_ABERTO_H_
 
 #include <stdexcept>
-#include <exception>
+//#include <exception>
 
 /** 
 * @details Esta classe verifica se foi possível abrir ou não um arquivo, e informa ao usuário
 */
 
-using std::exception;
+//using std::exception;
 using std::invalid_argument;
 
-class ArquivoNaoAberto : public exception, public invalid_argument {
+class ArquivoNaoAberto : public invalid_argument {
     public:
         const char * what() {
             return "Operação inválida: O arquivo NÃO foi aberto!";

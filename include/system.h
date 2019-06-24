@@ -632,7 +632,7 @@ class System{
       animal->setCorPelo(CorDoPelo);
     }
 
-    /*
+    /** @details
       Metodos com os tratamentos utilizados p/ "set" atributos de animais das classes Filhos
       Caso queira mudar ou utilizar esse metodo em uma classe nova
       acrescente o nome da classe a metodos de tratamento
