@@ -15,7 +15,7 @@ SRC = ./src
 BIN = ./bin
 INC = ./include
 
-CPPFLAGS = -Wall -pedantic -std=c++11 -I $(INC) -g -O0
+CPPFLAGS = -Wall -pedantic -fPIC -std=c++11 -I $(INC) -g -O0
 
 OBJS = $(OBJ)/anfibio.o $(OBJ)/anfibioExotico.o $(OBJ)/anfibioNativo.o $(OBJ)/animal.o \
 	$(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o $(OBJ)/ave.o \
@@ -98,6 +98,13 @@ $(OBJ)/system.o: $(INC)/system.h
 
 $(OBJ)/main.o: $(SRC)/main.cpp
 	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
+
+
+petfera.so: $(OBJ)/anfibio.o $(OBJ)anfibioExotico.o $(OBJ)/anfibioNativo.o \
+	$(OBJ)/animal.o $(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o $(OBJ)/ave.o \
+	$(OBJ)/aveExotico.o $(OBJ)/aveNativo.o $(OBJ)/funcionario.o $(OBJ)/tratador.o $(OBJ)/veterinario.o \
+	$(OBJ)/mamifero.o $(OBJ)/mamiferoExotico.o $(OBJ)/mamiferoNativo.o $(OBJ)/reptil.o $(OBJ)/reptilExotico.o \
+	$(OBJ)/reptilNativo.o
 
 clean:
 	rm -f $(BIN)/*

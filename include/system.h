@@ -13,23 +13,7 @@
 #include <map>
 #include <string>
 
-#include "animal.h"
-#include "animalExotico.h"
-#include "animalNativo.h"
-#include "animalSilvestre.h"
-#include "funcionario.h"
-
-#include "anfibioExotico.h"
-#include "anfibioNativo.h"
-
-#include "mamiferoExotico.h"
-#include "mamiferoNativo.h"
-
-#include "aveExotico.h"
-#include "aveNativo.h"
-
-#include "reptilExotico.h"
-#include "reptilNativo.h"
+#include "petfera.h"
 
 /**
 * @details Nesta classe, o usuário pode controlar todo o programa PetFera, inserindo e imprimindo

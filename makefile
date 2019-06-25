@@ -16,17 +16,32 @@ BIN = ./bin
 INC = ./include
 LIB = ./lib
 
-CPPFLAGS = -Wall -pedantic -std=c++11 -ansi -I. -I $(INC) -g -O0
+CPPFLAGS = -Wall -pedantic -std=c++11 -I$(INC) -g -O0
 ARCHIEVE = ar
+
+OBJS = $(OBJ)/anfibio.o $(OBJ)/anfibioExotico.o $(OBJ)/anfibioNativo.o $(OBJ)/animal.o \
+	$(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o $(OBJ)/ave.o \
+	$(OBJ)/aveExotico.o $(OBJ)/aveNativo.o $(OBJ)/funcionario.o $(OBJ)/tratador.o \
+	$(OBJ)/veterinario.o $(OBJ)/mamifero.o $(OBJ)/mamiferoExotico.o $(OBJ)/mamiferoNativo.o \
+	$(OBJ)/reptil.o $(OBJ)/reptilExotico.o $(OBJ)/reptilNativo.o \
+	$(OBJ)/arquivoNaoAberto.o $(OBJ)/system.o $(OBJ)/main.o
+
+all: mkdirs $(PROG)
+
+mkdirs:
+	mkdir -p $(OBJ)
+	mkdir -p $(BIN)
+
+$(PROG): $(OBJS)
+	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
 
 linux: petfera.so prog_dinamico
 
 petfera.so: $(SRC)/anfibio.cpp $(SRC)/anfibioExotico.cpp $(SRC)/anfibioNativo.cpp \
 $(SRC)/animal.cpp $(SRC)/animalExotico.cpp $(SRC)/animalNativo.cpp $(SRC)/animalSilvestre.cpp \
-$(SRC)/ave.cpp $(SRC)/aveExotico $(SRC)/aveNativo $(SRC)/funcionario $(SRC)/tratador \
+$(SRC)/ave.cpp $(SRC)/aveExotico.cpp $(SRC)/aveNativo.cpp $(SRC)/funcionario.cpp $(SRC)/tratador.cpp \
 $(SRC)/veterinario.cpp $(SRC)/mamifero.cpp $(SRC)/mamiferoExotico.cpp $(SRC)/mamiferoNativo.cpp \
-$(SRC)/reptil.cpp $(SRC)/reptilExotico.cpp $(SRC)/reptilNativo.cpp $(SRC)/arquivoNaoAberto.cpp.cpp \
-$(SRC)/system.cpp $(SRC)/main.cpp $(INC)/petfera.h
+$(SRC)/reptil.cpp $(SRC)/reptilExotico.cpp $(SRC)/reptilNativo.cpp $(INC)/petfera.h
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC)/anfibio.cpp -o $(OBJ)/anfibio.o
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC)/anfibioExotico.cpp -o $(OBJ)/anfibioExotico.o
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC)/anfibioNativo.cpp -o $(OBJ)/anfibioNativo.o
@@ -46,26 +61,25 @@ $(SRC)/system.cpp $(SRC)/main.cpp $(INC)/petfera.h
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC)/reptil.cpp -o $(OBJ)/reptil.o
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC)/reptilExotico.cpp -o $(OBJ)/reptilExotico.o
 	$(CC) $(CPPFLAGS) -fPIC -c $(SRC)/reptilNativo.cpp -o $(OBJ)/reptilNativo.o
-	$(CC) $(CPPFLAGS) -fPIC -c $(SRC)/arquivoNaoAberto.cpp -o $(OBJ)/arquivoNaoAberto.o
-	$(CC) $(CPPFLAGS) -fPIC -c $(SRC)/system.cpp -o $(OBJ)/system.o
-	$(CC) $(CPPFLAGS) -fPIC -c $(SRC)/main.cpp -o $(OBJ)/main.o
 
 	$(CC) -shared -fPIC -o $(LIB)/$@ $(OBJ)/anfibio.o $(OBJ)anfibioExotico.o $(OBJ)/anfibioNativo.o \
 	$(OBJ)/animal.o $(OBJ)/animalExotico.o $(OBJ)/animalNativo.o $(OBJ)/animalSilvestre.o $(OBJ)/ave.o \
 	$(OBJ)/aveExotico.o $(OBJ)/aveNativo.o $(OBJ)/funcionario.o $(OBJ)/tratador.o $(OBJ)/veterinario.o \
 	$(OBJ)/mamifero.o $(OBJ)/mamiferoExotico.o $(OBJ)/mamiferoNativo.o $(OBJ)/reptil.o $(OBJ)/reptilExotico.o \
-	$(OBJ)/reptilNativo.o $(OBJ)/arquivoNaoAberto.o $(OBJ)/system.o $(OBJ)/main.o
+	$(OBJ)/reptilNativo.o 
 
-	@echo "+++ [Biblioteca dinamica criada em $(LIB)/$@] +++"
+$(OBJ)/arquivoNaoAberto.o:$(INC)/arquivoNaoAberto.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/arquivoNaoAberto.cpp -o $(OBJ)/arquivoNaoAberto.o
+
+$(OBJ)/system.o: $(INC)/system.h
+	$(CC) $(CPPFLAGS) -c $(SRC)/system.cpp -o $(OBJ)/system.o
+
+$(OBJ)/main.o: $(SRC)/main.cpp
+	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
+
 
 prog_dinamico:
 	$(CC) $(CPPFLAGS) $(SRC)/main.cpp $(LIB)/petfera.so -o $(OBJ)/$@
-	
-all: mkdirs $(PROG)
-
-mkdirs:
-	mkdir -p $(OBJ)
-	mkdir -p $(BIN)
 
 clean:
 	rm -f $(BIN)/*
