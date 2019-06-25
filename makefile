@@ -8,7 +8,7 @@
 # =============================== MAKEFILE ===============================
 
 CC = g++
-PROG = Projeto-LPI
+PROG = superPet
 
 OBJ = ./build
 SRC = ./src
