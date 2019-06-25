@@ -1,13 +1,10 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
-*/
+/**
+* @file system.h
+* @brief Classe responsável por controlar todo o programa
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 24/06/2019
+*//
 
 #ifndef _SYSTEM_H
 #define _SYSTEM_H
@@ -34,29 +31,34 @@
 #include "reptilExotico.h"
 #include "reptilNativo.h"
 
+/**
+* @details Nesta classe, o usuário pode controlar todo o programa PetFera, inserindo e imprimindo
+*         animais, funcionários (tratadores e veterinários)
+*/
+
 class System{
   private:
     std::map<int,Funcionario*> mymapF;
     std::map<int,Animal*> mymapA;
 
   public:
-    System();
-    ~System();
+    System(); /**< Construtor padrão*/
+    ~System(); /**< Destrutor padrão*/
 
     //Metodos de Listagem
     void Print_MyMapA_Tela();
     void Print_MyMapF_Tela();
 
-    void Print_MyMapA_Func_Tela(int Id); // Imprime todos os animais pelo Id do funcionario
+    void Print_MyMapA_Func_Tela(int Id); /**<Imprime todos os animais pelo Id do funcionario */
 
-    void Print_MyMapA_CSV(std::string nomeArquivo); //Imprime os animais em um arquivo csv
-    void Print_MyMapF_CSV(std::string nomeArquivo); //Imprime os funcionarios em um arquivo csv
+    void Print_MyMapA_CSV(std::string nomeArquivo); /**<Imprime os animais em um arquivo csv */
+    void Print_MyMapF_CSV(std::string nomeArquivo); /**<Imprime os funcionarios em um arquivo csv */
 
-    //Metodos de Importação Inicial da Dados para o Banco.
+    /** @brief Metodos de Importação Inicial dos Dados para o Banco. */
     void Import_CSV_To_MyMapF(std::string nomeArquivo);
     void Import_CSV_To_MyMapA(std::string nomeArquivo);
 
-    //Metodos de instanciação de objetos
+    /** @brief Metodos de instanciação de objetos */
     void Inserir_Func_MyMapF();
     void Inserir_Animal_MyMapA();
 
@@ -73,7 +75,7 @@ class System{
     AnfibioNat * NewAnfibioNat();
 
 
-    //Metodos de inserção no MyMapF
+    /** @brief Metodos de inserção no MyMapF */
     template<typename T>
     void inserirFuncionarioMyMapF(T * funcionario){
       if( this->mymapF.find(funcionario->getId()) != mymapF.end()){
@@ -84,7 +86,7 @@ class System{
       this->mymapF.insert(std::pair<int, T*>(funcionario->getId(),funcionario));
     }
 
-    //Metodos de inserção no MyMapA
+    /** @brief Metodos de inserção no MyMapA */
     template<typename T>
     void inserirAnimalMyMapA(T * animal){
       if(animal->getTratador() == nullptr
@@ -105,11 +107,11 @@ class System{
       this->mymapA.insert(std::pair<int, T*>(animal->getId(),animal));
     }
 
-    //Metodos de remoção do MyMap
+    /** @brief Metodos de remoção do MyMap */
     void RemoverAnimal(int &id_);
     void RemoverFuncionario(int &id_);
 
-    //Metodos com os tratamentos utilizados p/ "set" atributos
+    /** @brief Metodos com os tratamentos utilizados para "set" atributos */
 
     template <typename T>
     void setFuncId(T * funcionario){
@@ -278,22 +280,23 @@ class System{
 
     void DefFuncaoFunc(std::string &funcao_);
 
-    //Metodos com os tratamentos utilizados p/ "set" atributos de animais da classe base
+    /** @brief Metodos com os tratamentos utilizados p/ "set" atributos de animais da classe base */
 
     /*
       Não vai funcionar para mudar o numero do ID no MyMapA pq tem que mudar a chave também
       Da para melhorar a parte de teste (tratamente de exceção)
     */
+
+    /** @brief Pergunta o ID do animal e teste se já existe no mymapA.*/
     template <typename T>
     void setAnimalId(T * animal){
       system("clear");
 
       int id_;
-      //Pergunta o ID do animal
+
       std::cout << "Qual o número idenficador do animal a ser inserido? " << std::endl;
       std::cin >> id_; std::cin.ignore();
 
-      // Testando se Id existencia no mymapA
       while(this->mymapA.find(id_) != this->mymapA.end()){
         system("clear");
         std::cout << "++++++++++++ ENTRADA INVALIDA, TENTE NOVAMENTE ++++++++++++++++\n"
@@ -632,10 +635,10 @@ class System{
       animal->setCorPelo(CorDoPelo);
     }
 
-    /** @details
-      Metodos com os tratamentos utilizados p/ "set" atributos de animais das classes Filhos
-      Caso queira mudar ou utilizar esse metodo em uma classe nova
-      acrescente o nome da classe a metodos de tratamento
+    /** @details Metodos com os tratamentos utilizados para "set" atributos de animais
+    * das classes Filhos.
+    * Caso queira mudar ou utilizar esse metodo em uma classe nova, acrescente o nome
+    * da classe a metodos de tratamento.
     */
 
     template <typename T>
@@ -728,9 +731,8 @@ class System{
     void infoString(std::string &generico, std::string os);
 
 
-    //Pesquisa
-    Tratador * consultaTratador(int Id);
-    Veterinario * consultaVeterinario(int Id);
+    Tratador * consultaTratador(int Id); /**< Pesquisa por um tratador através do ID*/
+    Veterinario * consultaVeterinario(int Id); /**< Pesquisa por um veterinário através do ID*/
 
 
 
@@ -738,7 +740,7 @@ class System{
 
 
 
-    //Menus que controlam as opções do usuario
+    /** @brief Menus que controlam as opções do usuário */
     void MenuInicial();
     void MenuListar1();
     void MenuListar1_1();

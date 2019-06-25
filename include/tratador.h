@@ -1,12 +1,9 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file tratador.h
+* @brief Classe responsável pelo tratador dos animais
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 24/06/2019
 */
 
 #ifndef _TRATADOR_H_
@@ -17,13 +14,12 @@
 
 class Tratador : public Funcionario{
 	private:
-		int m_nivel_de_seguranca;
-		std::ostream& print(std::ostream& os)const;
+		int m_nivel_de_seguranca; /**<Define o nível de segurança do tratador */
+		std::ostream& print(std::ostream& os)const; /**< Método virtual de sobrecarga do operador de saída */
 	protected:
 
 	public:
-
-		//Metodos Construtor
+		/** @brief Construtor parametrizado. */
 		Tratador(int id_ = 0,
 						 std::string funcao_ = "Tratador",
 						 std::string nome_ = "NOTDEF",
@@ -34,15 +30,12 @@ class Tratador : public Funcionario{
 						 std::string especialidade_= "NOTDEF",
 						 int nivel_de_seguranca_ = 0);
 
-		//Metodo Destrutor
-		~Tratador();
+		~Tratador(); /**< Destrutor padrão*/
 
-		//get's
 		int getNivel_de_Seguranca();
 
-		//set's
 		void setNivel_de_Seguranca(int nivel_de_seguranca_);
 
 };
 
-#endif // _TRATADOR_H_
+#endif

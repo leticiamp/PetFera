@@ -1,12 +1,9 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file mamifero.h
+* @brief Classe dos mamíferos
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 24/06/2019
 */
 
 #ifndef _MAMIFERO_H_
@@ -21,8 +18,9 @@ class Mamifero : public Animal{
 		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
-		std::string m_cor_pelo;
+		std::string m_cor_pelo; /**< Define a cor do pêlo do mamífero*/
 	public:
+		/** @brief Construtor parametrizado. */
 		Mamifero(int id_,
 						std::string classe_,
 						std::string nome_cientifico_,
@@ -35,7 +33,7 @@ class Mamifero : public Animal{
 						std::string naturalidade_,
 					  std::string cor_pelo_);
 
-		~Mamifero();
+		~Mamifero(); /**< Destrutor padrão*/
 
 		std::string getCorPelo();
 
@@ -44,4 +42,4 @@ class Mamifero : public Animal{
 
 };
 
-#endif // _MAMIFERO_H_
+#endif

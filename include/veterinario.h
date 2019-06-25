@@ -1,13 +1,11 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file veterinario.h
+* @brief Classe responsável pelo veterinário dos animais
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 24/06/2019
 */
+
 
 #ifndef _VETERINARIO_H_
 #define _VETERINARIO_H_
@@ -17,12 +15,12 @@
 
 class Veterinario : public Funcionario{
 	private:
-		std::string m_crmv;
-		std::ostream& print(std::ostream& os)const;
+		std::string m_crmv; /**< */
+		std::ostream& print(std::ostream& os)const; /**< Método virtual de sobrecarga do operador de saída */
 	protected:
 
 	public:
-		//Construtores
+		/** @brief Construtor parametrizado. */
 		Veterinario(int id_ = 0,
 						 std::string funcao_ = "Veterinario",
 						 std::string nome_ = "NOTDEF",
@@ -33,15 +31,13 @@ class Veterinario : public Funcionario{
 						 std::string especialidade_= "NOTDEF",
 					 	 std::string crmv_ = "NOTDEF");
 
-	//Destrutor
-		~Veterinario();
+		~Veterinario(); /**< Destrutor padrão*/
 
-		//get
 		std::string get_crmv();
-		//set
+
 		void set_crmv(std::string crmv_);
 
 
 };
 
-#endif // _VETERINARIO_H_
+#endif

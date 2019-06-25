@@ -1,12 +1,9 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file mamiferoNativo.h
+* @brief Classe dos mamíferos nativos
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 24/06/2019
 */
 
 #ifndef _MAMIFERO_NATIVO_H_
@@ -18,10 +15,12 @@
 
 class MamiferoNat : public Mamifero, public AnimalNat{
 	private:
+		/** Método virtual de sobrecarga do operador de saída */
 		std::ostream& print(std::ostream& os)const;
 	protected:
 
 	public:
+		/** @brief Construtor parametrizado. */
 		MamiferoNat(int id_ = 0,
 								std::string classe_ = "Mamifero",
 								std::string nome_cientifico_ = "NOTDEF",
@@ -35,8 +34,10 @@ class MamiferoNat : public Mamifero, public AnimalNat{
 								std::string cor_pelo_ = "NOTDEF",
 								std::string uf_origem_ = "NOTDEF",
 								std::string auto_ibama_ = "NOTDEF");
+
+		/**< Destrutor padrão*/
 		~MamiferoNat();
 
 };
 
-#endif // _MAMIFERO_NATIVO_H_
+#endif

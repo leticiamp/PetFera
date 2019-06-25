@@ -3,7 +3,7 @@
 * @brief Classe responsável pelo controle dos funcionários
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 23/06/2019
+* @date 24/06/2019
 */
 
 #ifndef _FUNCIONARIO_H_
@@ -18,6 +18,7 @@
 
 class Funcionario{
 	private:
+		/** Método virtual de sobrecarga do operador de saída */
 		virtual std::ostream& print(std::ostream&) const = 0;
 
 	protected:
@@ -43,7 +44,6 @@ class Funcionario{
 		Funcionario(); /**< Construtor padrão*/
 	virtual	~Funcionario(); /**< Destrutor padrão*/
 
-		//get's
 		int getId();
 		std::string getFuncao();
 		std::string getNome();
@@ -53,8 +53,6 @@ class Funcionario{
 		char getFator_rh();
 		std::string getEspecialidade();
 
-		//set's
-
 		void setId(int id_);
 		void setNome(std::string nome_);
 		void setCpf(std::string cpf_);
@@ -63,8 +61,7 @@ class Funcionario{
 		void setFator_rh(char fator_rh_);
 		void setEspecialidade(std::string especialidade_);
 
-		//Metodos de impressao
-
+		/** Sobrecarga do operador de saída. Imprime um funcionário*/
 		friend std::ostream& operator << ( std::ostream& os, const Funcionario& funcionario){
 			return funcionario.print(os);
 		}

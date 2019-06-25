@@ -1,12 +1,9 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file reptil.h
+* @brief Classe dos répteis
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 24/06/2019
 */
 
 #ifndef _REPTIL_H_
@@ -21,9 +18,10 @@ class Reptil : public Animal{
 		virtual std::ostream& print(std::ostream& os) const = 0;
 
 	protected:
-		bool m_venenoso;
-		std::string m_tipo_veneno;
+		bool m_venenoso; /**< Define se o réptil é venenoso ou não*/
+		std::string m_tipo_veneno; /**< Define o tipo de veneno do réptil*/
 	public:
+		/** @brief Construtor parametrizado. */
 		Reptil(int id_,
 						std::string classe_,
 						std::string nome_cientifico_,
@@ -36,7 +34,8 @@ class Reptil : public Animal{
 						std::string naturalidade_,
 					  bool venenoso_,
 						std::string tipo_veneno_);
-		~Reptil();
+
+		~Reptil(); /**< Destrutor padrão*/
 
 		bool getVenenoso();
 		std::string getTipoVenenoso();
@@ -46,4 +45,4 @@ class Reptil : public Animal{
 
 };
 
-#endif // _REPTIL_H_
+#endif

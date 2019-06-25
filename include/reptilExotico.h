@@ -1,12 +1,9 @@
-/*
-# Disciplina: Linguagem de Programação I
-# Professor: Silvio Sampaio
-# Alunos:
-# ANDRE VITOR MACEDO SOARES
-# LETICIA MOURA PINHEIRO
-# ODILON JULIO DOS SANTOS
-# Projeto Final "PetFera"
-===========================================================================
+/**
+* @file reptilExotico.h
+* @brief Classe dos répteis exóticos
+* @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
+* @since 25/04/2019
+* @date 24/06/2019
 */
 
 #ifndef _REPTIL_EXOTICO_H_
@@ -23,6 +20,7 @@ class ReptilExo : public Reptil, public AnimalExo{
 	protected:
 
 	public:
+		/** @brief Construtor parametrizado. */
 		ReptilExo(int id_ = 0,
 							std::string classe_ = "Reptil",
 							std::string nome_cientifico_ = "NOTDEF",
@@ -38,8 +36,9 @@ class ReptilExo : public Reptil, public AnimalExo{
 							std::string pais_origem_ = "NOTDEF",
 							std::string cidade_origem_ = "NOTDEF",
 							std::string auto_ibama_ = "NOTDEF");
-		~ReptilExo();
+
+		~ReptilExo(); /**< Destrutor padrão*/
 
 };
 
-#endif // _REPTIL_EXOTICO_H_
+#endif
