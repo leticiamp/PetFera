@@ -781,9 +781,14 @@ System::NewAnfibioNat(){
 /** @brief Métodos de remoção do MyMap.*/
 void
 System::RemoverAnimal(int &id_){
-  delete this->mymapA.find(id_)->second;
-  this->mymapA.erase(id_);
-  std::cout << "Animal removido com sucesso." << std::endl;
+  if(mymapA.count(id_) == 1){
+    delete this->mymapA.find(id_)->second;
+    this->mymapA.erase(id_);
+    std::cout << "Animal removido com sucesso." << std::endl;
+  }
+  else{
+    std::cout << "Não existe animal no banco com o idenficador informado." << std::endl;
+  }
 }
 
 void
