@@ -4,7 +4,7 @@
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
 * @date 24/06/2019
-*//
+*/
 
 #ifndef _SYSTEM_H
 #define _SYSTEM_H
@@ -739,6 +739,7 @@ class System{
     void MenuPesquisar1_1();
     void MenuPesquisar1_2();
     void MenuEditar1();
+    void MenuEditar1_1();
 
     //Cout's das opções dos menus
     void PrintMenuPrincipal();

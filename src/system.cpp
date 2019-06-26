@@ -35,7 +35,7 @@ System::~System(){
 }
 
 /** @brief Métodos de saída ou impressão. */
-void 
+void
 System::Print_MyMapA_Tela(){
   if(this->mymapA.size() == 0){
     std::cout << "Não há animais no banco de dados. \n" << std::endl;
@@ -46,7 +46,7 @@ System::Print_MyMapA_Tela(){
   }
 }
 
-void 
+void
 System::Print_MyMapF_Tela(){
   if(this->mymapF.size() == 0){
     std::cout << "Não há funcionários no banco de dados. \n" << std::endl;
@@ -60,7 +60,7 @@ System::Print_MyMapF_Tela(){
     }
 }
 
-void 
+void
 System::Print_MyMapA_Func_Tela(int Id){
   for (std::map<int,Animal*>::iterator it = this->mymapA.begin();
   it!= this->mymapA.end();
@@ -72,7 +72,7 @@ System::Print_MyMapA_Func_Tela(int Id){
   }
 }
 
-void 
+void
 System::Print_MyMapA_CSV(std::string nomeArquivo){
   ofstream file; // Cria arquivo.
 	file.open(nomeArquivo);
@@ -99,7 +99,7 @@ System::Print_MyMapA_CSV(std::string nomeArquivo){
   std::cout << "Arquivo modificado com sucesso" << std::endl;
 }
 
-void 
+void
 System::Print_MyMapF_CSV(std::string nomeArquivo){
 
   ofstream file; // Cria arquivo.
@@ -129,17 +129,17 @@ System::Print_MyMapF_CSV(std::string nomeArquivo){
 }
 
 /** @brief Importa dados de animais de arquivo CSV para o banco. */
-void 
+void
 System::Import_CSV_To_MyMapA(std::string nomeArquivo){
 
   ifstream file(nomeArquivo);
   /** @brief Trata a exceção, caso o arquivo não abra. */
   try{
     if(file.bad()) throw ArquivoNaoAberto();
-  } 
+  }
   catch (ArquivoNaoAberto &err){
       std::cerr << err.what() << std::endl;
-  } 
+  }
   catch (...) {
       std::cerr << "Erro desconhecido ao tentar abrir o arquivo." << std::endl;
   }
@@ -448,7 +448,7 @@ System::Import_CSV_To_MyMapA(std::string nomeArquivo){
 }
 
 /** @brief Importa dados de funcionários de arquivo CSV para o banco.  */
-void 
+void
 System::Import_CSV_To_MyMapF(std::string nomeArquivo){
 
   ifstream file(nomeArquivo);
@@ -460,7 +460,7 @@ System::Import_CSV_To_MyMapF(std::string nomeArquivo){
       std::cerr << err.what() << std::endl;
       file.close();
       return;
-  } 
+  }
   catch (...) {
       std::cerr << "Erro desconhecido ao tentar abrir o arquivo." << std::endl;
   }
@@ -522,12 +522,10 @@ System::Import_CSV_To_MyMapF(std::string nomeArquivo){
 
   file.close();
   std::cout << "Pronto! Os funcionários do arquivo foram salvos no banco de dados." << std::endl;
-
-
 }
 
 /** Métodos de instanciação de objetos das Classes Animal e Funcionario. */
-void 
+void
 System::Inserir_Func_MyMapF(){
 
   std::string funcao_;
@@ -541,7 +539,7 @@ System::Inserir_Func_MyMapF(){
   }
 }
 
-void 
+void
 System::Inserir_Animal_MyMapA(){
   //Condição de parada, se nao existir funcionarios
   if(mymapF.size() == 0){
@@ -599,7 +597,7 @@ System::Inserir_Animal_MyMapA(){
   */
 }
 
-Tratador * 
+Tratador *
 System::NewTratador(){
   Tratador * funcionario = new Tratador();
   setFuncId(funcionario);
@@ -613,7 +611,7 @@ System::NewTratador(){
   return funcionario;
 }
 
-Veterinario * 
+Veterinario *
 System::NewVeterinario(){
   Veterinario * funcionario = new Veterinario();
   setFuncId(funcionario);
@@ -627,7 +625,7 @@ System::NewVeterinario(){
   return funcionario;
 }
 
-AveExo * 
+AveExo *
 System::NewAveExo(){
   AveExo * animal = new AveExo();
   //Já é instanciado com a classe  = "Ave" e naturalidade = "Exotico"
@@ -647,7 +645,7 @@ System::NewAveExo(){
 
   return animal;
 }
-AveNat * 
+AveNat *
 System::NewAveNat(){
   AveNat * animal = new AveNat();
   //Já é instanciado com a classe  = "Ave" e naturalidade = "Nativo"
@@ -666,7 +664,7 @@ System::NewAveNat(){
 
   return animal;
 }
-ReptilExo * 
+ReptilExo *
 System::NewReptilExo(){
   ReptilExo * animal = new ReptilExo();
   //Já é instanciado com a classe  = "Reptil" e naturalidade = "Exotico"
@@ -686,7 +684,7 @@ System::NewReptilExo(){
 
   return animal;
 }
-ReptilNat * 
+ReptilNat *
 System::NewReptilNat(){
   ReptilNat * animal = new ReptilNat();
   //Já é instanciado com a classe  = "Reptil" e naturalidade = "Nativo"
@@ -705,7 +703,7 @@ System::NewReptilNat(){
 
   return animal;
 }
-MamiferoExo * 
+MamiferoExo *
 System::NewMamiferoExo(){
   MamiferoExo * animal = new MamiferoExo();
   //Já é instanciado com a classe  = "Mamifero" e naturalidade = "Exotico"
@@ -724,7 +722,7 @@ System::NewMamiferoExo(){
 
   return animal;
 }
-MamiferoNat * 
+MamiferoNat *
 System::NewMamiferoNat(){
   MamiferoNat * animal = new MamiferoNat();
   //Já é instanciado com a classe  = "Mamifero" e naturalidade = "Nativo"
@@ -742,7 +740,7 @@ System::NewMamiferoNat(){
 
   return animal;
 }
-AnfibioExo * 
+AnfibioExo *
 System::NewAnfibioExo(){
   AnfibioExo * animal = new AnfibioExo();
   //Já é instanciado com a classe  = "Anfibio" e naturalidade = "Exotico"
@@ -761,7 +759,7 @@ System::NewAnfibioExo(){
 
   return animal;
 }
-AnfibioNat * 
+AnfibioNat *
 System::NewAnfibioNat(){
   AnfibioNat * animal = new AnfibioNat();
   /** @brief Já é instanciado com a classe  = "Anfibio" e naturalidade = "Nativo" */
@@ -781,14 +779,14 @@ System::NewAnfibioNat(){
 }
 
 /** @brief Métodos de remoção do MyMap.*/
-void 
+void
 System::RemoverAnimal(int &id_){
   delete this->mymapA.find(id_)->second;
   this->mymapA.erase(id_);
   std::cout << "Animal removido com sucesso." << std::endl;
 }
 
-void 
+void
 System::RemoverFuncionario(int &id_){
   /**@brief Caso não exista animal instanciado. */
   if(this->mymapA.size() == 0){
@@ -865,7 +863,7 @@ System::RemoverFuncionario(int &id_){
 }
 
 /** @brief Métodos com tratamentos para os atributos da Classe Funcionário.*/
-void 
+void
 System::DefFuncaoFunc(std::string &funcao_){
   system("clear");
   std::cout << "Qual a função do funcionário? Opções: Veterinario ou Tratador." << std::endl;
@@ -881,7 +879,7 @@ System::DefFuncaoFunc(std::string &funcao_){
   }
 }
 
-void 
+void
 System::DefAnimalClasse(std::string &classe_){
 
   std::cout << "Qual a classe do animal? Opções: Ave, Reptil, Mamifero ou Anfibio." << std::endl;
@@ -900,7 +898,7 @@ System::DefAnimalClasse(std::string &classe_){
   system("clear");
 }
 
-void 
+void
 System::DefAnimalNaturalidade(std::string &naturalidade_){
   std::cout << "Qual a naturalidade do animal? Opções: Exotico ou Nativo." << std::endl;
   std::cin  >> naturalidade_;
@@ -917,10 +915,10 @@ System::DefAnimalNaturalidade(std::string &naturalidade_){
   system("clear");
 }
 
-/** @details Função genérica que recebe dois parâmetros do tipo string, 
- * onde "os" está com a com a pergunta a ser respondida no "genérico". 
+/** @details Função genérica que recebe dois parâmetros do tipo string,
+ * onde "os" está com a com a pergunta a ser respondida no "genérico".
 */
-void 
+void
 System::infoString(std::string &generico, std::string os){
   std::cout <<  os << std::endl;
   std::cin >> generico;
@@ -930,18 +928,18 @@ System::infoString(std::string &generico, std::string os){
 }
 
 /** @brief Consulta ou pesquisa o determinado funcionário. */
-Tratador * 
+Tratador *
 System::consultaTratador(int Id){
   return (dynamic_cast<Tratador*>(mymapF.find(Id)->second));
 }
 
-Veterinario * 
+Veterinario *
 System::consultaVeterinario(int Id){
   return (dynamic_cast<Veterinario*>(mymapF.find(Id)->second));
 }
 
 /** @brief Menus que controlam as ações definidas pelo usuário.*/
-void 
+void
 System::MenuInicial(){
   Import_CSV_To_MyMapF("funcionarios.csv");
   Import_CSV_To_MyMapA("animais.csv");
@@ -984,7 +982,7 @@ System::MenuInicial(){
   } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuListar1(){
   int alternativa = -1;
   do{
@@ -1010,7 +1008,7 @@ System::MenuListar1(){
   } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuListar1_1(){
   int alternativa = -1;
   std::string nomeArquivo;
@@ -1044,7 +1042,7 @@ System::MenuListar1_1(){
   } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuListar1_2(){
   int alternativa = -1;
   std::string nomeArquivo;
@@ -1078,7 +1076,7 @@ System::MenuListar1_2(){
   } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuInserir1(){
 
     int alternativa = -1;
@@ -1104,7 +1102,7 @@ System::MenuInserir1(){
     } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuInserir1_1(){
   int alternativa = -1;
   do{
@@ -1128,7 +1126,7 @@ System::MenuInserir1_1(){
     } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuInserir1_2(){
   int alternativa = -1;
   do{
@@ -1151,7 +1149,7 @@ System::MenuInserir1_2(){
   } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuRemover1(){
   int alternativa = -1;
   do{
@@ -1176,7 +1174,7 @@ System::MenuRemover1(){
   } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuRemover1_1(){
   int alternativa = -1;
   do{
@@ -1189,7 +1187,7 @@ System::MenuRemover1_1(){
   } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuRemover1_2(){
   int alternativa = -1;
   do{
@@ -1202,7 +1200,7 @@ System::MenuRemover1_2(){
   } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuPesquisar1(){
   int alternativa = -1;
   do{
@@ -1228,7 +1226,7 @@ System::MenuPesquisar1(){
 
 }
 
-void 
+void
 System::MenuPesquisar1_1(){
   int id;
   int alternativa = -1;
@@ -1259,7 +1257,7 @@ System::MenuPesquisar1_1(){
     } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuPesquisar1_2(){
   int id;
   int alternativa = -1;
@@ -1290,7 +1288,7 @@ System::MenuPesquisar1_2(){
     } while (alternativa != 0);
 }
 
-void 
+void
 System::MenuEditar1(){
   int alternativa = -1;
   do{
@@ -1301,7 +1299,7 @@ System::MenuEditar1(){
 
       switch(alternativa){
         case 1 :
-          //MenuEditar1_1(); // Editar >> Animais
+          MenuEditar1_1(); // Editar >> Animais
           break;
         case 2 :
           //MenuEditar1_2(); // Editar >> Funcionarios
@@ -1315,8 +1313,41 @@ System::MenuEditar1(){
     } while (alternativa != 0);
 }
 
+void
+System::MenuEditar1_1(){
+  int id_;
+  int alternativa;
+  do{
+      PrintEditar1_1();
+      std::cout  << " Alternativa escolhida: ";
+      std::cin   >> alternativa;
+      std::cin.ignore();
+
+      std::cout  << "Digite o Id do animal :";
+      std::cin   >> id_;
+      std::cin.ignore();
+
+      if(mymapA.count(id_) == 1){
+        switch(alternativa){
+          case 1 :
+          setAnimalNomeCientifico(mymapA.find(id_)->second); // Editar >> Animais
+          break;
+          case 2 :
+          //MenuEditar1_2(); // Editar >> Funcionarios
+          break;
+          case 0 :
+          break;
+          default:
+          system("clear");
+          std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
+        }
+      }
+
+    } while (alternativa != 0);
+}
+
 /** @brief Caixas de diálogos (cout's) apresentadas ao usuário. */
-void 
+void
 System::PrintMenuPrincipal(){
   std::cout  << "\n\n"
              << " +++++++++++++ MENU PRINCIPAL++++++++++++++++ \n"
@@ -1332,7 +1363,7 @@ System::PrintMenuPrincipal(){
              << std::endl;
 }
 
-void 
+void
 System::PrintListar1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Listar Dados no Banco \n"
@@ -1343,7 +1374,7 @@ System::PrintListar1(){
              << std::endl;
 }
 
-void 
+void
 System::PrintListar1_1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Listar Dados de Animais \n"
@@ -1357,7 +1388,7 @@ System::PrintListar1_1(){
              << std::endl;
 }
 
-void 
+void
 System::PrintListar1_2(){
   std::cout  << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Listar Dados de Funcionários \n"
@@ -1371,7 +1402,7 @@ System::PrintListar1_2(){
              << std::endl;
 }
 
-void 
+void
 System::PrintInserir1(){
   std::cout  << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Inserir Dados no Banco \n"
@@ -1383,7 +1414,7 @@ System::PrintInserir1(){
              << std::endl;
 }
 
-void 
+void
 System::PrintInserir1_1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Inserir Dados de Animal \n"
@@ -1395,7 +1426,7 @@ System::PrintInserir1_1(){
              << std::endl;
 }
 
-void 
+void
 System::PrintInserir1_2(){
   std::cout  << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Inserir Dados de Funcionário \n"
@@ -1407,7 +1438,7 @@ System::PrintInserir1_2(){
              << std::endl;
 }
 
-void 
+void
 System::PrintRemover1(){
   std::cout  << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Remover Dados no Banco \n"
@@ -1419,7 +1450,7 @@ System::PrintRemover1(){
              << std::endl;
 }
 
-void 
+void
 System::PrintRemover1_1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Remover um Animal \n"
@@ -1430,7 +1461,7 @@ System::PrintRemover1_1(){
              << std::endl;
 }
 
-void 
+void
 System::PrintRemover1_2(){
   std::cout  << " \n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Remover Dados de Funcionário \n"
@@ -1441,7 +1472,7 @@ System::PrintRemover1_2(){
              << std::endl;
 }
 
-void 
+void
 System::PrintPesquisar1(){
       std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
                  << " \n Você escolheu a alternativa: Pesquisar Dados do Banco \n"
@@ -1452,7 +1483,7 @@ System::PrintPesquisar1(){
                  << std::endl;
 }
 
-void 
+void
 System::PrintPesquisar1_1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Pesquisar dados dos animais \n"
@@ -1463,7 +1494,7 @@ System::PrintPesquisar1_1(){
              << std::endl;
 }
 
-void 
+void
 System::PrintPesquisar1_2(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Pesquisar dados dos funcionario \n"
@@ -1474,7 +1505,7 @@ System::PrintPesquisar1_2(){
              << std::endl;
 }
 
-void 
+void
 System::PrintEditar1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Editar Dados dos Banco \n"
@@ -1485,13 +1516,27 @@ System::PrintEditar1(){
              << std::endl;
 }
 
-void 
+void
 System::PrintEditar1_1(){
   std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
              << " \n Você escolheu a alternativa: Editar Dados dos Animais \n"
              << " \n Escolha uma das seguintes alternativas abaixo: \n"
-             << " Digite '1' para: Editar Dados dos Animais\n"
-             << " Digite '2' para: Editar Dados dos Funcionarios\n"
+             << " Digite '1'  para: Editar Nome Cientifico\n"
+             << " Digite '2'  para: Editar Sexo\n"
+             << " Digite '3'  para: Editar Tamanho\n"
+             << " Digite '4'  para: Editar Dieta\n"
+             << " Digite '5'  para: Editar Veterinario\n"
+             << " Digite '6'  para: Editar Tratador\n"
+             << " Digite '7'  para: Editar Nome de Batismo\n"
+             << " Digite '8'  para: Editar mudas\n"
+             << " Digite '9'  para: Editar Cor do pelo\n"
+             << " Digite '10' para: Editar Venenoso\n"
+             << " Digite '11' para: Editar Tipo do Veneno\n"
+             << " Digite '12' para: Editar Envergadura das Asas\n"
+             << " Digite '13' para: Editar Tamanho do Bico\n"
+             << " Digite '14' para: Editar Uf Origem\n"
+             << " Digite '15' para: Editar Pais de origem\n"
+             << " Digite '16' para: Editar Cidade de origem\n"
              << " Digite '0' para: Voltar ao Menu Anterior \n"
              << std::endl;
 }
