@@ -1,0 +1,10 @@
+digraph "src/arquivoNaoAberto.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="src/arquivoNaoAberto.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="arquivoNaoAberto.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$arquivo_nao_aberto_8h.html",tooltip="Classe padrão para a exceção de arquivo não aberto. "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="stdexcept",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

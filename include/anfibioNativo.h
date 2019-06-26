@@ -13,10 +13,16 @@
 #include "anfibio.h"
 #include "animalNativo.h"
 
+/**
+* @brief Classe dos anfíbios nativos
+* @details Nesta classe o usuário pode inicializar os dados do anfíbio, além de visualizar e
+*		alterar o número de trocas de pele (mudas) do animal. 
+*/
+
 class AnfibioNat : public Anfibio, public AnimalNat{
 	private:
-			/** Sobrecarga do operador de saída */
-			std::ostream& print(std::ostream& os)const;
+		/** Sobrecarga do operador de saída */
+		std::ostream& print(std::ostream& os)const;
 	protected:
 
 	public:

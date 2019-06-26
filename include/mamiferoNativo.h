@@ -3,7 +3,7 @@
 * @brief Classe dos mamíferos nativos
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 24/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _MAMIFERO_NATIVO_H_
@@ -12,6 +12,10 @@
 #include <string>
 #include "mamifero.h"
 #include "animalNativo.h"
+
+/**
+* @brief Classe dos mamíferos nativos
+*/
 
 class MamiferoNat : public Mamifero, public AnimalNat{
 	private:

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tratador',['Tratador',['../class_tratador.html#a3ad6e717885f5c3e86c7abcff7b23a78',1,'Tratador']]]
+  ['tratador',['Tratador',['../class_tratador.html#a6622c09c46e16b314e2499f4b675aa11',1,'Tratador']]]
 ];

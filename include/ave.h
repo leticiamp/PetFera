@@ -3,7 +3,7 @@
 * @brief Classe das aves
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 16/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _AVE_H_
@@ -12,7 +12,11 @@
 #include <string>
 #include "animal.h"
 
-/** @brief Classe responsável pelo controle das aves */
+/**
+* @brief Classe responsável pelo controle das aves
+* @details Nesta classe, o usuário pode definir características específicas das aves,
+* 			como o tamanho do bico e a envergadura das asas.
+*/
 
 class Ave : public Animal{
 	private:
@@ -40,11 +44,12 @@ class Ave : public Animal{
 
 		~Ave(); /**< Destrutor padrão*/
 
-		double getTamanhoBicoCm();
-		double getEnvergaduraAsas();
+		double getTamanhoBicoCm(); /**< Visualiza o tamanho do bico (em cm) das aves */
+		double getEnvergaduraAsas(); /**< Visualiza a envergadura das asas */
 
-		void setTamanhoBicoCm(double tamanho_do_bico_cm_);
-		void setEnvergaduraAsas(double envergadura_das_asas_);
+		void setTamanhoBicoCm(double tamanho_do_bico_cm_); /**< Altera o tamanho do bico (em cm) das aves */
+		void setEnvergaduraAsas(double envergadura_das_asas_); /**< Altera a envergadura das asas */
+
 
 };
 

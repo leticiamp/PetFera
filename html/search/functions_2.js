@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['excluianimal',['excluiAnimal',['../class_system.html#a79dee08261cd1cacbf639de2b55be955',1,'System']]],
-  ['excluifuncionario',['excluiFuncionario',['../class_system.html#a3337a9b0335c50c8f107cfe74b696945',1,'System']]]
+  ['defanimalclasse',['DefAnimalClasse',['../class_system.html#afe856ad39aa1fe68ea11c6f0760ebda9',1,'System']]],
+  ['defanimalnaturalidade',['DefAnimalNaturalidade',['../class_system.html#aba875762b34d47016be7ad63db016e51',1,'System']]],
+  ['deffuncaofunc',['DefFuncaoFunc',['../class_system.html#a91e614f6023bf66d421e691e2a137bc3',1,'System']]]
 ];

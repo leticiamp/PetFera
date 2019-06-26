@@ -3,7 +3,7 @@
 * @brief Classe dos animais nativos
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 21/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _ANIMAL_NATIVO_H_
@@ -13,7 +13,7 @@
 #include "animalSilvestre.h"
 
 /**
-* @brief Classe filha da classe Animal
+* @brief Classe dos animais nativos
 * @details Nesta classe, o usuário pode colocar e alterar algumas informações específicas de animais nativos,
 como seu estado de origem.
 */
@@ -32,9 +32,9 @@ class AnimalNat : public AnimalSilv {
 
 		~AnimalNat(); /**< Destrutor padrão*/
 
-		std::string getUfOrigem();
+		std::string getUfOrigem(); /**< Visualiza a UF de origem do animal */
 
-		void setUfOrigem(std::string UfOrigem);
+		void setUfOrigem(std::string UfOrigem); /**< Altera a UF de origem do animal */
 
 };
 

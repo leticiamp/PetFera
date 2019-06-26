@@ -63,11 +63,15 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Métodos Públicos</a> &#124;
 <a href="#pro-attribs">Atributos Protegidos</a> &#124;
+<a href="#pri-methods">Métodos Privados</a> &#124;
 <a href="class_anfibio-members.html">Lista de todos os Membros</a>  </div>
   <div class="headertitle">
-<div class="title">Referência da Classe Anfibio</div>  </div>
+<div class="title">Referência da Classe Anfibio<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe dos anfíbios.  
+ <a href="class_anfibio.html#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="anfibio_8h_source.html">anfibio.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -87,8 +91,9 @@ Diagrama de colaboração para Anfibio:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Métodos Públicos</h2></td></tr>
-<tr class="memitem:a00ee3e6970884a4da90f0ea6880978b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anfibio.html#a00ee3e6970884a4da90f0ea6880978b7">Anfibio</a> (int id_, std::string classe_, std::string nome_cientifico_, char sexo_, double tamanho_, std::string dieta_, <a class="el" href="class_veterinario.html">Veterinario</a> *veterinario_, <a class="el" href="class_tratador.html">Tratador</a> *tratador_, std::string nome_batismo_, int mudas_)</td></tr>
-<tr class="separator:a00ee3e6970884a4da90f0ea6880978b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4201694aef8b32cd5763cc7b7c35ae9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anfibio.html#a4201694aef8b32cd5763cc7b7c35ae9b">Anfibio</a> (int id_, std::string classe_, std::string nome_cientifico_, char sexo_, double tamanho_, std::string dieta_, <a class="el" href="class_veterinario.html">Veterinario</a> *veterinario_, <a class="el" href="class_tratador.html">Tratador</a> *tratador_, std::string nome_batismo_, std::string naturalidade_, int mudas_)</td></tr>
+<tr class="memdesc:a4201694aef8b32cd5763cc7b7c35ae9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor parametrizado.  <a href="#a4201694aef8b32cd5763cc7b7c35ae9b">Mais...</a><br /></td></tr>
+<tr class="separator:a4201694aef8b32cd5763cc7b7c35ae9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53bb71a1ed0e79c5fc41a62a0af9060c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anfibio.html#a53bb71a1ed0e79c5fc41a62a0af9060c">~Anfibio</a> ()</td></tr>
 <tr class="separator:a53bb71a1ed0e79c5fc41a62a0af9060c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89a0b0dc44e813344832c0ac516b1d25"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anfibio.html#a89a0b0dc44e813344832c0ac516b1d25">get_m_total_de_mudas</a> ()</td></tr>
@@ -96,10 +101,10 @@ Métodos Públicos</h2></td></tr>
 <tr class="memitem:a19e4569d5875df16c815be5b1ef0ec15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anfibio.html#a19e4569d5875df16c815be5b1ef0ec15">set_m_total_de_mudas</a> (int mudas)</td></tr>
 <tr class="separator:a19e4569d5875df16c815be5b1ef0ec15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_animal"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_animal')"><img src="closed.png" alt="-"/>&#160;Métodos Públicos herdados de <a class="el" href="class_animal.html">Animal</a></td></tr>
-<tr class="memitem:a6d1bd1eff49cfca4d297b9cb815da44a inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#a6d1bd1eff49cfca4d297b9cb815da44a">Animal</a> (int id_, std::string classe_, std::string nome_cientifico_, char sexo_, double tamanho_, std::string dieta_, <a class="el" href="class_veterinario.html">Veterinario</a> *veterinario_, <a class="el" href="class_tratador.html">Tratador</a> *tratador_, std::string nome_batismo_)</td></tr>
-<tr class="memdesc:a6d1bd1eff49cfca4d297b9cb815da44a inherit pub_methods_class_animal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor parametrizado.  <a href="class_animal.html#a6d1bd1eff49cfca4d297b9cb815da44a">Mais...</a><br /></td></tr>
-<tr class="separator:a6d1bd1eff49cfca4d297b9cb815da44a inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a476af25adde5f0dfa688129c8f86fa5c inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#a476af25adde5f0dfa688129c8f86fa5c">~Animal</a> ()</td></tr>
+<tr class="memitem:aa06ad917c0b943fcd50eb47519396686 inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#aa06ad917c0b943fcd50eb47519396686">Animal</a> (int id_, std::string classe_, std::string nome_cientifico_, char sexo_, double tamanho_, std::string dieta_, <a class="el" href="class_veterinario.html">Veterinario</a> *veterinario_, <a class="el" href="class_tratador.html">Tratador</a> *tratador_, std::string nome_batismo_, std::string naturalidade_)</td></tr>
+<tr class="memdesc:aa06ad917c0b943fcd50eb47519396686 inherit pub_methods_class_animal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor parametrizado.  <a href="class_animal.html#aa06ad917c0b943fcd50eb47519396686">Mais...</a><br /></td></tr>
+<tr class="separator:aa06ad917c0b943fcd50eb47519396686 inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a476af25adde5f0dfa688129c8f86fa5c inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#a476af25adde5f0dfa688129c8f86fa5c">~Animal</a> ()</td></tr>
 <tr class="separator:a476af25adde5f0dfa688129c8f86fa5c inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c27e56355bc2b40d65250da2bb8a102 inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#a2c27e56355bc2b40d65250da2bb8a102">getId</a> ()</td></tr>
 <tr class="separator:a2c27e56355bc2b40d65250da2bb8a102 inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,12 +120,13 @@ Métodos Públicos</h2></td></tr>
 <tr class="separator:a6fcb9a0b8debecb58ca20dbf88bce329 inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee0219bd596f0af49fa51fcdad29a1a7 inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#aee0219bd596f0af49fa51fcdad29a1a7">getNomeBatismo</a> ()</td></tr>
 <tr class="separator:aee0219bd596f0af49fa51fcdad29a1a7 inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2461a49ca76ca8c7f0230e9a32fb7e5 inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#aa2461a49ca76ca8c7f0230e9a32fb7e5">getNaturalidade</a> ()</td></tr>
+<tr class="separator:aa2461a49ca76ca8c7f0230e9a32fb7e5 inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c8aacd4e6709ae559c4b17d6856a3df inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_veterinario.html">Veterinario</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#a2c8aacd4e6709ae559c4b17d6856a3df">getVeterinario</a> ()</td></tr>
 <tr class="separator:a2c8aacd4e6709ae559c4b17d6856a3df inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a386807706a0ba203fe84b68cd10c38aa inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tratador.html">Tratador</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#a386807706a0ba203fe84b68cd10c38aa">getTratador</a> ()</td></tr>
 <tr class="separator:a386807706a0ba203fe84b68cd10c38aa inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf226682f948d55e5379bf02176ca648 inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#aaf226682f948d55e5379bf02176ca648">setId</a> (int id_)</td></tr>
-<tr class="memdesc:aaf226682f948d55e5379bf02176ca648 inherit pub_methods_class_animal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setters.  <a href="class_animal.html#aaf226682f948d55e5379bf02176ca648">Mais...</a><br /></td></tr>
 <tr class="separator:aaf226682f948d55e5379bf02176ca648 inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f4222ae4a9555c9540c62d60aca3fb6 inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#a5f4222ae4a9555c9540c62d60aca3fb6">setClasse</a> (std::string classe_)</td></tr>
 <tr class="separator:a5f4222ae4a9555c9540c62d60aca3fb6 inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,6 +140,8 @@ Métodos Públicos</h2></td></tr>
 <tr class="separator:a2b4b262921a4f7884092a4433bf72925 inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b3bb3eb446a80348a0bbb029d835588 inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#a6b3bb3eb446a80348a0bbb029d835588">setNomeBatismo</a> (std::string nome_batismo_)</td></tr>
 <tr class="separator:a6b3bb3eb446a80348a0bbb029d835588 inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb596265c64a1eeb357cd67d694aace inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#afdb596265c64a1eeb357cd67d694aace">setNaturalidade</a> (std::string naturalidade_)</td></tr>
+<tr class="separator:afdb596265c64a1eeb357cd67d694aace inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a123ea81f9449b01a41ea03ab17371252 inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#a123ea81f9449b01a41ea03ab17371252">setVeterinario</a> (<a class="el" href="class_veterinario.html">Veterinario</a> *veterinario_)</td></tr>
 <tr class="separator:a123ea81f9449b01a41ea03ab17371252 inherit pub_methods_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abba1803cbd1fdc4029c5b20099eac8c0 inherit pub_methods_class_animal"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#abba1803cbd1fdc4029c5b20099eac8c0">setTratador</a> (<a class="el" href="class_tratador.html">Tratador</a> *tratador_)</td></tr>
@@ -162,13 +170,22 @@ Atributos Protegidos</h2></td></tr>
 <tr class="separator:a1d9b76d126f6d72374f94d4d359e0ea7 inherit pro_attribs_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9717b7e2de07af7118050ca1c10d0b5 inherit pro_attribs_class_animal"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#aa9717b7e2de07af7118050ca1c10d0b5">m_nome_batismo</a></td></tr>
 <tr class="separator:aa9717b7e2de07af7118050ca1c10d0b5 inherit pro_attribs_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5497cceb88819a54e501fefc526ba38f inherit pro_attribs_class_animal"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal.html#a5497cceb88819a54e501fefc526ba38f">m_naturalidade</a></td></tr>
+<tr class="separator:a5497cceb88819a54e501fefc526ba38f inherit pro_attribs_class_animal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos Privados</h2></td></tr>
+<tr class="memitem:a7a6aa16ce56f82bcc65452bc0116a736"><td class="memItemLeft" align="right" valign="top">virtual std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anfibio.html#a7a6aa16ce56f82bcc65452bc0116a736">print</a> (std::ostream &amp;os) const =0</td></tr>
+<tr class="separator:a7a6aa16ce56f82bcc65452bc0116a736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição Detalhada</h2>
-<div class="textblock">
-<p class="definition">Definição na linha <a class="el" href="anfibio_8h_source.html#l00021">21</a> do arquivo <a class="el" href="anfibio_8h_source.html">anfibio.h</a>.</p>
+<div class="textblock"><p>Classe dos anfíbios. </p>
+<p>Nesta classe o usuário pode inicializar os dados do anfíbio, além de visualizar e alterar o número de trocas de pele (mudas) do animal. </p>
+
+<p class="definition">Definição na linha <a class="el" href="anfibio_8h_source.html#l00022">22</a> do arquivo <a class="el" href="anfibio_8h_source.html">anfibio.h</a>.</p>
 </div><h2 class="groupheader">Construtores &amp; Destrutores</h2>
-<a id="a00ee3e6970884a4da90f0ea6880978b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00ee3e6970884a4da90f0ea6880978b7">&#9670;&nbsp;</a></span>Anfibio()</h2>
+<a id="a4201694aef8b32cd5763cc7b7c35ae9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4201694aef8b32cd5763cc7b7c35ae9b">&#9670;&nbsp;</a></span>Anfibio()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,6 +247,12 @@ Atributos Protegidos</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>naturalidade_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>mudas_</em>&#160;</td>
         </tr>
@@ -240,6 +263,8 @@ Atributos Protegidos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construtor parametrizado. </p>
 
 <p class="definition">Definição na linha <a class="el" href="anfibio_8cpp_source.html#l00018">18</a> do arquivo <a class="el" href="anfibio_8cpp_source.html">anfibio.cpp</a>.</p>
 
@@ -259,8 +284,9 @@ Atributos Protegidos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Destrutor padrão </p>
 
-<p class="definition">Definição na linha <a class="el" href="anfibio_8cpp_source.html#l00041">41</a> do arquivo <a class="el" href="anfibio_8cpp_source.html">anfibio.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="anfibio_8cpp_source.html#l00043">43</a> do arquivo <a class="el" href="anfibio_8cpp_source.html">anfibio.cpp</a>.</p>
 
 </div>
 </div>
@@ -279,8 +305,40 @@ Atributos Protegidos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Visualiza o total de mudas </p>
 
-<p class="definition">Definição na linha <a class="el" href="anfibio_8cpp_source.html#l00044">44</a> do arquivo <a class="el" href="anfibio_8cpp_source.html">anfibio.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="anfibio_8cpp_source.html#l00046">46</a> do arquivo <a class="el" href="anfibio_8cpp_source.html">anfibio.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7a6aa16ce56f82bcc65452bc0116a736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a6aa16ce56f82bcc65452bc0116a736">&#9670;&nbsp;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::ostream&amp; Anfibio::print </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Transforma a classe em abstrata, impedindo a instanciação de um objeto </p>
+
+<p>Implementa <a class="el" href="class_animal.html#aeb2c33287a9795470458c4190e73d632">Animal</a>.</p>
+
+<p>Implementado por <a class="el" href="class_anfibio_nat.html#a74ac947671989601ef08a95d3614f3d3">AnfibioNat</a> e <a class="el" href="class_anfibio_exo.html#ae2f44c8d7690059aadb4ce2f4821ace0">AnfibioExo</a>.</p>
 
 </div>
 </div>
@@ -299,8 +357,9 @@ Atributos Protegidos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Altera o total de mudas </p>
 
-<p class="definition">Definição na linha <a class="el" href="anfibio_8cpp_source.html#l00048">48</a> do arquivo <a class="el" href="anfibio_8cpp_source.html">anfibio.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="anfibio_8cpp_source.html#l00050">50</a> do arquivo <a class="el" href="anfibio_8cpp_source.html">anfibio.cpp</a>.</p>
 
 </div>
 </div>
@@ -324,14 +383,15 @@ Atributos Protegidos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Define o total de mudas (trocas de pele) </p>
 
-<p class="definition">Definição na linha <a class="el" href="anfibio_8h_source.html#l00025">25</a> do arquivo <a class="el" href="anfibio_8h_source.html">anfibio.h</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="anfibio_8h_source.html#l00027">27</a> do arquivo <a class="el" href="anfibio_8h_source.html">anfibio.h</a>.</p>
 
 </div>
 </div>
 <hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
-<li>include/anfibio/<a class="el" href="anfibio_8h_source.html">anfibio.h</a></li>
-<li>src/anfibio/<a class="el" href="anfibio_8cpp_source.html">anfibio.cpp</a></li>
+<li>include/<a class="el" href="anfibio_8h_source.html">anfibio.h</a></li>
+<li>src/<a class="el" href="anfibio_8cpp_source.html">anfibio.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

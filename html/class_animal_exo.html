@@ -63,11 +63,15 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Métodos Públicos</a> &#124;
 <a href="#pro-attribs">Atributos Protegidos</a> &#124;
+<a href="#pri-methods">Métodos Privados</a> &#124;
 <a href="class_animal_exo-members.html">Lista de todos os Membros</a>  </div>
   <div class="headertitle">
-<div class="title">Referência da Classe AnimalExo</div>  </div>
+<div class="title">Referência da Classe AnimalExo<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe dos animais exóticos.  
+ <a href="class_animal_exo.html#details">Mais...</a></p>
 
 <p><code>#include &lt;<a class="el" href="animal_exotico_8h_source.html">animalExotico.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -88,6 +92,7 @@ Diagrama de colaboração para AnimalExo:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Métodos Públicos</h2></td></tr>
 <tr class="memitem:a28215cfb4c81b0eea47cca7fefb4f323"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal_exo.html#a28215cfb4c81b0eea47cca7fefb4f323">AnimalExo</a> (std::string pais_origem_, std::string cidade_origem_, std::string auto_ibama_)</td></tr>
+<tr class="memdesc:a28215cfb4c81b0eea47cca7fefb4f323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor parametrizado.  <a href="#a28215cfb4c81b0eea47cca7fefb4f323">Mais...</a><br /></td></tr>
 <tr class="separator:a28215cfb4c81b0eea47cca7fefb4f323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c7c446a6859fc496f33ced236712048"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal_exo.html#a0c7c446a6859fc496f33ced236712048">~AnimalExo</a> ()</td></tr>
 <tr class="separator:a0c7c446a6859fc496f33ced236712048"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,10 +123,17 @@ Atributos Protegidos</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_animal_silv"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_animal_silv')"><img src="closed.png" alt="-"/>&#160;Atributos Protegidos herdados de <a class="el" href="class_animal_silv.html">AnimalSilv</a></td></tr>
 <tr class="memitem:adf593ea42978a5c274df7567bd4e3e74 inherit pro_attribs_class_animal_silv"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal_silv.html#adf593ea42978a5c274df7567bd4e3e74">m_autorizacao_ibama</a></td></tr>
 <tr class="separator:adf593ea42978a5c274df7567bd4e3e74 inherit pro_attribs_class_animal_silv"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos Privados</h2></td></tr>
+<tr class="memitem:af9c9f9f573fb50b9ee53dd6e9b7b67f9"><td class="memItemLeft" align="right" valign="top">virtual std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animal_exo.html#af9c9f9f573fb50b9ee53dd6e9b7b67f9">print</a> (std::ostream &amp;os) const =0</td></tr>
+<tr class="separator:af9c9f9f573fb50b9ee53dd6e9b7b67f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição Detalhada</h2>
-<div class="textblock">
-<p class="definition">Definição na linha <a class="el" href="animal_exotico_8h_source.html#l00018">18</a> do arquivo <a class="el" href="animal_exotico_8h_source.html">animalExotico.h</a>.</p>
+<div class="textblock"><p>Classe dos animais exóticos. </p>
+<p>Nesta classe, o usuário pode colocar e alterar algumas informações específicas de animais exóticos, como seu país e cidade de origem. </p>
+
+<p class="definition">Definição na linha <a class="el" href="animal_exotico_8h_source.html#l00021">21</a> do arquivo <a class="el" href="animal_exotico_8h_source.html">animalExotico.h</a>.</p>
 </div><h2 class="groupheader">Construtores &amp; Destrutores</h2>
 <a id="a28215cfb4c81b0eea47cca7fefb4f323"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28215cfb4c81b0eea47cca7fefb4f323">&#9670;&nbsp;</a></span>AnimalExo()</h2>
@@ -155,6 +167,8 @@ Atributos Protegidos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Construtor parametrizado. </p>
+
 <p class="definition">Definição na linha <a class="el" href="animal_exotico_8cpp_source.html#l00016">16</a> do arquivo <a class="el" href="animal_exotico_8cpp_source.html">animalExotico.cpp</a>.</p>
 
 </div>
@@ -173,6 +187,7 @@ Atributos Protegidos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Destrutor padrão </p>
 
 <p class="definition">Definição na linha <a class="el" href="animal_exotico_8cpp_source.html#l00024">24</a> do arquivo <a class="el" href="animal_exotico_8cpp_source.html">animalExotico.cpp</a>.</p>
 
@@ -193,6 +208,7 @@ Atributos Protegidos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Visualiza a cidade de origem do animal </p>
 
 <p class="definition">Definição na linha <a class="el" href="animal_exotico_8cpp_source.html#l00032">32</a> do arquivo <a class="el" href="animal_exotico_8cpp_source.html">animalExotico.cpp</a>.</p>
 
@@ -212,8 +228,40 @@ Atributos Protegidos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Visualiza o país de origem do animal </p>
 
 <p class="definition">Definição na linha <a class="el" href="animal_exotico_8cpp_source.html#l00027">27</a> do arquivo <a class="el" href="animal_exotico_8cpp_source.html">animalExotico.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af9c9f9f573fb50b9ee53dd6e9b7b67f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c9f9f573fb50b9ee53dd6e9b7b67f9">&#9670;&nbsp;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::ostream&amp; AnimalExo::print </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sobrecarga do operador de saída </p>
+
+<p>Implementa <a class="el" href="class_animal_silv.html#abe1c6d7db4df8ab941b45f06493449d1">AnimalSilv</a>.</p>
+
+<p>Implementado por <a class="el" href="class_anfibio_exo.html#ae2f44c8d7690059aadb4ce2f4821ace0">AnfibioExo</a>, <a class="el" href="class_mamifero_exo.html#aaf2efba593fe2d7751f931d942f20caf">MamiferoExo</a>, <a class="el" href="class_ave_exo.html#a2eaeb631c7b6ba0755afd0ef189f2624">AveExo</a> e <a class="el" href="class_reptil_exo.html#a2c155309dca96b825f5f6a9274fdcebb">ReptilExo</a>.</p>
 
 </div>
 </div>
@@ -232,6 +280,7 @@ Atributos Protegidos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Altera a cidade de origem do animal </p>
 
 <p class="definition">Definição na linha <a class="el" href="animal_exotico_8cpp_source.html#l00043">43</a> do arquivo <a class="el" href="animal_exotico_8cpp_source.html">animalExotico.cpp</a>.</p>
 
@@ -252,6 +301,7 @@ Atributos Protegidos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Altera o país de origem do animal </p>
 
 <p class="definition">Definição na linha <a class="el" href="animal_exotico_8cpp_source.html#l00038">38</a> do arquivo <a class="el" href="animal_exotico_8cpp_source.html">animalExotico.cpp</a>.</p>
 
@@ -277,8 +327,9 @@ Atributos Protegidos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Defime o nome da cidade de origem do animal </p>
 
-<p class="definition">Definição na linha <a class="el" href="animal_exotico_8h_source.html#l00023">23</a> do arquivo <a class="el" href="animal_exotico_8h_source.html">animalExotico.h</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="animal_exotico_8h_source.html#l00028">28</a> do arquivo <a class="el" href="animal_exotico_8h_source.html">animalExotico.h</a>.</p>
 
 </div>
 </div>
@@ -301,14 +352,15 @@ Atributos Protegidos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Define o nome do país de origem do animal </p>
 
-<p class="definition">Definição na linha <a class="el" href="animal_exotico_8h_source.html#l00022">22</a> do arquivo <a class="el" href="animal_exotico_8h_source.html">animalExotico.h</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="animal_exotico_8h_source.html#l00027">27</a> do arquivo <a class="el" href="animal_exotico_8h_source.html">animalExotico.h</a>.</p>
 
 </div>
 </div>
 <hr/>A documentação para esta classe foi gerada a partir dos seguintes arquivos:<ul>
-<li>include/animal/<a class="el" href="animal_exotico_8h_source.html">animalExotico.h</a></li>
-<li>src/animal/<a class="el" href="animal_exotico_8cpp_source.html">animalExotico.cpp</a></li>
+<li>include/<a class="el" href="animal_exotico_8h_source.html">animalExotico.h</a></li>
+<li>src/<a class="el" href="animal_exotico_8cpp_source.html">animalExotico.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

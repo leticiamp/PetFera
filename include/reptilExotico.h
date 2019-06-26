@@ -3,7 +3,7 @@
 * @brief Classe dos répteis exóticos
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 24/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _REPTIL_EXOTICO_H_
@@ -12,6 +12,10 @@
 #include <string>
 #include "reptil.h"
 #include "animalExotico.h"
+
+/**
+* @brief Classe dos répteis exóticos
+*/
 
 class ReptilExo : public Reptil, public AnimalExo{
 	private:

@@ -3,7 +3,7 @@
 * @brief Classe dos animais silvestres
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 21/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _ANIMAL_SILVESTRE_H_
@@ -12,7 +12,7 @@
 #include <string>
 
 /**
-* @brief Classe filha da classe Animal
+* @brief Classe dos animais silvestres
 * @details Nesta classe, o usuário pode visualizar e alterar a autorização do IBAMA sobre o animal silvestre.
 */
 
@@ -28,8 +28,8 @@ class AnimalSilv{
 		AnimalSilv(std::string auto_ibama_); /**< Construtor parametrizado*/
 		~AnimalSilv(); /**< Destrutor padrão*/
 
-		std::string getAutoIbama();
-		void setAutoIbama(std::string auto_ibama_);
+		std::string getAutoIbama(); /**< Visualiza a autorização do IBAMA sobre o animal silvestre */
+		void setAutoIbama(std::string auto_ibama_); /**< Altera a autorização do IBAMA sobre o animal silvestre */
 };
 
 #endif

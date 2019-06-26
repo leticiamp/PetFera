@@ -3,7 +3,7 @@
 * @brief Classe dos mamíferos exóticos
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 24/06/2019
+* @date 26/06/2019
 */
 
 
@@ -13,6 +13,10 @@
 #include <string>
 #include "mamifero.h"
 #include "animalExotico.h"
+
+/**
+* @brief Classe dos mamíferos exóticos
+*/
 
 class MamiferoExo : public Mamifero, public AnimalExo{
 	private:

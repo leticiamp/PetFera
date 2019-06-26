@@ -3,7 +3,7 @@
 * @brief Classe responsável por controlar todo o programa
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 24/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _SYSTEM_H
@@ -16,6 +16,7 @@
 #include "petfera.h"
 
 /**
+* @brief Classe responsável por controlar todo o programa
 * @details Nesta classe, o usuário pode controlar todo o programa PetFera, inserindo e imprimindo
 *         animais, funcionários (tratadores e veterinários)
 */
@@ -46,7 +47,7 @@ class System{
     void Inserir_Func_MyMapF();
     void Inserir_Animal_MyMapA();
 
-    Tratador * NewTratador();
+    Tratador * NewTratador(); 
     Veterinario * NewVeterinario();
 
     AveExo * NewAveExo();
@@ -741,7 +742,7 @@ class System{
     void MenuEditar1();
     void MenuEditar1_1();
 
-    //Cout's das opções dos menus
+    /** @brief Cout's das opções dos menus */
     void PrintMenuPrincipal();
     void PrintListar1();
     void PrintListar1_1();

@@ -6,7 +6,7 @@ digraph "Reptil"
   Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 [label="Animal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_animal.html",tooltip="Classe base para todos os grupos de animais. "];
   Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="ReptilExo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_reptil_exo.html"];
+  Node2 [label="ReptilExo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_reptil_exo.html",tooltip="Classe dos répteis exóticos. "];
   Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="ReptilNat",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_reptil_nat.html"];
 }

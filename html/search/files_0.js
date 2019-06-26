@@ -14,6 +14,8 @@ var searchData=
   ['animalnativo_2eh',['animalNativo.h',['../animal_nativo_8h.html',1,'']]],
   ['animalsilvestre_2ecpp',['animalSilvestre.cpp',['../animal_silvestre_8cpp.html',1,'']]],
   ['animalsilvestre_2eh',['animalSilvestre.h',['../animal_silvestre_8h.html',1,'']]],
+  ['arquivonaoaberto_2ecpp',['arquivoNaoAberto.cpp',['../arquivo_nao_aberto_8cpp.html',1,'']]],
+  ['arquivonaoaberto_2eh',['arquivoNaoAberto.h',['../arquivo_nao_aberto_8h.html',1,'']]],
   ['ave_2ecpp',['ave.cpp',['../ave_8cpp.html',1,'']]],
   ['ave_2eh',['ave.h',['../ave_8h.html',1,'']]],
   ['aveexotico_2ecpp',['aveExotico.cpp',['../ave_exotico_8cpp.html',1,'']]],

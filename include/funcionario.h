@@ -3,7 +3,7 @@
 * @brief Classe responsável pelo controle dos funcionários
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 24/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _FUNCIONARIO_H_
@@ -12,6 +12,7 @@
 #include <string>
 
 /**
+* @brief Classe responsável pelo controle dos funcionários
 * @details Nesta classe, o usuário pode visualizar e modificar informações a respeito dos funcionários, tais como:
 *			Nome, CPF, tipo sanguíneo, especialidade, etc. 
 */
@@ -44,22 +45,22 @@ class Funcionario{
 		Funcionario(); /**< Construtor padrão*/
 	virtual	~Funcionario(); /**< Destrutor padrão*/
 
-		int getId();
-		std::string getFuncao();
-		std::string getNome();
-		std::string getCpf();
-		short getIdade();
-		std::string getTipo_sanguineo();
-		char getFator_rh();
-		std::string getEspecialidade();
+		int getId(); /**< Visualiza o número identificador (ID) do funcionário */
+		std::string getFuncao(); /**< Visualiza a função realizada pelo funcionário*/
+		std::string getNome(); /**< Visualiza o nome do funcionário*/
+		std::string getCpf(); /**< Visualiza o CPF do funcionário*/
+		short getIdade(); /**< Visualiza a idade do funcionário*/
+		std::string getTipo_sanguineo(); /**< Visualiza o tipo sanguíneo do funcionário*/
+		char getFator_rh(); /**< Visualiza o fator rh*/
+		std::string getEspecialidade(); /**< Visualiza a especialidade do funcionário*/
 
-		void setId(int id_);
-		void setNome(std::string nome_);
-		void setCpf(std::string cpf_);
-		void setIdade(short idade_);
-		void setTipo_sanguineo(std::string tipo_sanguineo_);
-		void setFator_rh(char fator_rh_);
-		void setEspecialidade(std::string especialidade_);
+		void setId(int id_); /**< Altera o número identificador (ID) do funcionário */
+		void setNome(std::string nome_); /**< Altera/insere o nome do funcionário*/
+		void setCpf(std::string cpf_); /**< Altera/insere o CPF do funcionário*/
+		void setIdade(short idade_); /**< Altera/insere a idade do funcionário*/
+		void setTipo_sanguineo(std::string tipo_sanguineo_); /**< Altera/insere o tipo sanguíneo do funcionário*/
+		void setFator_rh(char fator_rh_); /**< Altera/insere o fator rh*/
+		void setEspecialidade(std::string especialidade_); /**< Altera a especialidade do funcionário*/
 
 		/** Sobrecarga do operador de saída. Imprime um funcionário*/
 		friend std::ostream& operator << ( std::ostream& os, const Funcionario& funcionario){

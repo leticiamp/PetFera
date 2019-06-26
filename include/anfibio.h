@@ -3,7 +3,7 @@
 * @brief Classe dos Anfíbios
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 23/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _ANFIBIO_H_
@@ -13,6 +13,11 @@
 //#include "data.h"
 #include "animal.h"
 
+/**
+* @brief Classe dos anfíbios
+* @details Nesta classe o usuário pode inicializar os dados do anfíbio, além de visualizar e
+*		alterar o número de trocas de pele (mudas) do animal. 
+*/
 
 class Anfibio : public Animal{
 	private:
@@ -37,10 +42,9 @@ class Anfibio : public Animal{
 
 		~Anfibio(); /**< Destrutor padrão*/
 
-		//get's
-    int get_m_total_de_mudas();
+    int get_m_total_de_mudas(); /**< Visualiza o total de mudas */
     //set's
-    void set_m_total_de_mudas(int mudas);
+    void set_m_total_de_mudas(int mudas); /**< Altera o total de mudas */
 
 };
 

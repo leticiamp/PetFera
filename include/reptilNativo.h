@@ -3,7 +3,7 @@
 * @brief Classe dos répteis nativos
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 24/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _REPTIL_NATIVO_H_
@@ -12,6 +12,10 @@
 #include <string>
 #include "reptil.h"
 #include "animalNativo.h"
+
+/**
+* @brief Classe dos répteis nativos
+*/
 
 using namespace std;
 

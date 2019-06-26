@@ -3,7 +3,7 @@
 * @brief Classe das aves exóticas
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santosos
 * @since 25/04/2019
-* @date 16/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _AVE_EXOTICO_H_
@@ -12,6 +12,10 @@
 #include <string>
 #include "ave.h"
 #include "animalExotico.h"
+
+/**
+* @brief Classe das aves exóticas
+*/
 
 class AveExo : public Ave, public AnimalExo{
 	private:

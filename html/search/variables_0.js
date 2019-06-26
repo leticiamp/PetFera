@@ -10,8 +10,10 @@ var searchData=
   ['m_5fenvergadura_5fdas_5fasas',['m_envergadura_das_asas',['../class_ave.html#a6261373aae903e524e220e53ded18693',1,'Ave']]],
   ['m_5fespecialidade',['m_especialidade',['../class_funcionario.html#ac9ccf61efca75f4130e79ef06b7278a2',1,'Funcionario']]],
   ['m_5ffator_5frh',['m_fator_rh',['../class_funcionario.html#ab8b1fa2c4d830ea6a03c5d1db8ee1002',1,'Funcionario']]],
+  ['m_5ffuncao',['m_funcao',['../class_funcionario.html#afb07b5a1a6e32ed173e5001b61f32996',1,'Funcionario']]],
   ['m_5fid',['m_id',['../class_animal.html#a1a39448480e098fc74b5b67c4921a5ec',1,'Animal::m_id()'],['../class_funcionario.html#a123c4af00e4e6eea5d4d9366a8bfefed',1,'Funcionario::m_id()']]],
   ['m_5fidade',['m_idade',['../class_funcionario.html#a2bc5a68aebcf1a792812430ce5c8bdca',1,'Funcionario']]],
+  ['m_5fnaturalidade',['m_naturalidade',['../class_animal.html#a5497cceb88819a54e501fefc526ba38f',1,'Animal']]],
   ['m_5fnivel_5fde_5fseguranca',['m_nivel_de_seguranca',['../class_tratador.html#a955a2ce3f9652bcc43b914b2a325f763',1,'Tratador']]],
   ['m_5fnome',['m_nome',['../class_funcionario.html#a6d5228656aa32b0f36f02e08c51cd1e4',1,'Funcionario']]],
   ['m_5fnome_5fbatismo',['m_nome_batismo',['../class_animal.html#aa9717b7e2de07af7118050ca1c10d0b5',1,'Animal']]],
@@ -27,6 +29,6 @@ var searchData=
   ['m_5fuf_5forigem',['m_uf_origem',['../class_animal_nat.html#af4b9c0d966534d2c31910e812cc0ec01',1,'AnimalNat']]],
   ['m_5fvenenoso',['m_venenoso',['../class_reptil.html#ac195c1dc9a0fa38bc0551034c609c434',1,'Reptil']]],
   ['m_5fveterinario',['m_veterinario',['../class_animal.html#a3b95df9484483642a10cafcafc15961d',1,'Animal']]],
-  ['mymapa',['mymapA',['../class_system.html#a37630c5ceddff9fd53b106513a5bf085',1,'System']]],
+  ['mymapa',['mymapA',['../class_system.html#a215da6549daeaff92c44beea942461b9',1,'System']]],
   ['mymapf',['mymapF',['../class_system.html#a6694dd892f5fa77b1cbe927f0291dc9d',1,'System']]]
 ];

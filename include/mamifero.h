@@ -3,7 +3,7 @@
 * @brief Classe dos mamíferos
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 24/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _MAMIFERO_H_
@@ -11,6 +11,12 @@
 
 #include <string>
 #include "animal.h"
+
+/**
+* @brief Classe dos mamíferos
+* @details Nesta classe, o usuário pode inicializar um mamífero e alterar características
+*			como a cor do pêlo do animal.
+*/
 
 class Mamifero : public Animal{
 	private :
@@ -35,9 +41,9 @@ class Mamifero : public Animal{
 
 		~Mamifero(); /**< Destrutor padrão*/
 
-		std::string getCorPelo();
+		std::string getCorPelo(); /**< Visualiza a cor do pêlo */
 
-		void setCorPelo(std::string cor_pelo_);
+		void setCorPelo(std::string cor_pelo_); /**< Altera a cor do pêlo */
 
 
 };

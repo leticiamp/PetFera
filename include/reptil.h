@@ -3,7 +3,7 @@
 * @brief Classe dos répteis
 * @author André Vitor Macedo Soares, Letícia Moura Pinheiro e Odilon Julio dos Santos
 * @since 25/04/2019
-* @date 24/06/2019
+* @date 26/06/2019
 */
 
 #ifndef _REPTIL_H_
@@ -11,6 +11,12 @@
 
 #include <string>
 #include "animal.h"
+
+/**
+* @brief Classe dos répteis
+* @details Nesta classe, o usuário pode inicializar um réptil, além de definir características como
+*			o veneno do animal e o seu tipo.
+*/
 
 class Reptil : public Animal{
 	private:
@@ -37,11 +43,11 @@ class Reptil : public Animal{
 
 		~Reptil(); /**< Destrutor padrão*/
 
-		bool getVenenoso();
-		std::string getTipoVenenoso();
+		bool getVenenoso(); /**< Visualiza se o animal é venenoso ou não */
+		std::string getTipoVenenoso(); /**< Visualizar o tipo de veneno do réptil */
 
-		void setVenenoso(bool venenoso_);
-		void setTipoVenenoso(std::string tipo_veneno_);
+		void setVenenoso(bool venenoso_); /**< Altera se o animal é venenoso ou não */
+		void setTipoVenenoso(std::string tipo_veneno_); /**< Alterar o tipo de veneno do réptil */
 
 };
 

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['veterinario',['Veterinario',['../class_veterinario.html',1,'Veterinario'],['../class_veterinario.html#ac461bf53fc752de90d3d31e08ccbbf4d',1,'Veterinario::Veterinario()']]],
-  ['veterinario_2ecpp',['veterinario.cpp',['../veterinario_8cpp.html',1,'']]],
-  ['veterinario_2eh',['veterinario.h',['../veterinario_8h.html',1,'']]]
+  ['what',['what',['../class_arquivo_nao_aberto.html#afff0ce751d14d9afb6a7a77c17067479',1,'ArquivoNaoAberto']]]
 ];
