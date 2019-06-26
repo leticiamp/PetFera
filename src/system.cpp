@@ -1302,7 +1302,7 @@ System::MenuEditar1(){
           MenuEditar1_1(); // Editar >> Animais
           break;
         case 2 :
-          //MenuEditar1_2(); // Editar >> Funcionarios
+          MenuEditar1_2(); // Editar >> Funcionarios
           break;
         case 0 :
           break;
@@ -1323,26 +1323,154 @@ System::MenuEditar1_1(){
       std::cin   >> alternativa;
       std::cin.ignore();
 
-      std::cout  << "Digite o Id do animal :";
-      std::cin   >> id_;
+      if(alternativa != 0){
+        std::cout  << "Digite o Id do animal :";
+        std::cin   >> id_;
+        std::cin.ignore();
+
+        if(mymapA.count(id_) == 1){
+          switch(alternativa){
+            case 1 :
+              setAnimalNomeCientifico(mymapA.find(id_)->second); // Editar >> Animais
+              break;
+            case 2 :
+              setAnimalSexo(mymapA.find(id_)->second);
+              break;
+            case 3 :
+              setAnimalTamanho(mymapA.find(id_)->second);
+              break;
+            case 4:
+              setAnimalDieta(mymapA.find(id_)->second);
+              break;
+            case 5:
+              setAnimalVeterinario(mymapA.find(id_)->second);
+              break;
+            case 6:
+              setAnimalTratador(mymapA.find(id_)->second);
+              break;
+            case 7:
+              setAnimalNomeBatismo(mymapA.find(id_)->second);
+              break;
+            case 8:
+              if(FlagNumMudas(mymapA.find(id_)->second) == true){
+                setAnimalNumMudas(dynamic_cast<Anfibio*>(mymapA.find(id_)->second));
+              }
+              break;
+            case 9:
+              if(FlagCorDoPelo(mymapA.find(id_)->second) == true){
+                setAnimalCorDoPelo(dynamic_cast<Mamifero*>(mymapA.find(id_)->second));
+              }
+              break;
+            case 10:
+              if(FlagVenenoso(mymapA.find(id_)->second) == true){
+                setAnimalVenenoso(dynamic_cast<Reptil*>(mymapA.find(id_)->second));
+              }
+              break;
+            case 11 :
+              if(FlagTipoVeneno(mymapA.find(id_)->second) == true){
+                setAnimalTipoVeneno(dynamic_cast<Reptil*>(mymapA.find(id_)->second));
+              }
+              break;
+            case 12 :
+              if(FlagEnvergaduraAsas(mymapA.find(id_)->second) == true){
+                setAnimalEnvergaduraAsas(dynamic_cast<Ave*>(mymapA.find(id_)->second));
+              }
+              break;
+            case 13 :
+              if(FlagTamanhoDoBico(mymapA.find(id_)->second) == true){
+                setAnimalTamanhoDoBico(dynamic_cast<Ave*>(mymapA.find(id_)->second));
+              }
+              break;
+            case 14:
+              if(FlagUfOrigem(mymapA.find(id_)->second) == true){
+                setAnimalUfOrigem(dynamic_cast<AnimalNat*>(mymapA.find(id_)->second));
+              }
+              break;
+            case 15:
+              if(FlagPaisOrigem(mymapA.find(id_)->second) == true){
+                setAnimalPaisOrigem(dynamic_cast<AnimalExo*>(mymapA.find(id_)->second));
+              }
+              break;
+            case 16:
+              if(FlagCidadeOrigem(mymapA.find(id_)->second) == true){
+                setAnimalCidadeOrigem(dynamic_cast<AnimalExo*>(mymapA.find(id_)->second));
+              }
+              break;
+            case 17:
+              if(FlagAutoIbama(mymapA.find(id_)->second) == true){
+                setAnimalAutoIbama(dynamic_cast<AnimalSilv*>(mymapA.find(id_)->second));
+              }
+              break;
+            case 0 :
+              break;
+            default:
+            system("clear");
+            std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
+          }
+        }else{
+          std::cout << "\n\nId invalido! Animal não existe.\n\n";
+        }
+
+      }
+    } while (alternativa != 0);
+}
+
+void
+System::MenuEditar1_2(){
+  int id_;
+  int alternativa;
+  do{
+      PrintEditar1_2();
+      std::cout  << " Alternativa escolhida: ";
+      std::cin   >> alternativa;
       std::cin.ignore();
 
-      if(mymapA.count(id_) == 1){
-        switch(alternativa){
-          case 1 :
-          setAnimalNomeCientifico(mymapA.find(id_)->second); // Editar >> Animais
-          break;
-          case 2 :
-          //MenuEditar1_2(); // Editar >> Funcionarios
-          break;
-          case 0 :
-          break;
-          default:
-          system("clear");
-          std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
-        }
-      }
+      if(alternativa != 0){
+        std::cout  << "Digite o Id do animal :";
+        std::cin   >> id_;
+        std::cin.ignore();
 
+        if(mymapA.count(id_) == 1){
+          switch(alternativa){
+            case 1 :
+              setFuncNome(mymapF.find(id_)->second); // Editar >> Animais
+              break;
+            case 2 :
+              setFuncCpf(mymapF.find(id_)->second);
+              break;
+            case 3 :
+              setFuncIdade(mymapF.find(id_)->second);
+              break;
+            case 4:
+              setFuncTipoSanguineo(mymapF.find(id_)->second);
+              break;
+            case 5:
+              setFuncFatorRh(mymapF.find(id_)->second);
+              break;
+            case 6:
+              setFuncEspecialidade(mymapF.find(id_)->second);
+              break;
+            case 7:
+              if(FlagCrmv(mymapF.find(id_)->second) == true){
+                setFuncCrmv(dynamic_cast<Veterinario*>(mymapF.find(id_)->second));
+              }
+              break;
+            case 8:
+              if(FlagNivDeSeguranca(mymapF.find(id_)->second) == true){
+                setFuncNivDeSeguranca(dynamic_cast<Tratador*>(mymapF.find(id_)->second));
+              }
+              break;
+            case 0 :
+              break;
+            default:
+            system("clear");
+            std::cout << "\n\nAlternativa inválida! Tente outra vez.\n\n";
+          }
+        }else{
+          std::cout << "\n\nId invalido! Animal não existe.\n\n";
+        }
+
+      }
     } while (alternativa != 0);
 }
 
@@ -1537,6 +1665,23 @@ System::PrintEditar1_1(){
              << " Digite '14' para: Editar Uf Origem\n"
              << " Digite '15' para: Editar Pais de origem\n"
              << " Digite '16' para: Editar Cidade de origem\n"
+             << " Digite '17' para: Editar Autorização do ibama\n"
              << " Digite '0' para: Voltar ao Menu Anterior \n"
+             << std::endl;
+}
+
+void
+System::PrintEditar1_2(){
+  std::cout  << " \n ++++++++++++++++++++++++++++++++++++++++++++++++++ \n"
+             << " \n Você escolheu a alternativa: Editar Dados dos funcionarios \n"
+             << " \n Escolha uma das seguintes alternativas abaixo: \n"
+             << " Digite '1'  para: Editar Nome\n"
+             << " Digite '2'  para: Editar Cpf\n"
+             << " Digite '3'  para: Editar Idade\n"
+             << " Digite '4'  para: Editar Tipo Sanguineo\n"
+             << " Digite '5'  para: Editar Fator Rh\n"
+             << " Digite '6'  para: Editar especialidade\n"
+             << " Digite '7'  para: Editar Crmv\n"
+             << " Digite '8'  para: Editar Nivel de segurança\n"
              << std::endl;
 }

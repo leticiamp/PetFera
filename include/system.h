@@ -47,7 +47,7 @@ class System{
     void Inserir_Func_MyMapF();
     void Inserir_Animal_MyMapA();
 
-    Tratador * NewTratador(); 
+    Tratador * NewTratador();
     Veterinario * NewVeterinario();
 
     AveExo * NewAveExo();
@@ -473,11 +473,6 @@ class System{
     void setAnimalPaisOrigem(T * animal){
       system("clear");
 
-      if (FlagPaisOrigem(animal) == false){
-        std::cerr << "O animal não possue esse atributo" << std::endl;
-        return;
-      }
-
       std::string pais_origem_;
       std::cout <<  "Qual o pais de origem do animal?" << std::endl;
       std::cin >> pais_origem_;
@@ -488,11 +483,6 @@ class System{
     template <typename T>
     void setAnimalCidadeOrigem(T * animal){
       system("clear");
-
-      if (FlagCidadeOrigem(animal) == false){
-        std::cerr << "O animal não possue esse atributo" << std::endl;
-        return;
-      }
 
       std::string cidade_origem_;
       std::cout <<  "Qual cidade de origem do animal?" << std::endl;
@@ -505,11 +495,6 @@ class System{
     void setAnimalAutoIbama(T * animal){
       system("clear");
 
-      if (FlagAutoIbama(animal) == false){
-        std::cerr << "O animal não possue esse atributo" << std::endl;
-        return;
-      }
-
       std::string auto_ibama_;
       std::cout <<  "Qual a autorização do ibama do animal?" << std::endl;
       std::cin >> auto_ibama_;
@@ -520,11 +505,6 @@ class System{
     template <typename T>
     void setAnimalUfOrigem(T * animal){
       system("clear");
-
-      if (FlagUfOrigem(animal) == false){
-        std::cerr << "O animal não possue esse atributo" << std::endl;
-        return;
-      }
 
       std::string uf_origem_;
       std::cout <<  "Qual a Uf de origem do animal?" << std::endl;
@@ -741,6 +721,7 @@ class System{
     void MenuPesquisar1_2();
     void MenuEditar1();
     void MenuEditar1_1();
+    void MenuEditar1_2();
 
     /** @brief Cout's das opções dos menus */
     void PrintMenuPrincipal();
@@ -758,6 +739,7 @@ class System{
     void PrintPesquisar1_2();
     void PrintEditar1();
     void PrintEditar1_1();
+    void PrintEditar1_2();
 
 
 };

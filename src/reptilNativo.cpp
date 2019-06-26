@@ -47,25 +47,27 @@ ReptilNat::ReptilNat(int id_,
 ReptilNat::~ReptilNat(){}
 
 
+
 std::ostream& ReptilNat::print(std::ostream& os)const{
   os << m_id << ";" << m_classe 	 << ";" << m_nome_cientifico << ";"
-     << m_sexo << ";" << m_tamanho << ";" << m_dieta << ";"
-     << m_nome_batismo << ";" << m_naturalidade << ";"
-     << m_venenoso << ";" << m_tipo_veneno << ";";
+     << m_sexo << ";" << m_tamanho << ";" << m_dieta << ";";
 
-    if(m_veterinario == nullptr){
- 			os << "0" << ";";
- 		}else{
- 			os << m_veterinario->getId() << ";";
- 		}
+     if(m_veterinario == nullptr){
+       os << "0" << ";";
+     }else{
+       os << m_veterinario->getId() << ";";
+     }
 
- 		if(m_tratador == nullptr){
- 			os << "0" << ";";
- 		}else{
- 			os << m_tratador->getId()	<< ";";
- 		}
+     if(m_tratador == nullptr){
+       os << "0" << ";";
+     }else{
+       os << m_tratador->getId()	<< ";";
+     }
 
-    os  << m_uf_origem << ";"<< m_autorizacao_ibama << std::endl;
+
+  os << m_nome_batismo << ";" << m_naturalidade << ";"
+     << m_venenoso << ";" << m_tipo_veneno << ";"
+     << m_uf_origem << ";"<< m_autorizacao_ibama << std::endl;
 
     return os;
 }
