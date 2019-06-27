@@ -99,7 +99,7 @@ $(OBJ)/system.o: $(INC)/system.h
 	$(CC) $(CPPFLAGS) -c $(SRC)/system.cpp -o $(OBJ)/system.o
 
 $(OBJ)/main.o: $(SRC)/main.cpp
-	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
+	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o 
 
 
 petfera.so: $(OBJ)/anfibio.o $(OBJ)anfibioExotico.o $(OBJ)/anfibioNativo.o \
@@ -114,3 +114,6 @@ prog_dinamico:
 clean:
 	rm -f $(BIN)/*
 	rm -f $(OBJ)/*
+
+run:
+	@./superPet
